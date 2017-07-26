@@ -33,7 +33,7 @@ export class CurrencyListComponent  {
   //     .map((response: Response) => response.json());
   // }
   
-   data: Object;
+   data: Array<any>;
     constructor(private http: Http) {
       http.get('assets/currency.json')
         .map(res => res.json())

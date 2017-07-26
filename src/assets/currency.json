@@ -1,6 +1,71 @@
+[{
+  "currency": "EUR",
+  "buy": 33,
+  "flag": "",
+  "sell": 22
+},
+
 {
-  "firstName": "John",
-  "lastName": "Smith",
-  "email": "alek@yahoo.com",
-  "age": 25
+  "currency": "AUD",
+  "buy": 33,
+  "flag": "flag--australia",
+  "sell": 22
+},
+
+{
+  "currency": "CAD",
+  "buy": 33,
+  "flag": "flag--canada",
+  "sell": 22
+},
+
+{
+  "currency": "DKK",
+  "buy": 3.3,
+  "flag": "flag--denmark",
+  "sell": 22
+},
+
+{
+  "currency": "JPY",
+  "buy": 33,
+  "flag": "flag--japan",
+  "sell": 22
+},
+
+{
+  "currency": "NOK",
+  "buy": 33,
+  "flag": "flag--norway",
+  "sell": 22
+},
+
+{
+  "currency": "SEK",
+  "buy": 33,
+  "flag": "flag--sweden",
+  "sell": 22
+},
+
+{
+  "currency": "CHF",
+  "buy": 33,
+  "flag": "flag--switzerland",
+  "sell": 22
+},
+
+{
+  "currency": "GBP",
+  "buy": 33,
+  "flag": "flag--uk",
+  "sell": 22
+},
+
+{
+  "currency": "USD",
+  "buy": 33,
+  "flag": "flag--usa",
+  "sell": 22
 }
+
+]

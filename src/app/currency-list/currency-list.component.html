@@ -1,4 +1,5 @@
-<table class="table table-hover">
+<div>
+<table class="table table-hover table-currency">
   <thead>
     <tr>
       <th>Currency</th>
@@ -8,28 +9,14 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">Eur</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">Usd</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
+    <!-- <ng-template *ngFor="let item of data;"> -->
+    <tr  *ngFor="let item of data;">
+      <th scope="row">{{item.currency}}</th>
+      <td>{{item.buy}}</td>
+      <td><span class="{{item.flag}}"></span></td>
+      <td>{{item.sell}}</td>
     </tr>
   </tbody>
 </table>
-
-
-<div class="holder">
 
 </div>
