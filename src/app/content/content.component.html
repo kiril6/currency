@@ -1,10 +1,10 @@
-<div class="container">
+<!-- <div class="container"> -->
  
  
 
-  <div class="row">
-    <app-currency-list></app-currency-list>
-  </div>
+  <!-- <div class="row"> -->
+    <!-- <app-currency-list></app-currency-list> -->
+  <!-- </div> -->
 
 
 
@@ -18,5 +18,137 @@
   </div>
 
   -->
-  <div class="mailing-list"></div>
-</div>
+  <!-- <div class="mailing-list"></div>
+</div> -->
+
+
+<section id="main-slider" class="carousel">
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="container">
+                    <div class="carousel-content">
+                      <h3>Intercoop Currencies</h3>
+                        <app-currency-list></app-currency-list>
+                    </div>
+                </div>
+            </div><!--/.item-->
+            <div class="item">
+                <div class="container">
+                    <div class="carousel-content">
+                        <h1>You can also get the source code</h1>
+                        <p class="lead">Continue developing based on this source code<br>or start a new idea</p>
+                    </div>
+                </div>
+            </div><!--/.item-->
+                 <div class="item">
+                <div class="container">
+                    <div class="carousel-content">
+                       <p class="lead">Mobile apps, future<br>Hire me for your ideas</p>
+                        </div>
+                </div>
+            </div><!--/.item-->
+        </div><!--/.carousel-inner-->
+        <a class="prev" href="#main-slider" data-slide="prev"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+        <a class="next" href="#main-slider" data-slide="next"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <div class="box first">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="center">
+                            <!-- <i class="icon-apple icon-md icon-color3"></i> -->
+                            <img style="width: 60px" src="../../assets/img/logo2.png">
+                            <h4>iOS development</h4>
+                            <p>The passion and love for apple products inspired me to start developing iOS aps.</p><p>I build apps personally and also for clients.</p>
+                        </div>
+                    </div><!--/.col-md-4-->
+                
+                </div><!--/.row-->
+            </div><!--/.box-->
+        </div><!--/.container-->
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="box last">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <h1>&nbsp;&nbsp;&nbsp;Contact Form</h1>
+                        <div class="col-sm-6">
+                        <div class="status alert alert-success" style="display: none"></div>
+                        <fieldset id="contact_form" class="contact-form">
+                            <div class="row">
+                                <div class="col-sm-6"> <div id="result"></div>
+   		  <form action="mailer.php" method="post" id="ajax-contact">
+              <div width="100%" class="padding-left">
+                   
+                   <div class="form-group">
+                   <label for="name">Your name:</label>                 
+                      <input autocomplete="off" name="name" type="text" class="btn-wide form-control" id="name" size="" title="overall type: NAME_FULL
+    server type: NO_SERVER_DATA
+    heuristic type: NAME_FULL
+    label: Your name: Message:
+    parseable name: name
+    field signature: 3489289364
+    form signature: 7698844189148110595" autofill-prediction="NAME_FULL">
+                      
+                     </div>
+                     <div class="form-group">
+                       <label for="email">Your email:</label>                     
+                      <input autocomplete="off" name="email" type="email" class="btn-wide form-control" id="email" size="" title="overall type: EMAIL_ADDRESS
+    server type: EMAIL_ADDRESS
+    heuristic type: EMAIL_ADDRESS
+    label: Your email:
+    parseable name: email
+    field signature: 1029417091
+    form signature: 7698844189148110595" autofill-prediction="EMAIL_ADDRESS">
+                     <!-- <br>
+                       <span class="font-contact">Предмет:</span><br />
+                      <input name="subject" type="text" class="btn-wide" id="subject" size="" required/>-->
+                      </div>
+                      
+                      <div class="form-group">
+                      <label for="name">Message:</label>                    
+                      <textarea autocomplete="off" name="message" class="btn-wide form-control" cols="" rows="5" id="message" title="overall type: UNKNOWN_TYPE
+    server type: NO_SERVER_DATA
+    heuristic type: UNKNOWN_TYPE
+    label: Message:
+    parseable name: message
+    field signature: 4239419590
+    form signature: 7698844189148110595" autofill-prediction="UNKNOWN_TYPE"></textarea>
+                      </div>
+                      <br>
+                      <div class="row">                      
+           <div class="col-md-1">        
+<button type="submit" class="btn btn-info" id="send" onclick="MM_validate('name','','R','email','','RisEmail','message','','R');return document.MM_returnValue"><span class="glyphicon glyphicon-send"></span>&nbsp;SEND</button></div></div>
+
+       	   </div>
+</form>
+      </div>                               
+                            </div>
+                      <div id="msgsent"></div>
+                        </fieldset></div>
+                    </div><!--/.col-sm-5-->
+                    <div class="col-sm-4">
+                        <h1>Qr Code</h1>
+                        <div class="row">                              
+                                    <!-- <img class="img-thumbnail" src="images/qr.png" alt="Scan this with your qr reader"> -->
+                              </div>                    
+                        </div>
+                        <div class="col-sm-3">
+                        <h1>Find me on</h1>
+                        <div class="row">
+                            
+                                <ul class="social">
+                                    <li><a href="https://www.facebook.com/kdelovski"><i class="icon-facebook icon-social"></i> Facebook</a></li> 
+                                    <li><a href="http://mk.linkedin.com/in/kdelovski6"><i class="icon-linkedin icon-social"></i> Linked in</a></li> 
+                                </ul>
+                               </div>                      
+                           
+                    </div><!--/.col-sm-6-->
+                </div><!--/.row-->
+            </div><!--/.box-->
+        </div><!--/.container-->
+    </section>

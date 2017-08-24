@@ -1,3 +1,59 @@
-p {
-    
+#footer {
+
+  padding-top: 30px;
+
+  padding-bottom: 30px;
+
+  color: #999;
+
+}
+
+#footer a {
+
+  color: #999;
+
+}
+
+#footer a:hover {
+
+  color: #52b6ec;
+
+}
+
+ul.social {
+
+  list-style: none;
+
+  margin: 10px 0 0;
+
+  padding: 0;
+
+}
+
+ul.social > li {
+
+  margin: 0 0 20px;
+
+}
+
+ul.social > li > a {
+
+  display: block;
+
+  font-size: 18px;
+
+}
+
+ul.social > li > a i {
+
+  margin-right: 10px;
+
+}
+
+textarea#message {
+
+  padding: 10px 15px;
+
+  height: 220px;
+
 }
