@@ -35,14 +35,15 @@ export class CurrencyListComponent  {
   
    data: Array<any>;
     constructor(private http: Http) {
-      http.get('assets/currency.json')
+      const headers = new Headers({'Content-Type' : 'application/json'});
+      http.get('assets/currency.json', {headers: headers})
         .map(res => res.json())
         .subscribe(data => this.data = data,
                     err => console.log(err),
-                    () => console.log('file rode'));
-
-                   
+                    () => console.log('file rode'));  
     }
+
+    
 
 //   var output;
 
