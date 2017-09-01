@@ -442,6 +442,18 @@
   #call, #directions {
     font-size: 16px;
     font-weight: bold;
+    &:hover {
+      border: 1px dashed rgba(256, 256, 256, 0.5);
+    }
+  }
+
+  #directions-footer {
+    font-size: 14px;
+    font-weight: bold;
+    color: rgba(256,256,256,0.8)!important;
+    &:hover {
+      border: 1px dashed rgba(256, 256, 256, 0.5);
+    }
   }
 
   //social
