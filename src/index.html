@@ -28,6 +28,14 @@
 </head>
 
 <body data-spy="scroll" data-target="#navbar" data-offset="0" data-gr-c-s-loaded="true" style="">
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10&appId=171989892859040";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
   <app-root></app-root>
 
 
@@ -49,6 +57,34 @@
     ga('create', 'UA-79228863-1', 'auto');
     ga('send', 'pageview');
   </script>
+
+<script type="text/javascript">
+
+
+
+
+$(document).on("click", "a[href*='#']:not([href='#team-scroller'])", function() {
+
+  $('html,body').animate({scrollTop:$(this.hash).offset().top-50},1800);
+	});
+
+
+
+  // if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+  //   var target = $(this.hash);
+  //   target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+  //   if (target.length) {
+  //       $('html, body').animate({
+  //       scrollTop: target.offset().top - 100
+  //       }, 1000);
+  //       return false;
+  //   }
+  // }
+// });
+
+    
+
+</script>
 </body>
 
 </html>

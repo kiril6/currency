@@ -1,15 +1,30 @@
 #header {
-
   position: fixed;
-
   top: 0;
-
   left: 0;
-
   width: 100%;
-
   height: 80px;
-
   z-index: 99999;
+}
 
+.logo-text {
+  margin-left: 40px;
+  font-size: 12px;
+  line-height: 1.0;
+  font-weight: bold;
+  color: #f6821f;
+  span {
+    color: #012e6f;
+    font-size: 18px;
+  }
+}
+
+#empty:hover {
+ background-color: white;
+ cursor: default;
+ border-bottom: none;
+}
+
+.nav>li>a>img {
+  border: 1px solid white;
 }

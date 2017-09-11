@@ -954,9 +954,10 @@ body {
 .navbar-default .navbar-brand {
   margin-right: 50px;
   margin-left: 20px;
-  width: 200px;
+  width: 146px;
   height: 78px;
-  background: url(assets/img/logo.png) no-repeat 0 50%;
+  background: url(assets/img/logo2.png) no-repeat 0 50%;
+  background-size: 50px;
 }
 
 // main.css
@@ -1002,6 +1003,7 @@ body {
 .navbar-default .navbar-nav > li:focus > a:focus {
   background-color: #52b6ec;
   color: #fff;
+  border-bottom: 4px solid rgba(0,0,0,0.4);
 }
 
 .icon-lg {

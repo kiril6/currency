@@ -7,7 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+
+   }
+
+
+   lngChange() {
+    window.alert('Macedonian language\n will be available soon.');
+  }
 
   ngOnInit() {
   }

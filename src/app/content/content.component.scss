@@ -87,15 +87,6 @@
     }
   }
 
-
-  .member {
-    
-      margin: 0 50px;
-    
-      text-align: center;
-    
-    }
-
 //   od tuka ide main slider
 #main-slider {
 
@@ -279,98 +270,64 @@
 }
 
 //carousel
-#team-scroller .designation {
-  
-    margin-top: 10px;
-  
-    display: block;
-  
+img {
+  cursor: pointer;
+}
+
+#team-scroller .designation {  
+    margin-top: 10px;  
+    display: block;  
   }
   
-  .member {
-  
-    margin: 0 50px;
-  
-    text-align: center;
-  
+  .member {  
+    margin: 0 30px;  
+    text-align: center;  
   }
   
-  .carousel.scale .left-arrow,
-  
-  .carousel.scale .right-arrow {
-  
-    top: 30%;
-  
-    position: absolute;
-  
+  .carousel.scale .left-arrow,  
+  .carousel.scale .right-arrow {  
+    top: 37%;  
+    position: absolute;  
   }
   
-  .carousel.scale .left-arrow {
-  
-    left: -10px;
-  
+  .carousel.scale .left-arrow {  
+    left: -10px;  
   }
   
-  .carousel.scale .right-arrow {
-  
-    right: -10px;
-  
+  .carousel.scale .right-arrow {  
+    right: -10px;  
   }
   
-  .carousel.scale .active .row > div:nth-child(1) {
-  
-    -webkit-animation: scaleUp 200ms linear 0 both;
-  
-    -moz-animation: scaleUp 200ms linear 0 both;
-  
-    -ms-animation: scaleUp 200ms linear 0 both;
-  
-    -o-animation: scaleUp 200ms linear 0 both;
-  
+  .carousel.scale .active .row > div:nth-child(1) {  
+    -webkit-animation: scaleUp 200ms linear 0 both;  
+    -moz-animation: scaleUp 200ms linear 0 both;  
+    -ms-animation: scaleUp 200ms linear 0 both;  
+    -o-animation: scaleUp 200ms linear 0 both;  
     animation: scaleUp 200ms linear 0 both;
-  
   }
   
   .carousel.scale .active .row > div:nth-child(2) {
-  
-    -webkit-animation: scaleUp 200ms linear 100ms both;
-  
-    -moz-animation: scaleUp 200ms linear 100ms both;
-  
-    -ms-animation: scaleUp 200ms linear 100ms both;
-  
-    -o-animation: scaleUp 200ms linear 100ms both;
-  
+    -webkit-animation: scaleUp 200ms linear 100ms both;  
+    -moz-animation: scaleUp 200ms linear 100ms both;  
+    -ms-animation: scaleUp 200ms linear 100ms both;  
+    -o-animation: scaleUp 200ms linear 100ms both;  
     animation: scaleUp 200ms linear 100ms both;
-  
   }
   
   .carousel.scale .active .row > div:nth-child(3) {
-  
-    -webkit-animation: scaleUp 200ms linear 200ms both;
-  
-    -moz-animation: scaleUp 200ms linear 200ms both;
-  
-    -ms-animation: scaleUp 200ms linear 200ms both;
-  
-    -o-animation: scaleUp 200ms linear 200ms both;
-  
-    animation: scaleUp 200ms linear 200ms both;
-  
+    -webkit-animation: scaleUp 200ms linear 200ms both;  
+    -moz-animation: scaleUp 200ms linear 200ms both;  
+    -ms-animation: scaleUp 200ms linear 200ms both;  
+    -o-animation: scaleUp 200ms linear 200ms both;  
+    animation: scaleUp 200ms linear 200ms both;  
   }
   
-  .carousel.scale .active .row > div:nth-child(4) {
-  
-    -webkit-animation: scaleUp 200ms linear 400ms both;
-  
-    -moz-animation: scaleUp 200ms linear 400ms both;
-  
-    -ms-animation: scaleUp 200ms linear 400ms both;
-  
-    -o-animation: scaleUp 200ms linear 400ms both;
-  
-    animation: scaleUp 200ms linear 400ms both;
-  
+  .carousel.scale .active .row > div:nth-child(4) {  
+    -webkit-animation: scaleUp 200ms linear 400ms both;  
+    -moz-animation: scaleUp 200ms linear 400ms both;  
+    -ms-animation: scaleUp 200ms linear 400ms both;  
+    -o-animation: scaleUp 200ms linear 400ms both;  
+    animation: scaleUp 200ms linear 400ms both;  
   }
 
 
@@ -403,129 +360,80 @@
   .portfolio-items > li {
     float: left;
     padding: 0;
-    margin: 0;
-  
+    margin: 0;  
   }
   
-  .portfolio-items.col-2 > li {
-  
-    width: 50%;
-  
+  .portfolio-items.col-2 > li {  
+    width: 50%;  
   }
   
-  .portfolio-items.col-3 > li {
+  // .portfolio-items.col-3 > li {  
+  //   width: 33%;  
+  // }
   
-    width: 33%;
+  // .portfolio-items.col-4 > li {  
+  //   width: 25%;  
+  // }
   
-  }
+  // .portfolio-items.col-5 > li {  
+  //   width: 20%;  
+  // }
   
-  .portfolio-items.col-4 > li {
+  // .portfolio-items.col-6 > li {  
+  //   width: 16%;  
+  // }
   
-    width: 25%;
-  
-  }
-  
-  .portfolio-items.col-5 > li {
-  
-    width: 20%;
-  
-  }
-  
-  .portfolio-items.col-6 > li {
-  
-    width: 16%;
-  
-  }
-  
-  .portfolio-item .item-inner {
-  
-    margin: 0 20px 20px 0;
-  
-    text-align: center;
-  
-    background: #fff;
-  
-    padding: 10px;
-  
+  .portfolio-item .item-inner {  
+    margin: 0 20px 20px 0;  
+    text-align: center;  
+    background: #fff;  
+    padding: 10px;  
     border-bottom: 1px solid #e1e1e1;
-  
   }
   
   .portfolio-item img {
-  
     width: 100%;
-  
   }
   
   .portfolio-item .portfolio-image {
-  
     position: relative;
-  
   }
   
   .portfolio-item h5 {
-  
     margin: 0;
-  
     padding: 10px 0 0 0;
-  
     white-space: nowrap;
-  
     text-overflow: ellipsis;
-  
     overflow: hidden;
-  
   }
   
   .portfolio-item .overlay {
-  
     position: absolute;
-  
     top: 0;
-  
     left: 0;
-  
     width: 100%;
-  
     height: 100%;
-  
     opacity: 0;
-  
     background-color: rgba(255, 255, 255, 0.9);
-  
     text-align: center;
-  
     vertical-align: middle;
-  
     -webkit-transition: opacity 300ms;
-  
     -moz-transition: opacity 300ms;
-  
     -o-transition: opacity 300ms;
-  
     transition: opacity 300ms;
-  
   }
   
-  .portfolio-item .overlay .preview {
-  
-    position: relative;
-  
-    top: 50%;
-  
+  .portfolio-item .overlay .preview {  
+    position: relative;  
+    top: 50%;  
     display: inline-block;
-  
     margin-top: -20px;
-  
   }
   
   .portfolio-item:hover .overlay {
-  
     opacity: 1;
-  
   }
   
-
   //id\s
 
   #call, #directions {

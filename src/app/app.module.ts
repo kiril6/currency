@@ -8,6 +8,8 @@ import { FooterComponent } from './footer/footer.component';
 import { ContentComponent } from './content/content.component';
 import { CurrencyListComponent } from './currency-list/currency-list.component';
 
+import { Angular2ImageGalleryModule } from 'angular2-image-gallery';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +19,7 @@ import { CurrencyListComponent } from './currency-list/currency-list.component';
     CurrencyListComponent
   ],
   imports: [
-    BrowserModule, HttpModule
+    BrowserModule, HttpModule,  Angular2ImageGalleryModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
