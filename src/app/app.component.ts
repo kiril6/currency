@@ -41,11 +41,8 @@ export class AppComponent implements OnInit {
 
                    
   //   }
-
-
-ngOnInit() {
-
-}
+  ngOnInit() {
+  }
 } 
  
     // constructor(private http:Http) {
