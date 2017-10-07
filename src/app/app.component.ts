@@ -1,5 +1,5 @@
 import { Component, Injectable, OnInit } from '@angular/core';
-import {HerbsService} from "./services/data.service";
+// import {DataGetService} from "./services/data.service";
 // import {ActivatedRoute, Router} from "@angular/router";
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { Http, Response, RequestOptions, Headers, HttpModule } from '@angular/http';
@@ -7,30 +7,20 @@ import { Http, Response, RequestOptions, Headers, HttpModule } from '@angular/ht
 import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-
-
-import 'rxjs/add/operator/map';
+import * as $ from 'jquery';
 @Injectable()
-
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  providers: [HerbsService],
-  
+  styleUrls: ['./app.component.scss']
+  // providers: [DataGetService],
 })
 
-
-
-
-
 export class AppComponent implements OnInit {
-
+  // constructor(public dataGetService: DataGetService) { }
   // private data;
   title = 'app';
-
-  //  data;
 
   //  herbs = [];
   // constructor(private _CurrencyListComponent: HerbsService, private http:Http){}
@@ -56,10 +46,7 @@ export class AppComponent implements OnInit {
 ngOnInit() {
 
 }
-
-  }
-
-  
+} 
  
     // constructor(private http:Http) {
         // this.http.get('assets/currency.json')
@@ -146,4 +133,3 @@ ngOnInit() {
 //     }
 //     )
 //     .catch(this.handleError);
-

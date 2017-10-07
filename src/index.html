@@ -57,13 +57,14 @@
     ga('create', 'UA-79228863-1', 'auto');
     ga('send', 'pageview');
   </script>
-
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://codepen.io/fancyapps/pen/ybgpzy"></script> -->
 <script type="text/javascript">
 
 
 
 
-$(document).on("click", "a[href*='#']:not([href='#team-scroller'])", function() {
+$(document).on("click", "a[href*='#']:not([href='#team-scroller']):not([href='#main-slider'])", function() {
 
   $('html,body').animate({scrollTop:$(this.hash).offset().top-50},1800);
 	});
