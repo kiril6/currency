@@ -1,4 +1,10 @@
-<div style="height: 455.6px" >
+<div class="animated backInDown">
+  <h3><b>INTERCOOP CURRENNCIES</b></h3>
+  <h5 class="animated flash"><b>{{data.date}}</b></h5>
+</div>
+
+
+<div class="animated fadeIn" style="height: 455.6px" >
 <table *ngIf="this.data" class="table table-hover table-currency">
   <thead>
     <tr>
@@ -10,7 +16,7 @@
   </thead>
   <tbody>
     <!-- <ng-template *ngFor="let item of data;"> -->
-    <tr  *ngFor="let item of data;">
+    <tr  *ngFor="let item of data.values;">
       <th scope="row">{{item.currency}}</th>
       <td>{{item.buy}}</td>
       <td><span class="{{item.flag}}"></span></td>

@@ -267,3 +267,14 @@ $star-size: ($flag-height/13)*2.45/3.7;
   background: cross(mediumblue, yellow, yellow);
 }
 
+.animated.flash {
+  -webkit-animation-delay: 5s;
+  animation-delay: 5s;
+}
+
+.animated.fadeIn {
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+  -webkit-animation-duration: 5s;
+  animation-duration: 5s;
+}
