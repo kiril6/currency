@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule }      from '@angular/http';
-
+// import { Ng2ImageGalleryModule } from 'ng2-image-gallery';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -17,7 +17,7 @@ import { CurrencyListComponent } from './currency-list/currency-list.component';
     CurrencyListComponent
   ],
   imports: [
-    BrowserModule, HttpModule,
+    BrowserModule, HttpModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -31,7 +31,6 @@ $flag-height: $flag-width*10/16;
     linear-gradient(90deg, $back 25%, $detail 25%, $detail 28%, $main 28%, $main 34%, $detail 34%, $detail 37%, $back 37%);
 }
 
-
 // Usa flag function (13 lines)
 @function usa-lines(){
   $dist: 100%/13;
@@ -67,8 +66,6 @@ $flag-height: $flag-width*10/16;
   @return $shadow;
 }
 
-
-
 body{
   background: #f2f2f2;
   text-align: center;
@@ -94,7 +91,6 @@ body{
   }
 }
 
-
 // EXCEPTIONS (not functions)
 
 .flag--spain{
@@ -117,7 +113,6 @@ body{
     linear-gradient(90deg, transparent 44%, white 44%, white 46%, red 46%, red 56%, white 56%, white 58%, transparent 58%),
     linear-gradient(33deg, transparent 45%, white 45%, white 48%, red 48%, red 54%, white 54%, white 57%, transparent 57%),
     linear-gradient(-33deg, mediumblue 45%, white 45%, white 48%, red 48%, red 54%, white 54%, white 57%, mediumblue 57%);
-
 }
 
 .flag--japan{
@@ -209,7 +204,6 @@ $star-size: ($flag-height/13)*2.45/3.7;
   background: thirds(red, white, red, -180deg);
 }
 
-
 .flag--hungary{
   @extend %flag;
   background: thirds(red, white, green, -180deg);
@@ -219,7 +213,6 @@ $star-size: ($flag-height/13)*2.45/3.7;
   @extend %flag;
   background: thirds(royalblue, darken(royalblue, 30%), white, -180deg);
 }
-
 
 .flag--bolivia{
   @extend %flag;
@@ -245,7 +238,6 @@ $star-size: ($flag-height/13)*2.45/3.7;
   background: cross(red, white);
 }
 
-
 .flag--iceland{
   @extend %flag;
   background: cross(mediumblue, red, white);
@@ -261,7 +253,6 @@ $star-size: ($flag-height/13)*2.45/3.7;
   background: cross(white, blue, blue);
 }
 
-
 .flag--sweden{
   @extend %flag;
   background: cross(mediumblue, yellow, yellow);
@@ -269,23 +260,43 @@ $star-size: ($flag-height/13)*2.45/3.7;
 
 .animated.fadeInDown {
   color: gray;
-  -webkit-animation-delay: 14s;
-  animation-delay: 14s;
+  -webkit-animation-delay: 4s;
+  animation-delay: 4s;
   opacity: 1!important;
 }
 
 .animated.flash {
-  -webkit-animation-delay: 18s;
-  animation-delay: 18s;
+  -webkit-animation-delay: 8s;
+  animation-delay: 8s;
 }
 
 .animated.fadeIn {
-  -webkit-animation-delay: 15s;
-  animation-delay: 15s;
+  -webkit-animation-delay: 5s;
+  animation-delay: 5s;
   -webkit-animation-duration: 5s;
   animation-duration: 5s;
 }
 
 .title {
   color: white;
+  &.padding {
+    padding-top: 10px;
+  }
+}
+
+.animated.back {
+  -webkit-animation-delay: 4.5s;
+  animation-delay: 4.5;
+  background: rgba(0,0,0, 0.5);
+  border-radius: 5px;
+  color: whitesmoke;
+  table tr:hover {
+    background: rgba(0,0,0,0.8);
+  }
+  .tableTitle {
+    background: cadetblue;
+    &:hover {
+      background: cadetblue!important;
+    }
+  }
 }

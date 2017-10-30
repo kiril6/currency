@@ -28,7 +28,6 @@
     background: url("http://teabotravel.com/wp-content/uploads/2017/06/uefa-super-cup-dark-skopje.jpg") no-repeat center;
     background-size: auto;
     background-position-y: -20px;
-
     // width: 650px;
     height: 400px;
     margin: 0 auto;
@@ -88,7 +87,6 @@
   }
 
 //   od tuka ide main slider
-
 #main-slider .item {
   background: url(../../assets/img/slider-bg.jpg);
   background-attachment: fixed;
@@ -97,12 +95,10 @@
   background-repeat: no-repeat;
   padding: 90px 0 70px 0;
   color: #fff;
-
-  -webkit-animation: zoomin 20s ease-in forwards;
-  animation: zoomin 20s ease-in forwards;
+  -webkit-animation: zoomin 5s ease-in forwards;
+  animation: zoomin 5s ease-in forwards;
   transition: all .5s ease-in-out;
   overflow: hidden;
-
   -moz-transition: opacity ease-in-out 500ms;
   -o-transition: opacity ease-in-out 500ms;
   -webkit-transition: opacity ease-in-out 500ms;
@@ -118,8 +114,8 @@
 }
 
 .carousel-content {
-    -webkit-animation: zoomout 20s ease-in forwards;
-    animation: zoomout 20s ease-in forwards;
+    -webkit-animation: zoomout 2s ease-in forwards;
+    animation: zoomout 2s ease-in forwards;
     transition: all .5s ease-in-out;
     overflow: hidden;
   }
@@ -149,118 +145,72 @@
 }/*End of Zoom out Keyframes */
 
 #main-slider .item:first-child {
-
   top: auto;
-
   position: relative;
-
 }
 
 #main-slider .item.active {
-
   opacity: 1;
-
   -moz-transition: opacity ease-in-out 500ms;
-
   -o-transition: opacity ease-in-out 500ms;
-
   -webkit-transition: opacity ease-in-out 500ms;
-
   transition: opacity ease-in-out 500ms;
-
   z-index: 2;
-
 }
 
 #main-slider .item.active h1 {
-
   -webkit-animation: scaleUp 400ms;
-
   -moz-animation: scaleUp 400ms;
-
   -o-animation: scaleUp 400ms;
-
   -ms-animation: scaleUp 400ms;
-
   animation: scaleUp 400ms;
-
 }
 
 #main-slider .prev,
-
 #main-slider .next {
-
   position: absolute;
-
   top: 50%;
-
   background-color: rgba(0, 0, 0, 0.3);
-
   color: #fff;
-
   display: inline-block;
-
   margin-top: -50px;
-
   font-size: 24px;
-
   height: 50px;
-
   width: 50px;
-
   line-height: 50px;
-
   text-align: center;
-
   border-radius: 4px;
-
   z-index: 5;
-
 }
 
 #main-slider .prev:hover,
-
 #main-slider .next:hover {
-
   background-color: rgba(0, 0, 0, 0.5);
-
 }
 
 #main-slider .prev {
-
   left: 10px;
-
 }
 
 #main-slider .next {
-
   right: 10px;
-
 }
 
 #main-slider h1 {
-
   font-size: 68px;
-
   text-shadow: 0 3px rgba(0, 0, 0, 0.1);
-
   color: #fff;
-
 }
 
 
 // services
 
 #services .box {
-
   padding-bottom: 0;
-
 }
 
 #services .row > div {
-
   margin-bottom: 50px;
-
 }
 
 .box {
@@ -281,7 +231,6 @@
 
 .center {
   text-align: center;
-
 }
 
 //carousel
@@ -344,7 +293,6 @@ img {
     -o-animation: scaleUp 200ms linear 400ms both;  
     animation: scaleUp 200ms linear 400ms both;  
   }
-
 
 //portfolio
 

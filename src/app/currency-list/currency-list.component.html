@@ -1,28 +1,32 @@
-<div class="animated fadeInDown">
-  <h3 class="title"><b>INTERCOOP CURRENNCIES</b></h3>
-  <h5 class="title animated flash"><b>{{data?.date}}</b></h5>
-</div>
+
+<div class="animated fadeIn back">
+  <div class="animated fadeInDown">
+    <h3 class="title padding"><b>INTERCOOP CURRENNCIES</b></h3>
+    <h5 class="title animated flash"><b>{{data?.date}}</b></h5>
+  </div>
 
 
-<div class="animated fadeIn" style="height: 455.6px" >
-<table *ngIf="this.data" class="table table-hover table-currency">
-  <thead>
-    <tr>
-      <th>Currency</th>
-      <th style="text-align:center">Buy</th>
-      <th style="text-align:center">Flag</th>
-      <th style="text-align:center">Sell</th>
-    </tr>
-  </thead>
-  <tbody>
-    <!-- <ng-template *ngFor="let item of data;"> -->
-    <tr  *ngFor="let item of data.values;">
-      <th scope="row">{{item.currency}}</th>
-      <td>{{item.buy}}</td>
-      <td><span class="{{item.flag}}"></span></td>
-      <td>{{item.sell}}</td>
-    </tr>
-  </tbody>
-</table>
+  <div class="animated fadeIn" style="height: 455.6px" >
+  <table *ngIf="this.data" class="table table-responsive table-hover table-currency">
+    <thead>
+      <tr class="tableTitle">
+        <th>Currency</th>
+        <th style="text-align:center">Buy</th>
+        <th style="text-align:center">Flag</th>
+        <th style="text-align:center">Sell</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- <ng-template *ngFor="let item of data;"> -->
+      <tr  *ngFor="let item of data.values;">
+        <th scope="row">{{item.currency}}</th>
+        <td>{{item.buy}}</td>
+        <td><span class="{{item.flag}}"></span></td>
+        <td>{{item.sell}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  </div>
 
 </div>
