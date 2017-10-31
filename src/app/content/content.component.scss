@@ -252,14 +252,29 @@ img {
   .carousel.scale .right-arrow {  
     top: 37%;  
     position: absolute;  
+    transition: transform .2s ease-in-out;
+    -webkit-transition: transform .2s ease-in-out;
+    &:hover {
+     transform: scale(1.1);
+    }
   }
   
   .carousel.scale .left-arrow {  
     left: -10px;  
+    transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    &:hover {
+      left: -12px;
+    }
   }
   
   .carousel.scale .right-arrow {  
     right: -10px;  
+    transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    &:hover {
+      right: -12px;
+    }
   }
   
   .carousel.scale .active .row > div:nth-child(1) {  
@@ -439,5 +454,14 @@ p.social a {
   vertical-align: bottom;
   &:hover {
     border: 1px dashed rgba(256, 256, 256, 0.5);
+  }
+}
+.carousel-inner.slider {
+  padding-top: 15px;
+}
+.img-thumbnail{
+  transition: transform .2s ease-in-out;
+  &:hover {
+   transform: scale(1.1);
   }
 }
