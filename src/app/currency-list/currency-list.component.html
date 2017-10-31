@@ -20,9 +20,9 @@
       <!-- <ng-template *ngFor="let item of data;"> -->
       <tr  *ngFor="let item of data.values;">
         <th scope="row">{{item.currency}}</th>
-        <td>{{item.buy}}</td>
-        <td><span class="{{item.flag}}"></span></td>
-        <td>{{item.sell}}</td>
+        <td>{{item.buy.toFixed(2)}}</td>
+        <td><div class="{{item.flag}}"></div></td>
+        <td>{{item.sell.toFixed(2)}}</td>
       </tr>
     </tbody>
   </table>

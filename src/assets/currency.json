@@ -1,75 +1,75 @@
 
 
 {
-  "date" : "17.05.2017",
+  "date" : "31.10.2017",
 
     "values":[{
       "currency": "EUR",
-      "buy": 33,
-      "flag": "",
-      "sell": 22
+      "buy": 61.35,
+      "flag": "flag--europe",
+      "sell": 61.70
     },
 
     {
       "currency": "AUD",
-      "buy": 33,
+      "buy": 40.01,
       "flag": "flag--australia",
-      "sell": 22
+      "sell": 41.20
     },
 
     {
       "currency": "CAD",
-      "buy": 33,
+      "buy": 40.50,
       "flag": "flag--canada",
-      "sell": 22
+      "sell": 41.30
     },
 
     {
       "currency": "DKK",
-      "buy": 3.3,
+      "buy": 8.00,
       "flag": "flag--denmark",
-      "sell": 22
+      "sell": 8.30
     },
 
     {
       "currency": "JPY",
-      "buy": 33,
+      "buy": 44.80,
       "flag": "flag--japan",
-      "sell": 22
+      "sell": 48.00
     },
 
     {
       "currency": "NOK",
-      "buy": 33,
+      "buy": 6.30,
       "flag": "flag--norway",
-      "sell": 22
+      "sell": 6.80
     },
 
     {
       "currency": "SEK",
-      "buy": 33,
+      "buy": 6.10,
       "flag": "flag--sweden",
-      "sell": 22
+      "sell": 6.30
     },
 
     {
       "currency": "CHF",
-      "buy": 33,
+      "buy": 52.00,
       "flag": "flag--switzerland",
-      "sell": 22
+      "sell": 53.50
     },
 
     {
       "currency": "GBP",
-      "buy": 33,
+      "buy": 68.00,
       "flag": "flag--uk",
-      "sell": 22
+      "sell": 70.00
     },
 
     {
       "currency": "USD",
-      "buy": 33,
+      "buy": 52.00,
       "flag": "flag--usa",
-      "sell": 22
+      "sell": 53.50
     }]
 }

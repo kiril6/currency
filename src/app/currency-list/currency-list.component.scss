@@ -90,6 +90,17 @@ body{
     transform: scale(1.2);
   }
 }
+%additional {
+  transition: all .5s;
+  &::after{
+    // content: attr(class);
+    // line-height: $flag-height*2.5;
+  }
+  
+  &:hover{
+    transform: scale(1.2);
+  }
+}
 
 // EXCEPTIONS (not functions)
 
@@ -202,6 +213,33 @@ $star-size: ($flag-height/13)*2.45/3.7;
 .flag--austria{
   @extend %flag;
   background: thirds(red, white, red, -180deg);
+}
+
+.flag--australia{
+  @extend %additional;
+  background-image: url(/../assets/img/flags/aud.png);
+  background-repeat: no-repeat; 
+  width: 100%;
+  height: 22px;
+  background-position-x: center;
+}
+
+.flag--europe{
+  @extend %additional;
+  background-image: url(/../assets/img/flags/eur.png);
+  background-repeat: no-repeat; 
+  width: 100%;
+  height: 22px;
+  background-position-x: center;
+}
+
+.flag--canada{
+  @extend %additional;
+  background-image: url(/../assets/img/flags/cad.png);
+  background-repeat: no-repeat; 
+  width: 100%;
+  height: 22px;
+  background-position-x: center;
 }
 
 .flag--hungary{
