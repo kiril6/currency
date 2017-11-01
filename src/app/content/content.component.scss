@@ -89,11 +89,15 @@
 
 //   od tuka ide main slider
 #main-slider .item {
-  background: url(../../assets/img/slider-bg.jpg);
-  background-attachment: fixed;
+  background: url(../../assets/img/slider-bg.jpg) no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
-  background-position: 0% 50%;
-  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  width:100%;
+  height:100%;
   padding: 90px 0 70px 0;
   color: #fff;
   -webkit-animation: zoomin 5s ease-in forwards;
@@ -108,7 +112,6 @@
   opacity: 0;
   top: 0;
   position: absolute;
-  width: 100%;
   display: block !important;
   z-index: 1;
   text-align: center;
