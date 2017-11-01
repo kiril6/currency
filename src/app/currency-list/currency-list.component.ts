@@ -24,7 +24,46 @@ export class CurrencyListComponent  {
   //   return this._http.get(this._url)
   //     .map((response: Response) => response.json());
   // }
+
+  public d = new Date();
+  public newDate:string;
+  public same= false;
   
+  
+  // let today = new Date().toISOString().splice(1, 3);
+
+  ngOnInit() {  
+    var dateObj = new Date();
+    var month = dateObj.getUTCMonth() + 1;
+    var day = dateObj.getUTCDate();
+    var year = dateObj.getUTCFullYear();    
+    this.newDate = day + "." + month + "." + year;
+
+    // console.log(this.mozok);
+
+
+    if(this.data['date']==this.newDate){
+  
+    this.same=true;
+    }
+    else{
+      this.same=false;
+    }
+    // console.log(this.prov);
+    // console.log(this.data['date']);
+  }
+
+  ngAfterViewInit(){
+    // console.log(this.data['date']);
+  }
+
+  // prov(){
+  //   if(this.data['date']==this.newDate){
+  //     console.log(this.data['date']);
+  //   }
+     
+
+  // }
    data: Array<any>;
     constructor(private http: Http) {
       const headers = new Headers({'Content-Type' : 'application/json'});
@@ -38,4 +77,5 @@ export class CurrencyListComponent  {
               console.error(error);
               return Observable.throw(error || "Server Error");
         }
+        
 }

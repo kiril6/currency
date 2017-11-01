@@ -1,7 +1,9 @@
 
 <div class="animated fadeIn back">
+
+  <div class="currencyPrint" *ngIf="!this.same; else noCurrency">
   <div class="animated fadeInDown">
-    <h3 class="title padding"><b>INTERCOOP CURRENNCIES</b></h3>
+    <h3 class="title padding"><b>INTERCOOP CURRENNCIES</b><div class="pull-right printer"><a href="javascript:window.print();"><i class="fa fa-print" aria-hidden="true"></i></a>&nbsp;</div></h3>
     <h5 class="title animated flash"><b class="date">{{data["date"]}}</b></h5>
   </div>
 
@@ -28,5 +30,12 @@
   </table>
 
   </div>
+  </div>
+
+  <ng-template #noCurrency><div style="height: 400px;">
+    <h4 style="line-height: 13" class="title animated flash">There is not yet currency list for today.</h4>
+    <br><h4 style="" class="title animated flash">Visit us later.</h4>
+  </div></ng-template>
+
 
 </div>

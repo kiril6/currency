@@ -1198,3 +1198,14 @@ width: 50%;
   margin-bottom: 30px;
   font-size: 48px;
 }
+
+
+@media print { 
+  .currencyPrint {
+    display: block !important; 
+  }
+
+  #services, #portfolio, #about-us, #contact, #footer, .printer {
+    display:none!important;
+   }
+}
