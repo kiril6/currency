@@ -17,6 +17,7 @@ import * as $ from 'jquery';
 })
 
 export class AppComponent implements OnInit {
+
   // constructor(public dataGetService: DataGetService) { }
   // private data;
   title = 'app';
@@ -42,6 +43,8 @@ export class AppComponent implements OnInit {
   ngOnInit() {
   }
 } 
+
+
  
     // constructor(private http:Http) {
         // this.http.get('assets/currency.json')

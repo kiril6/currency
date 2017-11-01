@@ -26,13 +26,13 @@
             </a>
           </li>
           <li>
-            <a href="#portfolio">Services</a>
+            <a href="#portfolio">{{"nav1" | translate}}</a>
           </li>
           <li>
-            <a href="#about-us">About Us</a>
+            <a href="#about-us">{{"nav2" | translate}}</a>
           </li>
           <li>
-            <a href="#contact">Find Us</a>
+            <a href="#contact">{{"nav3" | translate}}</a>
           </li>
           <li>
             <a id="empty">&nbsp;</a>
@@ -49,10 +49,14 @@
           </li>
           <!-- <li><a id="empty">&nbsp;</a></li> -->
           <li>
-            <a href="javascript:;" (click)="lngChange();" title="change language">
-              <img style="width: 34px; vertical-align:bottom" src="assets/img/mk.jpg">
+            <a *ngIf="this.lngBool" href="javascript:;" (click)="switchLanguage('mk')" title="change to Macedonian">
+              <img style="width: 34px; vertical-align:bottom" src="assets/img/mk.png">
               <!-- language changer part-->
             </a>
+            <a *ngIf="!this.lngBool" href="javascript:;" (click)="switchLanguage('en')" title="change to English">
+                <img style="width: 34px; vertical-align:bottom" src="assets/img/en.png">
+                <!-- language changer part-->
+              </a>
           </li>
         </ul>
       </div>
