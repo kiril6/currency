@@ -2,14 +2,12 @@
   padding-top: 30px;
   padding-bottom: 30px;
   color: #999;
-}
-
-#footer a {
-  color: #999;
-}
-
-#footer a:hover {
-  color: #52b6ec;
+  a {
+    color: #999;
+    &:hover {
+      color: #52b6ec;
+    }
+  }
 }
 
 ul.social {

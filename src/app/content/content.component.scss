@@ -25,6 +25,7 @@
   .img {
     // box-shadow: 1px 3px 4px 5px rgba(128, 128, 128, 0.3);
     // background: darkblue!important;
+    cursor: pointer;
     background: url("http://teabotravel.com/wp-content/uploads/2017/06/uefa-super-cup-dark-skopje.jpg") no-repeat center;
     background-size: auto;
     background-position-y: -20px;
@@ -204,7 +205,6 @@
 
 
 // services
-
 #services .box {
   padding-bottom: 0;
 }
@@ -234,10 +234,6 @@
 }
 
 //carousel
-img {
-  cursor: pointer;
-}
-
 #team-scroller .designation {  
     margin-top: 10px;  
     display: block;  
@@ -310,7 +306,6 @@ img {
   }
 
 //portfolio
-
 #portfolio .box {  
     background: #f3f3f3;
   }
@@ -436,31 +431,35 @@ img {
     }
   }
 
-  //social
-  p.social a.facebook {
+//social
+p.social {
+  
+  a.facebook {
     background-color: #4460ae;
-}
-p.social a.gplus {
-  background-color: #c21f25;
-}
-p.social a {
-  margin: 0 20px 0 0;
-  color: #fff!important;
-  display: inline-block;
-  width: 38px;
-  height: 38px;
-  border-radius: 50px;
-  line-height: 39px;
-  font-size: 17px;
-  text-align: center;
-  -webkit-transition: all 0.2s ease-out;
-  -moz-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
-  vertical-align: bottom;
-  &:hover {
-    border: 1px dashed rgba(256, 256, 256, 0.5);
+  }
+  a.gplus {
+    background-color: #c21f25;
+  }
+  a {
+    margin: 0 20px 0 0;
+    color: #fff!important;
+    display: inline-block;
+    width: 38px;
+    height: 38px;
+    border-radius: 50px;
+    line-height: 39px;
+    font-size: 17px;
+    text-align: center;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+    vertical-align: bottom;
+    &:hover {
+      border: 1px dashed rgba(256, 256, 256, 0.5);
+    }
   }
 }
+
 .carousel-inner.slider {
   padding-top: 15px;
 }

@@ -4,10 +4,8 @@ import { Component } from '@angular/core';
 // import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
-
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { Http, Response, RequestOptions, Headers, HttpModule } from '@angular/http';
-
 import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
@@ -28,9 +26,6 @@ export class CurrencyListComponent  {
   public d = new Date();
   public newDate:string;
   public same= false;
-  
-  
-  // let today = new Date().toISOString().splice(1, 3);
 
   ngOnInit() {  
     var dateObj = new Date();
@@ -39,9 +34,6 @@ export class CurrencyListComponent  {
     var year = dateObj.getUTCFullYear();    
     this.newDate = day + "." + month + "." + year;
 
-    // console.log(this.mozok);
-
-
     if(this.data['date']==this.newDate){
   
     this.same=true;
@@ -49,21 +41,14 @@ export class CurrencyListComponent  {
     else{
       this.same=false;
     }
-    // console.log(this.prov);
+
     // console.log(this.data['date']);
   }
 
-  ngAfterViewInit(){
-    // console.log(this.data['date']);
+  print() {
+    window.print();
   }
 
-  // prov(){
-  //   if(this.data['date']==this.newDate){
-  //     console.log(this.data['date']);
-  //   }
-     
-
-  // }
    data: Array<any>;
     constructor(private http: Http) {
       const headers = new Headers({'Content-Type' : 'application/json'});
@@ -76,6 +61,5 @@ export class CurrencyListComponent  {
         errorHandler(error: Response){
               console.error(error);
               return Observable.throw(error || "Server Error");
-        }
-        
+        }        
 }

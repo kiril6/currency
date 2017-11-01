@@ -3,7 +3,6 @@ import { Component, Injectable, OnInit } from '@angular/core';
 // import {ActivatedRoute, Router} from "@angular/router";
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { Http, Response, RequestOptions, Headers, HttpModule } from '@angular/http';
-
 import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
@@ -21,7 +20,6 @@ export class AppComponent implements OnInit {
   // constructor(public dataGetService: DataGetService) { }
   // private data;
   title = 'app';
-
   //  herbs = [];
   // constructor(private _CurrencyListComponent: HerbsService, private http:Http){}
   // ngOnInit() {
@@ -54,7 +52,6 @@ export class AppComponent implements OnInit {
 
                 
     // }
-
     
 
     //   public getJSON(): Observable<any> {
@@ -80,7 +77,6 @@ export class AppComponent implements OnInit {
 
   // constructor (private ds: DataService, private route: ActivatedRoute, private router: Router) {}
 
-
   //    login() {
   //   this.ds.doLogin(this.user).subscribe(result => {
 
@@ -97,7 +93,6 @@ export class AppComponent implements OnInit {
   //   });
   // }
 
-
   // ngOnInit() {
   //   // this._herbService.getHerbs()
   //   //   .subscribe(resHerbsData => this.herbs = resHerbsData);
@@ -105,9 +100,6 @@ export class AppComponent implements OnInit {
 
     
   // }
-
-
-
   	
 // getOrderSummary(): Observable<any> {
 //     // get users from api
@@ -120,8 +112,6 @@ export class AppComponent implements OnInit {
 //     // .catch(this.handleError);
 // } 
 // }
-
-
 
 //  this.http.get('assets/currency.json')
 //     .map((response: Response) => {

@@ -326,11 +326,12 @@ $star-size: ($flag-height/13)*2.45/3.7;
   }
  
   b.date {
+    padding: 0 4px;
     transition: all .2s ease-in-out;
-  &:hover {
+    &:hover {
     font-size: 16px;
+    }
   }
-}
 }
 
 .animated.back {

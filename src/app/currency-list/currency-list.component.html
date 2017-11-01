@@ -1,41 +1,49 @@
-
 <div class="animated fadeIn back">
 
   <div class="currencyPrint" *ngIf="!this.same; else noCurrency">
-  <div class="animated fadeInDown">
-    <h3 class="title padding"><b>INTERCOOP CURRENNCIES</b><div class="pull-right printer"><a href="javascript:window.print();"><i class="fa fa-print" aria-hidden="true"></i></a>&nbsp;</div></h3>
-    <h5 class="title animated flash"><b class="date">{{data["date"]}}</b></h5>
+    <div class="animated fadeInDown">
+      <h3 class="title padding">
+        <b>INTERCOOP CURRENCIES</b>
+        <div class="pull-right printer">
+          <i (click)="this.print()" class="fa fa-print" aria-hidden="true"></i>&nbsp;
+        </div>
+      </h3>
+      <h5 class="title animated flash">
+        <b class="date">&nbsp;{{data['date']}}&nbsp;</b>
+      </h5>
+    </div>
+
+    <div class="animated fadeIn" style="height: 464.6px">
+      <table *ngIf="this.data" class="table table-responsive table-hover table-currency">
+        <thead>
+          <tr class="tableTitle">
+            <th>Currency</th>
+            <th style="text-align:center">Buy</th>
+            <th class="noPrint" style="text-align:center">Flag</th>
+            <th style="text-align:center">Sell</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- <ng-template *ngFor="let item of data;"> -->
+          <tr *ngFor="let item of data.values;">
+            <th scope="row">{{item.currency}}</th>
+            <td>{{item.buy.toFixed(2)}}</td>
+            <td class="noPrint">
+              <div class="{{item.flag}}"></div>
+            </td>
+            <td>{{item.sell.toFixed(2)}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
-
-  <div class="animated fadeIn" style="height: 455.6px" >
-  <table *ngIf="this.data" class="table table-responsive table-hover table-currency">
-    <thead>
-      <tr class="tableTitle">
-        <th>Currency</th>
-        <th style="text-align:center">Buy</th>
-        <th style="text-align:center">Flag</th>
-        <th style="text-align:center">Sell</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- <ng-template *ngFor="let item of data;"> -->
-      <tr  *ngFor="let item of data.values;">
-        <th scope="row">{{item.currency}}</th>
-        <td>{{item.buy.toFixed(2)}}</td>
-        <td><div class="{{item.flag}}"></div></td>
-        <td>{{item.sell.toFixed(2)}}</td>
-      </tr>
-    </tbody>
-  </table>
-
-  </div>
-  </div>
-
-  <ng-template #noCurrency><div style="height: 400px;">
-    <h4 style="line-height: 13" class="title animated flash">There is not yet currency list for today.</h4>
-    <br><h4 style="" class="title animated flash">Visit us later.</h4>
-  </div></ng-template>
-
+  <ng-template #noCurrency>
+    <div style="height: 400px;">
+      <h4 style="line-height: 13" class="title animated flash">There is not yet currency list for today.</h4>
+      <br>
+      <h4 class="title animated flash">Visit us later.</h4>
+    </div>
+  </ng-template>
 
 </div>

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
@@ -15,9 +14,9 @@ export class ContentComponent implements OnInit {
 
   constructor() { }
 
-  closeModal() {
-    document.getElementById("myModal").classList.remove("show");
-  }
+  // closeModal() {
+  //   document.getElementById("myModal").classList.remove("show");
+  // }
 
   ngOnInit() {
     // this.closeModal();
