@@ -216,48 +216,27 @@
               <div class="row">
                 <div class="col-sm-6">
                   <div id="result"></div>
-                  <form action="../../mailer.php" method="post" id="ajax-contact">
+                  <form (submit)="sendEmail(message)" id="ajax-contact">
                     <div width="100%" class="padding-left">
 
                       <div class="form-group">
                         <label for="name">{{"name" | translate }}</label>
-                        <input maxlength="29" autocomplete="off" name="name" type="text" class="btn-wide form-control" id="name" size="" title="overall type: NAME_FULL
-    server type: NO_SERVER_DATA
-    heuristic type: NAME_FULL
-    label: Your name: Message:
-    parseable name: name
-    field signature: 3489289364
-    form signature: 7698844189148110595" autofill-prediction="NAME_FULL">
+                        <input maxlength="29" autocomplete="off" name="name" type="text" class="btn-wide form-control" id="name" [(ngModel)]="message.name" size="">
 
                       </div>
                       <div class="form-group">
                         <label for="email">{{"email" | translate }}</label>
-                        <input maxlength="50" autocomplete="off" name="email" type="email" class="btn-wide form-control" id="email" size="" title="overall type: EMAIL_ADDRESS
-    server type: EMAIL_ADDRESS
-    heuristic type: EMAIL_ADDRESS
-    label: Your email:
-    parseable name: email
-    field signature: 1029417091
-    form signature: 7698844189148110595" autofill-prediction="EMAIL_ADDRESS">
-                        <!-- <br>
-                       <span class="font-contact">Предмет:</span><br />
-                      <input name="subject" type="text" class="btn-wide" id="subject" size="" required/>-->
+                        <input maxlength="50" autocomplete="off" name="email" type="email" class="btn-wide form-control" id="email" [(ngModel)]="message.email" size="">
                       </div>
 
                       <div class="form-group">
                         <label for="name">{{"message" | translate }}</label>
-                        <textarea maxlength="500" autocomplete="off" name="message" class="btn-wide form-control" cols="" rows="5" id="message" title="overall type: UNKNOWN_TYPE
-    server type: NO_SERVER_DATA
-    heuristic type: UNKNOWN_TYPE
-    label: Message:
-    parseable name: message
-    field signature: 4239419590
-    form signature: 7698844189148110595" autofill-prediction="UNKNOWN_TYPE"></textarea>
+                        <textarea maxlength="500" autocomplete="off" name="message" class="btn-wide form-control" cols="" rows="5" [(ngModel)]="message.message" id="message"></textarea>
                       </div>
                       <br>
                       <div class="row">
                         <div class="col-md-1">
-                          <button type="submit" class="btn btn-info" id="send" onclick="MM_validate('name','','R','email','','RisEmail','message','','R');return document.MM_returnValue">
+                          <button type="submit" class="btn btn-info" id="send">
                             <span class="glyphicon glyphicon-send"></span>&nbsp;{{"send" | translate}}</button>
                         </div>
 

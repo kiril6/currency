@@ -1,11 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule }      from '@angular/http';
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContentComponent } from './content/content.component';
 import { CurrencyListComponent } from './currency-list/currency-list.component';
+import { AppService } from './content/app.service';
 
 
 import { HttpClientModule, HttpClient } from '@angular/common/http';
@@ -22,10 +24,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     HeaderComponent,
     FooterComponent,
     ContentComponent,
-    CurrencyListComponent
+    CurrencyListComponent,
   ],
   imports: [
-    BrowserModule,HttpModule, HttpClientModule,
+    BrowserModule,HttpModule, HttpClientModule, FormsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -34,7 +36,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     }) 
   ],
-  providers: [],
+  providers: [AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

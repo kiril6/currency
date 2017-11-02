@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService, IMessage } from './app.service';
 
 @Component({
   selector: 'app-content',
@@ -7,12 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentComponent implements OnInit {
 
-  thumbnail?: any; //image src for the thumbnail
-  image?: any; //image src for the image 
-  text?: string; //optional text to show for the image
-  [propName: string]: any;
 
-  constructor() { }
+  message: IMessage = {};
+
+
+  constructor(private appService: AppService) { }
+
+
+  sendEmail(message: IMessage) {
+    this.appService.sendEmail(message).subscribe(res => {
+      console.log('AppComponent Success', res);
+    }, error => {
+      console.log('AppComponent Error', error);
+    })
+  }
 
   // closeModal() {
   //   document.getElementById("myModal").classList.remove("show");
