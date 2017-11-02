@@ -3,7 +3,7 @@
   <div class="currencyPrint" *ngIf="this.same; else noCurrency">
     <div class="animated fadeInDown">
       <h3 class="title padding">
-        <b>INTERCOOP CURRENCIES</b>
+        <b>{{"currency_title" | translate}}</b>
         <div class="pull-right printer">
           <i (click)="this.print()" class="fa fa-print" aria-hidden="true"></i>&nbsp;
         </div>
@@ -17,10 +17,10 @@
       <table *ngIf="this.data" class="table table-responsive table-hover table-currency">
         <thead>
           <tr class="tableTitle">
-            <th>Currency</th>
-            <th style="text-align:center">Buy</th>
+            <th>{{"currency" | translate}}</th>
+            <th style="text-align:center">{{"buy" | translate}}</th>
             <th class="noPrint" style="text-align:center"></th>
-            <th style="text-align:center">Sell</th>
+            <th style="text-align:center">{{"sell" | translate}}</th>
           </tr>
         </thead>
         <tbody>
@@ -40,9 +40,9 @@
 
   <ng-template #noCurrency>
     <div style="height: 400px;">
-      <h4 style="line-height: 13" class="title animated flash">There is not yet currency list for today.</h4>
+      <h4 style="line-height: 13" class="title animated flash">{{"no_currency1" | translate}}</h4>
       <br>
-      <h4 class="title animated flash">Visit us later.</h4>
+      <h4 class="title animated flash">{{"no_currency2" | translate}}.</h4>
     </div>
   </ng-template>
 
