@@ -16,7 +16,7 @@ if(empty($errors))
 	$from_name = $request->name;
 
   // $to_email = $from_email;
-  $to_email="delovski.office@gmail.com";
+  $to_email="intercoop.delovski@hotmail.com";
 
 	$contact = "<p><strong>Name:</strong> $from_name</p>
 							<p><strong>Email:</strong> $from_email</p>";

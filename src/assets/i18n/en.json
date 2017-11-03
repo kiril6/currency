@@ -21,6 +21,7 @@
     "name" : "Name:",
     "email" : "Email:",
     "message" : "Message:",
+    "fill_the_field" : "*Please fill the field",
     "send" : "Send",
     "sendY" : "Sent!",
     "sendN" : "Not Sent!",
