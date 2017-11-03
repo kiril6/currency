@@ -354,6 +354,9 @@ $star-size: ($flag-height/13)*2.45/3.7;
     &:hover {
       background: cadetblue!important;
     }
+    th {
+      text-align: center;
+    }
   }
 }
 
@@ -362,4 +365,9 @@ $star-size: ($flag-height/13)*2.45/3.7;
     cursor: pointer;
     color: white!important;
   }
+}
+
+.no-currency {
+  height: 400px;
+  padding-top: 128px;
 }

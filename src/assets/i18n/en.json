@@ -22,6 +22,8 @@
     "email" : "Email:",
     "message" : "Message:",
     "send" : "Send",
+    "sendY" : "Sent!",
+    "sendN" : "Not Sent!",
     "location_title" : "Location",
     "address_title" : "ADDRESS",
     "address" : "Nikola Vapcarov 5/2-1, Skopje 1000, Macedonia",
@@ -35,6 +37,9 @@
     "friday": "Fri 9:00 AM – 7:00 PM",
     "saturday": "Sat 9:30 AM – 3:30 PM",
     "sunday": "Sun Closed",
+    "alert_header" : "Alert Window",
+    "modal_body" : "The form has not been sent, please try again.", 
+    "ok": "OK",
 
     "rights": "All Rights Reserved."
 }

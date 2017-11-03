@@ -45,7 +45,6 @@ if(empty($errors))
 } else {
 	$response_array['status'] = 'error';
 	echo json_encode($response_array);
-  // header('Location: http://google.com');
-  alert("error occured! Reload the page and try again.");
+  header('Location: http://intercoop.delovski.net');
 }
 ?>

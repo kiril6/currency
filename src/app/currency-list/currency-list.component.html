@@ -18,9 +18,9 @@
         <thead>
           <tr class="tableTitle">
             <th>{{"currency" | translate}}</th>
-            <th style="text-align:center">{{"buy" | translate}}</th>
-            <th class="noPrint" style="text-align:center"></th>
-            <th style="text-align:center">{{"sell" | translate}}</th>
+            <th>{{"buy" | translate}}</th>
+            <th class="noPrint"></th>
+            <th>{{"sell" | translate}}</th>
           </tr>
         </thead>
         <tbody>
@@ -39,8 +39,8 @@
   </div>
 
   <ng-template #noCurrency>
-    <div style="height: 400px;">
-      <h4 style="line-height: 13" class="title animated flash">{{"no_currency1" | translate}}</h4>
+    <div class="no-currency">
+      <h4 class="title animated flash">{{"no_currency1" | translate}}</h4>
       <br>
       <h4 class="title animated flash">{{"no_currency2" | translate}}.</h4>
     </div>

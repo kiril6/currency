@@ -28,6 +28,12 @@ export class HeaderComponent implements OnInit {
   //   window.alert('Macedonian language\n will be available soon.');
   // }
 
+  closeToggle() {
+    if (screen.width < 1200) {
+      document.getElementById("toggleNav").click();
+    }
+  }
+
   ngOnInit() {
   }
 

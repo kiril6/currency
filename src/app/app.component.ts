@@ -16,7 +16,11 @@ import * as $ from 'jquery';
   // providers: [DataGetService],
 })
 
+
+
 export class AppComponent implements OnInit {
+
+  // public modalElement;
 
   // constructor(public dataGetService: DataGetService) { }
   // private data;
@@ -42,9 +46,15 @@ export class AppComponent implements OnInit {
   //   }
   ngOnInit() {
   }
+
+  reload(){
+    location.reload();
+  }
+
+  closeModal() {
+    document.getElementById("myModal").classList.remove("showB");
+  }
 } 
-
-
  
     // constructor(private http:Http) {
         // this.http.get('assets/currency.json')
