@@ -12,7 +12,7 @@ if(empty($errors))
 	$request = json_decode($postdata);
 
 	$from_email = $request->email;
-	$message = $request->message;
+	$message = $request->messageBox;
 	$from_name = $request->name;
 
   // $to_email = $from_email;
