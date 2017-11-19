@@ -40,9 +40,11 @@
 
   <ng-template #noCurrency>
     <div class="no-currency">
-      <h4 class="title animated flash">{{"no_currency1" | translate}}</h4>
+      <h4 *ngIf="!this.isSunday" class="title animated flash">{{"no_currency1" | translate}}</h4>
+      <h4 *ngIf="this.isSunday" class="title animated flash">{{"no_currencySunday1" | translate}}</h4>
       <br>
-      <h4 class="title animated flash">{{"no_currency2" | translate}}.</h4>
+      <h4 *ngIf="!this.isSunday" class="title animated flash">{{"no_currency2" | translate}}.</h4>
+      <h4 *ngIf="this.isSunday" class="title animated flash">{{"no_currencySunday2" | translate}}</h4>
     </div>
   </ng-template>
 

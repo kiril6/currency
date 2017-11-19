@@ -8,6 +8,8 @@
     "currency": "Currency",
     "no_currency1" : "There is no currency list for today.",
     "no_currency2" : "Visit us later.",
+    "no_currencySunday1" : "There is no currency list for Sundays.",
+    "no_currencySunday2" : "Enjoy your weekend..",
     "services1" : "Intercoop - currency exchange service",
     "services2" : "The Intercoop exchange office offers the best service in exchange of effective foreign currencies with the best currency rates in the city.",
     "services_title" : "Services",
