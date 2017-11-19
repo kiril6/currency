@@ -1,25 +1,8 @@
-<div class="">
-  <div class="pull-left item">
-    <img src="assets/img/intercoop.jpg" width="200px" class="img-rounded flipInY animated">
-  </div>
-</div>
-<div class="container">
-  <p class="social">
-    <a href="https://www.facebook.com/IntercoopExchangeOffice/" title="" class="facebook"><i class="fa fa-facebook"></i></a>
-    <a href="https://plus.google.com/116118647434016492795/" title="" class="gplus"><i class="fa fa-google-plus"></i></a>
-  </p>
-  <p></p>
-  <h1 class="cursive flipInX animated" style="margin-top:40px">INTERCOOP</h1>
-  <h2 class="sub">
-    <b>CURRENCY EXCHANGE OFFICE</b>
-  </h2>
-  <h4 class="sub">
-    <b>[EUR - AUD - CAD - DKK - JPY - NOK - SEK - CHF - GBP - USD - RSD - HRK - BGN - ALL - TRY - MKD]</b>
-  </h4>
-  <br>
-  <div class="row">
-    <app-currency-list></app-currency-list>
-  </div>
+<!-- <div class="container"> -->
+<!-- <div class="row"> -->
+<!-- <app-currency-list></app-currency-list> -->
+<!-- </div> -->
+<!--
   <div class="col-md-12 collapse in" id="map" style="opacity: 0.8;filter: alpha(opacity=80);">
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2965.219248296016!2d21.42829931521855!3d41.995569979213144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0xdbaddbf99023fcb5!2sIntercoop+-+Currency+Exchange+Office!5e0!3m2!1sen!2sus!4v1465155940175"
       width="100%" height="250" frameborder="0" style="border:0" allowfullscreen="no"></iframe>
@@ -27,39 +10,332 @@
   <div class="text-center">
     <a href="#map" class="btn btn-success btn-xs" data-toggle="collapse" role="button"><b>toggle map</b></a>
   </div>
-  <div class="mailing-list"></div>
+  -->
+<!-- <div class="mailing-list"></div>
+</div> -->
 
-  <div id="myModal" class="modal fade in show" role="dialog">
-    <div class="modal-dialog center-modal modal-lg zoomIn animated">
-
-      <!-- Modal content-->
-      <div class="modal-content">
-        <!-- <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
-      </div> -->
-
-        <div class="modal-body">
-          <div class="frame">
-            <div class="img">
+<!-- slider -->
+<!-- back photo slightly zooming on 1st currency page stay fixed-maybe -->
+<section id="main-slider" class="carousel">
+  <div class="carousel-inner">
+    <div class="item active">
+      <div class="container">
+        <div class="carousel-content">
+          <app-currency-list></app-currency-list>
+        </div>
+      </div>
+    </div>
+    <!--/.item-->
+    <!-- <div class="item">
+            <div class="container">
+                <div class="carousel-content">
+                    <h1>You can also get the source code</h1>
+                    <p class="lead">Continue developing based on this source code<br>or start a new idea</p>
+                </div>
             </div>
-            <div class="text-holder">
-              Considering the upcoming supercup event we are offering the best currency rates in the town.<br> You are Welcomed,
-              and wishing you pleasant stay in Skopje.
-
+        </div> -->
+    <!--/.item-->
+    <!-- <div class="item">
+            <div class="container">
+                <div class="carousel-content">
+                    <p class="lead">Mobile apps, future<br>Hire me for your ideas</p>
+                </div>
             </div>
-            <div class="link">
-              <button type="button"  (click)="closeModal()" class="btn btn-default" data-dismiss="modal">close</button></div>
+        </div> -->
+    <!--/.item-->
+  </div>
+  <!--/.carousel-inner-->
+  <!-- <a class="prev" href="#main-slider" data-slide="prev"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+    <a class="next" href="#main-slider" data-slide="next"><i class="fa fa-chevron-right" aria-hidden="true"></i></a> -->
+</section>
 
+<section id="services">
+  <div class="container">
+    <div class="box first">
+      <div class="row">
+        <div class="col-md-12 col-sm-12">
+          <div class="center">
+            <!-- <i class="icon-apple icon-md icon-color3"></i> -->
+            <img style="width: 60px" src="../../assets/img/logo2.png">
+            <h4>{{"services1" | translate}}</h4>
+            <p>{{"services2" | translate}}</p>
+            <p></p>
           </div>
         </div>
-        <!-- <div class="modal-footer">
-        <button type="button" class="btn btn-default" (click)="closeModal()" data-dismiss="modal">Close</button>
-      </div> -->
+        <!--/.col-md-4-->
+
       </div>
-
+      <!--/.row-->
     </div>
+    <!--/.box-->
   </div>
+  <!--/.container-->
+</section>
 
+<section id="portfolio">
+  <div class="container">
+    <div class="box">
+      <div class="center gap">
+        <h2>{{"services_title" | translate}}</h2>
+        <p class="lead">{{"services_description" | translate}}</p>
+        EUR AUD CAD DKK JPY NOK SEK CHF
+        <br>GBP USD RSD HRK BGN ALL TRY MKD
+        <br>
+      </div>
+      <!--/.center-->
+      <div class="row">
 
-</div>
+        <div class="col-md-6 col-sm-6 col-xs-12 text-center list-services">
+          <!-- <div class="portfolio-image">
+                                <h3>Calculator VII</h3>
+                                <img src="images/portfolio/thumb/item1.jpg" alt="">
+                                <div class="overlay">
+                                    <a class="preview btn btn-info" title="Calculator VII" href="https://www.google.com/maps/dir//%27%27/data=!4m5!4m4!1m0!1m2!1m1!1s0x135415b48a672011:0xdbaddbf99023fcb5"><i class="icon-eye-open"></i></a>
+                                </div>
+                            </div> -->
+          <a id="call" href="tel:+389023239522" class="btn btn-success btn-sm">
+            <span class="fa fa-phone"></span>&nbsp;&nbsp;{{"call_us" | translate}}</a>
+        </div>
+
+        <div class="col-md-6 col-sm-6 col-xs-12 text-center list-services">
+          <!-- <div class="portfolio-image">
+                                <h3>Light-calc</h3>
+                                <img src="images/portfolio/thumb/item2.png" alt="">
+                                <div class="overlay">
+                                    <a class="preview btn btn-info" title="Light-Calc" href="images/portfolio/full/item2.png"><i class="icon-eye-open"></i></a>
+                                </div>
+                            </div> -->
+
+          <a id="directions" href="https://www.google.com/maps/dir//%27%27/data=!4m5!4m4!1m0!1m2!1m1!1s0x135415b48a672011:0xdbaddbf99023fcb5"
+            class="btn btn-success btn-sm">
+            <span class="fa fa-map-marker"></span>&nbsp;&nbsp;{{"get_directions" | translate}}</a>
+        </div>
+
+      </div>
+    </div>
+    <!--/.box-->
+  </div>
+  <!--/.container-->
+</section>
+<!--/#portfolio-->
+
+<section id="about-us">
+  <div class="container">
+    <div class="box images">
+      <div class="center">
+        <h2>{{"about_us_title" | translate}}</h2>
+        <p class="lead">{{"about_us1" | translate}}</p>
+        <h4>{{"about_us2" | translate}}</h4>
+        <br>
+      </div>
+      <div class="gap"></div>
+      <div id="team-scroller" class="carousel scale">
+        <div class="carousel-inner slider">
+          <div class="item active">
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="member">
+                  <p>
+                    <img alt="click to view" class="img-responsive img-thumbnail " src="assets/img/slider/1.jpg">
+                  </p>
+                  <!-- <h3>Agnes Smith<small class="designation">CEO &amp; Founder</small></h3> -->
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="member">
+                  <p>
+                    <img alt="click to view" class="img-responsive img-thumbnail " src="assets/img/slider/2.jpg" alt="">
+                  </p>
+                  <!-- <h3>Donald Ford<small class="designation">Senior Vice President</small></h3> -->
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="member">
+                  <p>
+                    <img alt="click to view" class="img-responsive img-thumbnail " src="assets/img/slider/3.jpg" alt="">
+                  </p>
+                  <!-- <h3>Karen Richardson<small class="designation">Assitant Vice President</small></h3> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="member">
+                  <p>
+                    <img alt="click to view" class="img-responsive img-thumbnail " src="assets/img/slider/4.jpg" alt="">
+                  </p>
+                  <!-- <h3>David Robbins<small class="designation">Co-Founder</small></h3> -->
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="member">
+                  <p>
+                    <img alt="click to view" class="img-responsive img-thumbnail " src="assets/img/slider/5.jpg" alt="">
+                  </p>
+                  <!-- <h3>Philip Mejia<small class="designation">Marketing Manager</small></h3> -->
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="member">
+                  <p>
+                    <img alt="click to view" class="img-responsive img-thumbnail " src="assets/img/slider/6.jpg" alt="">
+                  </p>
+                  <!-- <h3>Charles Erickson<small class="designation">Support Manager</small></h3> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="left-arrow" href="#team-scroller" data-slide="prev">
+          <i class="fa fa-angle-left fa-4x"></i>
+        </a>
+        <a class="right-arrow" href="#team-scroller" data-slide="next">
+          <i class="fa fa-angle-right fa-4x"></i>
+        </a>
+        <!-- https://github.com/bergben/ng2-image-gallery -->
+        <!-- <ng2-image-gallery [images]="myImages" [asText]="'content'" [asThumbnail]="'mythumb'"></ng2-image-gallery>  -->
+      </div>
+      <!--/.carousel-->
+    </div>
+    <!--/.box-->
+  </div>
+  <!--/.container-->
+</section>
+<!--/#about-us-->
+
+<section id="contact">
+  <div class="container">
+    <div class="box last">
+      <div class="row">
+        <div class="col-md-4 col-sm-6 col-xs-12 noPrint">
+          <h1>&nbsp;&nbsp;{{"contact_form" | translate }}</h1>
+          <div>
+            <fieldset id="contact_form" class="contact-form">
+              <div class="row">
+                <div class="col-sm-12 col-xs-12 col-md-12">
+                  <div id="result"></div>
+                  <form (submit)="sendEmail(message)" id="ajax-contact" #f="ngForm">
+                    <div width="100%" class="padding-left">
+
+                      <div class="form-group">
+                        <label for="name">{{"name" | translate }}</label>
+                        <input #name=ngModel required name maxlength="29" autocomplete="off" name="name" type="text" class="btn-wide form-control" id="name" [(ngModel)]="message.name"
+                          size=""><span *ngIf="!name.valid && name.touched">{{"fill_the_field" | translate}}</span>
+
+                      </div>
+                      <div class="form-group">
+                        <label for="email">{{"email" | translate }}</label>
+                        <input #email=ngModel required email maxlength="50" autocomplete="off" name="email" type="email" class="btn-wide form-control" id="email"
+                          [(ngModel)]="message.email" size=""><span *ngIf="!email.valid && email.touched">{{"fill_the_field" | translate}}</span>
+                      </div>
+
+                      <div class="form-group">
+                      <label for="messageBox">{{"message" | translate }}</label>
+                        <textarea #messageBox="ngModel" required messageBox maxlength="500" autocomplete="off" name="messageBox" class="btn-wide form-control" cols="" rows="5"
+                          [(ngModel)]="message.messageBox" id="messageBox"></textarea><span *ngIf="!messageBox.valid && messageBox.touched">{{"fill_the_field" | translate}}</span>
+                      </div>
+                      <br>
+                      <div class="row">
+                        <div class="col-md-1">
+                          <button *ngIf="this.success==null" [disabled]="!f.valid" type="submit" class="btn" [ngClass]="{'btn-primary' : this.success==null}"
+                            id="send">
+                            <span class="glyphicon glyphicon-send"></span>&nbsp;{{"send" | translate}}
+                          </button>
+                          <button *ngIf="this.success==true" [disabled]="this.success==true" type="submit" class="btn" [ngClass]="{'btn-success' : this.success==true}"
+                            id="send">
+                            <span class="fa fa-check-circle-o"></span>&nbsp;{{"sendY" | translate}}
+                          </button>
+                          <button *ngIf="this.success==false" [disabled]="this.success==false" type="submit" class="btn" [ngClass]="{'btn-danger' : this.success==false}"
+                            id="send">
+                            <span class="fa fa-exclamation-triangle"></span>&nbsp;{{"sendN" | translate}}
+                          </button>
+                        </div>
+
+                      </div>
+
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+            </fieldset>
+          </div>
+        </div>
+        <!--/.col-sm-5-->
+        <div class="col-md-4 col-sm-6 col-xs-12 moveUP">
+          <h1 class="noPrint">{{"location_title" | translate}}</h1>
+          <!-- <img class="img-thumbnail" src="images/qr.png" alt="Scan this with your qr reader"> -->
+          <span>{{"address_title" | translate}}</span>
+          <br> {{"address" | translate}}
+          <br>
+          <br>
+
+          <div class="noPrint">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2965.219248296016!2d21.42829931521855!3d41.995569979213144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0xdbaddbf99023fcb5!2sIntercoop+-+Currency+Exchange+Office!5e0!3m2!1sen!2sus!4v1465155940175"
+              width="90%" height="250" frameborder="0" style="border:0" allowfullscreen="no"></iframe>
+            <br>
+            <br>
+
+            <a id="directions-footer" href="https://www.google.com/maps/dir//%27%27/data=!4m5!4m4!1m0!1m2!1m1!1s0x135415b48a672011:0xdbaddbf99023fcb5"
+              class="btn btn-success btn-xs">
+              <span class="fa fa-map-marker"></span>&nbsp;&nbsp;{{"get_directions" | translate }}</a>
+            <br>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12">
+          <div class="noPrint">
+            <h1>{{"find_us" | translate}}</h1>
+
+            <p class="social">
+
+              <a href="https://www.facebook.com/IntercoopExchangeOffice/" title="" class="facebook">
+                <i class="fa fa-facebook"></i>
+              </a>
+
+              <a href="https://plus.google.com/116118647434016492795/" title="" class="gplus">
+                <i class="fa fa-google-plus"></i>
+              </a>
+
+            </p>
+          </div>
+
+          <span>{{"contact" | translate}}</span>
+          <br>
+          <a href="tel:00389023239522" class="noPrint">
+            <span>02 323 9522</span>
+            <i class="fa fa-phone" aria-hidden="true"></i>
+          </a>
+          <span class="telPrint">02 323 9522
+            <i class="fa fa-phone" aria-hidden="true"></i>
+          </span>
+          <br class="noPrint">
+          <a href="mailto:intercoop.delovski@hotmail.com" class="noPrint" target="_top">{{"email" | translate}}
+            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+          </a>
+          <br class="noPrint">
+          <br> {{"business_hours" | translate}}
+          <br> {{"monday" | translate }}
+          <br> {{"tuesday" | translate }}
+          <br> {{"wednesday" | translate }}
+          <br> {{"thursday" | translate }}
+          <br> {{"friday" | translate }}
+          <br> {{"saturday" | translate }}
+          <br> {{"sunday" | translate }}
+
+          <br class="noPrint">
+          <br class="noPrint">
+          <div class="fb-like noPrint" data-href="https://www.facebook.com/IntercoopExchangeOffice/" data-layout="button_count" data-action="like"
+            data-size="small" data-show-faces="false" data-share="true"></div>
+        </div>
+        <!--/.col-sm-6-->
+      </div>
+      <!--/.row-->
+    </div>
+    <!--/.box-->
+  </div>
+  <!--/.container-->
+</section>
+
+<!-- demo interesen sajt za sporedba http://bootstrapdevelop.com/demo/devtheme-v1.1/ -->

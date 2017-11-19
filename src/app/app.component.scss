@@ -1,3 +1,30 @@
-p {
-    
+
+.showB{
+  margin: 200px 0 0 0;
+  display: block!important;
+  .modal-dialog{
+    width: 300px;
+    margin: 0 auto;
+  }
+  .modal-footer {
+    padding: 10px;
+  }
+  @media all and (orientation:landscape) {
+    margin: 110px 0 0 0;
+  }
+}
+.modal-header {
+  background-color: #d73b3b;
+  color: white;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  .close {
+    margin-top: -3px;
+    font-size: 27px;
+  }
+}
+.modal-body {
+  p {
+    color: black;
+  }
 }

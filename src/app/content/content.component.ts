@@ -1,27 +1,34 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService, IMessage } from './app.service';
 
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.scss']
 })
-export class ContentComponent implements OnInit {
+export class ContentComponent {
 
-  constructor() { }
+  public success:boolean;
+  public modalElement;
 
-  closeModal() {
-    // var findModal;
-    // findModal=document.getElementsByClassName('modal');
-    // findModal.removeClass('show');
+  message: IMessage = {};
 
-    document.getElementById("myModal").classList.remove("show");
+  constructor(private appService: AppService) { }
 
-    // findModal.removeClass("show");
-    // console.log(findModal);
-  }
 
-  ngOnInit() {
-    // this.closeModal();
+  sendEmail(message: IMessage) {
+    
+    this.appService.sendEmail(message).subscribe(res => {
+      this.success=true;
+      // alert('The form has been sent!');
+      // console.log('AppComponent Success', res);
+    }, error => {
+      this.success=false;
+      // alert('The form was not sent!\n Please refresh and try again.');
+      this.modalElement = document.getElementById('myModal');
+      this.modalElement.className += " showB";
+      // console.log('AppComponent Error', error);
+    })
   }
 
 }
