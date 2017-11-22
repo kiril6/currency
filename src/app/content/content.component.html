@@ -21,7 +21,8 @@
     <div class="item active">
       <div class="container">
         <div class="carousel-content">
-          <app-currency-list></app-currency-list>
+          <app-currency-list *ngIf="this.editLink==false"></app-currency-list>
+          <app-update *ngIf="this.editLink==true"></app-update>
         </div>
       </div>
     </div>

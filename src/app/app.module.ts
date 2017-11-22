@@ -8,11 +8,14 @@ import { FooterComponent } from './footer/footer.component';
 import { ContentComponent } from './content/content.component';
 import { CurrencyListComponent } from './currency-list/currency-list.component';
 import { AppService } from './content/app.service';
+import { AppRoutingModule } from './app-routing.module';
 
+// import { Router, RouterModule  }   from '@angular/router';
 
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { UpdateComponent } from './update/update.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -25,9 +28,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     FooterComponent,
     ContentComponent,
     CurrencyListComponent,
+    UpdateComponent,
   ],
   imports: [
-    BrowserModule,HttpModule, HttpClientModule, FormsModule,
+    BrowserModule,HttpModule, HttpClientModule, FormsModule, AppRoutingModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
