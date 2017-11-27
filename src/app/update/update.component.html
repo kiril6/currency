@@ -11,6 +11,7 @@
     </div>
 
     <div class="animated fadeIn" style="height: 464.6px">
+              <form (submit)="sendCurrency(messageCurrency)" id="ajax-update">
       <table class="table table-responsive table-hover table-currency">
         <thead>
           <tr class="tableTitle">
@@ -20,8 +21,9 @@
             <th>{{"sell" | translate}}</th>
           </tr>
         </thead>
+
         <tbody>
-          <!-- <form> -->
+          
             <tr>
               <th scope="row">curency</th>
               <td>
@@ -98,13 +100,15 @@
               <td>
                 <input type="text" name="designation" class="form-control input-sm" />
                 </td>
-            </tr>
-
-          <!-- </form> -->
+            </tr>      
 
         </tbody>
+         
       </table>
-
+      <button type="submit" class="btn btn-default" id="update">
+      <span class="glyphicon glyphicon-send"></span>&nbsp;{{"send" | translate}}
+    </button>
+   </form>
     </div>
   </div>
 
