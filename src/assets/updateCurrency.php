@@ -22,7 +22,7 @@
                 $current_data = file_get_contents('employee_data.json');  
                 $array_data = json_decode($current_data, true);  
                 $extra = array(  
-                     'name'               =>     $_POST['name'],  
+                     'name'            =>     $_POST['name'],  
                      'gender'          =>     $_POST["gender"],  
                      'designation'     =>     $_POST["designation"]  
                 );  
