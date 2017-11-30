@@ -9,10 +9,10 @@
       {  
         //    $error = "<label class='text-danger'>Enter Name</label>";  
       }  
-      else if(empty($_POST["gender"]))  
-      {  
-        //    $error = "<label class='text-danger'>Enter Gender</label>";  
-      }  
+      // else if(empty($_POST["gender"]))  
+      // {  
+      //   //    $error = "<label class='text-danger'>Enter Gender</label>";  
+      // }  
       else if(empty($_POST["designation"]))  
       {  
         //    $error = "<label class='text-danger'>Enter Designation</label>";  
@@ -25,7 +25,7 @@
                 $array_data = json_decode($current_data, true);  
                 $extra = array(  
                      'name'            =>     $_POST['name'],  
-                     'gender'          =>     $_POST["gender"],  
+                  
                      'designation'     =>     $_POST["designation"]  
                 );  
                 $array_data[] = $extra;  

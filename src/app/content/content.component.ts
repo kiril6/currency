@@ -13,8 +13,8 @@ export class ContentComponent {
 
   message: IMessage = {};
 
-  //update currency
-  messageCurrency: ICurrencies = {};
+  // //update currency
+  // messageCurrency: ICurrencies = {};
 
   constructor(private appService: AppService, private router: Router) { }
 
@@ -46,21 +46,21 @@ export class ContentComponent {
     })
   }
 
-  //update currency
-  sendCurrency(messageCurrency: ICurrencies) {
-    
-        this.appService.sendCurrency(messageCurrency).subscribe(res => {
-          this.success = true;
-          // alert('The form has been sent!');
-          // console.log('AppComponent Success', res);
-        }, error => {
-          this.success = false;
-          // alert('The form was not sent!\n Please refresh and try again.');
-          this.modalElement = document.getElementById('myModal');
-          this.modalElement.className += " showB";
-          // console.log('AppComponent Error', error);
-        })
-      }
+  // //update currency
+  // sendCurrency(messageCurrency: ICurrencies) {
+  //   console.log('crucc sent');
+  //       this.appService.sendCurrency(messageCurrency).subscribe(res => {
+  //         this.success = true;
+  //         // alert('The form has been sent!');
+  //         // console.log('AppComponent Success', res);
+  //       }, error => {
+  //         this.success = false;
+  //         // alert('The form was not sent!\n Please refresh and try again.');
+  //         this.modalElement = document.getElementById('myModal');
+  //         this.modalElement.className += " showB";
+  //         // console.log('AppComponent Error', error);
+  //       })
+  //     }
 
   ngOnInit() {
     this.subscribeRouterChanges();

@@ -18,8 +18,9 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { UpdateComponent } from './update/update.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
+  return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
 }
+
 
 @NgModule({
   declarations: [
