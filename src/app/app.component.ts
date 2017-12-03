@@ -1,12 +1,13 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 // import {DataGetService} from "./services/data.service";
-// import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute, Router} from '@angular/router';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { Http, Response, RequestOptions, Headers, HttpModule } from '@angular/http';
 import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import * as $ from 'jquery';
+// import { Routes, RouterModule } from '@angular/router';
 @Injectable()
 
 @Component({
@@ -22,7 +23,7 @@ export class AppComponent implements OnInit {
 
   // public modalElement;
 
-  // constructor(public dataGetService: DataGetService) { }
+  constructor(private router: Router) { }
   // private data;
   title = 'app';
   //  herbs = [];
@@ -42,12 +43,17 @@ export class AppComponent implements OnInit {
   //                   err => console.log(err),
   //                   () => console.log('file rode'));
 
-                   
   //   }
   ngOnInit() {
+    // if (window.location.href === 'http://testing.delovski.net/update'){
+    //   setTimeout(()=>{
+    //      this.router.navigate(['update']);
+    //      console.log('vleze');
+    //   },2000)
+    // }
   }
 
-  reload(){
+  reload() {
     location.reload();
   }
 

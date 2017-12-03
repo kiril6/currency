@@ -6,109 +6,183 @@
         <b>{{"currency_title" | translate}}</b>
       </h3>
       <h5 class="title animated flash">
-        <b class=""><input maxlength="10" placeholder="00.00.2017" type="text" name="date" class="form-control input-sm date-field" /></b>
+        <b class="">
+          <input maxlength="10" readonly [value]="this.newDate" type="text" name="date" class="form-control input-sm date-field" />
+        </b>
       </h5>
     </div>
 
-    <div class="animated fadeIn" style="height: 464.6px">
-     <form (submit)="sendCurrency(messageCurrency)" id="ajax-update">
-      <table class="table table-responsive table-hover table-currency">
-        <thead>
-          <tr class="tableTitle">
-            <th>{{"currency" | translate}}</th>
-            <th>{{"buy" | translate}}</th>
-            <th class="noPrint"></th>
-            <th>{{"sell" | translate}}</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          
-            <tr>
-              <th scope="row">curency</th>
-              <td>
-                <input type="text" name="name" class="form-control input-sm" />
-                </td>
-              <td class="noPrint">
-                <div class="">&nbsp;</div>
-              </td>
-              <td>
-                <input type="text" name="designation" class="form-control input-sm" />
-                </td>
+    <div class="animated fadeIn" style="height: 564.6px">
+      <form (submit)="sendCurrency(messageCurrency)" id="ajax-update">
+        <table class="table table-responsive table-hover table-currency">
+          <thead>
+            <tr class="tableTitle">
+              <th>{{"currency" | translate}}</th>
+              <th>{{"buy" | translate}}</th>
+              <th class="noPrint"></th>
+              <th>{{"sell" | translate}}</th>
             </tr>
+          </thead>
 
-            <!-- <tr>
-              <th scope="row">curency</th>
+          <tbody>
+
+            <tr>
+              <th scope="row">EUR</th>
               <td>
-                <input type="text" name="name" class="form-control input-sm" />
-                </td>
+                <input maxlength="5" [(ngModel)]="messageCurrency.eurBuy" type="text" id="eurBuy" name="eurBuy" class="form-control input-sm" />
+              </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input type="text" name="designation" class="form-control input-sm" />
-                </td>
+                <input maxlength="5" [(ngModel)]="messageCurrency.eurSell" type="text" id="eurSell" name="eurSell" class="form-control input-sm"
+                />
+              </td>
             </tr>
 
             <tr>
-              <th scope="row">curency</th>
+              <th scope="row">AUD</th>
               <td>
-                <input type="text" name="name" class="form-control input-sm" />
-                </td>
+                <input maxlength="5" [(ngModel)]="messageCurrency.audBuy" type="text" id="audBuy" name="audBuy" class="form-control input-sm" />
+              </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input type="text" name="designation" class="form-control input-sm" />
-                </td>
+                <input maxlength="5" [(ngModel)]="messageCurrency.audSell" type="text" id="audSell" name="audSell" class="form-control input-sm"
+                />
+              </td>
             </tr>
 
             <tr>
-              <th scope="row">curency</th>
+              <th scope="row">CAD</th>
               <td>
-                <input type="text" name="name" class="form-control input-sm" />
-                </td>
+                <input maxlength="5" [(ngModel)]="messageCurrency.cadBuy" type="text" id="cadBuy" name="cadBuy" class="form-control input-sm" />
+              </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input type="text" name="designation" class="form-control input-sm" />
-                </td>
+                <input maxlength="5" [(ngModel)]="messageCurrency.cadSell" type="text" id="cadSell" name="cadSell" class="form-control input-sm"
+                />
+              </td>
             </tr>
 
             <tr>
-              <th scope="row">curency</th>
+              <th scope="row">DKK</th>
               <td>
-                <input type="text" name="name" class="form-control input-sm" />
-                </td>
+                <input maxlength="5" [(ngModel)]="messageCurrency.dkkBuy" type="text" id="dkkBuy" name="dkkBuy" class="form-control input-sm" />
+              </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input type="text" name="designation" class="form-control input-sm" />
-                </td>
+                <input maxlength="5" [(ngModel)]="messageCurrency.dkkSell" type="text" id="dkkSell" name="dkkSell" class="form-control input-sm"
+                />
+              </td>
             </tr>
 
             <tr>
-              <th scope="row">curency</th>
+              <th scope="row">JPY</th>
               <td>
-                <input type="text" name="name" class="form-control input-sm" />
-                </td>
+                <input maxlength="5" [(ngModel)]="messageCurrency.jpyBuy" type="text" id="jpyBuy" name="jpyBuy" class="form-control input-sm" />
+              </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input type="text" name="designation" class="form-control input-sm" />
-                </td>
-            </tr>       -->
+                <input maxlength="5" [(ngModel)]="messageCurrency.jpySell" type="text" id="jpySell" name="jpySell" class="form-control input-sm"
+                />
+              </td>
+            </tr>
 
-        </tbody>
-         
-      </table>
-      <button type="submit" class="btn btn-default" id="update">
-      <span class="glyphicon glyphicon-send"></span>&nbsp;{{"send" | translate}}
-    </button>
-   </form>
+            <tr>
+              <th scope="row">NOK</th>
+              <td>
+                <input maxlength="5" [(ngModel)]="messageCurrency.nokBuy" type="text" id="nokBuy" name="nokBuy" class="form-control input-sm" />
+              </td>
+              <td class="noPrint">
+                <div class="">&nbsp;</div>
+              </td>
+              <td>
+                <input maxlength="5" [(ngModel)]="messageCurrency.nokSell" type="text" id="nokSell" name="nokSell" class="form-control input-sm"
+                />
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">SEK</th>
+              <td>
+                <input maxlength="5" [(ngModel)]="messageCurrency.sekBuy" type="text" id="sekBuy" name="sekBuy" class="form-control input-sm" />
+              </td>
+              <td class="noPrint">
+                <div class="">&nbsp;</div>
+              </td>
+              <td>
+                <input maxlength="5" [(ngModel)]="messageCurrency.sekSell" type="text" id="sekkSell" name="sekSell" class="form-control input-sm"
+                />
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">CHF</th>
+              <td>
+                <input maxlength="5" [(ngModel)]="messageCurrency.chfBuy" type="text" id="chfBuy" name="chfBuy" class="form-control input-sm" />
+              </td>
+              <td class="noPrint">
+                <div class="">&nbsp;</div>
+              </td>
+              <td>
+                <input maxlength="5" [(ngModel)]="messageCurrency.chfSell" type="text" id="chfSell" name="chfSell" class="form-control input-sm"
+                />
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">GBP</th>
+              <td>
+                <input maxlength="5" [(ngModel)]="messageCurrency.gbpBuy" type="text" id="gbpBuy" name="gbpBuy" class="form-control input-sm" />
+              </td>
+              <td class="noPrint">
+                <div class="">&nbsp;</div>
+              </td>
+              <td>
+                <input maxlength="5" [(ngModel)]="messageCurrency.gbpSell" type="text" id="gbpSell" name="gbpSell" class="form-control input-sm"
+                />
+              </td>
+            </tr>
+
+            <tr>
+              <th scope="row">USD</th>
+              <td>
+                <input maxlength="5" [(ngModel)]="messageCurrency.usdBuy" type="text" id="usdBuy" name="usdBuy" class="form-control input-sm" />
+              </td>
+              <td class="noPrint">
+                <div class="">&nbsp;</div>
+              </td>
+              <td>
+                <input maxlength="5" [(ngModel)]="messageCurrency.usdSell" type="text" id="usdSell" name="usdSell" class="form-control input-sm"
+                />
+              </td>
+            </tr>
+
+            <tr>
+              <th scope="row"></th>
+              <td>
+                <input placeholder="enter password" (input)="this.isPasswordTrue()" [(ngModel)]="passwordInput" type="password" maxlength="7" id="passwordInput" name="passwordInput" class="form-control input-sm"/>
+              </td>
+              <td class="noPrint">
+                <div class="">&nbsp;</div>
+              </td>
+              <td>
+                <button [disabled]="this.updateCurrency==false" type="submit" class="btn btn-default" id="update">
+                  <span class="glyphicon glyphicon-send"></span>&nbsp;{{"send" | translate}}
+                </button>
+              </td>
+            </tr>
+
+          </tbody>
+
+        </table>
+      
+      </form>
     </div>
   </div>
 
