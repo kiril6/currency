@@ -14,4 +14,5 @@ This project has been created with Angular 4 && Bootstrap 3.3.7 && fontawesome i
 -Used http get to read json file and present the data.
 -Used ngx-translate translation with json to switch between languages.
 -Used forms and validation.
+-Used file.php to update a json file which values are filled from Angular form
 -Used http post with mailer.php to send the filled form.
