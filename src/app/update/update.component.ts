@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService, ICurrencies } from '../content/app.service';
 import { Router } from '@angular/router';
+
+import { Http, Response, RequestOptions, Headers, HttpModule } from '@angular/http';
+import { Observable } from 'rxjs/Rx';
 @Component({
   selector: 'app-update',
   templateUrl: './update.component.html',
@@ -15,8 +18,26 @@ export class UpdateComponent implements OnInit {
 
   public passwordInput: string='';
   public updateCurrency:boolean = false;
+  data: Array<any>;
 
-  constructor(private appService: AppService, private router: Router) { }
+  constructor(private appService: AppService, private router: Router, private http: Http) {
+    
+  
+      const headers = new Headers({ 'Content-Type': 'application/json' });
+      http.get('assets/currency.json', { headers: headers })
+        .map(response => response.json()).catch(this.errorHandler)
+        .subscribe(data => this.data = data,
+        err => console.log(err + ' currency file not found') == window.alert('Currency file not found!'),
+        () => console.log(''));
+        }
+    errorHandler(error: Response) {
+      console.error(error);
+      return Observable.throw(error || "Server Error");
+    }
+
+
+
+   
 
   //update currency
   sendCurrency(messageCurrency: ICurrencies) {
@@ -43,7 +64,7 @@ export class UpdateComponent implements OnInit {
   }
 
   isPasswordTrue(){ 
-    if(this.passwordInput=='ang2805'){
+    if(this.passwordInput=='ang2805' || this.passwordInput=='aveo100'){
       this.updateCurrency = true;  
     }else{
       this.updateCurrency = false;  
@@ -65,4 +86,6 @@ export class UpdateComponent implements OnInit {
     var yyyy = date.getFullYear();
     return (dd + "." + MM + "." + yyyy);
   }
+
+  
 }

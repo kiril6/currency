@@ -19,8 +19,8 @@
 //       }  
 //       else  
 //       {  
-          //  if(file_exists('currency.json'))  
-          //  {  
+           if(file_exists('currency.json'))  
+           {  
             $jsonString = file_get_contents("php://input");
 
             date_default_timezone_set("Europe/Skopje");
@@ -126,5 +126,5 @@
       //           $error = 'JSON File not exits';  
       //      }  
 //       }  
-//  }  
+ }  
  ?>  
