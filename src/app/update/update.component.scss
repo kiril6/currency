@@ -1,0 +1,27 @@
+.animated.back {
+  background-color: rgba(13, 9, 62, 0.9)!important;
+}
+
+.date-field {
+  width: 90px;
+  margin: 0 auto;
+}
+
+#ajax-update {
+  input {
+    font-weight: bold;
+    color: black;
+  }
+  ::-webkit-input-placeholder { text-align:right; }
+
+  input:-moz-placeholder { text-align:right; }
+  #passwordInput {
+    text-align: center;
+  }
+}
+
+input, textarea {
+  &.ng-invalid.ng-touched {
+  background-color: #af4848!important;
+  }
+}

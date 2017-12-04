@@ -26,11 +26,13 @@ export class CurrencyListComponent {
   public d = new Date();
   public newDate: string;
   public same = false;
+  public isSunday = false;
 
   ngOnInit() {
     var dateObj = new Date();
     var month = dateObj.getUTCMonth() + 1;
-    var day = dateObj.getUTCDay();
+    var day = dateObj.getUTCDay(); 
+    var dayName = dateObj.toString().split(' ')[0];
     var year = dateObj.getUTCFullYear();
     this.newDate = this.formatDateToString(dateObj);
 
@@ -40,6 +42,9 @@ export class CurrencyListComponent {
       }
       else {
         this.same = false;
+         if(dayName=='Sun'){
+          this.isSunday = true;
+        }
       }
     }, 1300);
   }

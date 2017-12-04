@@ -21,7 +21,8 @@
     <div class="item active">
       <div class="container">
         <div class="carousel-content">
-          <app-currency-list></app-currency-list>
+          <app-currency-list *ngIf="this.editLink==false"></app-currency-list>
+          <app-update *ngIf="this.editLink==true"></app-update>
         </div>
       </div>
     </div>
@@ -221,20 +222,23 @@
 
                       <div class="form-group">
                         <label for="name">{{"name" | translate }}</label>
-                        <input #name=ngModel required name maxlength="29" autocomplete="off" name="name" type="text" class="btn-wide form-control" id="name" [(ngModel)]="message.name"
-                          size=""><span *ngIf="!name.valid && name.touched">{{"fill_the_field" | translate}}</span>
+                        <input #name=ngModel required name maxlength="29" autocomplete="off" name="name" type="text" class="btn-wide form-control"
+                          id="name" [(ngModel)]="message.name" size="">
+                        <span *ngIf="!name.valid && name.touched">{{"fill_the_field" | translate}}</span>
 
                       </div>
                       <div class="form-group">
                         <label for="email">{{"email" | translate }}</label>
-                        <input #email=ngModel required email maxlength="50" autocomplete="off" name="email" type="email" class="btn-wide form-control" id="email"
-                          [(ngModel)]="message.email" size=""><span *ngIf="!email.valid && email.touched">{{"fill_the_field" | translate}}</span>
+                        <input #email=ngModel required email maxlength="50" autocomplete="off" name="email" type="email" class="btn-wide form-control"
+                          id="email" [(ngModel)]="message.email" size="">
+                        <span *ngIf="!email.valid && email.touched">{{"fill_the_field" | translate}}</span>
                       </div>
 
                       <div class="form-group">
-                      <label for="messageBox">{{"message" | translate }}</label>
-                        <textarea #messageBox="ngModel" required messageBox maxlength="500" autocomplete="off" name="messageBox" class="btn-wide form-control" cols="" rows="5"
-                          [(ngModel)]="message.messageBox" id="messageBox"></textarea><span *ngIf="!messageBox.valid && messageBox.touched">{{"fill_the_field" | translate}}</span>
+                        <label for="messageBox">{{"message" | translate }}</label>
+                        <textarea #messageBox="ngModel" required messageBox maxlength="500" autocomplete="off" name="messageBox" class="btn-wide form-control"
+                          cols="" rows="5" [(ngModel)]="message.messageBox" id="messageBox"></textarea>
+                        <span *ngIf="!messageBox.valid && messageBox.touched">{{"fill_the_field" | translate}}</span>
                       </div>
                       <br>
                       <div class="row">
