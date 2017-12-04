@@ -1,5 +1,5 @@
 {
-  "datum": "01.12.2017",
+  "datum": "04.12.2017",
   "values": [{
     "currency": "EUR",
     "buy": 61.35, "sell": 61.70,
@@ -7,12 +7,12 @@
     },
     {
       "currency": "AUD",
-      "buy": 38.70, "sell": 40.80,
+      "buy": 39.00, "sell": 40.70,
       "flag": "flag--australia"
     },
     {
       "currency": "CAD",
-      "buy": 39.60, "sell": 41.50,
+      "buy": 40.20, "sell": 41.50,
       "flag": "flag--canada"  
     },
     {
@@ -39,17 +39,17 @@
     },
     {
       "currency": "CHF",
-      "buy": 51.80, "sell": 53.00,
+      "buy": 52.00, "sell": 53.40,
       "flag": "flag--switzerland" 
     },
     {
       "currency": "GBP",
-      "buy": 68.70, "sell": 70.40,
+      "buy": 68.80, "sell": 70.60,
       "flag": "flag--uk"
     },
     {
       "currency" : "USD",
-      "buy" : 10.00, "sell": 10.00,
+      "buy" : 51.20, "sell": 52.60,
       "flag" : "flag--usa"
     }
   ]

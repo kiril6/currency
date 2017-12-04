@@ -19,3 +19,9 @@
     text-align: center;
   }
 }
+
+input, textarea {
+  &.ng-invalid.ng-touched {
+  background-color: #af4848!important;
+  }
+}

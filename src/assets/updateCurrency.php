@@ -31,63 +31,63 @@
             // $n[]=$data;
             $eur=array(
                   'currency' => 'EUR',
-                  'buy' => (int)$data->eurBuy,
-                  'sell' => (int)$data->eurSell,
+                  'buy' => (double)$data->eurBuy,
+                  'sell' => (double)$data->eurSell,
                   'flag' => "flag--europe"
             );
 
             $aud=array(
                   'currency' => 'AUD',
-                  'buy' => (int)$data->audBuy,
-                  'sell' => (int)$data->audSell,
+                  'buy' => (double)$data->audBuy,
+                  'sell' => (double)$data->audSell,
                   'flag' => "flag--australia"
                   );
             $cad=array(
                   'currency' => 'CAD',
-                  'buy' => (int)$data->cadBuy,
-                  'sell' => (int)$data->cadSell,
+                  'buy' => (double)$data->cadBuy,
+                  'sell' => (double)$data->cadSell,
                   'flag' => "flag--canada" 
                   );
             $dkk=array(
                   'currency' => 'DKK',
-                  'buy' => (int)$data->dkkBuy,
-                  'sell' => (int)$data->dkkSell,
+                  'buy' => (double)$data->dkkBuy,
+                  'sell' => (double)$data->dkkSell,
                   'flag' => "flag--denmark"  
                   );
             $jpy=array(
                   'currency' => 'JPY',
-                  'buy' => (int)$data->jpyBuy,
-                  'sell' => (int)$data->jpySell,
+                  'buy' => (double)$data->jpyBuy,
+                  'sell' => (double)$data->jpySell,
                   'flag' => "flag--japan"
                   );
             $nok=array(
                   'currency' => 'NOK',
-                  'buy' => (int)$data->nokBuy,
-                  'sell' => (int)$data->nokSell,
+                  'buy' => (double)$data->nokBuy,
+                  'sell' => (double)$data->nokSell,
                   'flag' => "flag--norway"
                   );
             $sek=array(
                   'currency' => 'SEK',
-                  'buy' => (int)$data->sekBuy,
-                  'sell' => (int)$data->sekSell,
+                  'buy' => (double)$data->sekBuy,
+                  'sell' => (double)$data->sekSell,
                   'flag' => "flag--sweden"
                   );
             $chf=array(
                   'currency' => 'CHF',
-                  'buy' => (int)$data->chfBuy,
-                  'sell' => (int)$data->chfSell,
+                  'buy' => (double)$data->chfBuy,
+                  'sell' => (double)$data->chfSell,
                   'flag' => "flag--switzerland"
                   );
             $gbp=array(
                   'currency' => 'GBP',
-                  'buy' => (int)$data->gbpBuy,
-                  'sell' => (int)$data->gbpSell,
+                  'buy' => (double)$data->gbpBuy,
+                  'sell' => (double)$data->gbpSell,
                   'flag' => "flag--uk"
                   );
             $usd=array(
                   'currency' => 'USD',
-                  'buy' => (int)$data->usdBuy,
-                  'sell' => (int)$data->usdSell,
+                  'buy' => (double)$data->usdBuy,
+                  'sell' => (double)$data->usdSell,
                   'flag' => "flag--usa"
                   );
 
