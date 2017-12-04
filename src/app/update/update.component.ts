@@ -16,28 +16,28 @@ export class UpdateComponent implements OnInit {
   //update currency
   messageCurrency: ICurrencies = {};
 
-  public passwordInput: string='';
-  public updateCurrency:boolean = false;
+  public passwordInput: string = '';
+  public updateCurrency: boolean = false;
   data: Array<any>;
 
   constructor(private appService: AppService, private router: Router, private http: Http) {
-    
-  
-      const headers = new Headers({ 'Content-Type': 'application/json' });
-      http.get('assets/currency.json', { headers: headers })
-        .map(response => response.json()).catch(this.errorHandler)
-        .subscribe(data => this.data = data,
-        err => console.log(err + ' currency file not found') == window.alert('Currency file not found!'),
-        () => console.log(''));
-        }
-    errorHandler(error: Response) {
-      console.error(error);
-      return Observable.throw(error || "Server Error");
-    }
+
+
+    const headers = new Headers({ 'Content-Type': 'application/json' });
+    http.get('assets/currency.json', { headers: headers })
+      .map(response => response.json()).catch(this.errorHandler)
+      .subscribe(data => this.data = data,
+      err => console.log(err + ' currency file not found') == window.alert('Currency file not found!'),
+      () => console.log(''));
+  }
+  errorHandler(error: Response) {
+    console.error(error);
+    return Observable.throw(error || "Server Error");
+  }
 
 
 
-   
+
 
   //update currency
   sendCurrency(messageCurrency: ICurrencies) {
@@ -58,16 +58,16 @@ export class UpdateComponent implements OnInit {
 
 
   passwordInputValue(value) {
-   this.passwordInput=value;
-    
-    
+    this.passwordInput = value;
+
+
   }
 
-  isPasswordTrue(){ 
-    if(this.passwordInput=='ang2805' || this.passwordInput=='aveo100'){
-      this.updateCurrency = true;  
-    }else{
-      this.updateCurrency = false;  
+  isPasswordTrue() {
+    if (this.passwordInput == 'ang2805' || this.passwordInput == 'aveo100') {
+      this.updateCurrency = true;
+    } else {
+      this.updateCurrency = false;
     }
   }
 
@@ -77,7 +77,30 @@ export class UpdateComponent implements OnInit {
     var day = dateObj.getUTCDay();
     var dayName = dateObj.toString().split(' ')[0];
     var year = dateObj.getUTCFullYear();
-    this.newDate = this.formatDateToString(dateObj);   
+    this.newDate = this.formatDateToString(dateObj);
+  }
+
+  clearFields() {
+    this.messageCurrency.eurBuy = '';
+    this.messageCurrency.eurSell = '';
+    this.messageCurrency.audBuy = '';
+    this.messageCurrency.audSell = '';
+    this.messageCurrency.cadBuy = '';
+    this.messageCurrency.cadSell = '';
+    this.messageCurrency.dkkBuy = '';
+    this.messageCurrency.dkkSell = '';
+    this.messageCurrency.jpyBuy = '';
+    this.messageCurrency.jpySell = '';
+    this.messageCurrency.nokBuy = '';
+    this.messageCurrency.nokSell = '';
+    this.messageCurrency.sekBuy = '';
+    this.messageCurrency.sekSell = '';
+    this.messageCurrency.chfBuy = '';
+    this.messageCurrency.chfSell = '';
+    this.messageCurrency.gbpBuy = '';
+    this.messageCurrency.gbpSell = '';
+    this.messageCurrency.usdBuy = '';
+    this.messageCurrency.usdSell = '';
   }
 
   private formatDateToString(date) {
@@ -87,5 +110,5 @@ export class UpdateComponent implements OnInit {
     return (dd + "." + MM + "." + yyyy);
   }
 
-  
+
 }
