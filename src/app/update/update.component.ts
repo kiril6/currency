@@ -80,6 +80,14 @@ export class UpdateComponent implements OnInit {
     this.newDate = this.formatDateToString(dateObj);
   }
 
+  ngAfterViewInit() {
+    setTimeout(() => {
+      for (let i; i >= 9; i++) {
+        this.data.values[i].buy.toFixed(2);
+      }
+    }, 1300);
+  }
+
   clearFields() {
     this.messageCurrency.eurBuy = '';
     this.messageCurrency.eurSell = '';
