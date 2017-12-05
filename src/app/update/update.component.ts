@@ -16,28 +16,28 @@ export class UpdateComponent implements OnInit {
   //update currency
   messageCurrency: ICurrencies = {};
 
-  public passwordInput: string='';
-  public updateCurrency:boolean = false;
+  public passwordInput: string = '';
+  public updateCurrency: boolean = false;
   data: Array<any>;
 
   constructor(private appService: AppService, private router: Router, private http: Http) {
-    
-  
-      const headers = new Headers({ 'Content-Type': 'application/json' });
-      http.get('assets/currency.json', { headers: headers })
-        .map(response => response.json()).catch(this.errorHandler)
-        .subscribe(data => this.data = data,
-        err => console.log(err + ' currency file not found') == window.alert('Currency file not found!'),
-        () => console.log(''));
-        }
-    errorHandler(error: Response) {
-      console.error(error);
-      return Observable.throw(error || "Server Error");
-    }
+
+
+    const headers = new Headers({ 'Content-Type': 'application/json' });
+    http.get('assets/currency.json', { headers: headers })
+      .map(response => response.json()).catch(this.errorHandler)
+      .subscribe(data => this.data = data,
+      err => console.log(err + ' currency file not found') == window.alert('Currency file not found!'),
+      () => console.log(''));
+  }
+  errorHandler(error: Response) {
+    console.error(error);
+    return Observable.throw(error || "Server Error");
+  }
 
 
 
-   
+
 
   //update currency
   sendCurrency(messageCurrency: ICurrencies) {
@@ -58,16 +58,16 @@ export class UpdateComponent implements OnInit {
 
 
   passwordInputValue(value) {
-   this.passwordInput=value;
-    
-    
+    this.passwordInput = value;
+
+
   }
 
-  isPasswordTrue(){ 
-    if(this.passwordInput=='ang2805' || this.passwordInput=='aveo100'){
-      this.updateCurrency = true;  
-    }else{
-      this.updateCurrency = false;  
+  isPasswordTrue() {
+    if (this.passwordInput == 'ang2805' || this.passwordInput == 'aveo100') {
+      this.updateCurrency = true;
+    } else {
+      this.updateCurrency = false;
     }
   }
 
@@ -77,7 +77,55 @@ export class UpdateComponent implements OnInit {
     var day = dateObj.getUTCDay();
     var dayName = dateObj.toString().split(' ')[0];
     var year = dateObj.getUTCFullYear();
-    this.newDate = this.formatDateToString(dateObj);   
+    this.newDate = this.formatDateToString(dateObj);
+  }
+
+  ngAfterViewInit() {
+    setTimeout(() => {
+      this.messageCurrency.eurBuy = this.data.values[0].buy.toFixed(2);
+      this.messageCurrency.eurSell = this.data.values[0].buy.toFixed(2);
+      this.messageCurrency.audBuy = this.data.values[1].buy.toFixed(2);
+      this.messageCurrency.audSell = this.data.values[1].buy.toFixed(2);
+      this.messageCurrency.cadBuy = this.data.values[2].buy.toFixed(2);
+      this.messageCurrency.cadSell = this.data.values[2].buy.toFixed(2);
+      this.messageCurrency.dkkBuy = this.data.values[3].buy.toFixed(2);
+      this.messageCurrency.dkkSell = this.data.values[3].buy.toFixed(2);
+      this.messageCurrency.jpyBuy = this.data.values[4].buy.toFixed(2);
+      this.messageCurrency.jpySell = this.data.values[4].buy.toFixed(2);
+      this.messageCurrency.nokBuy = this.data.values[5].buy.toFixed(2);
+      this.messageCurrency.nokSell = this.data.values[5].buy.toFixed(2);
+      this.messageCurrency.sekBuy = this.data.values[6].buy.toFixed(2);
+      this.messageCurrency.sekSell = this.data.values[6].buy.toFixed(2);
+      this.messageCurrency.chfBuy = this.data.values[7].buy.toFixed(2);
+      this.messageCurrency.chfSell = this.data.values[7].buy.toFixed(2);
+      this.messageCurrency.gbpBuy = this.data.values[8].buy.toFixed(2);
+      this.messageCurrency.gbpSell = this.data.values[8].buy.toFixed(2);
+      this.messageCurrency.usdBuy = this.data.values[9].buy.toFixed(2);
+      this.messageCurrency.usdSell = this.data.values[9].buy.toFixed(2);
+    }, 1300);
+  }
+
+  clearFields() {
+    this.messageCurrency.eurBuy = '';
+    this.messageCurrency.eurSell = '';
+    this.messageCurrency.audBuy = '';
+    this.messageCurrency.audSell = '';
+    this.messageCurrency.cadBuy = '';
+    this.messageCurrency.cadSell = '';
+    this.messageCurrency.dkkBuy = '';
+    this.messageCurrency.dkkSell = '';
+    this.messageCurrency.jpyBuy = '';
+    this.messageCurrency.jpySell = '';
+    this.messageCurrency.nokBuy = '';
+    this.messageCurrency.nokSell = '';
+    this.messageCurrency.sekBuy = '';
+    this.messageCurrency.sekSell = '';
+    this.messageCurrency.chfBuy = '';
+    this.messageCurrency.chfSell = '';
+    this.messageCurrency.gbpBuy = '';
+    this.messageCurrency.gbpSell = '';
+    this.messageCurrency.usdBuy = '';
+    this.messageCurrency.usdSell = '';
   }
 
   private formatDateToString(date) {
@@ -87,5 +135,5 @@ export class UpdateComponent implements OnInit {
     return (dd + "." + MM + "." + yyyy);
   }
 
-  
+
 }
