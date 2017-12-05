@@ -13,7 +13,7 @@
     </div>
 
     <div class="animated fadeIn" style="height: 564.6px">
-      <form (submit)="sendCurrency(messageCurrency)" id="ajax-update">
+      <form (submit)="sendCurrency(messageCurrency)" id="ajax-update" #form="ngForm">
         <table class="table table-responsive table-hover table-currency">
           <thead>
             <tr class="tableTitle">
@@ -207,7 +207,7 @@
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <button [disabled]="this.updateCurrency==false" type="submit" class="btn btn-default btn-block" id="update">
+                <button [disabled]="this.updateCurrency==false || !form.valid" type="submit" class="btn btn-default btn-block" id="update">
                   <span class="glyphicon glyphicon-send"></span>&nbsp;{{"send" | translate}}
                 </button>
               </td>
