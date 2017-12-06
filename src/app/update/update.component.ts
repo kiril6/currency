@@ -83,25 +83,25 @@ export class UpdateComponent implements OnInit {
   ngAfterViewInit() {
     setTimeout(() => {
       this.messageCurrency.eurBuy = this.data.values[0].buy.toFixed(2);
-      this.messageCurrency.eurSell = this.data.values[0].buy.toFixed(2);
+      this.messageCurrency.eurSell = this.data.values[0].sell.toFixed(2);
       this.messageCurrency.audBuy = this.data.values[1].buy.toFixed(2);
-      this.messageCurrency.audSell = this.data.values[1].buy.toFixed(2);
+      this.messageCurrency.audSell = this.data.values[1].sell.toFixed(2);
       this.messageCurrency.cadBuy = this.data.values[2].buy.toFixed(2);
-      this.messageCurrency.cadSell = this.data.values[2].buy.toFixed(2);
+      this.messageCurrency.cadSell = this.data.values[2].sell.toFixed(2);
       this.messageCurrency.dkkBuy = this.data.values[3].buy.toFixed(2);
-      this.messageCurrency.dkkSell = this.data.values[3].buy.toFixed(2);
+      this.messageCurrency.dkkSell = this.data.values[3].sell.toFixed(2);
       this.messageCurrency.jpyBuy = this.data.values[4].buy.toFixed(2);
-      this.messageCurrency.jpySell = this.data.values[4].buy.toFixed(2);
+      this.messageCurrency.jpySell = this.data.values[4].sell.toFixed(2);
       this.messageCurrency.nokBuy = this.data.values[5].buy.toFixed(2);
-      this.messageCurrency.nokSell = this.data.values[5].buy.toFixed(2);
+      this.messageCurrency.nokSell = this.data.values[5].sell.toFixed(2);
       this.messageCurrency.sekBuy = this.data.values[6].buy.toFixed(2);
-      this.messageCurrency.sekSell = this.data.values[6].buy.toFixed(2);
+      this.messageCurrency.sekSell = this.data.values[6].sell.toFixed(2);
       this.messageCurrency.chfBuy = this.data.values[7].buy.toFixed(2);
-      this.messageCurrency.chfSell = this.data.values[7].buy.toFixed(2);
+      this.messageCurrency.chfSell = this.data.values[7].sell.toFixed(2);
       this.messageCurrency.gbpBuy = this.data.values[8].buy.toFixed(2);
-      this.messageCurrency.gbpSell = this.data.values[8].buy.toFixed(2);
+      this.messageCurrency.gbpSell = this.data.values[8].sell.toFixed(2);
       this.messageCurrency.usdBuy = this.data.values[9].buy.toFixed(2);
-      this.messageCurrency.usdSell = this.data.values[9].buy.toFixed(2);
+      this.messageCurrency.usdSell = this.data.values[9].sell.toFixed(2);
     }, 1300);
   }
 
