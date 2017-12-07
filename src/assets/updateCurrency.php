@@ -99,7 +99,7 @@
             
             $newJsonString = json_encode($obj);
             file_put_contents('currency.json', $newJsonString);
-            // unset($data);
+            unset($data);
       //       if(empty($errors))
       //       {         
       //       $postdata = file_get_contents("php://input");

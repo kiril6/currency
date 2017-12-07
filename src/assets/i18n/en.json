@@ -43,6 +43,11 @@
     "alert_header" : "Alert Window",
     "modal_body" : "The form has not been sent, please try again.", 
     "ok": "OK",
-
+    "close" : "Close",
+    "title_calculator" : "CURRENCY CALCULATOR",
+    "enter_amount" : "Enter amount",
+    "from_currency" : "From currency",
+    "into_currency" : "To currency",
+    "calculate" : "Calculate",
     "rights": "All Rights Reserved."
 }

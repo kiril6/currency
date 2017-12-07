@@ -9,10 +9,43 @@
   .modal-footer {
     padding: 10px;
   }
+  .informDialog {
+    display: none;
+  }
   @media all and (orientation:landscape) {
     margin: 110px 0 0 0;
   }
 }
+
+//modal calculator
+.calculator {
+  .modal-header{
+    color: white!important;
+    background-color: rgb(42, 201, 103)!important;
+  }
+  .modal-body {
+    height: 150px;
+    padding-top: 3px!important;
+  }
+  .hide {
+    display: none;
+  }
+
+  .informDialog {
+    display: block!important;  
+  }
+  button.informDialog.btn-primary {
+    float:right;
+  }
+
+  #amount, #currency_in, #currency_out {
+    margin: 4px 0 4px 0;
+  }
+  #updateCalculator {
+    margin-bottom: 4px;
+  }
+}
+
 .modal-header {
   background-color: #d73b3b;
   color: white;

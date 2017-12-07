@@ -27,6 +27,7 @@ export class CurrencyListComponent {
   public newDate: string;
   public same = false;
   public isSunday = false;
+  public modalElement;
 
   ngOnInit() {
     var dateObj = new Date();
@@ -51,6 +52,12 @@ export class CurrencyListComponent {
 
   print() {
     window.print();
+  }
+
+  calculator() {
+    this.modalElement = document.getElementById('myModal');
+    this.modalElement.className += " showB";
+    this.modalElement.className += " calculator";
   }
 
   private formatDateToString(date) {

@@ -22,8 +22,28 @@ import * as $ from 'jquery';
 export class AppComponent implements OnInit {
 
   // public modalElement;
+  public amount: string = '';
+  public currencyFrom: string = '';
+  public currencyTo: string = '';
+  public outputCalculation: string = 'iznos od presmetka';
 
-  constructor(private router: Router) { }
+  data: Array<any>;
+  constructor(private router: Router, private http: Http) {
+    const headers = new Headers({ 'Content-Type': 'application/json' });
+    http.get('assets/currency.json', { headers: headers })
+      .map(response => response.json()).catch(this.errorHandler)
+      .subscribe(data => this.data = data,
+      err => console.log(err + ' currency file not found') == window.alert('Currency file not found!'),
+      () => console.log(''));
+   
+  }
+   errorHandler(error: Response) {
+    console.error(error);
+    return Observable.throw(error || "Server Error");
+  }
+
+  
+   
   // private data;
   title = 'app';
   //  herbs = [];
@@ -60,6 +80,39 @@ export class AppComponent implements OnInit {
   closeModal() {
     document.getElementById("myModal").classList.remove("showB");
   }
+
+  calculateCurrency() {
+    // console.log(   this.outputCalculation=this.currencyFrom + ' ' + this.amount * this.data.values[0].buy.toFixed(2) + this.currencyTo);
+
+    // if(this.data.values['CAD'].buy.toFixed(2)) {
+    //   console.log('here' + this.data.values['CAD'].buy.toFixed(2));
+    // }
+    // this.outputCalculation=this.currencyFrom + ' ' + amount;
+
+    
+
+
+    // console.log(this.currencyFrom);
+    // console.log(this.data.values[0].buy);
+
+    for (let i=0; i<=9; i++) {
+      // console.log(this.data.values[i]);
+
+      if(this.data.values[i].currency == this.currencyFrom){
+        console.log('rabotiBuy ' + this.data.values[i].buy.toFixed(2));
+      }
+
+      if(this.data.values[i].currency == this.currencyTo){
+        console.log('rabotiSell ' + this.data.values[i].sell.toFixed(2));
+      }
+ 
+    }
+
+    console.log('iznos ' + this.amount);
+
+    // console.log('here' + this.data.values);
+  }
+
 } 
  
     // constructor(private http:Http) {

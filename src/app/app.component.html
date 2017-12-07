@@ -8,13 +8,37 @@
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" (click)="this.closeModal()">&times;</button>
-              <h5 class="modal-title"><b>{{"alert_header" | translate}}</b></h5>
+              <h5 class="modal-title hide"><b>{{"alert_header" | translate}}</b></h5>
+              <h5 class="modal-title informDialog"><b>{{"title_calculator" | translate}}</b></h5>
             </div>
             <div class="modal-body">
-              <p>{{"modal_body" | translate }}</p>
+              <p class="hide">{{"modal_body" | translate }}</p>
+
+
+          <form informDialog id="form_calculator" #formCalculator="ngForm">
+              <input [(ngModel)]="amount" type="number" required amount placeholder="{{'enter_amount' | translate}}" autocomplete="off" maxlength="7"
+              id="amount" name="amount" class="form-control input-sm"
+          />
+           <!-- [(ngModel)]="amount"  #amount=ngModel -->
+
+          <select [(ngModel)]="currencyFrom" required currencyFrom class="form-control input-sm" id="currencyFrom" name="currencyFrom">
+            <option selected="selected">{{"from_currency" | translate}}</option>
+            <option *ngFor="let list of data?.values;">{{list.currency}}</option>
+        
+          </select>
+          <select [(ngModel)]="currencyTo" required currencyTo class="form-control input-sm" id="currencyTo" name="currencyTo">
+            <option selected="selected">{{"into_currency" | translate}}</option>
+            <option *ngFor="let list of data?.values;">{{list.currency}}</option>
+          </select>
+          <button (click)="calculateCurrency()" [disabled]="this.updateCalculator==false || !formCalculator.valid" type="submit" class="btn btn-info btn-block" id="updateCalculator">
+            <span class="fa fa-calculator"></span>&nbsp;{{"calculate" | translate}}
+          </button>
+          </form>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-primary btn-sm" (click)="this.reload()">{{"ok" | translate}}</button>
+              <button type="button" class="btn btn-primary btn-sm hide" (click)="this.reload()">{{"ok" | translate}}</button>
+              <button type="button" class="btn btn-primary btn-sm informDialog" (click)="this.closeModal()">{{"close" | translate}}</button>
+          <div class="pull-left informDialog">{{this.outputCalculation}}</div>
             </div>
           </div>
       
