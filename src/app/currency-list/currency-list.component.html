@@ -4,7 +4,7 @@
     <div class="animated fadeInDown">
       <h3 class="title padding">
         <b>{{"currency_title" | translate}}</b>
-        
+
         <div class="pull-right printer">
           <i (click)="this.calculator()" class="fa fa-calculator" aria-hidden="true"></i>&nbsp;
           <i (click)="this.print()" class="fa fa-print" aria-hidden="true"></i>&nbsp;
@@ -12,12 +12,12 @@
       </h3>
       <div class="clearfix"></div>
       <h5 class="title animated flash">
-        <b class="date">&nbsp;{{data?.datum}}&nbsp;</b>
+        <b class="date">&nbsp;{{this.dataService.data?.datum}}&nbsp;</b>
       </h5>
     </div>
 
     <div class="animated fadeIn" style="height: 464.6px">
-      <table *ngIf="this.data" class="table table-responsive table-hover table-currency">
+      <table *ngIf="this.dataService.data" class="table table-responsive table-hover table-currency">
         <thead>
           <tr class="tableTitle">
             <th>{{"currency" | translate}}</th>
@@ -28,7 +28,7 @@
         </thead>
         <tbody>
           <!-- <ng-template *ngFor="let item of data;"> -->
-          <tr *ngFor="let item of data.values;">
+          <tr *ngFor="let item of this.dataService.data.values;">
             <th scope="row">{{item.currency}}</th>
             <td>{{item.buy.toFixed(2)}}</td>
             <td class="noPrint">

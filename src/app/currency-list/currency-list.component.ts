@@ -10,6 +10,9 @@ import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
+import { DataService } from '../services/data.service';
+
+
 @Component({
   selector: 'app-currency-list',
   templateUrl: './currency-list.component.html',
@@ -29,21 +32,23 @@ export class CurrencyListComponent {
   public isSunday = false;
   public modalElement;
 
+  constructor(public dataService: DataService) { }
+
   ngOnInit() {
     var dateObj = new Date();
     var month = dateObj.getUTCMonth() + 1;
-    var day = dateObj.getUTCDay(); 
+    var day = dateObj.getUTCDay();
     var dayName = dateObj.toString().split(' ')[0];
     var year = dateObj.getUTCFullYear();
     this.newDate = this.formatDateToString(dateObj);
 
     setTimeout(() => {
-      if (this.data['datum'] === this.newDate) {
+      if (this.dataService.data['datum'] === this.newDate) {
         this.same = true;
       }
       else {
         this.same = false;
-         if(dayName=='Sun'){
+        if (dayName == 'Sun') {
           this.isSunday = true;
         }
       }
@@ -69,19 +74,5 @@ export class CurrencyListComponent {
     var yyyy = date.getFullYear();
     // create the format you want
     return (dd + "." + MM + "." + yyyy);
-  }
-  
-  data: Array<any>;
-  constructor(private http: Http) {
-    const headers = new Headers({ 'Content-Type': 'application/json' });
-    http.get('assets/currency.json', { headers: headers })
-      .map(response => response.json()).catch(this.errorHandler)
-      .subscribe(data => this.data = data,
-      err => console.log(err + ' currency file not found') == window.alert('Currency file not found!'),
-      () => console.log(''));
-  }
-  errorHandler(error: Response) {
-    console.error(error);
-    return Observable.throw(error || "Server Error");
   }
 }

@@ -8,16 +8,15 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import * as $ from 'jquery';
 // import { Routes, RouterModule } from '@angular/router';
+import { DataService } from './services/data.service';
 @Injectable()
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
-  // providers: [DataGetService],
+  styleUrls: ['./app.component.scss'],
+  providers: [DataService]
 })
-
-
 
 export class AppComponent implements OnInit {
 
@@ -25,24 +24,9 @@ export class AppComponent implements OnInit {
   public amount: string = '';
   public currencyFrom: string = '';
   public currencyTo: string = '';
-  public outputCalculation: string = 'iznos od presmetka';
+  public outputCalculation: string = '';
 
-  data: Array<any>;
-  constructor(private router: Router, private http: Http) {
-    const headers = new Headers({ 'Content-Type': 'application/json' });
-    http.get('assets/currency.json', { headers: headers })
-      .map(response => response.json()).catch(this.errorHandler)
-      .subscribe(data => this.data = data,
-      err => console.log(err + ' currency file not found') == window.alert('Currency file not found!'),
-      () => console.log(''));
-   
-  }
-   errorHandler(error: Response) {
-    console.error(error);
-    return Observable.throw(error || "Server Error");
-  }
-
-  
+  constructor(public dataService: DataService) { }  
    
   // private data;
   title = 'app';
@@ -87,9 +71,7 @@ export class AppComponent implements OnInit {
     // if(this.data.values['CAD'].buy.toFixed(2)) {
     //   console.log('here' + this.data.values['CAD'].buy.toFixed(2));
     // }
-    // this.outputCalculation=this.currencyFrom + ' ' + amount;
-
-    
+    // this.outputCalculation=this.currencyFrom + ' ' + amount; 
 
 
     // console.log(this.currencyFrom);
@@ -98,19 +80,19 @@ export class AppComponent implements OnInit {
     for (let i=0; i<=9; i++) {
       // console.log(this.data.values[i]);
 
-      if(this.data.values[i].currency == this.currencyFrom){
-        console.log('rabotiBuy ' + this.data.values[i].buy.toFixed(2));
+      if(this.dataService.data.values[i].currency == this.currencyFrom){
+        console.log('rabotiBuy ' + this.dataService.data.values[i].buy.toFixed(2));
       }
 
-      if(this.data.values[i].currency == this.currencyTo){
-        console.log('rabotiSell ' + this.data.values[i].sell.toFixed(2));
+      if(this.dataService.data.values[i].currency == this.currencyTo){
+        console.log('rabotiSell ' + this.dataService.data.values[i].sell.toFixed(2));
       }
  
     }
 
+    this.outputCalculation=this.amount + ' ' + this.currencyFrom + ' = ' + this.currencyTo;
     console.log('iznos ' + this.amount);
 
-    // console.log('here' + this.data.values);
   }
 
 } 
@@ -123,8 +105,7 @@ export class AppComponent implements OnInit {
     //      this.getJSON().subscribe(data => obj=data, error => console.log(error));
 
                 
-    // }
-    
+    // }   
 
     //   public getJSON(): Observable<any> {
     //      return this.http.get("assets/currency.json")
