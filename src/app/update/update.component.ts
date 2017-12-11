@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService, ICurrencies } from '../content/app.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Http, Response, RequestOptions, Headers, HttpModule } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import { DataService } from '../services/data.service';
@@ -30,8 +30,8 @@ export class UpdateComponent implements OnInit {
       // alert('The form has been sent!');
       // console.log('AppComponent Success', res);
       window.alert('Uspesno Azurirano!');
-      this.router.navigate(['/']);
-      // location.href = "http://testing.delovski.net";
+      // this.router.navigate(['/']);
+      location.href = "http://intercoop.delovski.net";
     }, error => {
       this.success = false;
       // alert('The form was not sent!\n Please refresh and try again.');
@@ -51,6 +51,10 @@ export class UpdateComponent implements OnInit {
     } else {
       this.updateCurrency = false;
     }
+  }
+
+  reload() {
+    location.reload();
   }
 
   ngOnInit() {

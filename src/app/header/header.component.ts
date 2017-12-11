@@ -30,6 +30,10 @@ export class HeaderComponent implements OnInit {
     }
   }
 
+  home() {
+    location.href="http://intercoop.delovski.net";
+  }
+
   ngOnInit() {
   }
 

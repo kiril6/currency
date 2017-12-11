@@ -49,12 +49,6 @@ export class AppComponent implements OnInit {
 
   //   }
   ngOnInit() {
-    // if (window.location.href === 'http://testing.delovski.net/update'){
-    //   setTimeout(()=>{
-    //      this.router.navigate(['update']);
-    //      console.log('vleze');
-    //   },2000)
-    // }
   }
 
   reload() {
