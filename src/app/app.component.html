@@ -33,8 +33,7 @@
             <option selected="selected">{{"into_currency" | translate}}</option>
             <option *ngFor="let list of this.dataService.data?.values;">{{list.currency}}</option>
           </select>
-          <button (click)="calculateCurrency()" [disabled]="!formCalculator.valid" type="submit" class="btn btn-info btn-block"
-            id="updateCalculator">
+          <button (click)="calculateCurrency()" [disabled]="!formCalculator.valid" type="submit" class="btn btn-info btn-block" id="updateCalculator">
             <span class="fa fa-calculator"></span>&nbsp;{{"calculate" | translate}}
           </button>
         </form>
@@ -53,7 +52,10 @@
 
 <app-header></app-header>
 
-<app-content></app-content>
+<app-content>
+
+  <router-outlet></router-outlet>
+</app-content>
 
 <app-footer></app-footer>
 <!-- </div> -->
