@@ -20,12 +20,6 @@ import { DataService } from '../services/data.service';
 })
 
 export class CurrencyListComponent {
-  // private _url= 'assets/currency.json';
-  // method () {
-  //   return this._http.get(this._url)
-  //     .map((response: Response) => response.json());
-  // }
-
   public d = new Date();
   public newDate: string;
   public same = false;
@@ -61,8 +55,7 @@ export class CurrencyListComponent {
 
   calculator() {
     this.modalElement = document.getElementById('myModal');
-    this.modalElement.className += " showB";
-    this.modalElement.className += " calculator";
+    this.modalElement.className += " showB calculator";
   }
 
   private formatDateToString(date) {

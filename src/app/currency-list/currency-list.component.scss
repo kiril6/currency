@@ -133,25 +133,13 @@ body{
 
 $star-size: ($flag-height/13)*2.45/3.7;
 .flag--usa{
-  @extend %flag;
-  position: relative;
-  background: usa-lines();
-  
-  &::before{
-    box-sizing: border-box;
-    content: "\2605";
-    position: absolute;
-    text-align: left;
-    top: 0; left: 0;
-    border: $star-size solid #3C3B6E;
-    display: inline-block;
-    width: 100%*(2/5);
-    height: 100%*(7/13);
-    color: white;
-    background: #3C3B6E;
-    font-size: $star-size;
-    text-shadow: buildStars();
-  }
+  @extend %additional;
+  background-image: url(/../assets/img/flags/usa.png);
+  background-repeat: no-repeat; 
+  width: 100%;
+  height: 22px;
+  background-position-x: center;
+  background-position-y: center;
 }
 
 // Made WITH FUNCTIONS

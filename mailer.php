@@ -34,7 +34,7 @@
         $email_content = "Name: $name\n";
         $email_content .= "Email: $email\n\n";
         $email_content .= "Message:\n$message\n\n";
-		$email_content .= "IpAddress:\n" .$_SERVER['REMOTE_ADDR'] . "\n";	
+	    	$email_content .= "IpAddress:\n" .$_SERVER['REMOTE_ADDR'] . "\n";	
 
         // Build the email headers.
         $email_headers = "From: $name <$email>";

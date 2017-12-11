@@ -19,7 +19,7 @@
         <p class="hide">{{"modal_body" | translate }}</p>
 
 
-        <form informDialog id="form_calculator" #formCalculator="ngForm">
+        <form class="informDialog" id="form_calculator" #formCalculator="ngForm">
           <input [(ngModel)]="amount" type="number" required amount placeholder="{{'enter_amount' | translate}}" autocomplete="off"
             maxlength="7" id="amount" name="amount" class="form-control input-sm" />
           <!-- [(ngModel)]="amount"  #amount=ngModel -->

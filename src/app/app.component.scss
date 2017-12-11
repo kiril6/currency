@@ -1,5 +1,5 @@
 
-.showB{
+.showB {
   margin: 200px 0 0 0;
   display: block!important;
   .modal-dialog{
@@ -9,11 +9,18 @@
   .modal-footer {
     padding: 10px;
   }
-  .informDialog {
-    display: none;
-  }
+
   @media all and (orientation:landscape) {
     margin: 110px 0 0 0;
+  }
+}
+
+.showB.infoPopUp {
+  .informDialog {
+    display: none!important;
+  }
+  .hide {
+    display: block!important;
   }
 }
 

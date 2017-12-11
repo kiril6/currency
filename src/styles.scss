@@ -1075,7 +1075,7 @@ body {
 
 // contact form
 #contact_form{
-	width:272px;
+	max-width:272px;
 	padding:20px;
 	border: 1px solid #DDD;
 	border-radius: 5px;
@@ -1106,7 +1106,7 @@ body {
 	border: 1px solid #DBDBDB;
 	border-radius: 3px;
 	color: #FFF;
-	width: 230px;
+	max-width: 230px;
 	font-family: Arial, Helvetica, sans-serif;
 }
 #contact_form textarea{
@@ -1114,9 +1114,16 @@ body {
 	border: 1px solid #DBDBDB;
 	border-radius: 3px;
 	color: #FFF;
-	height:100px;
-	width: 230px;
+	height: 100px;
+	max-width: 230px;
 	font-family: Arial, Helvetica, sans-serif;
+}
+@media only screen 
+and (min-device-width : 320px) 
+{
+  h1 {
+    font-size: 30px!important;
+  }
 }
 .submit_btn2 {
 	border: 1px solid #D8D8D8;

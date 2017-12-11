@@ -30,13 +30,13 @@ export class UpdateComponent implements OnInit {
       // alert('The form has been sent!');
       // console.log('AppComponent Success', res);
       window.alert('Uspesno Azurirano!');
-      // this.router.navigate(['/']);
-      location.href = "http://testing.delovski.net";
+      this.router.navigate(['/']);
+      // location.href = "http://testing.delovski.net";
     }, error => {
       this.success = false;
       // alert('The form was not sent!\n Please refresh and try again.');
       this.modalElement = document.getElementById('myModal');
-      this.modalElement.className += " showB";
+      this.modalElement.className += " showB infoPopUp";
       // console.log('AppComponent Error', error);
     })
   }
