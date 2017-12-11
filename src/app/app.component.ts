@@ -1,9 +1,9 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 // import {DataGetService} from "./services/data.service";
-import {ActivatedRoute, Router} from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { Http, Response, RequestOptions, Headers, HttpModule } from '@angular/http';
-import {Observable} from 'rxjs/Rx';
+import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import * as $ from 'jquery';
@@ -21,13 +21,16 @@ import { DataService } from './services/data.service';
 export class AppComponent implements OnInit {
 
   // public modalElement;
-  public amount: string = '';
+  public amount: number;
   public currencyFrom: string = '';
   public currencyTo: string = '';
-  public outputCalculation: string = '';
+  public outputCalculation;
+  private fromBuyValue;
+  private toSellValue;
+  private formula;
 
-  constructor(public dataService: DataService) { }  
-   
+  constructor(public dataService: DataService) { }
+
   // private data;
   title = 'app';
   //  herbs = [];
@@ -55,8 +58,29 @@ export class AppComponent implements OnInit {
     location.reload();
   }
 
+  // turnOnSubscribtion(){
+  //   console.log("activate timer");
+  //   // unsubscribe here
+  //   this.dataService.timer.subscribe();
+  // }
+
+  closeModalX() {
+    document.getElementById("myModal").classList.remove("showB");
+  }
+
   closeModal() {
     document.getElementById("myModal").classList.remove("showB");
+    // this.turnOnSubscribtion();
+  }
+
+  fieldsChange() {
+    this.turnOffSubscribtion();
+  }
+
+  turnOffSubscribtion() {
+    // console.log("Destroy timer");
+    // unsubscribe here
+    this.dataService.sub.unsubscribe();
   }
 
   calculateCurrency() {
@@ -71,26 +95,33 @@ export class AppComponent implements OnInit {
     // console.log(this.currencyFrom);
     // console.log(this.data.values[0].buy);
 
-    for (let i=0; i<=9; i++) {
+    for (let i = 0; i <= 9; i++) {
       // console.log(this.data.values[i]);
 
-      if(this.dataService.data.values[i].currency == this.currencyFrom){
-        console.log('rabotiBuy ' + this.dataService.data.values[i].buy.toFixed(2));
+      if (this.dataService.data.values[i].currency == this.currencyFrom) {
+        // console.log('rabotiBuy ' + this.dataService.data.values[i].buy.toFixed(2));
+        this.fromBuyValue = this.dataService.data.values[i].buy;
       }
 
-      if(this.dataService.data.values[i].currency == this.currencyTo){
-        console.log('rabotiSell ' + this.dataService.data.values[i].sell.toFixed(2));
+      if (this.dataService.data.values[i].currency == this.currencyTo) {
+        // console.log('rabotiSell ' + this.dataService.data.values[i].sell.toFixed(2));
+        this.toSellValue = this.dataService.data.values[i].sell;
       }
- 
+
     }
 
-    this.outputCalculation=this.amount + ' ' + this.currencyFrom + ' = ' + this.currencyTo;
-    console.log('iznos ' + this.amount);
+    this.formula = this.amount * this.fromBuyValue / this.toSellValue;
+
+    this.outputCalculation = this.amount + ' ' + this.currencyFrom + ' = ' + Math.round(this.formula * 100) / 100 + ' ' + this.currencyTo;
 
   }
 
-} 
- 
+  ngOnDestroy() {
+    this.dataService.sub.unsubscribe();
+  }
+
+}
+
     // constructor(private http:Http) {
         // this.http.get('assets/currency.json')
         //         .subscribe(res => this.data = res.json());
@@ -98,7 +129,7 @@ export class AppComponent implements OnInit {
     //  var obj;
     //      this.getJSON().subscribe(data => obj=data, error => console.log(error));
 
-                
+
     // }   
 
     //   public getJSON(): Observable<any> {
@@ -145,9 +176,9 @@ export class AppComponent implements OnInit {
   //   //   .subscribe(resHerbsData => this.herbs = resHerbsData);
   //     console.log(this.getJSON().firstName);
 
-    
+
   // }
-  	
+
 // getOrderSummary(): Observable<any> {
 //     // get users from api
 //     return this.http.get('assets/currency.json')//, options)

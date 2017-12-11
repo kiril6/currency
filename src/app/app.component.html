@@ -7,7 +7,7 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" (click)="this.closeModal()">&times;</button>
+        <button type="button" class="close" (click)="this.closeModalX()">&times;</button>
         <h5 class="modal-title hide">
           <b>{{"alert_header" | translate}}</b>
         </h5>
@@ -20,18 +20,18 @@
 
 
         <form class="informDialog" id="form_calculator" #formCalculator="ngForm">
-          <input [(ngModel)]="amount" type="number" required amount placeholder="{{'enter_amount' | translate}}" autocomplete="off"
+          <input (change)="this.fieldsChange()" [(ngModel)]="amount" type="number" required amount placeholder="{{'enter_amount' | translate}}" autocomplete="off"
             maxlength="7" id="amount" name="amount" class="form-control input-sm" />
           <!-- [(ngModel)]="amount"  #amount=ngModel -->
 
-          <select [(ngModel)]="currencyFrom" required currencyFrom class="form-control input-sm" id="currencyFrom" name="currencyFrom">
+          <select (change)="this.fieldsChange()" [(ngModel)]="currencyFrom" required currencyFrom class="form-control input-sm" id="currencyFrom" name="currencyFrom">
             <option selected="selected">{{"from_currency" | translate}}</option>
-            <option *ngFor="let list of this.dataService.data?.values;">{{list.currency}}</option>
+            <option [disabled]="this.currencyTo===list.currency" *ngFor="let list of this.dataService.data?.values;">{{list.currency}}</option>
 
           </select>
-          <select [(ngModel)]="currencyTo" required currencyTo class="form-control input-sm" id="currencyTo" name="currencyTo">
+          <select (change)="this.fieldsChange()" [(ngModel)]="currencyTo" required currencyTo class="form-control input-sm" id="currencyTo" name="currencyTo">
             <option selected="selected">{{"into_currency" | translate}}</option>
-            <option *ngFor="let list of this.dataService.data?.values;">{{list.currency}}</option>
+            <option [disabled]="this.currencyFrom===list.currency" *ngFor="let list of this.dataService.data?.values;">{{list.currency}}</option>
           </select>
           <button (click)="calculateCurrency()" [disabled]="!formCalculator.valid" type="submit" class="btn btn-info btn-block" id="updateCalculator">
             <span class="fa fa-calculator"></span>&nbsp;{{"calculate" | translate}}
@@ -42,7 +42,7 @@
         <button type="button" class="btn btn-primary btn-sm hide" (click)="this.reload()">{{"ok" | translate}}</button>
         <button type="button" class="btn btn-primary btn-sm informDialog" (click)="this.closeModal()">{{"close" | translate}}</button>
         <div class="pull-left informDialog">
-          <b>{{this.outputCalculation}}</b>
+          &nbsp;<b>{{this.outputCalculation}}</b>
         </div>
       </div>
     </div>

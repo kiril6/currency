@@ -46,7 +46,7 @@ export class CurrencyListComponent {
           this.isSunday = true;
         }
       }
-    }, 1300);
+    }, 3000);
   }
 
   print() {
@@ -56,7 +56,16 @@ export class CurrencyListComponent {
   calculator() {
     this.modalElement = document.getElementById('myModal');
     this.modalElement.className += " showB calculator";
+    // this.turnOffSubscribtion();
   }
+
+  // turnOffSubscribtion(){
+  //   console.log("Destroy timer");
+  //   // unsubscribe here
+  //   this.dataService.sub.unsubscribe();
+  // }
+
+
 
   private formatDateToString(date) {
     // 01, 02, 03, ... 29, 30, 31
