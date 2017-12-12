@@ -363,3 +363,11 @@ $star-size: ($flag-height/13)*2.45/3.7;
   height: 400px;
   padding-top: 128px;
 }
+
+#printBtn {
+  display: none;
+  @media screen and (min-width: 1000px) {
+    display: block;
+    float: right;
+  }
+}

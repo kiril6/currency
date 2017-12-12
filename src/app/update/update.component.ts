@@ -88,7 +88,7 @@ export class UpdateComponent implements OnInit {
       this.messageCurrency.gbpSell = this.dataService.data.values[8].sell.toFixed(2);
       this.messageCurrency.usdBuy = this.dataService.data.values[9].buy.toFixed(2);
       this.messageCurrency.usdSell = this.dataService.data.values[9].sell.toFixed(2);
-    }, 1300);
+    }, 3300);
   }
 
   clearFields() {
