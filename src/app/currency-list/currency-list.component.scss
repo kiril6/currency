@@ -337,13 +337,16 @@ $star-size: ($flag-height/13)*2.45/3.7;
   }
 }
 
-  .tableTitle {
+  .tableTitle { 
     background: cadetblue;
     &:hover {
       background: cadetblue!important;
     }
     th {
       text-align: center;
+    }
+    th:first-child{
+      text-align: left;
     }
   }
 }
