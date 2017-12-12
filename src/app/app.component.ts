@@ -101,25 +101,23 @@ export class AppComponent implements OnInit {
       if (this.dataService.data.values[i].currency == this.currencyFrom) {
         // console.log('rabotiBuy ' + this.dataService.data.values[i].buy.toFixed(2));
         this.fromBuyValue = this.dataService.data.values[i].buy;
-      } else {
-        this.fromBuyValue = this.dataService.data.values[i].sell;
       }
+      //  else {
+      //   this.fromBuyValue = this.dataService.data.values[0].sell;
+      // }
 
       if (this.dataService.data.values[i].currency == this.currencyTo) {
         // console.log('rabotiSell ' + this.dataService.data.values[i].sell.toFixed(2));
         this.toSellValue = this.dataService.data.values[i].sell;
-      } else {
-        this.toSellValue = this.dataService.data.values[i].sell;
-      }
+      } 
+      // else {
+      //   this.toSellValue = this.dataService.data.values[0].sell;
+      // }
 
     }
 
     if (this.currencyFrom === 'MKD') {
       this.formula = this.amount / this.fromBuyValue;
-      // if (this.currencyTo != this.dataService.data.values[0].currency) {
-      //   console.log(this.formula * this.fromBuyValue / this.toSellValue);
-      // }
-
     } else if (this.currencyTo === 'MKD') {
       this.formula = this.amount * this.toSellValue;
     }
