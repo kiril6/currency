@@ -106,7 +106,7 @@ export class AppComponent implements OnInit {
         this.fromBuyValue = this.dataService.data.values[i].buy;
       }
       //  else if(this.currencyFrom==='MKD') {
-    
+
       //   // this.fromBuyValue = this.dataService.data.values[0].sell;
 
       // }
@@ -114,7 +114,7 @@ export class AppComponent implements OnInit {
       if (this.dataService.data.values[i].currency == this.currencyTo) {
         // console.log('rabotiSell ' + this.dataService.data.values[i].sell.toFixed(2));
         this.toSellValue = this.dataService.data.values[i].sell;
-      } 
+      }
       // else {
       //   this.toSellValue = this.dataService.data.values[0].sell;
       // }
@@ -124,24 +124,34 @@ export class AppComponent implements OnInit {
 
     }
 
-    if((this.currencyFrom === 'MKD') && (this.currencyTo !== 'MKD')){
-      this.fromBuyValueForMKD = this.dataService.data.values[0].buy;
-      this.formula = this.amount * this.fromBuyValueForMKD / this.toSellValue;
-      this.calcMKD=this.formula / this.toSellValue;
-      this.outputCalculation = this.amount + ' ' + this.currencyFrom + ' = ' + Math.round(this.calcMKD * 100) / 100 + ' ' + this.currencyTo;
+    if ((this.currencyFrom === 'MKD') && (this.currencyTo !== 'MKD')) {
+      this.fromBuyValueForMKD = this.dataService.data.values[0].sell;
+      this.formula = this.amount / this.fromBuyValueForMKD * this.toSellValue;
+      console.log(this.toSellValue);
+      this.calcMKD = this.formula / this.toSellValue;
+      if ((this.currencyTo !== 'MKD') && (this.currencyTo !== 'EUR')) {
+        this.calcMKD = this.formula / this.dataService.data.values[0].buy;
+      }
+
+      this.outputCalculation = this.amount + ' ' + this.currencyFrom + ' = ' + this.calcMKD.toFixed(2) + ' ' + this.currencyTo;
     }
 
-    else if((this.currencyFrom !== 'MKD') && (this.currencyTo === 'MKD')){      
-            this.toSellValueForMKD = this.dataService.data.values[0].sell;      
-            this.formula = this.amount / this.toSellValueForMKD * this.fromBuyValue;         
-            this.calcMKD=this.formula * this.fromBuyValue;
-            this.outputCalculation = this.amount + ' ' + this.currencyFrom + ' = ' + Math.round(this.calcMKD * 100) / 100 + ' ' + this.currencyTo;
-          }        
-          
-          else {
-            this.formula = this.amount * this.fromBuyValue / this.toSellValue;
-            this.outputCalculation = this.amount + ' ' + this.currencyFrom + ' = ' + Math.round(this.formula * 100) / 100 + ' ' + this.currencyTo;
-          }
+
+    else if ((this.currencyFrom !== 'MKD') && (this.currencyTo === 'MKD')) {
+      this.toSellValueForMKD = this.dataService.data.values[0].buy;
+      this.formula = this.amount / this.toSellValueForMKD * this.fromBuyValue;
+      this.calcMKD = this.formula * this.fromBuyValue;
+      if ((this.currencyFrom !== 'MKD') && (this.currencyFrom !== 'EUR')) {
+        this.calcMKD = this.formula * this.dataService.data.values[0].sell;
+      }
+
+      this.outputCalculation = this.amount + ' ' + this.currencyFrom + ' = ' + this.calcMKD.toFixed(2) + ' ' + this.currencyTo;
+    }
+
+    else {
+      this.formula = this.amount * this.fromBuyValue / this.toSellValue;
+      this.outputCalculation = this.amount + ' ' + this.currencyFrom + ' = ' + this.formula.toFixed(2) + ' ' + this.currencyTo;
+    }
 
     // if (this.currencyFrom === 'MKD') {
     //   console.log('vo uslov1 '+ this.fromBuyValueForMKD);
@@ -151,9 +161,15 @@ export class AppComponent implements OnInit {
     //   console.log('vo uslov2 ');
     // }
     // else {
-     
+
     // }
-  
+
+  }
+
+  refreshCalc() {
+    this.amount = null;
+    this.currencyFrom = '';
+    this.currencyTo = '';
   }
 
   ngOnDestroy() {

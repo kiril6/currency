@@ -20,22 +20,34 @@
 
 
         <form class="informDialog" id="form_calculator" #formCalculator="ngForm">
-          <input (change)="this.fieldsChange()" [(ngModel)]="amount" type="number" required amount placeholder="{{'enter_amount' | translate}}" autocomplete="off"
-            maxlength="7" id="amount" name="amount" class="form-control input-sm" />
+          <div class="row">
+            <div class="col-xs-9 col-sm-9 col-md-9">
+              <input tabindex=1 (change)="this.fieldsChange()" [(ngModel)]="amount" type="number" required amount placeholder="{{'enter_amount' | translate}}"
+                autocomplete="off" maxlength="7" id="amount" name="amount" class="form-control input-sm" />
+            </div>
+            <div class="col-xs-3 col-sm-3 col-md-3" style="padding-top: 4px; text-align: right">
+              <button (click)="refreshCalc()" type="button" class="btn btn-default btn-sm">
+                <span class="fa fa-refresh"></span>
+              </button>
+            </div>
+          </div>
           <!-- [(ngModel)]="amount"  #amount=ngModel -->
 
-          <select (change)="this.fieldsChange()" [(ngModel)]="currencyFrom" required currencyFrom class="form-control input-sm" id="currencyFrom" name="currencyFrom">
+          <select tabindex=2 (change)="this.fieldsChange()" [(ngModel)]="currencyFrom" required currencyFrom class="form-control input-sm"
+            id="currencyFrom" name="currencyFrom">
             <option selected="selected">{{"from_currency" | translate}}</option>
             <option [disabled]="this.currencyTo==='MKD'" value="MKD">MKD</option>
             <option [disabled]="this.currencyTo===list.currency" *ngFor="let list of this.dataService.data?.values;">{{list.currency}}</option>
 
           </select>
-          <select (change)="this.fieldsChange()" [(ngModel)]="currencyTo" required currencyTo class="form-control input-sm" id="currencyTo" name="currencyTo">
+          <select tabindex=3 (change)="this.fieldsChange()" [(ngModel)]="currencyTo" required currencyTo class="form-control input-sm"
+            id="currencyTo" name="currencyTo">
             <option selected="selected">{{"into_currency" | translate}}</option>
             <option [disabled]="this.currencyFrom==='MKD'" value="MKD">MKD</option>
             <option [disabled]="this.currencyFrom===list.currency" *ngFor="let list of this.dataService.data?.values;">{{list.currency}}</option>
           </select>
-          <button (click)="calculateCurrency()" [disabled]="!formCalculator.valid" type="submit" class="btn btn-info btn-block" id="updateCalculator">
+          <button tabindex=4 (click)="calculateCurrency()" [disabled]="!formCalculator.valid" type="submit" class="btn btn-info btn-block"
+            id="updateCalculator">
             <span class="fa fa-calculator"></span>&nbsp;{{"calculate" | translate}}
           </button>
         </form>
@@ -44,7 +56,8 @@
         <button type="button" class="btn btn-primary btn-sm hide" (click)="this.reload()">{{"ok" | translate}}</button>
         <button type="button" class="btn btn-primary btn-sm informDialog" (click)="this.closeModal()">{{"close" | translate}}</button>
         <div class="pull-left informDialog">
-          &nbsp;<b>{{this.outputCalculation}}</b>
+          &nbsp;
+          <b>{{this.outputCalculation}}</b>
         </div>
       </div>
     </div>
