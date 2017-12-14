@@ -22,7 +22,7 @@
         <form class="informDialog" id="form_calculator" #formCalculator="ngForm">
           <div class="row">
             <div class="col-xs-9 col-sm-9 col-md-9">
-              <input tabindex=1 (change)="this.fieldsChange()" [(ngModel)]="amount" type="number" required amount placeholder="{{'enter_amount' | translate}}"
+              <input autofocus tabindex=1 (change)="this.fieldsChange()" [(ngModel)]="amount" type="number" required amount placeholder="{{'enter_amount' | translate}}"
                 autocomplete="off" maxlength="7" id="amount" name="amount" class="form-control input-sm" />
             </div>
             <div class="col-xs-3 col-sm-3 col-md-3" style="padding-top: 4px; text-align: right">

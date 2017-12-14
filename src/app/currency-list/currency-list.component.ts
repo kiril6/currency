@@ -49,6 +49,10 @@ export class CurrencyListComponent {
     }, 3000);
   }
 
+  reloadPage(){
+    location.href = "http://intercoop.delovski.net";
+  }
+
   print() {
     window.print();
   }

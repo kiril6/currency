@@ -19,7 +19,7 @@ export class DataService {
         http.get('assets/currency.json?nocache=' + (new Date()).getTime(), { headers: headers })
             .map(response => response.json()).catch(this.errorHandler)
             .subscribe(data => this.data = data,
-            err => console.log(err + ' currency file not found') == window.alert('Currency file not found!'),
+            err => console.log(err + ' currency file not found'),
             () => console.log('')));
     }
     errorHandler(error: Response) {

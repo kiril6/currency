@@ -94,89 +94,44 @@ export class AppComponent implements OnInit {
     // }
     // this.outputCalculation=this.currencyFrom + ' ' + amount; 
 
-
     // console.log(this.currencyFrom);
     // console.log(this.data.values[0].buy);
 
     for (let i = 0; i <= 9; i++) {
-      // console.log(this.data.values[i]);
 
       if (this.dataService.data.values[i].currency == this.currencyFrom) {
-        // console.log('rabotiBuy ' + this.dataService.data.values[i].buy.toFixed(2));
         this.fromBuyValue = this.dataService.data.values[i].buy;
       }
       else if (this.currencyFrom === 'MKD') {
-    
-        //  this.fromBuyValueForMKD = this.dataService.data.values[0].sell;
-
 
         if (this.dataService.data.values[i].currency == this.currencyTo) {
-          // console.log('rabotiSell ' + this.dataService.data.values[i].sell.toFixed(2));
           this.toSellValue = this.dataService.data.values[i].sell;
-     
         }
 
-        //  this.formula = this.amount / this.toSellValue;
-  
         this.calcMKD = this.amount / this.toSellValue;
-        // if ((this.currencyTo !== 'MKD') && (this.currencyTo !== 'EUR')) {
-        //   this.calcMKD = this.formula / this.dataService.data.values[0].buy;
-        // }
-
         this.outputCalculation = this.amount + ' ' + this.currencyFrom + ' = ' + this.calcMKD.toFixed(2) + ' ' + this.currencyTo;
-
-
-        // this.fromBuyValue = this.dataService.data.values[0].sell;
-
       }
 
       //druga operacija
 
       if (this.dataService.data.values[i].currency == this.currencyTo) {
-        // console.log('rabotiSell ' + this.dataService.data.values[i].sell.toFixed(2));
         this.toSellValue = this.dataService.data.values[i].sell;
 
       } else if (this.currencyTo === 'MKD') {
 
-        //  this.fromBuyValueForMKD = this.dataService.data.values[0].sell;
-
-
         if (this.dataService.data.values[i].currency == this.currencyFrom) {
-          // console.log('rabotiSell ' + this.dataService.data.values[i].sell.toFixed(2));
           this.fromBuyValue = this.dataService.data.values[i].buy;
-  
         }
 
-        //  this.formula = this.amount / this.toSellValue;
-
         this.calcMKD = this.amount * this.fromBuyValue;
-        // if ((this.currencyTo !== 'MKD') && (this.currencyTo !== 'EUR')) {
-        //   this.calcMKD = this.formula / this.dataService.data.values[0].buy;
-        // }
-
         this.outputCalculation = this.amount + ' ' + this.currencyFrom + ' = ' + this.calcMKD.toFixed(2) + ' ' + this.currencyTo;
 
-
-        // this.fromBuyValue = this.dataService.data.values[0].sell;
-
       }
-
 
       if ((this.currencyFrom != 'MKD') && (this.currencyTo != 'MKD')) {
-    
         this.formula = this.amount * this.fromBuyValue / this.toSellValue;
         this.outputCalculation = this.amount + ' ' + this.currencyFrom + ' = ' + this.formula.toFixed(2) + ' ' + this.currencyTo;
-
       }
-
-
-      // else {
-      //   this.toSellValue = this.dataService.data.values[0].sell;
-      // }
-
-      // this.fromBuyValueForMKD = this.dataService.data.values[i].buy;
-      // this.toSellValueForMKD = this.dataService.data.values[i].sell;    
-
 
     }
 
@@ -192,7 +147,6 @@ export class AppComponent implements OnInit {
     //   this.outputCalculation = this.amount + ' ' + this.currencyFrom + ' = ' + this.calcMKD.toFixed(2) + ' ' + this.currencyTo;
     // }
 
-
     // else if ((this.currencyFrom !== 'MKD') ) {
     //   // this.toSellValueForMKD = this.dataService.data.values[0].buy;
     //   this.formula = this.amount * this.fromBuyValue;
@@ -206,7 +160,6 @@ export class AppComponent implements OnInit {
 
     //   this.outputCalculation = this.amount + ' ' + this.currencyFrom + ' = ' + this.calcMKD + ' ' + this.currencyTo;
     // }
-
 
     // else {
     //   this.formula = this.amount * this.fromBuyValue / this.toSellValue;
@@ -230,6 +183,7 @@ export class AppComponent implements OnInit {
     this.amount = null;
     this.currencyFrom = '';
     this.currencyTo = '';
+    this.outputCalculation = '';
   }
 
   ngOnDestroy() {
@@ -244,7 +198,6 @@ export class AppComponent implements OnInit {
 
     //  var obj;
     //      this.getJSON().subscribe(data => obj=data, error => console.log(error));
-
 
     // }   
 
