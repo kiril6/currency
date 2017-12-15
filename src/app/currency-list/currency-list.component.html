@@ -21,7 +21,7 @@
         <thead>
           <tr class="tableTitle">
             <th>{{"currency" | translate}}</th>
-            <th class="noPrint"></th>
+            <th></th>
             <th>{{"buy" | translate}}</th>
             <th class="noPrint"></th>
             <th>{{"sell" | translate}}</th>
@@ -31,7 +31,7 @@
           <!-- <ng-template *ngFor="let item of data;"> -->
           <tr *ngFor="let item of this.dataService.data.values;">
             <th scope="row">{{item.currency}}</th>
-            <th class="noPrint">1</th>
+            <th>1</th>
             <td>{{item.buy.toFixed(2)}}</td>
             <td class="noPrint">
               <div class="{{item.flag}}"></div>
