@@ -3,7 +3,7 @@
   <div class="currencyPrint" *ngIf="this.same; else noCurrency">
     <div class="animated fadeInDown">
       <h3 class="title padding">
-        <div class="col-md-12"><b><span class="titleFirm">INTERCOOP </span>{{"currency_title" | translate}}</b></div>
+        <div class="col-md-12"><b><span class="titleFirm">{{"intercoop" | translate}} </span>{{"currency_title" | translate}}</b></div>
 
         <div class="pull-right printer">
           <i (click)="this.calculator()"  class="fa fa-calculator" aria-hidden="true"></i>&nbsp;
@@ -41,6 +41,9 @@
         </tbody>
       </table>
     </div>
+
+
+    <marquee class="noPrint" scrollamount="5" direction="left" width="auto" height="20" behavior="scroll" style="margin: 0 8px 0 8px">{{"above_500" | translate}}</marquee>
   </div>
 
   <ng-template #noCurrency>

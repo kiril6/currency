@@ -49,5 +49,7 @@
     "from_currency" : "From currency",
     "into_currency" : "To currency",
     "calculate" : "Calculate",
+    "intercoop" : "INTERCOOP",
+    "above_500" : "The currencies are with calculated service. For amounts above 500eur and in equivalent of another currency is followed by additional discounts.",
     "rights": "All Rights Reserved."
 }
