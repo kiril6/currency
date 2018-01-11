@@ -32,7 +32,7 @@
             <tr>
               <th scope="row">EUR</th>
               <td>
-                <input #eurBuy=ngModel required eurBuy autocomplete="off" autofocus maxlength="5" [value]="this.dataService.data?.values[0]['buy'].toFixed(2)"
+                <input #eurBuy=ngModel required eurBuy autocomplete="off" autofocus maxlength="7" [value]="this.dataService.data?.values[0]['buy'].toFixed(2)"
                   [(ngModel)]="messageCurrency.eurBuy" type="text" id="eurBuy" name="eurBuy" class="form-control input-sm"
                 />
               </td>
@@ -40,7 +40,7 @@
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input #eurSell=ngModel required eurSell autocomplete="off" maxlength="5" [value]="this.dataService.data?.values[0]['sell'].toFixed(2)"
+                <input #eurSell=ngModel required eurSell autocomplete="off" maxlength="7" [value]="this.dataService.data?.values[0]['sell'].toFixed(2)"
                   [(ngModel)]="messageCurrency.eurSell" type="text" id="eurSell" name="eurSell" class="form-control input-sm"
                 />
               </td>
@@ -49,7 +49,7 @@
             <tr>
               <th scope="row">AUD</th>
               <td>
-                <input #audBuy=ngModel required audBuy autocomplete="off" maxlength="5" [value]="this.dataService.data?.values[1]['buy'].toFixed(2)"
+                <input #audBuy=ngModel required audBuy autocomplete="off" maxlength="7" [value]="this.dataService.data?.values[1]['buy'].toFixed(2)"
                   [(ngModel)]="messageCurrency.audBuy" type="text" id="audBuy" name="audBuy" class="form-control input-sm"
                 />
               </td>
@@ -57,7 +57,7 @@
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input #audSell=ngModel required audSell autocomplete="off" maxlength="5" [value]="this.dataService.data?.values[1]['sell'].toFixed(2)"
+                <input #audSell=ngModel required audSell autocomplete="off" maxlength="7" [value]="this.dataService.data?.values[1]['sell'].toFixed(2)"
                   [(ngModel)]="messageCurrency.audSell" type="text" id="audSell" name="audSell" class="form-control input-sm"
                 />
               </td>
@@ -66,7 +66,7 @@
             <tr>
               <th scope="row">CAD</th>
               <td>
-                <input #cadBuy=ngModel required cadBuy autocomplete="off" maxlength="5" [value]="this.dataService.data?.values[2]['buy'].toFixed(2)"
+                <input #cadBuy=ngModel required cadBuy autocomplete="off" maxlength="7" [value]="this.dataService.data?.values[2]['buy'].toFixed(2)"
                   [(ngModel)]="messageCurrency.cadBuy" type="text" id="cadBuy" name="cadBuy" class="form-control input-sm"
                 />
               </td>
@@ -74,7 +74,7 @@
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input #cadSell=ngModel required cadSell autocomplete="off" maxlength="5" [value]="this.dataService.data?.values[2]['sell'].toFixed(2)"
+                <input #cadSell=ngModel required cadSell autocomplete="off" maxlength="7" [value]="this.dataService.data?.values[2]['sell'].toFixed(2)"
                   [(ngModel)]="messageCurrency.cadSell" type="text" id="cadSell" name="cadSell" class="form-control input-sm"
                 />
               </td>
@@ -83,7 +83,7 @@
             <tr>
               <th scope="row">DKK</th>
               <td>
-                <input #dkkBuy=ngModel required dkkBuy autocomplete="off" maxlength="5" [value]="this.dataService.data?.values[3]['buy'].toFixed(2)"
+                <input #dkkBuy=ngModel required dkkBuy autocomplete="off" maxlength="7" [value]="this.dataService.data?.values[3]['buy'].toFixed(2)"
                   [(ngModel)]="messageCurrency.dkkBuy" type="text" id="dkkBuy" name="dkkBuy" class="form-control input-sm"
                 />
               </td>
@@ -91,7 +91,7 @@
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input #dkkSell=ngModel required dkkSell autocomplete="off" maxlength="5" [value]="this.dataService.data?.values[3]['sell'].toFixed(2)"
+                <input #dkkSell=ngModel required dkkSell autocomplete="off" maxlength="7" [value]="this.dataService.data?.values[3]['sell'].toFixed(2)"
                   [(ngModel)]="messageCurrency.dkkSell" type="text" id="dkkSell" name="dkkSell" class="form-control input-sm"
                 />
               </td>
@@ -100,7 +100,7 @@
             <tr>
               <th scope="row">JPY</th>
               <td>
-                <input #jpyBuy=ngModel required jpyBuy autocomplete="off" maxlength="5" [value]="this.dataService.data?.values[4]['buy'].toFixed(2)"
+                <input #jpyBuy=ngModel required jpyBuy autocomplete="off" maxlength="7" [value]="this.dataService.data?.values[4]['buy'].toFixed(2)"
                   [(ngModel)]="messageCurrency.jpyBuy" type="text" id="jpyBuy" name="jpyBuy" class="form-control input-sm"
                 />
               </td>
@@ -108,7 +108,7 @@
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input #jpySell=ngModel required jpySell autocomplete="off" maxlength="5" [value]="this.dataService.data?.values[4]['sell'].toFixed(2)"
+                <input #jpySell=ngModel required jpySell autocomplete="off" maxlength="7" [value]="this.dataService.data?.values[4]['sell'].toFixed(2)"
                   [(ngModel)]="messageCurrency.jpySell" type="text" id="jpySell" name="jpySell" class="form-control input-sm"
                 />
               </td>
@@ -117,7 +117,7 @@
             <tr>
               <th scope="row">NOK</th>
               <td>
-                <input #nokBuy=ngModel required nokBuy autocomplete="off" maxlength="5" [value]="this.dataService.data?.values[5]['buy'].toFixed(2)"
+                <input #nokBuy=ngModel required nokBuy autocomplete="off" maxlength="7" [value]="this.dataService.data?.values[5]['buy'].toFixed(2)"
                   [(ngModel)]="messageCurrency.nokBuy" type="text" id="nokBuy" name="nokBuy" class="form-control input-sm"
                 />
               </td>
@@ -125,7 +125,7 @@
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input #nokSell=ngModel required nokSell autocomplete="off" maxlength="5" [value]="this.dataService.data?.values[5]['sell'].toFixed(2)"
+                <input #nokSell=ngModel required nokSell autocomplete="off" maxlength="7" [value]="this.dataService.data?.values[5]['sell'].toFixed(2)"
                   [(ngModel)]="messageCurrency.nokSell" type="text" id="nokSell" name="nokSell" class="form-control input-sm"
                 />
               </td>
@@ -133,7 +133,7 @@
             <tr>
               <th scope="row">SEK</th>
               <td>
-                <input #sekBuy=ngModel required sekBuy autocomplete="off" maxlength="5" [value]="this.dataService.data?.values[6]['buy'].toFixed(2)"
+                <input #sekBuy=ngModel required sekBuy autocomplete="off" maxlength="7" [value]="this.dataService.data?.values[6]['buy'].toFixed(2)"
                   [(ngModel)]="messageCurrency.sekBuy" type="text" id="sekBuy" name="sekBuy" class="form-control input-sm"
                 />
               </td>
@@ -141,7 +141,7 @@
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input #sekSell=ngModel required sekSell autocomplete="off" maxlength="5" [value]="this.dataService.data?.values[6]['sell'].toFixed(2)"
+                <input #sekSell=ngModel required sekSell autocomplete="off" maxlength="7" [value]="this.dataService.data?.values[6]['sell'].toFixed(2)"
                   [(ngModel)]="messageCurrency.sekSell" type="text" id="sekkSell" name="sekSell" class="form-control input-sm"
                 />
               </td>
@@ -149,7 +149,7 @@
             <tr>
               <th scope="row">CHF</th>
               <td>
-                <input #chfBuy=ngModel required chfBuy autocomplete="off" maxlength="5" [value]="this.dataService.data?.values[7]['buy'].toFixed(2)"
+                <input #chfBuy=ngModel required chfBuy autocomplete="off" maxlength="7" [value]="this.dataService.data?.values[7]['buy'].toFixed(2)"
                   [(ngModel)]="messageCurrency.chfBuy" type="text" id="chfBuy" name="chfBuy" class="form-control input-sm"
                 />
               </td>
@@ -157,7 +157,7 @@
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input #chfSell=ngModel required chfSell autocomplete="off" maxlength="5" [value]="this.dataService.data?.values[7]['sell'].toFixed(2)"
+                <input #chfSell=ngModel required chfSell autocomplete="off" maxlength="7" [value]="this.dataService.data?.values[7]['sell'].toFixed(2)"
                   [(ngModel)]="messageCurrency.chfSell" type="text" id="chfSell" name="chfSell" class="form-control input-sm"
                 />
               </td>
@@ -165,7 +165,7 @@
             <tr>
               <th scope="row">GBP</th>
               <td>
-                <input #gbpBuy=ngModel required gbpBuy autocomplete="off" maxlength="5" [value]="this.dataService.data?.values[8]['buy'].toFixed(2)"
+                <input #gbpBuy=ngModel required gbpBuy autocomplete="off" maxlength="7" [value]="this.dataService.data?.values[8]['buy'].toFixed(2)"
                   [(ngModel)]="messageCurrency.gbpBuy" type="text" id="gbpBuy" name="gbpBuy" class="form-control input-sm"
                 />
               </td>
@@ -173,7 +173,7 @@
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input #gbpSell=ngModel required gbpSell autocomplete="off" maxlength="5" [value]="this.dataService.data?.values[8]['sell'].toFixed(2)"
+                <input #gbpSell=ngModel required gbpSell autocomplete="off" maxlength="7" [value]="this.dataService.data?.values[8]['sell'].toFixed(2)"
                   [(ngModel)]="messageCurrency.gbpSell" type="text" id="gbpSell" name="gbpSell" class="form-control input-sm"
                 />
               </td>
@@ -182,7 +182,7 @@
             <tr>
               <th scope="row">USD</th>
               <td>
-                <input #usdBuy=ngModel required usdBuy autocomplete="off" maxlength="5" [value]="this.dataService.data?.values[9]['buy'].toFixed(2)"
+                <input #usdBuy=ngModel required usdBuy autocomplete="off" maxlength="7" [value]="this.dataService.data?.values[9]['buy'].toFixed(2)"
                   [(ngModel)]="messageCurrency.usdBuy" type="text" id="usdBuy" name="usdBuy" class="form-control input-sm"
                 />
               </td>
@@ -190,7 +190,7 @@
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input #usdSell=ngModel required usdSell autocomplete="off" maxlength="5" [value]="this.dataService.data?.values[9]['sell'].toFixed(2)"
+                <input #usdSell=ngModel required usdSell autocomplete="off" maxlength="7" [value]="this.dataService.data?.values[9]['sell'].toFixed(2)"
                   [(ngModel)]="messageCurrency.usdSell" type="text" id="usdSell" name="usdSell" class="form-control input-sm"
                 />
               </td>

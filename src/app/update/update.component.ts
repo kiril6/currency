@@ -68,26 +68,26 @@ export class UpdateComponent implements OnInit {
 
   ngAfterViewInit() {
     setTimeout(() => {
-      this.messageCurrency.eurBuy = this.dataService.data.values[0].buy.toFixed(2);
-      this.messageCurrency.eurSell = this.dataService.data.values[0].sell.toFixed(2);
-      this.messageCurrency.audBuy = this.dataService.data.values[1].buy.toFixed(2);
-      this.messageCurrency.audSell = this.dataService.data.values[1].sell.toFixed(2);
-      this.messageCurrency.cadBuy = this.dataService.data.values[2].buy.toFixed(2);
-      this.messageCurrency.cadSell = this.dataService.data.values[2].sell.toFixed(2);
-      this.messageCurrency.dkkBuy = this.dataService.data.values[3].buy.toFixed(2);
-      this.messageCurrency.dkkSell = this.dataService.data.values[3].sell.toFixed(2);
-      this.messageCurrency.jpyBuy = this.dataService.data.values[4].buy.toFixed(2);
-      this.messageCurrency.jpySell = this.dataService.data.values[4].sell.toFixed(2);
-      this.messageCurrency.nokBuy = this.dataService.data.values[5].buy.toFixed(2);
-      this.messageCurrency.nokSell = this.dataService.data.values[5].sell.toFixed(2);
-      this.messageCurrency.sekBuy = this.dataService.data.values[6].buy.toFixed(2);
-      this.messageCurrency.sekSell = this.dataService.data.values[6].sell.toFixed(2);
-      this.messageCurrency.chfBuy = this.dataService.data.values[7].buy.toFixed(2);
-      this.messageCurrency.chfSell = this.dataService.data.values[7].sell.toFixed(2);
-      this.messageCurrency.gbpBuy = this.dataService.data.values[8].buy.toFixed(2);
-      this.messageCurrency.gbpSell = this.dataService.data.values[8].sell.toFixed(2);
-      this.messageCurrency.usdBuy = this.dataService.data.values[9].buy.toFixed(2);
-      this.messageCurrency.usdSell = this.dataService.data.values[9].sell.toFixed(2);
+      this.messageCurrency.eurBuy = this.dataService.data.values[0].buy.toFixed(4);
+      this.messageCurrency.eurSell = this.dataService.data.values[0].sell.toFixed(4);
+      this.messageCurrency.audBuy = this.dataService.data.values[1].buy.toFixed(4);
+      this.messageCurrency.audSell = this.dataService.data.values[1].sell.toFixed(4);
+      this.messageCurrency.cadBuy = this.dataService.data.values[2].buy.toFixed(4);
+      this.messageCurrency.cadSell = this.dataService.data.values[2].sell.toFixed(4);
+      this.messageCurrency.dkkBuy = this.dataService.data.values[3].buy.toFixed(4);
+      this.messageCurrency.dkkSell = this.dataService.data.values[3].sell.toFixed(4);
+      this.messageCurrency.jpyBuy = this.dataService.data.values[4].buy.toFixed(4);
+      this.messageCurrency.jpySell = this.dataService.data.values[4].sell.toFixed(4);
+      this.messageCurrency.nokBuy = this.dataService.data.values[5].buy.toFixed(4);
+      this.messageCurrency.nokSell = this.dataService.data.values[5].sell.toFixed(4);
+      this.messageCurrency.sekBuy = this.dataService.data.values[6].buy.toFixed(4);
+      this.messageCurrency.sekSell = this.dataService.data.values[6].sell.toFixed(4);
+      this.messageCurrency.chfBuy = this.dataService.data.values[7].buy.toFixed(4);
+      this.messageCurrency.chfSell = this.dataService.data.values[7].sell.toFixed(4);
+      this.messageCurrency.gbpBuy = this.dataService.data.values[8].buy.toFixed(4);
+      this.messageCurrency.gbpSell = this.dataService.data.values[8].sell.toFixed(4);
+      this.messageCurrency.usdBuy = this.dataService.data.values[9].buy.toFixed(4);
+      this.messageCurrency.usdSell = this.dataService.data.values[9].sell.toFixed(4);
     }, 3300);
   }
 
