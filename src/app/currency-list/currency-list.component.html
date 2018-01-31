@@ -3,21 +3,28 @@
   <div class="currencyPrint" *ngIf="this.same; else noCurrency">
     <div class="animated fadeInDown">
       <h3 class="title padding">
-        <b>{{"currency_title" | translate}}</b>
+        <div class="col-md-12">
+          <b>
+            <span class="titleFirm">{{"intercoop" | translate}} </span>{{"currency_title" | translate}}</b>
+        </div>
+
         <div class="pull-right printer">
-          <i (click)="this.print()" class="fa fa-print" aria-hidden="true"></i>&nbsp;
+          <i (click)="this.calculator()" class="fa fa-calculator" aria-hidden="true"></i>&nbsp;
+          <i (click)="this.print()" id="printBtn" class="fa fa-print" aria-hidden="true"></i>&nbsp;
         </div>
       </h3>
+      <div class="clearfix"></div>
       <h5 class="title animated flash">
-        <b class="date">&nbsp;{{data?.datum}}&nbsp;</b>
+        <b class="date">&nbsp;{{this.dataService.data?.datum}}&nbsp;</b>
       </h5>
     </div>
 
     <div class="animated fadeIn" style="height: 464.6px">
-      <table *ngIf="this.data" class="table table-responsive table-hover table-currency">
+      <table *ngIf="this.dataService.data" class="table table-responsive table-hover table-currency">
         <thead>
           <tr class="tableTitle">
             <th>{{"currency" | translate}}</th>
+            <th></th>
             <th>{{"buy" | translate}}</th>
             <th class="noPrint"></th>
             <th>{{"sell" | translate}}</th>
@@ -25,16 +32,24 @@
         </thead>
         <tbody>
           <!-- <ng-template *ngFor="let item of data;"> -->
-          <tr *ngFor="let item of data.values;">
+          <tr *ngFor="let item of this.dataService.data.values;">
             <th scope="row">{{item.currency}}</th>
-            <td>{{item.buy.toFixed(2)}}</td>
+            <th>1</th>
+            <td>{{item.buy.toFixed(4)}}</td>
             <td class="noPrint">
               <div class="{{item.flag}}"></div>
             </td>
-            <td>{{item.sell.toFixed(2)}}</td>
+            <td>{{item.sell.toFixed(4)}}</td>
           </tr>
         </tbody>
       </table>
+    </div>
+    <div class="ticker-wrap">
+      <div class="ticker">
+
+        <div class="ticker__item">{{"above_500" | translate}}</div>
+
+      </div>
     </div>
   </div>
 
@@ -44,6 +59,13 @@
       <h4 *ngIf="this.isSunday" class="title animated flash">{{"no_currencySunday1" | translate}}</h4>
       <br>
       <h4 *ngIf="!this.isSunday" class="title animated flash">{{"no_currency2" | translate}}.</h4>
+      <div *ngIf="!this.isSunday">
+        <br>
+        <button (click)="reloadPage()" type="button" class="btn btn-default btn-sm">
+          <span class="fa fa-refresh"></span>
+        </button>
+      </div>
+
       <h4 *ngIf="this.isSunday" class="title animated flash">{{"no_currencySunday2" | translate}}</h4>
     </div>
   </ng-template>

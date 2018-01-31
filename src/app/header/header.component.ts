@@ -8,30 +8,30 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class HeaderComponent implements OnInit {
 
-  public lngCheck='en';
-  public lngBool=true;
+  public lngCheck = 'en';
+  public lngBool = true;
 
   constructor(private translate: TranslateService) {
 
     translate.setDefaultLang('en');
-   }
-   switchLanguage(language: string) {
+  }
+  switchLanguage(language: string) {
     this.translate.use(language);
-    if(language==this.lngCheck){
-      this.lngBool=true;
-    }else {
-      this.lngBool=false;
+    if (language == this.lngCheck) {
+      this.lngBool = true;
+    } else {
+      this.lngBool = false;
     }
   }
-
-  //  lngChange() {
-  //   window.alert('Macedonian language\n will be available soon.');
-  // }
 
   closeToggle() {
     if (screen.width < 1200) {
       document.getElementById("toggleNav").click();
     }
+  }
+
+  home() {
+    location.href="http://intercoop.delovski.net";
   }
 
   ngOnInit() {

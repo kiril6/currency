@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService, ICurrencies } from '../content/app.service';
-import { Router } from '@angular/router';
-
+import { Router, ActivatedRoute } from '@angular/router';
 import { Http, Response, RequestOptions, Headers, HttpModule } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
+import { DataService } from '../services/data.service';
+
 @Component({
   selector: 'app-update',
   templateUrl: './update.component.html',
   styleUrls: ['./update.component.scss', '../currency-list/currency-list.component.scss']
 })
+
 export class UpdateComponent implements OnInit {
   public success: boolean;
   public modalElement;
@@ -18,26 +20,8 @@ export class UpdateComponent implements OnInit {
 
   public passwordInput: string = '';
   public updateCurrency: boolean = false;
-  data: Array<any>;
 
-  constructor(private appService: AppService, private router: Router, private http: Http) {
-
-
-    const headers = new Headers({ 'Content-Type': 'application/json' });
-    http.get('assets/currency.json', { headers: headers })
-      .map(response => response.json()).catch(this.errorHandler)
-      .subscribe(data => this.data = data,
-      err => console.log(err + ' currency file not found') == window.alert('Currency file not found!'),
-      () => console.log(''));
-  }
-  errorHandler(error: Response) {
-    console.error(error);
-    return Observable.throw(error || "Server Error");
-  }
-
-
-
-
+  constructor(private appService: AppService, private router: Router, private http: Http, public dataService: DataService) { }
 
   //update currency
   sendCurrency(messageCurrency: ICurrencies) {
@@ -46,21 +30,19 @@ export class UpdateComponent implements OnInit {
       // alert('The form has been sent!');
       // console.log('AppComponent Success', res);
       window.alert('Uspesno Azurirano!');
-      this.router.navigate(['/']);
+      // this.router.navigate(['/']);
+      location.href = "http://intercoop.delovski.net";
     }, error => {
       this.success = false;
       // alert('The form was not sent!\n Please refresh and try again.');
       this.modalElement = document.getElementById('myModal');
-      this.modalElement.className += " showB";
+      this.modalElement.className += " showB infoPopUp";
       // console.log('AppComponent Error', error);
     })
   }
 
-
   passwordInputValue(value) {
     this.passwordInput = value;
-
-
   }
 
   isPasswordTrue() {
@@ -69,6 +51,10 @@ export class UpdateComponent implements OnInit {
     } else {
       this.updateCurrency = false;
     }
+  }
+
+  reload() {
+    location.reload();
   }
 
   ngOnInit() {
@@ -82,27 +68,27 @@ export class UpdateComponent implements OnInit {
 
   ngAfterViewInit() {
     setTimeout(() => {
-      this.messageCurrency.eurBuy = this.data.values[0].buy.toFixed(2);
-      this.messageCurrency.eurSell = this.data.values[0].sell.toFixed(2);
-      this.messageCurrency.audBuy = this.data.values[1].buy.toFixed(2);
-      this.messageCurrency.audSell = this.data.values[1].sell.toFixed(2);
-      this.messageCurrency.cadBuy = this.data.values[2].buy.toFixed(2);
-      this.messageCurrency.cadSell = this.data.values[2].sell.toFixed(2);
-      this.messageCurrency.dkkBuy = this.data.values[3].buy.toFixed(2);
-      this.messageCurrency.dkkSell = this.data.values[3].sell.toFixed(2);
-      this.messageCurrency.jpyBuy = this.data.values[4].buy.toFixed(2);
-      this.messageCurrency.jpySell = this.data.values[4].sell.toFixed(2);
-      this.messageCurrency.nokBuy = this.data.values[5].buy.toFixed(2);
-      this.messageCurrency.nokSell = this.data.values[5].sell.toFixed(2);
-      this.messageCurrency.sekBuy = this.data.values[6].buy.toFixed(2);
-      this.messageCurrency.sekSell = this.data.values[6].sell.toFixed(2);
-      this.messageCurrency.chfBuy = this.data.values[7].buy.toFixed(2);
-      this.messageCurrency.chfSell = this.data.values[7].sell.toFixed(2);
-      this.messageCurrency.gbpBuy = this.data.values[8].buy.toFixed(2);
-      this.messageCurrency.gbpSell = this.data.values[8].sell.toFixed(2);
-      this.messageCurrency.usdBuy = this.data.values[9].buy.toFixed(2);
-      this.messageCurrency.usdSell = this.data.values[9].sell.toFixed(2);
-    }, 1300);
+      this.messageCurrency.eurBuy = this.dataService.data.values[0].buy.toFixed(4);
+      this.messageCurrency.eurSell = this.dataService.data.values[0].sell.toFixed(4);
+      this.messageCurrency.audBuy = this.dataService.data.values[1].buy.toFixed(4);
+      this.messageCurrency.audSell = this.dataService.data.values[1].sell.toFixed(4);
+      this.messageCurrency.cadBuy = this.dataService.data.values[2].buy.toFixed(4);
+      this.messageCurrency.cadSell = this.dataService.data.values[2].sell.toFixed(4);
+      this.messageCurrency.dkkBuy = this.dataService.data.values[3].buy.toFixed(4);
+      this.messageCurrency.dkkSell = this.dataService.data.values[3].sell.toFixed(4);
+      this.messageCurrency.jpyBuy = this.dataService.data.values[4].buy.toFixed(4);
+      this.messageCurrency.jpySell = this.dataService.data.values[4].sell.toFixed(4);
+      this.messageCurrency.nokBuy = this.dataService.data.values[5].buy.toFixed(4);
+      this.messageCurrency.nokSell = this.dataService.data.values[5].sell.toFixed(4);
+      this.messageCurrency.sekBuy = this.dataService.data.values[6].buy.toFixed(4);
+      this.messageCurrency.sekSell = this.dataService.data.values[6].sell.toFixed(4);
+      this.messageCurrency.chfBuy = this.dataService.data.values[7].buy.toFixed(4);
+      this.messageCurrency.chfSell = this.dataService.data.values[7].sell.toFixed(4);
+      this.messageCurrency.gbpBuy = this.dataService.data.values[8].buy.toFixed(4);
+      this.messageCurrency.gbpSell = this.dataService.data.values[8].sell.toFixed(4);
+      this.messageCurrency.usdBuy = this.dataService.data.values[9].buy.toFixed(4);
+      this.messageCurrency.usdSell = this.dataService.data.values[9].sell.toFixed(4);
+    }, 3300);
   }
 
   clearFields() {
@@ -134,6 +120,5 @@ export class UpdateComponent implements OnInit {
     var yyyy = date.getFullYear();
     return (dd + "." + MM + "." + yyyy);
   }
-
 
 }

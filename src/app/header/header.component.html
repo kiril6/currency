@@ -10,7 +10,7 @@
         <button id="toggleNav" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
           <span class="glyphicon glyphicon-chevron-down blue"></span>
         </button>
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" (click)="this.home()">
           <div class="logo-text">
             <span>Intercoop</span>
             <br>Exchange
@@ -54,9 +54,9 @@
               <!-- language changer part-->
             </a>
             <a (click)="this.closeToggle()" *ngIf="!this.lngBool" href="javascript:;" (click)="switchLanguage('en')" title="change to English">
-                <img style="width: 34px; vertical-align:bottom" src="assets/img/en.png">
-                <!-- language changer part-->
-              </a>
+              <img style="width: 34px; vertical-align:bottom" src="assets/img/en.png">
+              <!-- language changer part-->
+            </a>
           </li>
         </ul>
       </div>

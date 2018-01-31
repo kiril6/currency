@@ -3,6 +3,9 @@ body {
     color: #999;
 }
 
+
+
+
 // * {
 //   -moz-box-sizing: border-box;
 //   -webkit-box-sizing: border-box;
@@ -1072,7 +1075,7 @@ body {
 
 // contact form
 #contact_form{
-	width:272px;
+	max-width:272px;
 	padding:20px;
 	border: 1px solid #DDD;
 	border-radius: 5px;
@@ -1103,7 +1106,7 @@ body {
 	border: 1px solid #DBDBDB;
 	border-radius: 3px;
 	color: #FFF;
-	width: 230px;
+	max-width: 230px;
 	font-family: Arial, Helvetica, sans-serif;
 }
 #contact_form textarea{
@@ -1111,9 +1114,16 @@ body {
 	border: 1px solid #DBDBDB;
 	border-radius: 3px;
 	color: #FFF;
-	height:100px;
-	width: 230px;
+	height: 100px;
+	max-width: 230px;
 	font-family: Arial, Helvetica, sans-serif;
+}
+@media only screen 
+and (min-device-width : 320px) 
+{
+  h1 {
+    font-size: 30px!important;
+  }
 }
 .submit_btn2 {
 	border: 1px solid #D8D8D8;
@@ -1202,19 +1212,45 @@ width: 50%;
   display: none;
 }
 
+.currencyPrint {
+  .titleFirm{
+    display: none;
+  }
+}
+
 @media print { 
+  body {
+    height: 100%;
+  }
   .currencyPrint {
     display: block !important; 
-    margin-top: -30px;
-    margin-bottom: 20px;
+    margin: -30px 0 0 0;
+    height: 700px;
+    font-size: 26px;
+    // transform: scale(1.7);
+    @media (orientation: landscape) {  font-size: 21px;  margin-top: -30px;  height: 700px; }
+    .titleFirm{
+      display: block!important;
+    }
   }
 
   @page {
-    margin: 10px 0 0 0;
+    // height: 100%;
+    margin: 0 auto;
   }
 
   .moveUP {
-    margin-top: -40px;
+    height: 110px;
+    font-size: 22px;
+    // margin-top: 500px;
+    @media (orientation: landscape) { font-size: 24px;  margin-top: 50px; }
+  }
+
+  .moveUP2 {
+    height: 400px;
+    font-size: 22px;
+    margin-top: 0;
+    @media (orientation: landscape) { font-size: 24px;  margin-top: 10px; }
   }
 
   .telPrint {

@@ -2,23 +2,10 @@
  $message = '';  
  $errors = '';  
  header('Content-type: application/json');
+ header('Cache-Control: no-cache, no-store, must-revalidate');
+ header('Pragma: no-cache');
+ header('Expires: 0');
 
-//  if(isset($_POST["submit"]))  
-//  {  
-//       if(empty($_POST["name"]))  
-//       {  
-//         //    $error = "<label class='text-danger'>Enter Name</label>";  
-//       }  
-//       // else if(empty($_POST["gender"]))  
-//       // {  
-//       //   //    $error = "<label class='text-danger'>Enter Gender</label>";  
-//       // }  
-//       else if(empty($_POST["designation"]))  
-//       {  
-//         //    $error = "<label class='text-danger'>Enter Designation</label>";  
-//       }  
-//       else  
-//       {  
            if(file_exists('currency.json'))  
            {  
             $jsonString = file_get_contents("php://input");
@@ -91,7 +78,6 @@
                   'flag' => "flag--usa"
                   );
 
-
             // $n[]=$data;
             $currencies=array($eur, $aud, $cad, $dkk, $jpy, $nok, $sek, $chf, $gbp, $usd);
 
@@ -99,7 +85,7 @@
             
             $newJsonString = json_encode($obj);
             file_put_contents('currency.json', $newJsonString);
-            // unset($data);
+            unset($data);
       //       if(empty($errors))
       //       {         
       //       $postdata = file_get_contents("php://input");

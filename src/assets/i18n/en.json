@@ -2,7 +2,7 @@
     "nav1": "Services",
     "nav2": "About Us",
     "nav3": "Find Us",
-    "currency_title": "INTERCOOP CURRENCIES",
+    "currency_title": "EXCHANGE RATES",
     "buy": "Buy",
     "sell": "Sell",
     "currency": "Currency",
@@ -43,6 +43,13 @@
     "alert_header" : "Alert Window",
     "modal_body" : "The form has not been sent, please try again.", 
     "ok": "OK",
-
+    "close" : "Close",
+    "title_calculator" : "CURRENCY CALCULATOR",
+    "enter_amount" : "Enter amount",
+    "from_currency" : "From currency",
+    "into_currency" : "To currency",
+    "calculate" : "Calculate",
+    "intercoop" : "INTERCOOP",
+    "above_500" : "The currencies are with calculated service. For amounts above 500eur and in equivalent of another currency is followed by additional discounts.",
     "rights": "All Rights Reserved."
 }

@@ -10,6 +10,9 @@ import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
+import { DataService } from '../services/data.service';
+
+
 @Component({
   selector: 'app-currency-list',
   templateUrl: './currency-list.component.html',
@@ -17,41 +20,56 @@ import 'rxjs/add/operator/catch';
 })
 
 export class CurrencyListComponent {
-  // private _url= 'assets/currency.json';
-  // method () {
-  //   return this._http.get(this._url)
-  //     .map((response: Response) => response.json());
-  // }
-
   public d = new Date();
   public newDate: string;
   public same = false;
   public isSunday = false;
+  public modalElement;
+
+  constructor(public dataService: DataService) { }
 
   ngOnInit() {
     var dateObj = new Date();
     var month = dateObj.getUTCMonth() + 1;
-    var day = dateObj.getUTCDay(); 
+    var day = dateObj.getUTCDay();
     var dayName = dateObj.toString().split(' ')[0];
     var year = dateObj.getUTCFullYear();
     this.newDate = this.formatDateToString(dateObj);
 
     setTimeout(() => {
-      if (this.data['datum'] === this.newDate) {
+      if (this.dataService.data['datum'] === this.newDate) {
         this.same = true;
       }
       else {
         this.same = false;
-         if(dayName=='Sun'){
+        if (dayName == 'Sun') {
           this.isSunday = true;
         }
       }
-    }, 1300);
+    }, 3000);
+  }
+
+  reloadPage(){
+    location.href = "http://intercoop.delovski.net";
   }
 
   print() {
     window.print();
   }
+
+  calculator() {
+    this.modalElement = document.getElementById('myModal');
+    this.modalElement.className += " showB calculator";
+    // this.turnOffSubscribtion();
+  }
+
+  // turnOffSubscribtion(){
+  //   console.log("Destroy timer");
+  //   // unsubscribe here
+  //   this.dataService.sub.unsubscribe();
+  // }
+
+
 
   private formatDateToString(date) {
     // 01, 02, 03, ... 29, 30, 31
@@ -62,19 +80,5 @@ export class CurrencyListComponent {
     var yyyy = date.getFullYear();
     // create the format you want
     return (dd + "." + MM + "." + yyyy);
-  }
-  
-  data: Array<any>;
-  constructor(private http: Http) {
-    const headers = new Headers({ 'Content-Type': 'application/json' });
-    http.get('assets/currency.json', { headers: headers })
-      .map(response => response.json()).catch(this.errorHandler)
-      .subscribe(data => this.data = data,
-      err => console.log(err + ' currency file not found') == window.alert('Currency file not found!'),
-      () => console.log(''));
-  }
-  errorHandler(error: Response) {
-    console.error(error);
-    return Observable.throw(error || "Server Error");
   }
 }
