@@ -20,6 +20,7 @@ export class UpdateComponent implements OnInit {
 
   public passwordInput: string = '';
   public updateCurrency: boolean = false;
+  public checkedStatus: boolean = true;
 
   constructor(private appService: AppService, private router: Router, private http: Http, public dataService: DataService) { }
 
@@ -112,6 +113,30 @@ export class UpdateComponent implements OnInit {
     this.messageCurrency.gbpSell = '';
     this.messageCurrency.usdBuy = '';
     this.messageCurrency.usdSell = '';
+  }
+
+  checkAll() {
+    this.checkedStatus = this.checkedStatus!= true;
+    // this.messageCurrency.eurBuy = '';
+    // this.messageCurrency.eurSell = '';
+    // this.messageCurrency.audBuy = '';
+    // this.messageCurrency.audSell = '';
+    // this.messageCurrency.cadBuy = '';
+    // this.messageCurrency.cadSell = '';
+    // this.messageCurrency.dkkBuy = '';
+    // this.messageCurrency.dkkSell = '';
+    // this.messageCurrency.jpyBuy = '';
+    // this.messageCurrency.jpySell = '';
+    // this.messageCurrency.nokBuy = '';
+    // this.messageCurrency.nokSell = '';
+    // this.messageCurrency.sekBuy = '';
+    // this.messageCurrency.sekSell = '';
+    // this.messageCurrency.chfBuy = '';
+    // this.messageCurrency.chfSell = '';
+    // this.messageCurrency.gbpBuy = '';
+    // this.messageCurrency.gbpSell = '';
+    // this.messageCurrency.usdBuy = '';
+    // this.messageCurrency.usdSell = '';
   }
 
   private formatDateToString(date) {

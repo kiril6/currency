@@ -32,6 +32,7 @@
     "address" : "Nikola Vapcarov 5/2-1, Skopje 1000, Macedonia",
     "find_us" : "Find Us",
     "contact" : "CONTACT",
+    "tel" : "+3892 3239-522",
     "business_hours" : "BUSINESS HOURS",
     "monday": "Mon 9:00 AM – 8:00 PM",
     "tuesday": "Tue 9:00 AM – 8:00 PM",
@@ -51,5 +52,8 @@
     "calculate" : "Calculate",
     "intercoop" : "INTERCOOP",
     "above_500" : "The currencies are with calculated service. For amounts above 500eur and in equivalent of another currency is followed by additional discounts.",
-    "rights": "All Rights Reserved."
+    "rights": "All Rights Reserved.",
+    "password": "Password",
+    "save": "Save",
+    "state": "Status"
 }

@@ -31,15 +31,14 @@
           </tr>
         </thead>
         <tbody>
-          <!-- <ng-template *ngFor="let item of data;"> -->
           <tr *ngFor="let item of this.dataService.data.values;">
-            <th scope="row">{{item.currency}}</th>
-            <th>1</th>
-            <td>{{item.buy.toFixed(4)}}</td>
-            <td class="noPrint">
+            <th *ngIf="item.checked == 'true'" scope="row">{{item.currency}}</th>
+            <th *ngIf="item.checked == 'true'">1</th>
+            <td *ngIf="item.checked == 'true'">{{item.buy.toFixed(4)}}</td>
+            <td *ngIf="item.checked == 'true'" class="noPrint">
               <div class="{{item.flag}}"></div>
             </td>
-            <td>{{item.sell.toFixed(4)}}</td>
+            <td *ngIf="item.checked == 'true'">{{item.sell.toFixed(4)}}</td>
           </tr>
         </tbody>
       </table>
