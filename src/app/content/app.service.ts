@@ -32,7 +32,18 @@ export interface ICurrencies {
   gbpBuy?: string,
   gbpSell?: string,
   usdBuy?: string,
-  usdSell?: string
+  usdSell?: string,
+
+  eurStatus?: boolean,
+  audStatus?: boolean,
+  cadStatus?: boolean,
+  dkkStatus?: boolean,
+  jpyStatus?: boolean,
+  nokStatus?: boolean,
+  sekStatus?: boolean,
+  chfStatus?: boolean,
+  gbpStatus?: boolean,
+  usdStatus?: boolean
 }
 
 @Injectable()

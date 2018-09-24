@@ -25,6 +25,7 @@ export class CurrencyListComponent {
   public same = false;
   public isSunday = false;
   public modalElement;
+  public moreExpanded: boolean = false;
 
   constructor(public dataService: DataService) { }
 
@@ -49,7 +50,7 @@ export class CurrencyListComponent {
     }, 3000);
   }
 
-  reloadPage(){
+  reloadPage() {
     location.href = "http://intercoop.delovski.net";
   }
 
@@ -63,12 +64,15 @@ export class CurrencyListComponent {
     // this.turnOffSubscribtion();
   }
 
+  seeMore() {
+    this.moreExpanded = this.moreExpanded != true;
+  }
+
   // turnOffSubscribtion(){
   //   console.log("Destroy timer");
   //   // unsubscribe here
   //   this.dataService.sub.unsubscribe();
   // }
-
 
 
   private formatDateToString(date) {

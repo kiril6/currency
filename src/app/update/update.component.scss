@@ -31,6 +31,39 @@ input, textarea {
   background-color: #af4848!important;
   }
 }
+@keyframes fadeDisabled {
+  from {background: rgba(255, 255, 255, 1);}
+  to {background: repeating-linear-gradient(
+    -55deg,
+    rgb(94, 94, 94),
+    rgb(96, 96, 96) 10px,
+    rgb(98, 98, 98) 10px,
+    rgb(100, 100, 100) 20px
+  );}
+}
+
+@keyframes fadeEnabled {
+  from {background: repeating-linear-gradient(
+    -55deg,
+    rgb(94, 94, 94),
+    rgb(96, 96, 96) 10px,
+    rgb(98, 98, 98) 10px,
+    rgb(100, 100, 100) 20px);}
+  to {background-color: rgba(255, 255, 255, 1);}
+}
+
+input, textarea {
+  animation-name: fadeEnabled;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+ input:disabled, textarea:disabled {
+  animation-name: fadeDisabled;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+
 
 input[type='checkbox'] {
   cursor: pointer;

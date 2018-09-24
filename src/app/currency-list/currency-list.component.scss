@@ -431,3 +431,15 @@ $duration: 30s;
     color: white;       
   }  
 }
+
+td a{ 
+  &:link,
+  &:visited,
+  &:active {
+    color: white;
+    text-decoration: none;
+  }
+  &:hover {
+    text-decoration: underline;
+  }
+}
