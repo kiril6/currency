@@ -9,9 +9,7 @@ import { Http, Response, RequestOptions, Headers, HttpModule } from '@angular/ht
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-
 import { DataService } from '../services/data.service';
-
 
 @Component({
   selector: 'app-currency-list',
@@ -73,7 +71,6 @@ export class CurrencyListComponent {
   //   // unsubscribe here
   //   this.dataService.sub.unsubscribe();
   // }
-
 
   private formatDateToString(date) {
     // 01, 02, 03, ... 29, 30, 31

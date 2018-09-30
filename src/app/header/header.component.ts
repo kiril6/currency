@@ -6,15 +6,15 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
   public lngCheck = 'en';
   public lngBool = true;
 
   constructor(private translate: TranslateService) {
-
     translate.setDefaultLang('en');
   }
+
   switchLanguage(language: string) {
     this.translate.use(language);
     if (language == this.lngCheck) {
@@ -33,8 +33,4 @@ export class HeaderComponent implements OnInit {
   home() {
     location.href="http://intercoop.delovski.net";
   }
-
-  ngOnInit() {
-  }
-
 }

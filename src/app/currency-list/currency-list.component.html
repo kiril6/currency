@@ -32,10 +32,8 @@
         </thead>
 
         <tbody>
-
           <ng-container *ngIf="this.moreExpanded==false;">
             <tr *ngFor="let item of this.dataService.data.values | slice:0:10">
-
               <th *ngIf="item.checked == true" scope="row">{{item.currency}}</th>
               <th *ngIf="item.checked == true">1</th>
               <td *ngIf="item.checked == true">{{item.buy.toFixed(4)}}</td>

@@ -1,67 +1,3 @@
-//modal
-.frame {
-    width: 100%;
-}
-
-.img {
-    // box-shadow: 1px 3px 4px 5px rgba(128, 128, 128, 0.3);
-    // background: darkblue!important;
-    cursor: pointer;
-    background: url("http://teabotravel.com/wp-content/uploads/2017/06/uefa-super-cup-dark-skopje.jpg") no-repeat center;
-    background-size: auto;
-    background-position-y: -20px; // width: 650px;
-    height: 400px;
-    margin: 0 auto;
-    text-align: center;
-    border: 1px solid grey;
-}
-
-.text-holder {
-    // width: 650px;
-    margin: -70px auto 0 auto;
-    background: rgba(256, 256, 256, 0.3);
-    height: 70px;
-    padding: 6px 20px 0 20px;
-    color: white;
-    font-weight: bold;
-    text-align: center;
-    font-family: Calibri, Arial, Helvetica;
-    font-size: 140%;
-    -webkit-font-smoothing: antialiased;
-    text-shadow: -5px 0px 14px #fff;
-    /*     text-shadow: rgba(0,0,0,.5) 0 0 14px; */
-    text-shadow: rgb(0, 0, 0) 2px 0px 0px, rgb(0, 0, 0) 1.75517px 0.958851px 0px, rgb(0, 0, 0) 1.0806px 1.68294px 0px, rgb(0, 0, 0) 0.141474px 1.99499px 0px, rgb(0, 0, 0) -0.832294px 1.81859px 0px, rgb(0, 0, 0) -1.60229px 1.19694px 0px, rgb(0, 0, 0) -1.97998px 0.28224px 0px, rgb(0, 0, 0) -1.87291px -0.701566px 0px, rgb(0, 0, 0) -1.30729px -1.5136px 0px, rgb(0, 0, 0) -0.421592px -1.95506px 0px, rgb(0, 0, 0) 0.567324px -1.91785px 0px, rgb(0, 0, 0) 1.41734px -1.41108px 0px, rgb(0, 0, 0) 1.92034px -0.558831px 0px;
-}
-
-.link {
-    display: inline-block;
-    text-align: right;
-    width: 14%;
-}
-
-.link {
-    display: grid;
-    width: 100%;
-    border-top: 2px solid black;
-}
-
-.link button {
-    font-weight: bold; // margin-top: 6px;
-    color: black;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
-    border: none;
-    padding: 3px 6px 3px 6px;
-    &:active {
-        background: skyblue !important;
-        color: white;
-    }
-    &:hover {
-        background: lightgray; // color: white;
-    }
-}
 
 // main slider
 #main-slider .item {
@@ -101,7 +37,6 @@
 }
 
 /* Zoom in Keyframes */
-
 @-webkit-keyframes zoomin {
     0% {
         transform: scale(1);
@@ -129,7 +64,6 @@
 /*End of Zoom in Keyframes */
 
 /* Zoom out Keyframes */
-
 @-webkit-keyframes zoomout {
     0% {
         transform: scale(1);
@@ -214,13 +148,13 @@
     }
 }
 
-// services
-#services .box {
-    padding-bottom: 0;
-}
-
-#services .row>div {
-    margin-bottom: 50px;
+#services {
+    .box {
+        padding-bottom: 0;
+    }
+    .row>div {
+        margin-bottom: 50px;
+    }
 }
 
 .box {
@@ -320,85 +254,6 @@
     background: #f3f3f3;
 }
 
-.portfolio-items,
-.portfolio-filter {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.portfolio-filter {
-    margin-bottom: 50px;
-    text-align: center;
-}
-
-.portfolio-filter>li {
-    display: inline-block;
-} // .portfolio-items > li {
-//   float: left;
-//   padding: 0;
-//   margin: 0;  
-// }
-// .portfolio-items.col-2 > li {  
-//   width: 50%;
-// }
-// .portfolio-items.col-3 > li {  
-//   width: 33%;  
-// }
-// .portfolio-items.col-4 > li {  
-//   width: 25%;  
-// }
-// .portfolio-items.col-5 > li {  
-//   width: 20%;  
-// }
-// .portfolio-items.col-6 > li {  
-//   width: 16%;  
-// }
-// .portfolio-item .item-inner {  
-//   margin: 0 20px 20px 0;  
-//   text-align: center;  
-//   background: #fff;  
-//   padding: 10px;  
-//   border-bottom: 1px solid #e1e1e1;
-// }
-// .portfolio-item img {
-//   width: 100%;
-// }
-// .portfolio-item .portfolio-image {
-//   position: relative;
-// }
-// .portfolio-item h5 {
-//   margin: 0;
-//   padding: 10px 0 0 0;
-//   white-space: nowrap;
-//   text-overflow: ellipsis;
-//   overflow: hidden;
-// }
-// .portfolio-item .overlay {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-//   opacity: 0;
-//   background-color: rgba(255, 255, 255, 0.9);
-//   text-align: center;
-//   vertical-align: middle;
-//   -webkit-transition: opacity 300ms;
-//   -moz-transition: opacity 300ms;
-//   -o-transition: opacity 300ms;
-//   transition: opacity 300ms;
-// }
-// .portfolio-item .overlay .preview {  
-//   position: relative;  
-//   top: 50%;  
-//   display: inline-block;
-//   margin-top: -20px;
-// }
-// .portfolio-item:hover .overlay {
-//   opacity: 1;
-// }
-//id's
 .list-services {
     padding: 10px 10px;
     background: white;
