@@ -24,6 +24,8 @@ export class CurrencyListComponent {
   public isSunday = false;
   public modalElement;
   public moreExpanded: boolean = false;
+  public reloadPage = () => location.href = "http://intercoop.delovski.net";
+  public print =() => window.print();
 
   constructor(public dataService: DataService) { }
 
@@ -46,14 +48,6 @@ export class CurrencyListComponent {
         }
       }
     }, 3000);
-  }
-
-  reloadPage() {
-    location.href = "http://intercoop.delovski.net";
-  }
-
-  print() {
-    window.print();
   }
 
   calculator() {

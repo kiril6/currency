@@ -10,6 +10,7 @@ export class HeaderComponent {
 
   public lngCheck = 'en';
   public lngBool = true;
+  public home = () => location.href="http://intercoop.delovski.net";
 
   constructor(private translate: TranslateService) {
     translate.setDefaultLang('en');
@@ -28,9 +29,5 @@ export class HeaderComponent {
     if (screen.width < 1200) {
       document.getElementById("toggleNav").click();
     }
-  }
-
-  home() {
-    location.href="http://intercoop.delovski.net";
   }
 }

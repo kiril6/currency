@@ -21,6 +21,7 @@ export class UpdateComponent implements OnInit {
   public passwordInput: string = '';
   public updateCurrency: boolean = false;
   public checkedStatus: boolean = true;
+  public reload = () => location.reload();
 
   constructor(private appService: AppService, private router: Router, private http: Http, public dataService: DataService) { }
 
@@ -52,10 +53,6 @@ export class UpdateComponent implements OnInit {
     } else {
       this.updateCurrency = false;
     }
-  }
-
-  reload() {
-    location.reload();
   }
 
   ngOnInit() {
