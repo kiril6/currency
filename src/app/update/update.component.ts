@@ -2,9 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppService, ICurrencies } from '../content/app.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Http, Response, RequestOptions, Headers, HttpModule } from '@angular/http';
-import { Observable } from 'rxjs/Rx';
 import { DataService } from '../services/data.service';
-
 @Component({
   selector: 'app-update',
   templateUrl: './update.component.html',
@@ -21,7 +19,6 @@ export class UpdateComponent implements OnInit {
   public passwordInput: string = '';
   public updateCurrency: boolean = false;
   public checkedStatus: boolean = true;
-  public reload = () => location.reload();
 
   constructor(private appService: AppService, private router: Router, private http: Http, public dataService: DataService) { }
 

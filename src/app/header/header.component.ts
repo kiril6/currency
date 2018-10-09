@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-
+import { DataService } from '../services/data.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -10,9 +10,8 @@ export class HeaderComponent {
 
   public lngCheck = 'en';
   public lngBool = true;
-  public home = () => location.href="http://intercoop.delovski.net";
 
-  constructor(private translate: TranslateService) {
+  constructor(private translate: TranslateService, public dataService: DataService) {
     translate.setDefaultLang('en');
   }
 

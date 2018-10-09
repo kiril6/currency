@@ -10,9 +10,7 @@ import { CurrencyListComponent } from './currency-list/currency-list.component';
 import { UpdateComponent } from './update/update.component';
 import { AppService } from './content/app.service';
 import { AppRoutingModule } from './app-routing.module';
-
-import { RouterModule } from '@angular/router';
-
+// import { RouterModule } from '@angular/router';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';

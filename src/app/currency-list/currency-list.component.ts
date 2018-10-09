@@ -1,16 +1,11 @@
 import { Component } from '@angular/core';
-// import { Http, Response } from '@angular/http';
-// import { Observable } from 'rxjs/Observable';
-// import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { Http, Response, RequestOptions, Headers, HttpModule } from '@angular/http';
-import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { DataService } from '../services/data.service';
-
 @Component({
   selector: 'app-currency-list',
   templateUrl: './currency-list.component.html',
@@ -24,7 +19,6 @@ export class CurrencyListComponent {
   public isSunday = false;
   public modalElement;
   public moreExpanded: boolean = false;
-  public reloadPage = () => location.href = "http://intercoop.delovski.net";
   public print =() => window.print();
 
   constructor(public dataService: DataService) { }

@@ -80,7 +80,7 @@
       <h4 *ngIf="!this.isSunday" class="title animated flash">{{"no_currency2" | translate}}.</h4>
       <div *ngIf="!this.isSunday">
         <br>
-        <button (click)="reloadPage()" type="button" class="btn btn-default btn-sm">
+        <button (click)="this.dataService.reloadPage('external')" type="button" class="btn btn-default btn-sm">
           <span class="fa fa-refresh"></span>
         </button>
       </div>
