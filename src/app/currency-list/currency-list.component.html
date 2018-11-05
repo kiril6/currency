@@ -19,7 +19,7 @@
       </h5>
     </div>
 
-    <div class="animated fadeIn" style="height: 464.6px">
+    <div class="animated fadeIn" style="min-height: 464.6px">
       <table *ngIf="this.dataService.data" class="table table-responsive table-hover table-currency">
         <thead>
           <tr class="tableTitle">
@@ -30,17 +30,38 @@
             <th>{{"sell" | translate}}</th>
           </tr>
         </thead>
+
         <tbody>
-          <!-- <ng-template *ngFor="let item of data;"> -->
-          <tr *ngFor="let item of this.dataService.data.values;">
-            <th scope="row">{{item.currency}}</th>
-            <th>1</th>
-            <td>{{item.buy.toFixed(4)}}</td>
-            <td class="noPrint">
-              <div class="{{item.flag}}"></div>
-            </td>
-            <td>{{item.sell.toFixed(4)}}</td>
-          </tr>
+          <ng-container *ngIf="this.moreExpanded==false;">
+            <tr *ngFor="let item of this.dataService.data.values | slice:0:10">
+              <th *ngIf="item.checked == true" scope="row">{{item.currency}}</th>
+              <th *ngIf="item.checked == true">1</th>
+              <td *ngIf="item.checked == true">{{item.buy.toFixed(4)}}</td>
+              <td *ngIf="item.checked == true" class="noPrint">
+                <div class="{{item.flag}}"></div>
+              </td>
+              <td *ngIf="item.checked == true">{{item.sell.toFixed(4)}}</td>
+            </tr>
+            <tr class="noPrint">
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><a href="javascript:;" (click)="seeMore()">{{"more" | translate}}</a></td>
+            </tr>
+          </ng-container>
+
+          <ng-container *ngIf="this.moreExpanded==true;">
+            <tr *ngFor="let item of this.dataService.data.values">
+              <th *ngIf="item.checked == true" scope="row">{{item.currency}}</th>
+              <th *ngIf="item.checked == true">1</th>
+              <td *ngIf="item.checked == true">{{item.buy.toFixed(4)}}</td>
+              <td *ngIf="item.checked == true" class="noPrint">
+                <div class="{{item.flag}}"></div>
+              </td>
+              <td *ngIf="item.checked == true">{{item.sell.toFixed(4)}}</td>
+            </tr>
+          </ng-container>
         </tbody>
       </table>
     </div>
@@ -59,7 +80,7 @@
       <h4 *ngIf="!this.isSunday" class="title animated flash">{{"no_currency2" | translate}}.</h4>
       <div *ngIf="!this.isSunday">
         <br>
-        <button (click)="reloadPage()" type="button" class="btn btn-default btn-sm">
+        <button (click)="this.dataService.reloadPage('external')" type="button" class="btn btn-default btn-sm">
           <span class="fa fa-refresh"></span>
         </button>
       </div>

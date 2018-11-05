@@ -1,18 +1,11 @@
 import { Component } from '@angular/core';
-// import { Http, Response } from '@angular/http';
-// import { Observable } from 'rxjs/Observable';
-// import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { Http, Response, RequestOptions, Headers, HttpModule } from '@angular/http';
-import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-
 import { DataService } from '../services/data.service';
-
-
 @Component({
   selector: 'app-currency-list',
   templateUrl: './currency-list.component.html',
@@ -25,6 +18,8 @@ export class CurrencyListComponent {
   public same = false;
   public isSunday = false;
   public modalElement;
+  public moreExpanded: boolean = false;
+  public print =() => window.print();
 
   constructor(public dataService: DataService) { }
 
@@ -49,18 +44,14 @@ export class CurrencyListComponent {
     }, 3000);
   }
 
-  reloadPage(){
-    location.href = "http://intercoop.delovski.net";
-  }
-
-  print() {
-    window.print();
-  }
-
   calculator() {
     this.modalElement = document.getElementById('myModal');
     this.modalElement.className += " showB calculator";
     // this.turnOffSubscribtion();
+  }
+
+  seeMore() {
+    this.moreExpanded = this.moreExpanded != true;
   }
 
   // turnOffSubscribtion(){
@@ -68,8 +59,6 @@ export class CurrencyListComponent {
   //   // unsubscribe here
   //   this.dataService.sub.unsubscribe();
   // }
-
-
 
   private formatDateToString(date) {
     // 01, 02, 03, ... 29, 30, 31

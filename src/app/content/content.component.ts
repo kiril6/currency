@@ -27,9 +27,7 @@ export class ContentComponent {
     });
   }
 
-
   sendEmail(message: IMessage) {
-
     this.appService.sendEmail(message).subscribe(res => {
       this.success = true;
       // alert('The form has been sent!');

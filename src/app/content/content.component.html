@@ -46,13 +46,12 @@
     <a class="next" href="#main-slider" data-slide="next"><i class="fa fa-chevron-right" aria-hidden="true"></i></a> -->
 </section>
 
-<section id="services">
+<section id="services" *ngIf="this.editLink==false">
   <div class="container">
     <div class="box first">
       <div class="row">
         <div class="col-md-12 col-sm-12">
           <div class="center">
-            <!-- <i class="icon-apple icon-md icon-color3"></i> -->
             <img style="width: 60px" src="../../assets/img/logo2.png">
             <h4>{{"services1" | translate}}</h4>
             <p>{{"services2" | translate}}</p>
@@ -60,7 +59,6 @@
           </div>
         </div>
         <!--/.col-md-4-->
-
       </div>
       <!--/.row-->
     </div>
@@ -69,7 +67,7 @@
   <!--/.container-->
 </section>
 
-<section id="portfolio">
+<section id="portfolio" *ngIf="this.editLink==false">
   <div class="container">
     <div class="box">
       <div class="center gap">
@@ -81,33 +79,15 @@
       </div>
       <!--/.center-->
       <div class="row">
-
         <div class="col-md-6 col-sm-6 col-xs-12 text-center list-services">
-          <!-- <div class="portfolio-image">
-                                <h3>Calculator VII</h3>
-                                <img src="images/portfolio/thumb/item1.jpg" alt="">
-                                <div class="overlay">
-                                    <a class="preview btn btn-info" title="Calculator VII" href="https://www.google.com/maps/dir//%27%27/data=!4m5!4m4!1m0!1m2!1m1!1s0x135415b48a672011:0xdbaddbf99023fcb5"><i class="icon-eye-open"></i></a>
-                                </div>
-                            </div> -->
           <a id="call" href="tel:+389023239522" class="btn btn-success btn-sm">
             <span class="fa fa-phone"></span>&nbsp;&nbsp;{{"call_us" | translate}}</a>
         </div>
-
         <div class="col-md-6 col-sm-6 col-xs-12 text-center list-services">
-          <!-- <div class="portfolio-image">
-                                <h3>Light-calc</h3>
-                                <img src="images/portfolio/thumb/item2.png" alt="">
-                                <div class="overlay">
-                                    <a class="preview btn btn-info" title="Light-Calc" href="images/portfolio/full/item2.png"><i class="icon-eye-open"></i></a>
-                                </div>
-                            </div> -->
-
           <a id="directions" href="https://www.google.com/maps/dir//%27%27/data=!4m5!4m4!1m0!1m2!1m1!1s0x135415b48a672011:0xdbaddbf99023fcb5"
             class="btn btn-success btn-sm">
             <span class="fa fa-map-marker"></span>&nbsp;&nbsp;{{"get_directions" | translate}}</a>
         </div>
-
       </div>
     </div>
     <!--/.box-->
@@ -116,7 +96,7 @@
 </section>
 <!--/#portfolio-->
 
-<section id="about-us">
+<section id="about-us" *ngIf="this.editLink==false">
   <div class="container">
     <div class="box images">
       <div class="center">
@@ -202,7 +182,7 @@
 </section>
 <!--/#about-us-->
 
-<section id="contact">
+<section id="contact" *ngIf="this.editLink==false">
   <div class="container">
     <div class="box last">
       <div class="row">
@@ -218,22 +198,22 @@
 
                       <div class="form-group">
                         <label for="name">{{"name" | translate }}</label>
-                        <input #name=ngModel required name maxlength="29" autocomplete="off" name="name" type="text" class="btn-wide form-control"
-                          id="name" [(ngModel)]="message.name" size="">
+                        <input #name=ngModel required name maxlength="29" autocomplete="off" name="name" type="text"
+                          class="btn-wide form-control" id="name" [(ngModel)]="message.name" size="">
                         <span *ngIf="!name.valid && name.touched">{{"fill_the_field" | translate}}</span>
 
                       </div>
                       <div class="form-group">
                         <label for="email">{{"email" | translate }}</label>
-                        <input #email=ngModel required email maxlength="50" autocomplete="off" name="email" type="email" class="btn-wide form-control"
-                          id="email" [(ngModel)]="message.email" size="">
+                        <input #email=ngModel required email maxlength="50" autocomplete="off" name="email" type="email"
+                          class="btn-wide form-control" id="email" [(ngModel)]="message.email" size="">
                         <span *ngIf="!email.valid && email.touched">{{"fill_the_field" | translate}}</span>
                       </div>
 
                       <div class="form-group">
                         <label for="messageBox">{{"message" | translate }}</label>
-                        <textarea #messageBox="ngModel" required messageBox maxlength="500" autocomplete="off" name="messageBox" class="btn-wide form-control"
-                          cols="" rows="5" [(ngModel)]="message.messageBox" id="messageBox"></textarea>
+                        <textarea #messageBox="ngModel" required messageBox maxlength="500" autocomplete="off" name="messageBox"
+                          class="btn-wide form-control" cols="" rows="5" [(ngModel)]="message.messageBox" id="messageBox"></textarea>
                         <span *ngIf="!messageBox.valid && messageBox.touched">{{"fill_the_field" | translate}}</span>
                       </div>
                       <br>
@@ -243,12 +223,12 @@
                             id="send">
                             <span class="glyphicon glyphicon-send"></span>&nbsp;{{"send" | translate}}
                           </button>
-                          <button *ngIf="this.success==true" [disabled]="this.success==true" type="submit" class="btn" [ngClass]="{'btn-success' : this.success==true}"
-                            id="send">
+                          <button *ngIf="this.success==true" [disabled]="this.success==true" type="submit" class="btn"
+                            [ngClass]="{'btn-success' : this.success==true}" id="send">
                             <span class="fa fa-check-circle-o"></span>&nbsp;{{"sendY" | translate}}
                           </button>
-                          <button *ngIf="this.success==false" [disabled]="this.success==false" type="submit" class="btn" [ngClass]="{'btn-danger' : this.success==false}"
-                            id="send">
+                          <button *ngIf="this.success==false" [disabled]="this.success==false" type="submit" class="btn"
+                            [ngClass]="{'btn-danger' : this.success==false}" id="send">
                             <span class="fa fa-exclamation-triangle"></span>&nbsp;{{"sendN" | translate}}
                           </button>
                         </div>
@@ -266,7 +246,6 @@
         <!--/.col-sm-5-->
         <div class="col-md-4 col-sm-6 col-xs-12 moveUP">
           <h1 class="noPrint">{{"location_title" | translate}}</h1>
-          <!-- <img class="img-thumbnail" src="images/qr.png" alt="Scan this with your qr reader"> -->
           <span>{{"address_title" | translate}}</span>
           <br> {{"address" | translate}}
           <br>
@@ -287,49 +266,44 @@
         <div class="col-md-4 col-sm-12 col-xs-12">
           <div class="noPrint">
             <h1>{{"find_us" | translate}}</h1>
-
             <p class="social">
-
               <a href="https://www.facebook.com/IntercoopExchangeOffice/" title="" class="facebook">
                 <i class="fa fa-facebook"></i>
               </a>
-
               <a href="https://plus.google.com/116118647434016492795/" title="" class="gplus">
                 <i class="fa fa-google-plus"></i>
               </a>
-
             </p>
           </div>
 
           <div class="moveUP2">
-          <span>{{"contact" | translate}}</span>
-          <br>
-          <a href="tel:00389023239522" class="noPrint">
-            <span>02 323 9522</span>
-            <i class="fa fa-phone" aria-hidden="true"></i>
-          </a>
-          <span class="telPrint">02 323 9522
-            <i class="fa fa-phone" aria-hidden="true"></i>
-          </span>
-        
+            <span>{{"contact" | translate}}</span>
+            <br>
+            <a href="tel:00389023239522" class="noPrint">
+              <span>{{"tel" | translate}}</span>
+              <i class="fa fa-phone" aria-hidden="true"></i>
+            </a>
+            <span class="telPrint">{{"tel" | translate}}
+              <i class="fa fa-phone" aria-hidden="true"></i>
+            </span>
+            <br class="noPrint">
+            <a href="mailto:intercoop.delovski@hotmail.com" class="noPrint" target="_top">{{"email" | translate}}
+              <i class="fa fa-envelope-o" aria-hidden="true"></i>
+            </a>
+            <br class="noPrint">
+            <br> {{"business_hours" | translate}}
+            <br> {{"monday" | translate }}
+            <br> {{"tuesday" | translate }}
+            <br> {{"wednesday" | translate }}
+            <br> {{"thursday" | translate }}
+            <br> {{"friday" | translate }}
+            <br> {{"saturday" | translate }}
+            <br> {{"sunday" | translate }}
+          </div>
           <br class="noPrint">
-          <a href="mailto:intercoop.delovski@hotmail.com" class="noPrint" target="_top">{{"email" | translate}}
-            <i class="fa fa-envelope-o" aria-hidden="true"></i>
-          </a>
           <br class="noPrint">
-          <br> {{"business_hours" | translate}}
-          <br> {{"monday" | translate }}
-          <br> {{"tuesday" | translate }}
-          <br> {{"wednesday" | translate }}
-          <br> {{"thursday" | translate }}
-          <br> {{"friday" | translate }}
-          <br> {{"saturday" | translate }}
-          <br> {{"sunday" | translate }}
-        </div>
-          <br class="noPrint">
-          <br class="noPrint">
-          <div class="fb-like noPrint" data-href="https://www.facebook.com/IntercoopExchangeOffice/" data-layout="button_count" data-action="like"
-            data-size="small" data-show-faces="false" data-share="true"></div>
+          <div class="fb-like noPrint" data-href="https://www.facebook.com/IntercoopExchangeOffice/" data-layout="button_count"
+            data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
         </div>
         <!--/.col-sm-6-->
       </div>

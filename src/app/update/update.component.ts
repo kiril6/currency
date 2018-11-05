@@ -2,9 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppService, ICurrencies } from '../content/app.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Http, Response, RequestOptions, Headers, HttpModule } from '@angular/http';
-import { Observable } from 'rxjs/Rx';
 import { DataService } from '../services/data.service';
-
 @Component({
   selector: 'app-update',
   templateUrl: './update.component.html',
@@ -20,6 +18,7 @@ export class UpdateComponent implements OnInit {
 
   public passwordInput: string = '';
   public updateCurrency: boolean = false;
+  public checkedStatus: boolean = true;
 
   constructor(private appService: AppService, private router: Router, private http: Http, public dataService: DataService) { }
 
@@ -53,10 +52,6 @@ export class UpdateComponent implements OnInit {
     }
   }
 
-  reload() {
-    location.reload();
-  }
-
   ngOnInit() {
     var dateObj = new Date();
     var month = dateObj.getUTCMonth() + 1;
@@ -88,6 +83,18 @@ export class UpdateComponent implements OnInit {
       this.messageCurrency.gbpSell = this.dataService.data.values[8].sell.toFixed(4);
       this.messageCurrency.usdBuy = this.dataService.data.values[9].buy.toFixed(4);
       this.messageCurrency.usdSell = this.dataService.data.values[9].sell.toFixed(4);
+
+      this.messageCurrency.eurStatus = this.dataService.data.values[0].checked
+      this.messageCurrency.audStatus = this.dataService.data.values[1].checked
+      this.messageCurrency.cadStatus = this.dataService.data.values[2].checked
+      this.messageCurrency.dkkStatus = this.dataService.data.values[3].checked
+      this.messageCurrency.jpyStatus = this.dataService.data.values[4].checked
+      this.messageCurrency.nokStatus = this.dataService.data.values[5].checked
+      this.messageCurrency.sekStatus = this.dataService.data.values[6].checked
+      this.messageCurrency.chfStatus = this.dataService.data.values[7].checked
+      this.messageCurrency.gbpStatus = this.dataService.data.values[8].checked
+      this.messageCurrency.usdStatus = this.dataService.data.values[9].checked
+
     }, 3300);
   }
 
@@ -112,6 +119,22 @@ export class UpdateComponent implements OnInit {
     this.messageCurrency.gbpSell = '';
     this.messageCurrency.usdBuy = '';
     this.messageCurrency.usdSell = '';
+  }
+
+  checkAll() {
+    this.checkedStatus = this.checkedStatus != true;
+
+    this.messageCurrency.eurStatus = this.checkedStatus
+    this.messageCurrency.audStatus = this.checkedStatus
+    this.messageCurrency.cadStatus = this.checkedStatus
+    this.messageCurrency.dkkStatus = this.checkedStatus
+    this.messageCurrency.jpyStatus = this.checkedStatus
+    this.messageCurrency.nokStatus = this.checkedStatus
+    this.messageCurrency.sekStatus = this.checkedStatus
+    this.messageCurrency.chfStatus = this.checkedStatus
+    this.messageCurrency.gbpStatus = this.checkedStatus
+    this.messageCurrency.usdStatus = this.checkedStatus
+
   }
 
   private formatDateToString(date) {

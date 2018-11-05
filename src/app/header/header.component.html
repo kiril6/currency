@@ -10,7 +10,7 @@
         <button id="toggleNav" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
           <span class="glyphicon glyphicon-chevron-down blue"></span>
         </button>
-        <a class="navbar-brand" (click)="this.home()">
+        <a class="navbar-brand" (click)="this.dataService.reloadPage('external')">
           <div class="logo-text">
             <span>Intercoop</span>
             <br>Exchange

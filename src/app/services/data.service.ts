@@ -12,6 +12,7 @@ export class DataService {
   public data: Array<any>;
   public timer;
   public sub: Subscription;
+
     constructor(private router: Router, private http: Http) {
         const headers = new Headers({ 'Content-Type': 'application/json' });
         this.timer = Observable.timer(2000,5000);
@@ -26,4 +27,13 @@ export class DataService {
         console.error(error);
         return Observable.throw(error || "Server Error");
     }
+
+    reloadPage(parameter) {
+        if (parameter==='external') {
+            location.href = "http://intercoop.delovski.net";
+        }  else if (parameter==='local') {
+            location.reload();
+        }
+    }
 }
+
