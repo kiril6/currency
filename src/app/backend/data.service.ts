@@ -1,3 +1,5 @@
+
+import {map} from 'rxjs/operators';
 import {Http, Response, RequestOptions, Headers} from '@angular/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
@@ -26,15 +28,15 @@ export class DataService {
   }
 
   getUser(): Observable<any> {
-    return this.http.post("/api/backend_user.php", {}, this.requestOptions()).map((response:Response) => {
+    return this.http.post("/api/backend_user.php", {}, this.requestOptions()).pipe(map((response:Response) => {
       let responseObject = response.json();
       this.user = responseObject.user;
       return responseObject;
-    });
+    }));
   }
 
   doLogin(user:{username: string, password: string}): Observable<any> {
-    return this.http.post("backend_login.php", user).map((response:Response) => response.json());
+    return this.http.post("backend_login.php", user).pipe(map((response:Response) => response.json()));
   }
 
   isLoggedIn() {
@@ -51,7 +53,7 @@ export class DataService {
 //   }
 
   createReservation(data: CreateReservationParams): Observable<ReservationData> {
-    return this.http.post("/api/backend_reservation_create.php", data, this.requestOptions()).map((response:Response) => {
+    return this.http.post("/api/backend_reservation_create.php", data, this.requestOptions()).pipe(map((response:Response) => {
       return {
         id: response.json().id,
         start: data.start,
@@ -61,11 +63,11 @@ export class DataService {
         status: "New",
         paid: "0"
       };
-    });
+    }));
   }
 
   deleteReservation(id: string): Observable<any> {
-    return this.http.post("/api/backend_reservation_delete.php", {id: id}, this.requestOptions()).map((response:Response) => response.json());
+    return this.http.post("/api/backend_reservation_delete.php", {id: id}, this.requestOptions()).pipe(map((response:Response) => response.json()));
   }
 
 //   updateReservation(params: UpdateReservationParams): Observable<ReservationData> {
@@ -83,37 +85,37 @@ export class DataService {
 //   }
 
   moveReservation(params: MoveReservationParams): Observable<any> {
-    return this.http.post("/api/backend_reservation_move.php", params, this.requestOptions()).map((response:Response) => response.json());
+    return this.http.post("/api/backend_reservation_move.php", params, this.requestOptions()).pipe(map((response:Response) => response.json()));
   }
 
   getRooms(): Observable<any[]> {
-    return this.http.post("/api/backend_rooms.php", {capacity: 0}, this.requestOptions()).map((response:Response) => response.json());
+    return this.http.post("/api/backend_rooms.php", {capacity: 0}, this.requestOptions()).pipe(map((response:Response) => response.json()));
   }
 
   createRoom(params: CreateRoomParams): Observable<RoomData> {
-    return this.http.post("/api/backend_room_create.php", params, this.requestOptions()).map((response:Response) => {
+    return this.http.post("/api/backend_room_create.php", params, this.requestOptions()).pipe(map((response:Response) => {
       return {
         name: params.name,
         capacity: params.capacity,
         status: "Ready",
         id: response.json().id,
       };
-    });
+    }));
   }
 
   updateRoom(params: UpdateRoomParams): Observable<RoomData> {
-    return this.http.post("/api/backend_room_update.php", params, this.requestOptions()).map((response:Response) => {
+    return this.http.post("/api/backend_room_update.php", params, this.requestOptions()).pipe(map((response:Response) => {
       return {
         id: params.id,
         name: params.name,
         capacity: params.capacity,
         status: params.status
       };
-    });
+    }));
   }
 
   deleteRoom(id: string): Observable<any> {
-    return this.http.post("/api/backend_room_delete.php", {id: id}, this.requestOptions()).map((response:Response) => response.json());
+    return this.http.post("/api/backend_room_delete.php", {id: id}, this.requestOptions()).pipe(map((response:Response) => response.json()));
   }
 
 }

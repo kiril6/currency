@@ -1,62 +1,62 @@
 {
-  "datum": "24.09.2018",
+  "datum": "25.10.2018",
   "values": [{
     "currency": "EUR",
-    "buy": 61.35, "sell": 61.70,
+    "buy": 61.39, "sell": 61.60,
     "flag": "flag--europe",
     "checked": true
     },
     {
       "currency": "AUD",
-      "buy": 39.00, "sell": 40.70,
+      "buy": 38.10, "sell": 38.70,
       "flag": "flag--australia",
       "checked": true
     },
     {
       "currency": "CAD",
-      "buy": 40.20, "sell": 41.50,
+      "buy": 41.00, "sell": 41.60,
       "flag": "flag--canada",
       "checked": true
     },
     {
       "currency": "DKK",
-      "buy": 8.00, "sell": 8.30,
+      "buy": 8.19, "sell": 8.30,
       "flag": "flag--denmark",
       "checked": true
     },
     {
         "currency": "JPY",
-        "buy": 45.20, "sell": 46.60,
+        "buy": 0.46, "sell": 0.47,
         "flag": "flag--japan",
         "checked": true
     },
     {
       "currency": "NOK",
-      "buy": 6.10,  "sell": 6.60,
+      "buy": 6.4,  "sell": 6.5,
       "flag": "flag--norway",
       "checked": true
     },
     {
       "currency": "SEK",
-      "buy": 6.00, "sell": 6.50,
+      "buy": 5.9, "sell": 6,
       "flag": "flag--sweden",
       "checked": true
     },
     {
       "currency": "CHF",
-      "buy": 52.00, "sell": 53.40,
+      "buy": 53.79, "sell": 54.39,
       "flag": "flag--switzerland",
       "checked": true
     },
     {
       "currency": "GBP",
-      "buy": 68.80, "sell": 70.60,
+      "buy": 69.40, "sell": 71,
       "flag": "flag--uk",
       "checked": true
     },
     {
       "currency" : "USD",
-      "buy" : 51.20, "sell": 52.60,
+      "buy" : 57.20, "sell": 54.29,
       "flag" : "flag--usa",
       "checked": true
     }
