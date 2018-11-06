@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/observable/throw';
+
+
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { Http, Response, RequestOptions, Headers, HttpModule } from '@angular/http';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
+
+
 import { DataService } from '../services/data.service';
 @Component({
   selector: 'app-currency-list',

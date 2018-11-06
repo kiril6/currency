@@ -1,9 +1,12 @@
+
+import {throwError as observableThrowError,  Observable } from 'rxjs';
+
+import {map, catchError} from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
 import { Resolve } from '@angular/router';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
+
+
 
 export interface IMessage {
   name?: string,
@@ -55,28 +58,28 @@ export class AppService {
   }
   
   sendEmail(message: IMessage): Observable<IMessage> | any { 
-    return this.http.post(this.emailUrl, message)
-      .map(response => {
+    return this.http.post(this.emailUrl, message).pipe(
+      map(response => {
         // console.log('Sending email was successfull', response);
         return response;
-      })
-      .catch(error => {
+      }),
+      catchError(error => {
         // console.log('Sending email got error', error);
-        return Observable.throw(error)
-      })
+        return observableThrowError(error)
+      }),)
   }
 
   //currency udpate
   sendCurrency(messageCurrency: ICurrencies): Observable<ICurrencies> | any { 
-    return this.http.post(this.updateCurrency, messageCurrency)
-      .map(response => {
+    return this.http.post(this.updateCurrency, messageCurrency).pipe(
+      map(response => {
         // console.log('updating currency was successfull', response);
         return response;
-      })
-      .catch(error => {
+      }),
+      catchError(error => {
         // console.log('updating currency got error', error);
-        return Observable.throw(error)
-      })
+        return observableThrowError(error)
+      }),)
   }
 
 }
