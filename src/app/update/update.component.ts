@@ -20,20 +20,23 @@ export class UpdateComponent implements OnInit {
   public updateCurrency = false;
   public checkedStatus = true;
 
+  public currencyBuy = ['eurBuy', 'audBuy', 'cadBuy', 'dkkBuy', 'jpyBuy', 'nokBuy', 'sekBuy', 'chfBuy', 'gbpBuy', 'usdBuy' ];
+  public currencySell = ['eurSell', 'audSell', 'cadSell', 'dkkSell', 'jpySell', 'nokSell', 'sekSell', 'chfSell', 'gbpSell', 'usdSell' ];
+  public currencyStatus = ['eurStatus', 'audStatus', 'cadStatus', 'dkkStatus', 'jpyStatus', 'nokStatus', 'sekStatus', 'chfStatus', 'gbpStatus', 'usdStatus' ];
+
+
   constructor(private appService: AppService, private router: Router, private http: Http, public dataService: DataService) { }
 
   // update currency
   sendCurrency(messageCurrency: ICurrencies) {
     this.appService.sendCurrency(messageCurrency).subscribe(res => {
       this.success = true;
-      // alert('The form has been sent!');
       // console.log('AppComponent Success', res);
-      window.alert('Uspesno Azurirano!');
+      alert('Uspesno Azurirano!');
       // this.router.navigate(['/']);
       location.href = 'http://intercoop.delovski.net';
     }, error => {
       this.success = false;
-      // alert('The form was not sent!\n Please refresh and try again.');
       this.modalElement = document.getElementById('myModal');
       this.modalElement.className += ' showB infoPopUp';
       // console.log('AppComponent Error', error);
@@ -63,6 +66,7 @@ export class UpdateComponent implements OnInit {
 
   ngAfterViewInit() {
     setTimeout(() => {
+
       this.messageCurrency.eurBuy = this.dataService.data.values[0].buy.toFixed(4);
       this.messageCurrency.eurSell = this.dataService.data.values[0].sell.toFixed(4);
       this.messageCurrency.audBuy = this.dataService.data.values[1].buy.toFixed(4);
@@ -98,43 +102,31 @@ export class UpdateComponent implements OnInit {
     }, 3300);
   }
 
+  getValues(dataType1, dataType2, dataType3) {
+    if (dataType1 === 'status') {
+      for (let i = 0; i <= this.currencyStatus.length; i++) { 
+        this.messageCurrency[this.currencyStatus[i]] = this.checkedStatus;
+      }
+    }
+    if (dataType2 === 'buy') {
+        for (let i = 0; i <= this.currencyBuy.length; i++) { 
+          this.messageCurrency[this.currencyBuy[i]] = '';
+        }
+    }
+    if (dataType3 === 'sell') {
+        for (let i = 0; i <= this.currencySell.length; i++) { 
+          this.messageCurrency[this.currencySell[i]] = '';
+        }
+    }
+  }
+
   clearFields() {
-    this.messageCurrency.eurBuy = '';
-    this.messageCurrency.eurSell = '';
-    this.messageCurrency.audBuy = '';
-    this.messageCurrency.audSell = '';
-    this.messageCurrency.cadBuy = '';
-    this.messageCurrency.cadSell = '';
-    this.messageCurrency.dkkBuy = '';
-    this.messageCurrency.dkkSell = '';
-    this.messageCurrency.jpyBuy = '';
-    this.messageCurrency.jpySell = '';
-    this.messageCurrency.nokBuy = '';
-    this.messageCurrency.nokSell = '';
-    this.messageCurrency.sekBuy = '';
-    this.messageCurrency.sekSell = '';
-    this.messageCurrency.chfBuy = '';
-    this.messageCurrency.chfSell = '';
-    this.messageCurrency.gbpBuy = '';
-    this.messageCurrency.gbpSell = '';
-    this.messageCurrency.usdBuy = '';
-    this.messageCurrency.usdSell = '';
+    this.getValues('', 'buy', 'sell');
   }
 
   checkAll() {
     this.checkedStatus = this.checkedStatus !== true;
-
-    this.messageCurrency.eurStatus = this.checkedStatus;
-    this.messageCurrency.audStatus = this.checkedStatus;
-    this.messageCurrency.cadStatus = this.checkedStatus;
-    this.messageCurrency.dkkStatus = this.checkedStatus;
-    this.messageCurrency.jpyStatus = this.checkedStatus;
-    this.messageCurrency.nokStatus = this.checkedStatus;
-    this.messageCurrency.sekStatus = this.checkedStatus;
-    this.messageCurrency.chfStatus = this.checkedStatus;
-    this.messageCurrency.gbpStatus = this.checkedStatus;
-    this.messageCurrency.usdStatus = this.checkedStatus;
-
+    this.getValues('status', '', '');
   }
 
   private formatDateToString(date) {

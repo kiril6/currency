@@ -13,7 +13,6 @@ import { DataService } from '../services/data.service';
 })
 
 export class CurrencyListComponent {
-  public d = new Date();
   public newDate: string;
   public same = false;
   public isSunday = false;
@@ -25,10 +24,7 @@ export class CurrencyListComponent {
 
   ngOnInit() {
     const dateObj = new Date();
-    const month = dateObj.getUTCMonth() + 1;
-    const day = dateObj.getUTCDay();
     const dayName = dateObj.toString().split(' ')[0];
-    const year = dateObj.getUTCFullYear();
     this.newDate = this.formatDateToString(dateObj);
 
     setTimeout(() => {

@@ -31,17 +31,17 @@
             <tr>
               <th scope="row">EUR</th>
               <td>
-                <input [disabled]="messageCurrency.eurStatus==false" #eurBuy=ngModel required eurBuy autocomplete="off"
-                  autofocus maxlength="7" [value]="this.dataService.data?.values[0]['buy'].toFixed(2)" [(ngModel)]="messageCurrency.eurBuy"
-                  type="text" id="eurBuy" name="eurBuy" class="form-control input-sm" />
+                <input step="0.0001" min="1" max="7" [disabled]="messageCurrency.eurStatus==false" #eurBuy=ngModel required eurBuy autocomplete="off"
+                   [value]="this.dataService.data?.values[0]['buy'].toFixed(2)" [(ngModel)]="messageCurrency.eurBuy"
+                  type="number" id="eurBuy" name="eurBuy" class="form-control input-sm" />
               </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input [disabled]="messageCurrency.eurStatus==false" #eurSell=ngModel required eurSell autocomplete="off"
-                  maxlength="7" [value]="this.dataService.data?.values[0]['sell'].toFixed(2)" [(ngModel)]="messageCurrency.eurSell"
-                  type="text" id="eurSell" name="eurSell" class="form-control input-sm" />
+                <input step="0.0001" min="1" max="7" [disabled]="messageCurrency.eurStatus==false" #eurSell=ngModel required eurSell autocomplete="off"
+                  [value]="this.dataService.data?.values[0]['sell'].toFixed(2)" [(ngModel)]="messageCurrency.eurSell"
+                  type="number" id="eurSell" name="eurSell" class="form-control input-sm" />
               </td>
               <td>
                 <input [(ngModel)]="messageCurrency.eurStatus" [checked]="this.checkedStatus==true" type="checkbox" id="eurStatus"
@@ -52,17 +52,17 @@
             <tr>
               <th scope="row">AUD</th>
               <td>
-                <input [disabled]="messageCurrency.audStatus==false" #audBuy=ngModel required audBuy autocomplete="off"
-                  maxlength="7" [value]="this.dataService.data?.values[1]['buy'].toFixed(2)" [(ngModel)]="messageCurrency.audBuy"
-                  type="text" id="audBuy" name="audBuy" class="form-control input-sm" />
+                <input step="0.0001" min="1" max="7" [disabled]="messageCurrency.audStatus==false" #audBuy=ngModel required audBuy autocomplete="off"
+                  [value]="this.dataService.data?.values[1]['buy'].toFixed(2)" [(ngModel)]="messageCurrency.audBuy"
+                  type="number" id="audBuy" name="audBuy" class="form-control input-sm" />
               </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input [disabled]="messageCurrency.audStatus==false" #audSell=ngModel required audSell autocomplete="off"
-                  maxlength="7" [value]="this.dataService.data?.values[1]['sell'].toFixed(2)" [(ngModel)]="messageCurrency.audSell"
-                  type="text" id="audSell" name="audSell" class="form-control input-sm" />
+                <input step="0.0001" min="1" max="7" [disabled]="messageCurrency.audStatus==false" #audSell=ngModel required audSell autocomplete="off"
+                  [value]="this.dataService.data?.values[1]['sell'].toFixed(2)" [(ngModel)]="messageCurrency.audSell"
+                  type="number" id="audSell" name="audSell" class="form-control input-sm" />
               </td>
               <td>
                 <input [(ngModel)]="messageCurrency.audStatus" [checked]="this.checkedStatus==true" type="checkbox" id="audStatus"
@@ -73,17 +73,17 @@
             <tr>
               <th scope="row">CAD</th>
               <td>
-                <input [disabled]="messageCurrency.cadStatus==false" #cadBuy=ngModel required cadBuy autocomplete="off"
-                  maxlength="7" [value]="this.dataService.data?.values[2]['buy'].toFixed(2)" [(ngModel)]="messageCurrency.cadBuy"
-                  type="text" id="cadBuy" name="cadBuy" class="form-control input-sm" />
+                <input step="0.0001" min="1" max="7" [disabled]="messageCurrency.cadStatus==false" #cadBuy=ngModel required cadBuy autocomplete="off"
+                   [value]="this.dataService.data?.values[2]['buy'].toFixed(2)" [(ngModel)]="messageCurrency.cadBuy"
+                  type="number" id="cadBuy" name="cadBuy" class="form-control input-sm" />
               </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input [disabled]="messageCurrency.cadStatus==false" #cadSell=ngModel required cadSell autocomplete="off"
-                  maxlength="7" [value]="this.dataService.data?.values[2]['sell'].toFixed(2)" [(ngModel)]="messageCurrency.cadSell"
-                  type="text" id="cadSell" name="cadSell" class="form-control input-sm" />
+                <input step="0.0001" min="1" max="7" [disabled]="messageCurrency.cadStatus==false" #cadSell=ngModel required cadSell autocomplete="off"
+                   [value]="this.dataService.data?.values[2]['sell'].toFixed(2)" [(ngModel)]="messageCurrency.cadSell"
+                  type="number" id="cadSell" name="cadSell" class="form-control input-sm" />
               </td>
               <td>
                 <input [(ngModel)]="messageCurrency.cadStatus" [checked]="this.checkedStatus==true" type="checkbox" id="cadStatus"
@@ -94,17 +94,17 @@
             <tr>
               <th scope="row">DKK</th>
               <td>
-                <input [disabled]="messageCurrency.dkkStatus==false" #dkkBuy=ngModel required dkkBuy autocomplete="off"
-                  maxlength="7" [value]="this.dataService.data?.values[3]['buy'].toFixed(2)" [(ngModel)]="messageCurrency.dkkBuy"
-                  type="text" id="dkkBuy" name="dkkBuy" class="form-control input-sm" />
+                <input step="0.0001" min="1" max="7" [disabled]="messageCurrency.dkkStatus==false" #dkkBuy=ngModel required dkkBuy autocomplete="off"
+                   [value]="this.dataService.data?.values[3]['buy'].toFixed(2)" [(ngModel)]="messageCurrency.dkkBuy"
+                  type="number" id="dkkBuy" name="dkkBuy" class="form-control input-sm" />
               </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input [disabled]="messageCurrency.dkkStatus==false" #dkkSell=ngModel required dkkSell autocomplete="off"
-                  maxlength="7" [value]="this.dataService.data?.values[3]['sell'].toFixed(2)" [(ngModel)]="messageCurrency.dkkSell"
-                  type="text" id="dkkSell" name="dkkSell" class="form-control input-sm" />
+                <input step="0.0001" min="1" max="7" [disabled]="messageCurrency.dkkStatus==false" #dkkSell=ngModel required dkkSell autocomplete="off"
+                  [value]="this.dataService.data?.values[3]['sell'].toFixed(2)" [(ngModel)]="messageCurrency.dkkSell"
+                  type="number" id="dkkSell" name="dkkSell" class="form-control input-sm" />
               </td>
               <td>
                 <input [(ngModel)]="messageCurrency.dkkStatus" [checked]="this.checkedStatus==true" type="checkbox" id="dkkStatus"
@@ -115,17 +115,17 @@
             <tr>
               <th scope="row">JPY</th>
               <td>
-                <input [disabled]="messageCurrency.jpyStatus==false" #jpyBuy=ngModel required jpyBuy autocomplete="off"
-                  maxlength="7" [value]="this.dataService.data?.values[4]['buy'].toFixed(2)" [(ngModel)]="messageCurrency.jpyBuy"
-                  type="text" id="jpyBuy" name="jpyBuy" class="form-control input-sm" />
+                <input step="0.0001" min="1" max="7" [disabled]="messageCurrency.jpyStatus==false" #jpyBuy=ngModel required jpyBuy autocomplete="off"
+                  [value]="this.dataService.data?.values[4]['buy'].toFixed(2)" [(ngModel)]="messageCurrency.jpyBuy"
+                  type="number" id="jpyBuy" name="jpyBuy" class="form-control input-sm" />
               </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input [disabled]="messageCurrency.jpyStatus==false" #jpySell=ngModel required jpySell autocomplete="off"
-                  maxlength="7" [value]="this.dataService.data?.values[4]['sell'].toFixed(2)" [(ngModel)]="messageCurrency.jpySell"
-                  type="text" id="jpySell" name="jpySell" class="form-control input-sm" />
+                <input step="0.0001" min="1" max="7" [disabled]="messageCurrency.jpyStatus==false" #jpySell=ngModel required jpySell autocomplete="off"
+                  [value]="this.dataService.data?.values[4]['sell'].toFixed(2)" [(ngModel)]="messageCurrency.jpySell"
+                  type="number" id="jpySell" name="jpySell" class="form-control input-sm" />
               </td>
               <td>
                 <input [(ngModel)]="messageCurrency.jpyStatus" [checked]="this.checkedStatus==true" type="checkbox" id="jpyStatus"
@@ -136,17 +136,17 @@
             <tr>
               <th scope="row">NOK</th>
               <td>
-                <input [disabled]="messageCurrency.nokStatus==false" #nokBuy=ngModel required nokBuy autocomplete="off"
-                  maxlength="7" [value]="this.dataService.data?.values[5]['buy'].toFixed(2)" [(ngModel)]="messageCurrency.nokBuy"
-                  type="text" id="nokBuy" name="nokBuy" class="form-control input-sm" />
+                <input step="0.0001" min="1" max="7" [disabled]="messageCurrency.nokStatus==false" #nokBuy=ngModel required nokBuy autocomplete="off"
+                 [value]="this.dataService.data?.values[5]['buy'].toFixed(2)" [(ngModel)]="messageCurrency.nokBuy"
+                  type="number" id="nokBuy" name="nokBuy" class="form-control input-sm" />
               </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input [disabled]="messageCurrency.nokStatus==false" #nokSell=ngModel required nokSell autocomplete="off"
-                  maxlength="7" [value]="this.dataService.data?.values[5]['sell'].toFixed(2)" [(ngModel)]="messageCurrency.nokSell"
-                  type="text" id="nokSell" name="nokSell" class="form-control input-sm" />
+                <input step="0.0001" min="1" max="7" [disabled]="messageCurrency.nokStatus==false" #nokSell=ngModel required nokSell autocomplete="off"
+                   [value]="this.dataService.data?.values[5]['sell'].toFixed(2)" [(ngModel)]="messageCurrency.nokSell"
+                  type="number" id="nokSell" name="nokSell" class="form-control input-sm" />
               </td>
               <td>
                 <input [(ngModel)]="messageCurrency.nokStatus" [checked]="this.checkedStatus==true" type="checkbox" id="nokStatus"
@@ -156,17 +156,17 @@
             <tr>
               <th scope="row">SEK</th>
               <td>
-                <input [disabled]="messageCurrency.sekStatus==false" #sekBuy=ngModel required sekBuy autocomplete="off"
-                  maxlength="7" [value]="this.dataService.data?.values[6]['buy'].toFixed(2)" [(ngModel)]="messageCurrency.sekBuy"
-                  type="text" id="sekBuy" name="sekBuy" class="form-control input-sm" />
+                <input step="0.0001" min="1" max="7" [disabled]="messageCurrency.sekStatus==false" #sekBuy=ngModel required sekBuy autocomplete="off"
+                  [value]="this.dataService.data?.values[6]['buy'].toFixed(2)" [(ngModel)]="messageCurrency.sekBuy"
+                  type="number" id="sekBuy" name="sekBuy" class="form-control input-sm" />
               </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input [disabled]="messageCurrency.sekStatus==false" #sekSell=ngModel required sekSell autocomplete="off"
-                  maxlength="7" [value]="this.dataService.data?.values[6]['sell'].toFixed(2)" [(ngModel)]="messageCurrency.sekSell"
-                  type="text" id="sekkSell" name="sekSell" class="form-control input-sm" />
+                <input step="0.0001" min="1" max="7" [disabled]="messageCurrency.sekStatus==false" #sekSell=ngModel required sekSell autocomplete="off"
+                   [value]="this.dataService.data?.values[6]['sell'].toFixed(2)" [(ngModel)]="messageCurrency.sekSell"
+                  type="number" id="sekkSell" name="sekSell" class="form-control input-sm" />
               </td>
               <td>
                 <input [(ngModel)]="messageCurrency.sekStatus" [checked]="this.checkedStatus==true" type="checkbox" id="sekStatus"
@@ -176,17 +176,17 @@
             <tr>
               <th scope="row">CHF</th>
               <td>
-                <input [disabled]="messageCurrency.chfStatus==false" #chfBuy=ngModel required chfBuy autocomplete="off"
-                  maxlength="7" [value]="this.dataService.data?.values[7]['buy'].toFixed(2)" [(ngModel)]="messageCurrency.chfBuy"
-                  type="text" id="chfBuy" name="chfBuy" class="form-control input-sm" />
+                <input step="0.0001" min="1" max="7" [disabled]="messageCurrency.chfStatus==false" #chfBuy=ngModel required chfBuy autocomplete="off"
+                   [value]="this.dataService.data?.values[7]['buy'].toFixed(2)" [(ngModel)]="messageCurrency.chfBuy"
+                  type="number" id="chfBuy" name="chfBuy" class="form-control input-sm" />
               </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input [disabled]="messageCurrency.chfStatus==false" #chfSell=ngModel required chfSell autocomplete="off"
-                  maxlength="7" [value]="this.dataService.data?.values[7]['sell'].toFixed(2)" [(ngModel)]="messageCurrency.chfSell"
-                  type="text" id="chfSell" name="chfSell" class="form-control input-sm" />
+                <input step="0.0001" min="1" max="7" [disabled]="messageCurrency.chfStatus==false" #chfSell=ngModel required chfSell autocomplete="off"
+                  [value]="this.dataService.data?.values[7]['sell'].toFixed(2)" [(ngModel)]="messageCurrency.chfSell"
+                  type="number" id="chfSell" name="chfSell" class="form-control input-sm" />
               </td>
               <td>
                 <input [(ngModel)]="messageCurrency.chfStatus" [checked]="this.checkedStatus==true" type="checkbox" id="chfStatus"
@@ -196,17 +196,17 @@
             <tr>
               <th scope="row">GBP</th>
               <td>
-                <input [disabled]="messageCurrency.gbpStatus==false" #gbpBuy=ngModel required gbpBuy autocomplete="off"
-                  maxlength="7" [value]="this.dataService.data?.values[8]['buy'].toFixed(2)" [(ngModel)]="messageCurrency.gbpBuy"
-                  type="text" id="gbpBuy" name="gbpBuy" class="form-control input-sm" />
+                <input step="0.0001" min="1" max="7" [disabled]="messageCurrency.gbpStatus==false" #gbpBuy=ngModel required gbpBuy autocomplete="off"
+               [value]="this.dataService.data?.values[8]['buy'].toFixed(2)" [(ngModel)]="messageCurrency.gbpBuy"
+                  type="number" id="gbpBuy" name="gbpBuy" class="form-control input-sm" />
               </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input [disabled]="messageCurrency.gbpStatus==false" #gbpSell=ngModel required gbpSell autocomplete="off"
-                  maxlength="7" [value]="this.dataService.data?.values[8]['sell'].toFixed(2)" [(ngModel)]="messageCurrency.gbpSell"
-                  type="text" id="gbpSell" name="gbpSell" class="form-control input-sm" />
+                <input step="0.0001" min="1" max="7" [disabled]="messageCurrency.gbpStatus==false" #gbpSell=ngModel required gbpSell autocomplete="off"
+                  [value]="this.dataService.data?.values[8]['sell'].toFixed(2)" [(ngModel)]="messageCurrency.gbpSell"
+                  type="number" id="gbpSell" name="gbpSell" class="form-control input-sm" />
               </td>
               <td>
                 <input [(ngModel)]="messageCurrency.gbpStatus" [checked]="this.checkedStatus==true" type="checkbox" id="gbpStatus"
@@ -217,17 +217,17 @@
             <tr>
               <th scope="row">USD</th>
               <td>
-                <input [disabled]="messageCurrency.usdStatus==false" #usdBuy=ngModel required usdBuy autocomplete="off"
-                  maxlength="7" [value]="this.dataService.data?.values[9]['buy'].toFixed(2)" [(ngModel)]="messageCurrency.usdBuy"
-                  type="text" id="usdBuy" name="usdBuy" class="form-control input-sm" />
+                <input step="0.0001" min="1" max="7" [disabled]="messageCurrency.usdStatus==false" #usdBuy=ngModel required usdBuy autocomplete="off"
+                  [value]="this.dataService.data?.values[9]['buy'].toFixed(2)" [(ngModel)]="messageCurrency.usdBuy"
+                  type="number" id="usdBuy" name="usdBuy" class="form-control input-sm" />
               </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input [disabled]="messageCurrency.usdStatus==false" #usdSell=ngModel required usdSell autocomplete="off"
-                  maxlength="7" [value]="this.dataService.data?.values[9]['sell'].toFixed(2)" [(ngModel)]="messageCurrency.usdSell"
-                  type="text" id="usdSell" name="usdSell" class="form-control input-sm" />
+                <input step="0.0001" min="1" max="7" [disabled]="messageCurrency.usdStatus==false" #usdSell=ngModel required usdSell autocomplete="off"
+                [value]="this.dataService.data?.values[9]['sell'].toFixed(2)" [(ngModel)]="messageCurrency.usdSell"
+                  type="number" id="usdSell" name="usdSell" class="form-control input-sm" />
               </td>
               <td>
                 <input [(ngModel)]="messageCurrency.usdStatus" [checked]="this.checkedStatus==true" type="checkbox" id="usdStatus"

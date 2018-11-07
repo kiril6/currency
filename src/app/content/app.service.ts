@@ -1,12 +1,8 @@
 
 import {throwError as observableThrowError,  Observable } from 'rxjs';
-
 import {map, catchError} from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import { Resolve } from '@angular/router';
-
-
 
 export interface IMessage {
   name?: string;
