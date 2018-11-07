@@ -9,7 +9,7 @@ import { Router, NavigationStart } from '@angular/router';
 export class ContentComponent {
   public success: boolean;
   public modalElement;
-  public editLink: boolean = false;
+  public editLink = false;
 
   message: IMessage = {};
 
@@ -36,9 +36,9 @@ export class ContentComponent {
       this.success = false;
       // alert('The form was not sent!\n Please refresh and try again.');
       this.modalElement = document.getElementById('myModal');
-      this.modalElement.className += " showB infoPopUp";
+      this.modalElement.className += ' showB infoPopUp';
       // console.log('AppComponent Error', error);
-    })
+    });
   }
 
   ngOnInit() {

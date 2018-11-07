@@ -20,13 +20,13 @@ export class AppComponent implements OnInit {
 
   // public modalElement;
   public amount: number;
-  public currencyFrom: string = '';
-  public currencyTo: string = '';
+  public currencyFrom = '';
+  public currencyTo = '';
   public outputCalculation;
   private fromBuyValue;
   private toSellValue;
-  private fromBuyValueForMKD;
-  private toSellValueForMKD;
+  // private fromBuyValueForMKD;
+  // private toSellValueForMKD;
   private formula = 0;
   private calcMKD = 0;
 
@@ -66,11 +66,11 @@ export class AppComponent implements OnInit {
   // }
 
   closeModalX() {
-    document.getElementById("myModal").classList.remove("showB");
+    document.getElementById('myModal').classList.remove('showB');
   }
 
   closeModal() {
-    document.getElementById("myModal").classList.remove("showB");
+    document.getElementById('myModal').classList.remove('showB');
     // this.turnOnSubscribtion();
   }
 
@@ -90,19 +90,17 @@ export class AppComponent implements OnInit {
     // if(this.data.values['CAD'].buy.toFixed(2)) {
     //   console.log('here' + this.data.values['CAD'].buy.toFixed(2));
     // }
-    // this.outputCalculation=this.currencyFrom + ' ' + amount; 
-
+    // this.outputCalculation=this.currencyFrom + ' ' + amount;
     // console.log(this.currencyFrom);
     // console.log(this.data.values[0].buy);
 
     for (let i = 0; i <= 9; i++) {
 
-      if (this.dataService.data.values[i].currency == this.currencyFrom) {
+      if (this.dataService.data.values[i].currency === this.currencyFrom) {
         this.fromBuyValue = this.dataService.data.values[i].buy;
-      }
-      else if (this.currencyFrom === 'MKD') {
+      } else if (this.currencyFrom === 'MKD') {
 
-        if (this.dataService.data.values[i].currency == this.currencyTo) {
+        if (this.dataService.data.values[i].currency === this.currencyTo) {
           this.toSellValue = this.dataService.data.values[i].sell;
         }
 
@@ -110,14 +108,14 @@ export class AppComponent implements OnInit {
         this.outputCalculation = this.amount + ' ' + this.currencyFrom + ' = ' + this.calcMKD.toFixed(2) + ' ' + this.currencyTo;
       }
 
-      //druga operacija
+      // other operation
 
-      if (this.dataService.data.values[i].currency == this.currencyTo) {
+      if (this.dataService.data.values[i].currency === this.currencyTo) {
         this.toSellValue = this.dataService.data.values[i].sell;
 
       } else if (this.currencyTo === 'MKD') {
 
-        if (this.dataService.data.values[i].currency == this.currencyFrom) {
+        if (this.dataService.data.values[i].currency === this.currencyFrom) {
           this.fromBuyValue = this.dataService.data.values[i].buy;
         }
 
@@ -126,7 +124,7 @@ export class AppComponent implements OnInit {
 
       }
 
-      if ((this.currencyFrom != 'MKD') && (this.currencyTo != 'MKD')) {
+      if ((this.currencyFrom !== 'MKD') && (this.currencyTo !== 'MKD')) {
         this.formula = this.amount * this.fromBuyValue / this.toSellValue;
         this.outputCalculation = this.amount + ' ' + this.currencyFrom + ' = ' + this.formula.toFixed(2) + ' ' + this.currencyTo;
       }
@@ -197,7 +195,7 @@ export class AppComponent implements OnInit {
     //  var obj;
     //      this.getJSON().subscribe(data => obj=data, error => console.log(error));
 
-    // }   
+    // }
 
     //   public getJSON(): Observable<any> {
     //      return this.http.get("assets/currency.json")
@@ -255,7 +253,7 @@ export class AppComponent implements OnInit {
 //         }
 //     )
 //     // .catch(this.handleError);
-// } 
+// }
 // }
 
 //  this.http.get('assets/currency.json')

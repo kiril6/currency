@@ -13,16 +13,16 @@ export class UpdateComponent implements OnInit {
   public success: boolean;
   public modalElement;
   public newDate: string;
-  //update currency
+  // update currency
   messageCurrency: ICurrencies = {};
 
-  public passwordInput: string = '';
-  public updateCurrency: boolean = false;
-  public checkedStatus: boolean = true;
+  public passwordInput = '';
+  public updateCurrency = false;
+  public checkedStatus = true;
 
   constructor(private appService: AppService, private router: Router, private http: Http, public dataService: DataService) { }
 
-  //update currency
+  // update currency
   sendCurrency(messageCurrency: ICurrencies) {
     this.appService.sendCurrency(messageCurrency).subscribe(res => {
       this.success = true;
@@ -30,14 +30,14 @@ export class UpdateComponent implements OnInit {
       // console.log('AppComponent Success', res);
       window.alert('Uspesno Azurirano!');
       // this.router.navigate(['/']);
-      location.href = "http://intercoop.delovski.net";
+      location.href = 'http://intercoop.delovski.net';
     }, error => {
       this.success = false;
       // alert('The form was not sent!\n Please refresh and try again.');
       this.modalElement = document.getElementById('myModal');
-      this.modalElement.className += " showB infoPopUp";
+      this.modalElement.className += ' showB infoPopUp';
       // console.log('AppComponent Error', error);
-    })
+    });
   }
 
   passwordInputValue(value) {
@@ -45,7 +45,7 @@ export class UpdateComponent implements OnInit {
   }
 
   isPasswordTrue() {
-    if (this.passwordInput == 'ang2805' || this.passwordInput == 'aveo100') {
+    if (this.passwordInput === 'ang2805' || this.passwordInput === 'aveo100') {
       this.updateCurrency = true;
     } else {
       this.updateCurrency = false;
@@ -53,11 +53,11 @@ export class UpdateComponent implements OnInit {
   }
 
   ngOnInit() {
-    var dateObj = new Date();
-    var month = dateObj.getUTCMonth() + 1;
-    var day = dateObj.getUTCDay();
-    var dayName = dateObj.toString().split(' ')[0];
-    var year = dateObj.getUTCFullYear();
+    const dateObj = new Date();
+    const month = dateObj.getUTCMonth() + 1;
+    const day = dateObj.getUTCDay();
+    const dayName = dateObj.toString().split(' ')[0];
+    const year = dateObj.getUTCFullYear();
     this.newDate = this.formatDateToString(dateObj);
   }
 
@@ -84,16 +84,16 @@ export class UpdateComponent implements OnInit {
       this.messageCurrency.usdBuy = this.dataService.data.values[9].buy.toFixed(4);
       this.messageCurrency.usdSell = this.dataService.data.values[9].sell.toFixed(4);
 
-      this.messageCurrency.eurStatus = this.dataService.data.values[0].checked
-      this.messageCurrency.audStatus = this.dataService.data.values[1].checked
-      this.messageCurrency.cadStatus = this.dataService.data.values[2].checked
-      this.messageCurrency.dkkStatus = this.dataService.data.values[3].checked
-      this.messageCurrency.jpyStatus = this.dataService.data.values[4].checked
-      this.messageCurrency.nokStatus = this.dataService.data.values[5].checked
-      this.messageCurrency.sekStatus = this.dataService.data.values[6].checked
-      this.messageCurrency.chfStatus = this.dataService.data.values[7].checked
-      this.messageCurrency.gbpStatus = this.dataService.data.values[8].checked
-      this.messageCurrency.usdStatus = this.dataService.data.values[9].checked
+      this.messageCurrency.eurStatus = this.dataService.data.values[0].checked;
+      this.messageCurrency.audStatus = this.dataService.data.values[1].checked;
+      this.messageCurrency.cadStatus = this.dataService.data.values[2].checked;
+      this.messageCurrency.dkkStatus = this.dataService.data.values[3].checked;
+      this.messageCurrency.jpyStatus = this.dataService.data.values[4].checked;
+      this.messageCurrency.nokStatus = this.dataService.data.values[5].checked;
+      this.messageCurrency.sekStatus = this.dataService.data.values[6].checked;
+      this.messageCurrency.chfStatus = this.dataService.data.values[7].checked;
+      this.messageCurrency.gbpStatus = this.dataService.data.values[8].checked;
+      this.messageCurrency.usdStatus = this.dataService.data.values[9].checked;
 
     }, 3300);
   }
@@ -122,26 +122,26 @@ export class UpdateComponent implements OnInit {
   }
 
   checkAll() {
-    this.checkedStatus = this.checkedStatus != true;
+    this.checkedStatus = this.checkedStatus !== true;
 
-    this.messageCurrency.eurStatus = this.checkedStatus
-    this.messageCurrency.audStatus = this.checkedStatus
-    this.messageCurrency.cadStatus = this.checkedStatus
-    this.messageCurrency.dkkStatus = this.checkedStatus
-    this.messageCurrency.jpyStatus = this.checkedStatus
-    this.messageCurrency.nokStatus = this.checkedStatus
-    this.messageCurrency.sekStatus = this.checkedStatus
-    this.messageCurrency.chfStatus = this.checkedStatus
-    this.messageCurrency.gbpStatus = this.checkedStatus
-    this.messageCurrency.usdStatus = this.checkedStatus
+    this.messageCurrency.eurStatus = this.checkedStatus;
+    this.messageCurrency.audStatus = this.checkedStatus;
+    this.messageCurrency.cadStatus = this.checkedStatus;
+    this.messageCurrency.dkkStatus = this.checkedStatus;
+    this.messageCurrency.jpyStatus = this.checkedStatus;
+    this.messageCurrency.nokStatus = this.checkedStatus;
+    this.messageCurrency.sekStatus = this.checkedStatus;
+    this.messageCurrency.chfStatus = this.checkedStatus;
+    this.messageCurrency.gbpStatus = this.checkedStatus;
+    this.messageCurrency.usdStatus = this.checkedStatus;
 
   }
 
   private formatDateToString(date) {
-    var dd = (date.getDate() < 10 ? '0' : '') + date.getDate();
-    var MM = ((date.getMonth() + 1) < 10 ? '0' : '') + (date.getMonth() + 1);
-    var yyyy = date.getFullYear();
-    return (dd + "." + MM + "." + yyyy);
+    const dd = (date.getDate() < 10 ? '0' : '') + date.getDate();
+    const MM = ((date.getMonth() + 1) < 10 ? '0' : '') + (date.getMonth() + 1);
+    const yyyy = date.getFullYear();
+    return (dd + '.' + MM + '.' + yyyy);
   }
 
 }

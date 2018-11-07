@@ -93,7 +93,7 @@ export class DataService {
   }
 
   createRoom(params: CreateRoomParams): Observable<RoomData> {
-    return this.http.post("/api/backend_room_create.php", params, this.requestOptions()).pipe(map((response:Response) => {
+    return this.http.post("/api/backend_room_create.php", params, this.requestOptions()).pipe(map((response: Response) => {
       return {
         name: params.name,
         capacity: params.capacity,
@@ -104,7 +104,7 @@ export class DataService {
   }
 
   updateRoom(params: UpdateRoomParams): Observable<RoomData> {
-    return this.http.post("/api/backend_room_update.php", params, this.requestOptions()).pipe(map((response:Response) => {
+    return this.http.post('/api/backend_room_update.php', params, this.requestOptions()).pipe(map((response: Response) => {
       return {
         id: params.id,
         name: params.name,
@@ -115,7 +115,8 @@ export class DataService {
   }
 
   deleteRoom(id: string): Observable<any> {
-    return this.http.post("/api/backend_room_delete.php", {id: id}, this.requestOptions()).pipe(map((response:Response) => response.json()));
+    return this.http.post('/api/backend_room_delete.php',
+     {id: id}, this.requestOptions()).pipe(map((response: Response) => response.json()));
   }
 
 }
