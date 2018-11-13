@@ -25,7 +25,7 @@ export class DataService {
             map(response => response.json()), catchError(this.errorHandler), )
             .subscribe(data => this.data = data,
             err => console.log(err + ' currency file not found'),
-            () => console.log('')));
+            () => console.log('subscribing..')));
     }
     errorHandler(error: Response) {
         console.error(error);
