@@ -31,7 +31,8 @@
             <tr>
               <th scope="row">EUR</th>
               <td>
-                <input step="0.0001" min="1" max="7" [disabled]="messageCurrency.eurStatus==false" #eurBuy=ngModel required eurBuy autocomplete="off"
+                <input step="0.0001" min="1" 
+                max="7" [disabled]="messageCurrency.eurStatus==false" #eurBuy=ngModel required eurBuy autocomplete="off"
                    [value]="this.dataService.data?.values[0]['buy'].toFixed(2)" [(ngModel)]="messageCurrency.eurBuy"
                   type="number" id="eurBuy" name="eurBuy" class="form-control input-sm" />
               </td>
@@ -232,6 +233,27 @@
               <td>
                 <input [(ngModel)]="messageCurrency.usdStatus" [checked]="this.checkedStatus==true" type="checkbox" id="usdStatus"
                   name="usdStatus" class="form-control input-sm" [value]="this.dataService.data?.values[9]['checked']" />
+              </td>
+            </tr>
+
+            <tr>
+              <th scope="row">BGN</th>
+              <td>
+                <input step="0.0001" min="1" max="7" [disabled]="messageCurrency.usdStatus==false" #bngBuy=ngModel required bgnBuy autocomplete="off"
+                  [value]="this.dataService.data?.values[10]['buy'].toFixed(2)" [(ngModel)]="messageCurrency.bgnBuy"
+                  type="number" id="bgnBuy" name="bgnBuy" class="form-control input-sm" />
+              </td>
+              <td class="noPrint">
+                <div class="">&nbsp;</div>
+              </td>
+              <td>
+                <input step="0.0001" min="1" max="7" [disabled]="messageCurrency.usdStatus==false" #bgnSell=ngModel required bgnSell autocomplete="off"
+                [value]="this.dataService.data?.values[10]['sell'].toFixed(2)" [(ngModel)]="messageCurrency.bgnSell"
+                  type="number" id="bgnSell" name="bgnSell" class="form-control input-sm" />
+              </td>
+              <td>
+                <input [(ngModel)]="messageCurrency.bgnStatus" [checked]="this.checkedStatus==true" type="checkbox" id="bgnStatus"
+                  name="bgnStatus" class="form-control input-sm" [value]="this.dataService.data?.values[10]['checked']" />
               </td>
             </tr>
 
