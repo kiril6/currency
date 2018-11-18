@@ -156,7 +156,7 @@
                   'flag' => "flag--china",
                   'checked' => $data->cnyStatus
                   );
-            $HKD=array(
+            $hkd=array(
                   'currency' => 'HKD',
                   'buy' => (double)$data->hkdBuy,
                   'sell' => (double)$data->hkdSell,
