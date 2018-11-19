@@ -5,7 +5,8 @@
       <h3 class="title padding">
         <b>{{"currency_title" | translate}}</b>
         <div class="pull-right printer">
-          <div class="btn btn-primary"><i (click)="this.dataService.reloadPage('local')" class="fa fa-refresh" aria-hidden="true"></i></div>
+          <div class="btn btn-primary"><i (click)="this.dataService.reloadPage('local')" class="fa fa-refresh"
+              aria-hidden="true"></i></div>
         </div>
       </h3>
       <h5 class="title animated flash">
@@ -22,7 +23,9 @@
               <th>{{"buy" | translate}}</th>
               <th class="noPrint"></th>
               <th>{{"sell" | translate}}</th>
-              <th (click)="this.checkAll()"><div class="btn btn-success">{{"state" | translate}}</div></th>
+              <th (click)="this.checkAll()">
+                <div class="btn btn-success">{{"state" | translate}}</div>
+              </th>
             </tr>
           </thead>
 
@@ -31,585 +34,627 @@
             <tr>
               <th scope="row">EUR</th>
               <td>
-                <input autofocus (keydown.Enter)="onKey($event)" step="0.0001"  [disabled]="messageCurrency.eurStatus==false" #eurBuy=ngModel
-                  required eurBuy autocomplete="off" [value]="this.dataService.data?.values[0]['buy'].toFixed(2)"
+                <input autofocus (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.eurStatus==false"
+                  #eurBuy=ngModel required eurBuy autocomplete="off" [value]="this.dataService.data?.values[0]['buy'].toFixed(2)"
                   [(ngModel)]="messageCurrency.eurBuy" type="number" id="eurBuy" name="eurBuy" class="form-control input-sm" />
               </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.eurStatus==false" #eurSell=ngModel
-                  required eurSell autocomplete="off" [value]="this.dataService.data?.values[0]['sell'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.eurStatus==false"
+                  #eurSell=ngModel required eurSell autocomplete="off" [value]="this.dataService.data?.values[0]['sell'].toFixed(2)"
                   [(ngModel)]="messageCurrency.eurSell" type="number" id="eurSell" name="eurSell" class="form-control input-sm" />
               </td>
               <td>
-                <input [(ngModel)]="messageCurrency.eurStatus" [checked]="this.checkedStatus==true" type="checkbox" id="eurStatus"
-                  name="eurStatus" class="form-control input-sm" [value]="this.dataService.data?.values[0]['checked']" />
+                <input (keydown.Enter)="onKey($event)" [(ngModel)]="messageCurrency.eurStatus" [checked]="this.checkedStatus"
+                  type="checkbox" id="eurStatus" name="eurStatus" class="form-control input-sm" [value]="this.dataService.data?.values[0]['checked']" />
               </td>
             </tr>
 
             <tr>
               <th scope="row">AUD</th>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.audStatus==false" #audBuy=ngModel
-                  required audBuy autocomplete="off" [value]="this.dataService.data?.values[1]['buy'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.audStatus==false"
+                  #audBuy=ngModel required audBuy autocomplete="off" [value]="this.dataService.data?.values[1]['buy'].toFixed(2)"
                   [(ngModel)]="messageCurrency.audBuy" type="number" id="audBuy" name="audBuy" class="form-control input-sm" />
               </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.audStatus==false" #audSell=ngModel
-                  required audSell autocomplete="off" [value]="this.dataService.data?.values[1]['sell'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.audStatus==false"
+                  #audSell=ngModel required audSell autocomplete="off" [value]="this.dataService.data?.values[1]['sell'].toFixed(2)"
                   [(ngModel)]="messageCurrency.audSell" type="number" id="audSell" name="audSell" class="form-control input-sm" />
               </td>
               <td>
-                <input [(ngModel)]="messageCurrency.audStatus" [checked]="this.checkedStatus==true" type="checkbox" id="audStatus"
-                  name="audStatus" class="form-control input-sm" [value]="this.dataService.data?.values[1]['checked']" />
+                <input (keydown.Enter)="onKey($event)" [(ngModel)]="messageCurrency.audStatus" [checked]="this.checkedStatus"
+                  type="checkbox" id="audStatus" name="audStatus" class="form-control input-sm" [value]="this.dataService.data?.values[1]['checked']" />
               </td>
             </tr>
 
             <tr>
               <th scope="row">CAD</th>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.cadStatus==false" #cadBuy=ngModel
-                  required cadBuy autocomplete="off" [value]="this.dataService.data?.values[2]['buy'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.cadStatus==false"
+                  #cadBuy=ngModel required cadBuy autocomplete="off" [value]="this.dataService.data?.values[2]['buy'].toFixed(2)"
                   [(ngModel)]="messageCurrency.cadBuy" type="number" id="cadBuy" name="cadBuy" class="form-control input-sm" />
               </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.cadStatus==false" #cadSell=ngModel
-                  required cadSell autocomplete="off" [value]="this.dataService.data?.values[2]['sell'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.cadStatus==false"
+                  #cadSell=ngModel required cadSell autocomplete="off" [value]="this.dataService.data?.values[2]['sell'].toFixed(2)"
                   [(ngModel)]="messageCurrency.cadSell" type="number" id="cadSell" name="cadSell" class="form-control input-sm" />
               </td>
               <td>
-                <input [(ngModel)]="messageCurrency.cadStatus" [checked]="this.checkedStatus==true" type="checkbox" id="cadStatus"
-                  name="cadStatus" class="form-control input-sm" [value]="this.dataService.data?.values[2]['checked']" />
+                <input (keydown.Enter)="onKey($event)" [(ngModel)]="messageCurrency.cadStatus" [checked]="this.checkedStatus"
+                  type="checkbox" id="cadStatus" name="cadStatus" class="form-control input-sm" [value]="this.dataService.data?.values[2]['checked']" />
               </td>
             </tr>
 
             <tr>
               <th scope="row">DKK</th>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.dkkStatus==false" #dkkBuy=ngModel
-                  required dkkBuy autocomplete="off" [value]="this.dataService.data?.values[3]['buy'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.dkkStatus==false"
+                  #dkkBuy=ngModel required dkkBuy autocomplete="off" [value]="this.dataService.data?.values[3]['buy'].toFixed(2)"
                   [(ngModel)]="messageCurrency.dkkBuy" type="number" id="dkkBuy" name="dkkBuy" class="form-control input-sm" />
               </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.dkkStatus==false" #dkkSell=ngModel
-                  required dkkSell autocomplete="off" [value]="this.dataService.data?.values[3]['sell'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.dkkStatus==false"
+                  #dkkSell=ngModel required dkkSell autocomplete="off" [value]="this.dataService.data?.values[3]['sell'].toFixed(2)"
                   [(ngModel)]="messageCurrency.dkkSell" type="number" id="dkkSell" name="dkkSell" class="form-control input-sm" />
               </td>
               <td>
-                <input [(ngModel)]="messageCurrency.dkkStatus" [checked]="this.checkedStatus==true" type="checkbox" id="dkkStatus"
-                  name="dkkStatus" class="form-control input-sm" [value]="this.dataService.data?.values[3]['checked']" />
+                <input (keydown.Enter)="onKey($event)" [(ngModel)]="messageCurrency.dkkStatus" [checked]="this.checkedStatus"
+                  type="checkbox" id="dkkStatus" name="dkkStatus" class="form-control input-sm" [value]="this.dataService.data?.values[3]['checked']" />
               </td>
             </tr>
 
             <tr>
               <th scope="row">JPY</th>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.jpyStatus==false" #jpyBuy=ngModel
-                  required jpyBuy autocomplete="off" [value]="this.dataService.data?.values[4]['buy'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.jpyStatus==false"
+                  #jpyBuy=ngModel required jpyBuy autocomplete="off" [value]="this.dataService.data?.values[4]['buy'].toFixed(2)"
                   [(ngModel)]="messageCurrency.jpyBuy" type="number" id="jpyBuy" name="jpyBuy" class="form-control input-sm" />
               </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.jpyStatus==false" #jpySell=ngModel
-                  required jpySell autocomplete="off" [value]="this.dataService.data?.values[4]['sell'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.jpyStatus==false"
+                  #jpySell=ngModel required jpySell autocomplete="off" [value]="this.dataService.data?.values[4]['sell'].toFixed(2)"
                   [(ngModel)]="messageCurrency.jpySell" type="number" id="jpySell" name="jpySell" class="form-control input-sm" />
               </td>
               <td>
-                <input [(ngModel)]="messageCurrency.jpyStatus" [checked]="this.checkedStatus==true" type="checkbox" id="jpyStatus"
-                  name="jpyStatus" class="form-control input-sm" [value]="this.dataService.data?.values[4]['checked']" />
+                <input (keydown.Enter)="onKey($event)" [(ngModel)]="messageCurrency.jpyStatus" [checked]="this.checkedStatus"
+                  type="checkbox" id="jpyStatus" name="jpyStatus" class="form-control input-sm" [value]="this.dataService.data?.values[4]['checked']" />
               </td>
             </tr>
 
             <tr>
               <th scope="row">NOK</th>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.nokStatus==false" #nokBuy=ngModel
-                  required nokBuy autocomplete="off" [value]="this.dataService.data?.values[5]['buy'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.nokStatus==false"
+                  #nokBuy=ngModel required nokBuy autocomplete="off" [value]="this.dataService.data?.values[5]['buy'].toFixed(2)"
                   [(ngModel)]="messageCurrency.nokBuy" type="number" id="nokBuy" name="nokBuy" class="form-control input-sm" />
               </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.nokStatus==false" #nokSell=ngModel
-                  required nokSell autocomplete="off" [value]="this.dataService.data?.values[5]['sell'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.nokStatus==false"
+                  #nokSell=ngModel required nokSell autocomplete="off" [value]="this.dataService.data?.values[5]['sell'].toFixed(2)"
                   [(ngModel)]="messageCurrency.nokSell" type="number" id="nokSell" name="nokSell" class="form-control input-sm" />
               </td>
               <td>
-                <input [(ngModel)]="messageCurrency.nokStatus" [checked]="this.checkedStatus==true" type="checkbox" id="nokStatus"
-                  name="nokStatus" class="form-control input-sm" [value]="this.dataService.data?.values[5]['checked']" />
+                <input (keydown.Enter)="onKey($event)" [(ngModel)]="messageCurrency.nokStatus" [checked]="this.checkedStatus"
+                  type="checkbox" id="nokStatus" name="nokStatus" class="form-control input-sm" [value]="this.dataService.data?.values[5]['checked']" />
               </td>
             </tr>
             <tr>
               <th scope="row">SEK</th>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.sekStatus==false" #sekBuy=ngModel
-                  required sekBuy autocomplete="off" [value]="this.dataService.data?.values[6]['buy'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.sekStatus==false"
+                  #sekBuy=ngModel required sekBuy autocomplete="off" [value]="this.dataService.data?.values[6]['buy'].toFixed(2)"
                   [(ngModel)]="messageCurrency.sekBuy" type="number" id="sekBuy" name="sekBuy" class="form-control input-sm" />
               </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.sekStatus==false" #sekSell=ngModel
-                  required sekSell autocomplete="off" [value]="this.dataService.data?.values[6]['sell'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.sekStatus==false"
+                  #sekSell=ngModel required sekSell autocomplete="off" [value]="this.dataService.data?.values[6]['sell'].toFixed(2)"
                   [(ngModel)]="messageCurrency.sekSell" type="number" id="sekkSell" name="sekSell" class="form-control input-sm" />
               </td>
               <td>
-                <input [(ngModel)]="messageCurrency.sekStatus" [checked]="this.checkedStatus==true" type="checkbox" id="sekStatus"
-                  name="sekStatus" class="form-control input-sm" [value]="this.dataService.data?.values[6]['checked']" />
+                <input (keydown.Enter)="onKey($event)" [(ngModel)]="messageCurrency.sekStatus" [checked]="this.checkedStatus"
+                  type="checkbox" id="sekStatus" name="sekStatus" class="form-control input-sm" [value]="this.dataService.data?.values[6]['checked']" />
               </td>
             </tr>
             <tr>
               <th scope="row">CHF</th>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.chfStatus==false" #chfBuy=ngModel
-                  required chfBuy autocomplete="off" [value]="this.dataService.data?.values[7]['buy'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.chfStatus==false"
+                  #chfBuy=ngModel required chfBuy autocomplete="off" [value]="this.dataService.data?.values[7]['buy'].toFixed(2)"
                   [(ngModel)]="messageCurrency.chfBuy" type="number" id="chfBuy" name="chfBuy" class="form-control input-sm" />
               </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.chfStatus==false" #chfSell=ngModel
-                  required chfSell autocomplete="off" [value]="this.dataService.data?.values[7]['sell'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.chfStatus==false"
+                  #chfSell=ngModel required chfSell autocomplete="off" [value]="this.dataService.data?.values[7]['sell'].toFixed(2)"
                   [(ngModel)]="messageCurrency.chfSell" type="number" id="chfSell" name="chfSell" class="form-control input-sm" />
               </td>
               <td>
-                <input [(ngModel)]="messageCurrency.chfStatus" [checked]="this.checkedStatus==true" type="checkbox" id="chfStatus"
-                  name="chfStatus" class="form-control input-sm" [value]="this.dataService.data?.values[7]['checked']" />
+                <input (keydown.Enter)="onKey($event)" [(ngModel)]="messageCurrency.chfStatus" [checked]="this.checkedStatus"
+                  type="checkbox" id="chfStatus" name="chfStatus" class="form-control input-sm" [value]="this.dataService.data?.values[7]['checked']" />
               </td>
             </tr>
             <tr>
               <th scope="row">GBP</th>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.gbpStatus==false" #gbpBuy=ngModel
-                  required gbpBuy autocomplete="off" [value]="this.dataService.data?.values[8]['buy'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.gbpStatus==false"
+                  #gbpBuy=ngModel required gbpBuy autocomplete="off" [value]="this.dataService.data?.values[8]['buy'].toFixed(2)"
                   [(ngModel)]="messageCurrency.gbpBuy" type="number" id="gbpBuy" name="gbpBuy" class="form-control input-sm" />
               </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.gbpStatus==false" #gbpSell=ngModel
-                  required gbpSell autocomplete="off" [value]="this.dataService.data?.values[8]['sell'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.gbpStatus==false"
+                  #gbpSell=ngModel required gbpSell autocomplete="off" [value]="this.dataService.data?.values[8]['sell'].toFixed(2)"
                   [(ngModel)]="messageCurrency.gbpSell" type="number" id="gbpSell" name="gbpSell" class="form-control input-sm" />
               </td>
               <td>
-                <input [(ngModel)]="messageCurrency.gbpStatus" [checked]="this.checkedStatus==true" type="checkbox" id="gbpStatus"
-                  name="gbpStatus" class="form-control input-sm" [value]="this.dataService.data?.values[8]['checked']" />
+                <input (keydown.Enter)="onKey($event)" [(ngModel)]="messageCurrency.gbpStatus" [checked]="this.checkedStatus"
+                  type="checkbox" id="gbpStatus" name="gbpStatus" class="form-control input-sm" [value]="this.dataService.data?.values[8]['checked']" />
               </td>
             </tr>
 
             <tr>
               <th scope="row">USD</th>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.usdStatus==false" #usdBuy=ngModel
-                  required usdBuy autocomplete="off" [value]="this.dataService.data?.values[9]['buy'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.usdStatus==false"
+                  #usdBuy=ngModel required usdBuy autocomplete="off" [value]="this.dataService.data?.values[9]['buy'].toFixed(2)"
                   [(ngModel)]="messageCurrency.usdBuy" type="number" id="usdBuy" name="usdBuy" class="form-control input-sm" />
               </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.usdStatus==false" #usdSell=ngModel
-                  required usdSell autocomplete="off" [value]="this.dataService.data?.values[9]['sell'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.usdStatus==false"
+                  #usdSell=ngModel required usdSell autocomplete="off" [value]="this.dataService.data?.values[9]['sell'].toFixed(2)"
                   [(ngModel)]="messageCurrency.usdSell" type="number" id="usdSell" name="usdSell" class="form-control input-sm" />
               </td>
               <td>
-                <input [(ngModel)]="messageCurrency.usdStatus" [checked]="this.checkedStatus==true" type="checkbox" id="usdStatus"
-                  name="usdStatus" class="form-control input-sm" [value]="this.dataService.data?.values[9]['checked']" />
+                <input (keydown.Enter)="onKey($event)" [(ngModel)]="messageCurrency.usdStatus" [checked]="this.checkedStatus"
+                  type="checkbox" id="usdStatus" name="usdStatus" class="form-control input-sm" [value]="this.dataService.data?.values[9]['checked']" />
               </td>
             </tr>
 
             <tr>
               <th scope="row">BGN</th>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.bgnStatus==false" #bgnBuy=ngModel
-                  required bgnBuy autocomplete="off" [value]="this.dataService.data?.values[10]['buy'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.bgnStatus==false"
+                  #bgnBuy=ngModel required bgnBuy autocomplete="off" [value]="this.dataService.data?.values[10]['buy'].toFixed(2)"
                   [(ngModel)]="messageCurrency.bgnBuy" type="number" id="bgnBuy" name="bgnBuy" class="form-control input-sm" />
               </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.bgnStatus==false" #bgnSell=ngModel
-                  required bgnSell autocomplete="off" [value]="this.dataService.data?.values[10]['sell'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.bgnStatus==false"
+                  #bgnSell=ngModel required bgnSell autocomplete="off" [value]="this.dataService.data?.values[10]['sell'].toFixed(2)"
                   [(ngModel)]="messageCurrency.bgnSell" type="number" id="bgnSell" name="bgnSell" class="form-control input-sm" />
               </td>
               <td>
-                <input [(ngModel)]="messageCurrency.bgnStatus" [checked]="this.checkedStatus==true" type="checkbox" id="bgnStatus"
-                  name="bgnStatus" class="form-control input-sm" [value]="this.dataService.data?.values[10]['checked']" />
+                <input (keydown.Enter)="onKey($event)" [(ngModel)]="messageCurrency.bgnStatus" [checked]="this.checkedStatus"
+                  type="checkbox" id="bgnStatus" name="bgnStatus" class="form-control input-sm" [value]="this.dataService.data?.values[10]['checked']" />
+              </td>
+            </tr>
+
+            <tr>
+              <th scope="row">RSD</th>
+              <td>
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.rsdStatus==false"
+                  #rsdBuy=ngModel required rsdBuy autocomplete="off" [value]="this.dataService.data?.values[11]['buy'].toFixed(2)"
+                  [(ngModel)]="messageCurrency.rsdBuy" type="number" id="rsdBuy" name="rsdBuy" class="form-control input-sm" />
+              </td>
+              <td class="noPrint">
+                <div class="">&nbsp;</div>
+              </td>
+              <td>
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.rsdStatus==false"
+                  #rsdSell=ngModel required rsdSell autocomplete="off" [value]="this.dataService.data?.values[11]['sell'].toFixed(2)"
+                  [(ngModel)]="messageCurrency.rsdSell" type="number" id="rsdSell" name="rsdSell" class="form-control input-sm" />
+              </td>
+              <td>
+                <input (keydown.Enter)="onKey($event)" [(ngModel)]="messageCurrency.rsdStatus" [checked]="this.checkedStatus"
+                  type="checkbox" id="rsdStatus" name="rsdStatus" class="form-control input-sm" [value]="this.dataService.data?.values[11]['checked']" />
+              </td>
+            </tr>
+
+            <tr>
+              <th scope="row">ALL</th>
+              <td>
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.allStatus==false"
+                  #bgnBuy=ngModel required allBuy autocomplete="off" [value]="this.dataService.data?.values[12]['buy'].toFixed(2)"
+                  [(ngModel)]="messageCurrency.allBuy" type="number" id="allBuy" name="allBuy" class="form-control input-sm" />
+              </td>
+              <td class="noPrint">
+                <div class="">&nbsp;</div>
+              </td>
+              <td>
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.allStatus==false"
+                  #allSell=ngModel required allSell autocomplete="off" [value]="this.dataService.data?.values[12]['sell'].toFixed(2)"
+                  [(ngModel)]="messageCurrency.allSell" type="number" id="allSell" name="allSell" class="form-control input-sm" />
+              </td>
+              <td>
+                <input (keydown.Enter)="onKey($event)" [(ngModel)]="messageCurrency.allStatus" [checked]="this.checkedStatus"
+                  type="checkbox" id="allStatus" name="allStatus" class="form-control input-sm" [value]="this.dataService.data?.values[12]['checked']" />
               </td>
             </tr>
 
             <tr>
               <th scope="row">CZK</th>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.czkStatus==false" #czkBuy=ngModel
-                  required czkBuy autocomplete="off" [value]="this.dataService.data?.values[11]['buy'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.czkStatus==false"
+                  #czkBuy=ngModel required czkBuy autocomplete="off" [value]="this.dataService.data?.values[13]['buy'].toFixed(2)"
                   [(ngModel)]="messageCurrency.czkBuy" type="number" id="czkBuy" name="czkBuy" class="form-control input-sm" />
               </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.czkStatus==false" #czkSell=ngModel
-                  required czkSell autocomplete="off" [value]="this.dataService.data?.values[11]['sell'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.czkStatus==false"
+                  #czkSell=ngModel required czkSell autocomplete="off" [value]="this.dataService.data?.values[13]['sell'].toFixed(2)"
                   [(ngModel)]="messageCurrency.czkSell" type="number" id="czkSell" name="czkSell" class="form-control input-sm" />
               </td>
               <td>
-                <input [(ngModel)]="messageCurrency.czkStatus" [checked]="this.checkedStatus==true" type="checkbox" id="czkStatus"
-                  name="czkStatus" class="form-control input-sm" [value]="this.dataService.data?.values[11]['checked']" />
+                <input (keydown.Enter)="onKey($event)" [(ngModel)]="messageCurrency.czkStatus" [checked]="this.checkedStatus"
+                  type="checkbox" id="czkStatus" name="czkStatus" class="form-control input-sm" [value]="this.dataService.data?.values[13]['checked']" />
               </td>
             </tr>
 
             <tr>
               <th scope="row">HUF</th>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.hufStatus==false" #hufBuy=ngModel
-                  required hufBuy autocomplete="off" [value]="this.dataService.data?.values[12]['buy'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.hufStatus==false"
+                  #hufBuy=ngModel required hufBuy autocomplete="off" [value]="this.dataService.data?.values[14]['buy'].toFixed(2)"
                   [(ngModel)]="messageCurrency.hufBuy" type="number" id="hufBuy" name="hufBuy" class="form-control input-sm" />
               </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.hufStatus==false" #hufSell=ngModel
-                  required hufSell autocomplete="off" [value]="this.dataService.data?.values[12]['sell'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.hufStatus==false"
+                  #hufSell=ngModel required hufSell autocomplete="off" [value]="this.dataService.data?.values[14]['sell'].toFixed(2)"
                   [(ngModel)]="messageCurrency.hufSell" type="number" id="hufSell" name="hufSell" class="form-control input-sm" />
               </td>
               <td>
-                <input [(ngModel)]="messageCurrency.hufStatus" [checked]="this.checkedStatus==true" type="checkbox" id="hufStatus"
-                  name="hufStatus" class="form-control input-sm" [value]="this.dataService.data?.values[12]['checked']" />
+                <input (keydown.Enter)="onKey($event)" [(ngModel)]="messageCurrency.hufStatus" [checked]="this.checkedStatus"
+                  type="checkbox" id="hufStatus" name="hufStatus" class="form-control input-sm" [value]="this.dataService.data?.values[14]['checked']" />
               </td>
             </tr>
 
             <tr>
               <th scope="row">PLN</th>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.plnStatus==false" #plnBuy=ngModel
-                  required plnBuy autocomplete="off" [value]="this.dataService.data?.values[13]['buy'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.plnStatus==false"
+                  #plnBuy=ngModel required plnBuy autocomplete="off" [value]="this.dataService.data?.values[15]['buy'].toFixed(2)"
                   [(ngModel)]="messageCurrency.plnBuy" type="number" id="plnBuy" name="plnBuy" class="form-control input-sm" />
               </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.plnStatus==false" #plnSell=ngModel
-                  required plnSell autocomplete="off" [value]="this.dataService.data?.values[13]['sell'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.plnStatus==false"
+                  #plnSell=ngModel required plnSell autocomplete="off" [value]="this.dataService.data?.values[15]['sell'].toFixed(2)"
                   [(ngModel)]="messageCurrency.plnSell" type="number" id="plnSell" name="plnSell" class="form-control input-sm" />
               </td>
               <td>
-                <input [(ngModel)]="messageCurrency.plnStatus" [checked]="this.checkedStatus==true" type="checkbox" id="plnStatus"
-                  name="plnStatus" class="form-control input-sm" [value]="this.dataService.data?.values[13]['checked']" />
+                <input (keydown.Enter)="onKey($event)" [(ngModel)]="messageCurrency.plnStatus" [checked]="this.checkedStatus"
+                  type="checkbox" id="plnStatus" name="plnStatus" class="form-control input-sm" [value]="this.dataService.data?.values[15]['checked']" />
               </td>
             </tr>
 
             <tr>
               <th scope="row">RON</th>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.ronStatus==false" #ronBuy=ngModel
-                  required ronBuy autocomplete="off" [value]="this.dataService.data?.values[14]['buy'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.ronStatus==false"
+                  #ronBuy=ngModel required ronBuy autocomplete="off" [value]="this.dataService.data?.values[16]['buy'].toFixed(2)"
                   [(ngModel)]="messageCurrency.ronBuy" type="number" id="ronBuy" name="ronBuy" class="form-control input-sm" />
               </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.ronStatus==false" #ronSell=ngModel
-                  required ronSell autocomplete="off" [value]="this.dataService.data?.values[14]['sell'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.ronStatus==false"
+                  #ronSell=ngModel required ronSell autocomplete="off" [value]="this.dataService.data?.values[16]['sell'].toFixed(2)"
                   [(ngModel)]="messageCurrency.ronSell" type="number" id="ronSell" name="ronSell" class="form-control input-sm" />
               </td>
               <td>
-                <input [(ngModel)]="messageCurrency.ronStatus" [checked]="this.checkedStatus==true" type="checkbox" id="ronStatus"
-                  name="ronStatus" class="form-control input-sm" [value]="this.dataService.data?.values[14]['checked']" />
+                <input (keydown.Enter)="onKey($event)" [(ngModel)]="messageCurrency.ronStatus" [checked]="this.checkedStatus"
+                  type="checkbox" id="ronStatus" name="ronStatus" class="form-control input-sm" [value]="this.dataService.data?.values[16]['checked']" />
               </td>
             </tr>
 
             <tr>
               <th scope="row">HRK</th>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.hrkStatus==false" #hrkBuy=ngModel
-                  required hrkBuy autocomplete="off" [value]="this.dataService.data?.values[15]['buy'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.hrkStatus==false"
+                  #hrkBuy=ngModel required hrkBuy autocomplete="off" [value]="this.dataService.data?.values[17]['buy'].toFixed(2)"
                   [(ngModel)]="messageCurrency.hrkBuy" type="number" id="hrkBuy" name="hrkBuy" class="form-control input-sm" />
               </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.hrkStatus==false" #hrkSell=ngModel
-                  required hrkSell autocomplete="off" [value]="this.dataService.data?.values[15]['sell'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.hrkStatus==false"
+                  #hrkSell=ngModel required hrkSell autocomplete="off" [value]="this.dataService.data?.values[17]['sell'].toFixed(2)"
                   [(ngModel)]="messageCurrency.hrkSell" type="number" id="hrkSell" name="hrkSell" class="form-control input-sm" />
               </td>
               <td>
-                <input [(ngModel)]="messageCurrency.hrkStatus" [checked]="this.checkedStatus==true" type="checkbox" id="hrkStatus"
-                  name="hrkStatus" class="form-control input-sm" [value]="this.dataService.data?.values[15]['checked']" />
+                <input (keydown.Enter)="onKey($event)" [(ngModel)]="messageCurrency.hrkStatus" [checked]="this.checkedStatus"
+                  type="checkbox" id="hrkStatus" name="hrkStatus" class="form-control input-sm" [value]="this.dataService.data?.values[17]['checked']" />
               </td>
             </tr>
 
             <tr>
               <th scope="row">TRY</th>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.tryStatus==false" #tryBuy=ngModel
-                  required tryBuy autocomplete="off" [value]="this.dataService.data?.values[16]['buy'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.tryStatus==false"
+                  #tryBuy=ngModel required tryBuy autocomplete="off" [value]="this.dataService.data?.values[18]['buy'].toFixed(2)"
                   [(ngModel)]="messageCurrency.tryBuy" type="number" id="tryBuy" name="tryBuy" class="form-control input-sm" />
               </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.tryStatus==false" #trySell=ngModel
-                  required trySell autocomplete="off" [value]="this.dataService.data?.values[16]['sell'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.tryStatus==false"
+                  #trySell=ngModel required trySell autocomplete="off" [value]="this.dataService.data?.values[18]['sell'].toFixed(2)"
                   [(ngModel)]="messageCurrency.trySell" type="number" id="trySell" name="trySell" class="form-control input-sm" />
               </td>
               <td>
-                <input [(ngModel)]="messageCurrency.tryStatus" [checked]="this.checkedStatus==true" type="checkbox" id="tryStatus"
-                  name="tryStatus" class="form-control input-sm" [value]="this.dataService.data?.values[16]['checked']" />
+                <input (keydown.Enter)="onKey($event)" [(ngModel)]="messageCurrency.tryStatus" [checked]="this.checkedStatus"
+                  type="checkbox" id="tryStatus" name="tryStatus" class="form-control input-sm" [value]="this.dataService.data?.values[18]['checked']" />
               </td>
             </tr>
 
             <tr>
               <th scope="row">RUB</th>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.rubStatus==false" #rubBuy=ngModel
-                  required rubBuy autocomplete="off" [value]="this.dataService.data?.values[17]['buy'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.rubStatus==false"
+                  #rubBuy=ngModel required rubBuy autocomplete="off" [value]="this.dataService.data?.values[19]['buy'].toFixed(2)"
                   [(ngModel)]="messageCurrency.rubBuy" type="number" id="rubBuy" name="rubBuy" class="form-control input-sm" />
               </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.rubStatus==false" #rubSell=ngModel
-                  required rubSell autocomplete="off" [value]="this.dataService.data?.values[17]['sell'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.rubStatus==false"
+                  #rubSell=ngModel required rubSell autocomplete="off" [value]="this.dataService.data?.values[19]['sell'].toFixed(2)"
                   [(ngModel)]="messageCurrency.rubSell" type="number" id="rubSell" name="rubSell" class="form-control input-sm" />
               </td>
               <td>
-                <input [(ngModel)]="messageCurrency.rubStatus" [checked]="this.checkedStatus==true" type="checkbox" id="rubStatus"
-                  name="rubStatus" class="form-control input-sm" [value]="this.dataService.data?.values[17]['checked']" />
+                <input (keydown.Enter)="onKey($event)" [(ngModel)]="messageCurrency.rubStatus" [checked]="this.checkedStatus"
+                  type="checkbox" id="rubStatus" name="rubStatus" class="form-control input-sm" [value]="this.dataService.data?.values[19]['checked']" />
               </td>
             </tr>
 
             <tr>
               <th scope="row">BRL</th>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.brlStatus==false" #brlBuy=ngModel
-                  required brlBuy autocomplete="off" [value]="this.dataService.data?.values[18]['buy'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.brlStatus==false"
+                  #brlBuy=ngModel required brlBuy autocomplete="off" [value]="this.dataService.data?.values[20]['buy'].toFixed(2)"
                   [(ngModel)]="messageCurrency.brlBuy" type="number" id="brlBuy" name="brlBuy" class="form-control input-sm" />
               </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.brlStatus==false" #brlSell=ngModel
-                  required brlSell autocomplete="off" [value]="this.dataService.data?.values[18]['sell'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.brlStatus==false"
+                  #brlSell=ngModel required brlSell autocomplete="off" [value]="this.dataService.data?.values[20]['sell'].toFixed(2)"
                   [(ngModel)]="messageCurrency.brlSell" type="number" id="brlSell" name="brlSell" class="form-control input-sm" />
               </td>
               <td>
-                <input [(ngModel)]="messageCurrency.brlStatus" [checked]="this.checkedStatus==true" type="checkbox" id="brlStatus"
-                  name="brlStatus" class="form-control input-sm" [value]="this.dataService.data?.values[18]['checked']" />
+                <input (keydown.Enter)="onKey($event)" [(ngModel)]="messageCurrency.brlStatus" [checked]="this.checkedStatus"
+                  type="checkbox" id="brlStatus" name="brlStatus" class="form-control input-sm" [value]="this.dataService.data?.values[20]['checked']" />
               </td>
             </tr>
 
             <tr>
               <th scope="row">CNY</th>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.cnyStatus==false" #cnyBuy=ngModel
-                  required cnyBuy autocomplete="off" [value]="this.dataService.data?.values[19]['buy'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.cnyStatus==false"
+                  #cnyBuy=ngModel required cnyBuy autocomplete="off" [value]="this.dataService.data?.values[21]['buy'].toFixed(2)"
                   [(ngModel)]="messageCurrency.cnyBuy" type="number" id="cnyBuy" name="cnyBuy" class="form-control input-sm" />
               </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.cnyStatus==false" #cnySell=ngModel
-                  required cnySell autocomplete="off" [value]="this.dataService.data?.values[19]['sell'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.cnyStatus==false"
+                  #cnySell=ngModel required cnySell autocomplete="off" [value]="this.dataService.data?.values[21]['sell'].toFixed(2)"
                   [(ngModel)]="messageCurrency.cnySell" type="number" id="cnySell" name="cnySell" class="form-control input-sm" />
               </td>
               <td>
-                <input [(ngModel)]="messageCurrency.cnyStatus" [checked]="this.checkedStatus==true" type="checkbox" id="cnyStatus"
-                  name="cnyStatus" class="form-control input-sm" [value]="this.dataService.data?.values[19]['checked']" />
+                <input (keydown.Enter)="onKey($event)" [(ngModel)]="messageCurrency.cnyStatus" [checked]="this.checkedStatus"
+                  type="checkbox" id="cnyStatus" name="cnyStatus" class="form-control input-sm" [value]="this.dataService.data?.values[21]['checked']" />
               </td>
             </tr>
 
             <tr>
               <th scope="row">HKD</th>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.hkdStatus==false" #hkdBuy=ngModel
-                  required hkdBuy autocomplete="off" [value]="this.dataService.data?.values[20]['buy'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.hkdStatus==false"
+                  #hkdBuy=ngModel required hkdBuy autocomplete="off" [value]="this.dataService.data?.values[22]['buy'].toFixed(2)"
                   [(ngModel)]="messageCurrency.hkdBuy" type="number" id="hkdBuy" name="hkdBuy" class="form-control input-sm" />
               </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.hkdStatus==false" #hkdSell=ngModel
-                  required hkdSell autocomplete="off" [value]="this.dataService.data?.values[20]['sell'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.hkdStatus==false"
+                  #hkdSell=ngModel required hkdSell autocomplete="off" [value]="this.dataService.data?.values[22]['sell'].toFixed(2)"
                   [(ngModel)]="messageCurrency.hkdSell" type="number" id="hkdSell" name="hkdSell" class="form-control input-sm" />
               </td>
               <td>
-                <input [(ngModel)]="messageCurrency.hkdStatus" [checked]="this.checkedStatus==true" type="checkbox" id="hkdStatus"
-                  name="hkdStatus" class="form-control input-sm" [value]="this.dataService.data?.values[20]['checked']" />
+                <input (keydown.Enter)="onKey($event)" [(ngModel)]="messageCurrency.hkdStatus" [checked]="this.checkedStatus"
+                  type="checkbox" id="hkdStatus" name="hkdStatus" class="form-control input-sm" [value]="this.dataService.data?.values[22]['checked']" />
               </td>
             </tr>
 
             <tr>
               <th scope="row">IDR</th>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.idrStatus==false" #idrBuy=ngModel
-                  required idrBuy autocomplete="off" [value]="this.dataService.data?.values[21]['buy'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.idrStatus==false"
+                  #idrBuy=ngModel required idrBuy autocomplete="off" [value]="this.dataService.data?.values[23]['buy'].toFixed(2)"
                   [(ngModel)]="messageCurrency.idrBuy" type="number" id="idrBuy" name="idrBuy" class="form-control input-sm" />
               </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.idrStatus==false" #idrSell=ngModel
-                  required idrSell autocomplete="off" [value]="this.dataService.data?.values[21]['sell'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.idrStatus==false"
+                  #idrSell=ngModel required idrSell autocomplete="off" [value]="this.dataService.data?.values[23]['sell'].toFixed(2)"
                   [(ngModel)]="messageCurrency.idrSell" type="number" id="idrSell" name="idrSell" class="form-control input-sm" />
               </td>
               <td>
-                <input [(ngModel)]="messageCurrency.idrStatus" [checked]="this.checkedStatus==true" type="checkbox" id="idrStatus"
-                  name="idrStatus" class="form-control input-sm" [value]="this.dataService.data?.values[21]['checked']" />
+                <input (keydown.Enter)="onKey($event)" [(ngModel)]="messageCurrency.idrStatus" [checked]="this.checkedStatus"
+                  type="checkbox" id="idrStatus" name="idrStatus" class="form-control input-sm" [value]="this.dataService.data?.values[23]['checked']" />
               </td>
             </tr>
 
             <tr>
               <th scope="row">ILS</th>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.ilsStatus==false" #ilsBuy=ngModel
-                  required ilsBuy autocomplete="off" [value]="this.dataService.data?.values[22]['buy'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.ilsStatus==false"
+                  #ilsBuy=ngModel required ilsBuy autocomplete="off" [value]="this.dataService.data?.values[24]['buy'].toFixed(2)"
                   [(ngModel)]="messageCurrency.ilsBuy" type="number" id="ilsBuy" name="ilsBuy" class="form-control input-sm" />
               </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.ilsStatus==false" #ilsSell=ngModel
-                  required ilsSell autocomplete="off" [value]="this.dataService.data?.values[22]['sell'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.ilsStatus==false"
+                  #ilsSell=ngModel required ilsSell autocomplete="off" [value]="this.dataService.data?.values[24]['sell'].toFixed(2)"
                   [(ngModel)]="messageCurrency.ilsSell" type="number" id="ilsSell" name="ilsSell" class="form-control input-sm" />
               </td>
               <td>
-                <input [(ngModel)]="messageCurrency.ilsStatus" [checked]="this.checkedStatus==true" type="checkbox" id="ilsStatus"
-                  name="ilsStatus" class="form-control input-sm" [value]="this.dataService.data?.values[22]['checked']" />
+                <input (keydown.Enter)="onKey($event)" [(ngModel)]="messageCurrency.ilsStatus" [checked]="this.checkedStatus"
+                  type="checkbox" id="ilsStatus" name="ilsStatus" class="form-control input-sm" [value]="this.dataService.data?.values[24]['checked']" />
               </td>
             </tr>
 
             <tr>
               <th scope="row">INR</th>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.inrStatus==false" #inrBuy=ngModel
-                  required inrBuy autocomplete="off" [value]="this.dataService.data?.values[23]['buy'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.inrStatus==false"
+                  #inrBuy=ngModel required inrBuy autocomplete="off" [value]="this.dataService.data?.values[25]['buy'].toFixed(2)"
                   [(ngModel)]="messageCurrency.inrBuy" type="number" id="inrBuy" name="inrBuy" class="form-control input-sm" />
               </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.inrStatus==false" #inrSell=ngModel
-                  required inrSell autocomplete="off" [value]="this.dataService.data?.values[23]['sell'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.inrStatus==false"
+                  #inrSell=ngModel required inrSell autocomplete="off" [value]="this.dataService.data?.values[25]['sell'].toFixed(2)"
                   [(ngModel)]="messageCurrency.inrSell" type="number" id="inrSell" name="inrSell" class="form-control input-sm" />
               </td>
               <td>
-                <input [(ngModel)]="messageCurrency.inrStatus" [checked]="this.checkedStatus==true" type="checkbox" id="inrStatus"
-                  name="inrStatus" class="form-control input-sm" [value]="this.dataService.data?.values[23]['checked']" />
+                <input (keydown.Enter)="onKey($event)" [(ngModel)]="messageCurrency.inrStatus" [checked]="this.checkedStatus"
+                  type="checkbox" id="inrStatus" name="inrStatus" class="form-control input-sm" [value]="this.dataService.data?.values[25]['checked']" />
               </td>
             </tr>
 
             <tr>
               <th scope="row">KRW</th>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.krwStatus==false" #krwBuy=ngModel
-                  required krwBuy autocomplete="off" [value]="this.dataService.data?.values[24]['buy'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.krwStatus==false"
+                  #krwBuy=ngModel required krwBuy autocomplete="off" [value]="this.dataService.data?.values[26]['buy'].toFixed(2)"
                   [(ngModel)]="messageCurrency.krwBuy" type="number" id="krwBuy" name="krwBuy" class="form-control input-sm" />
               </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.krwStatus==false" #krwSell=ngModel
-                  required krwSell autocomplete="off" [value]="this.dataService.data?.values[24]['sell'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.krwStatus==false"
+                  #krwSell=ngModel required krwSell autocomplete="off" [value]="this.dataService.data?.values[26]['sell'].toFixed(2)"
                   [(ngModel)]="messageCurrency.krwSell" type="number" id="krwSell" name="krwSell" class="form-control input-sm" />
               </td>
               <td>
-                <input [(ngModel)]="messageCurrency.krwStatus" [checked]="this.checkedStatus==true" type="checkbox" id="krwStatus"
-                  name="krwStatus" class="form-control input-sm" [value]="this.dataService.data?.values[24]['checked']" />
+                <input (keydown.Enter)="onKey($event)" [(ngModel)]="messageCurrency.krwStatus" [checked]="this.checkedStatus"
+                  type="checkbox" id="krwStatus" name="krwStatus" class="form-control input-sm" [value]="this.dataService.data?.values[26]['checked']" />
               </td>
             </tr>
 
             <tr>
               <th scope="row">MXN</th>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.mxnStatus==false" #mxnBuy=ngModel
-                  required mxnBuy autocomplete="off" [value]="this.dataService.data?.values[25]['buy'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.mxnStatus==false"
+                  #mxnBuy=ngModel required mxnBuy autocomplete="off" [value]="this.dataService.data?.values[27]['buy'].toFixed(2)"
                   [(ngModel)]="messageCurrency.mxnBuy" type="number" id="mxnBuy" name="mxnBuy" class="form-control input-sm" />
               </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.mxnStatus==false" #mxnSell=ngModel
-                  required mxnSell autocomplete="off" [value]="this.dataService.data?.values[25]['sell'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.mxnStatus==false"
+                  #mxnSell=ngModel required mxnSell autocomplete="off" [value]="this.dataService.data?.values[27]['sell'].toFixed(2)"
                   [(ngModel)]="messageCurrency.mxnSell" type="number" id="mxnSell" name="mxnSell" class="form-control input-sm" />
               </td>
               <td>
-                <input [(ngModel)]="messageCurrency.mxnStatus" [checked]="this.checkedStatus==true" type="checkbox" id="mxnStatus"
-                  name="mxnStatus" class="form-control input-sm" [value]="this.dataService.data?.values[25]['checked']" />
+                <input (keydown.Enter)="onKey($event)" [(ngModel)]="messageCurrency.mxnStatus" [checked]="this.checkedStatus"
+                  type="checkbox" id="mxnStatus" name="mxnStatus" class="form-control input-sm" [value]="this.dataService.data?.values[27]['checked']" />
               </td>
             </tr>
 
             <tr>
               <th scope="row">MYR</th>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.myrStatus==false" #myrBuy=ngModel
-                  required myrBuy autocomplete="off" [value]="this.dataService.data?.values[26]['buy'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.myrStatus==false"
+                  #myrBuy=ngModel required myrBuy autocomplete="off" [value]="this.dataService.data?.values[28]['buy'].toFixed(2)"
                   [(ngModel)]="messageCurrency.myrBuy" type="number" id="myrBuy" name="myrBuy" class="form-control input-sm" />
               </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.myrStatus==false" #myrSell=ngModel
-                  required myrSell autocomplete="off" [value]="this.dataService.data?.values[26]['sell'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.myrStatus==false"
+                  #myrSell=ngModel required myrSell autocomplete="off" [value]="this.dataService.data?.values[28]['sell'].toFixed(2)"
                   [(ngModel)]="messageCurrency.myrSell" type="number" id="myrSell" name="myrSell" class="form-control input-sm" />
               </td>
               <td>
-                <input [(ngModel)]="messageCurrency.myrStatus" [checked]="this.checkedStatus==true" type="checkbox" id="myrStatus"
-                  name="myrStatus" class="form-control input-sm" [value]="this.dataService.data?.values[26]['checked']" />
+                <input (keydown.Enter)="onKey($event)" [(ngModel)]="messageCurrency.myrStatus" [checked]="this.checkedStatus"
+                  type="checkbox" id="myrStatus" name="myrStatus" class="form-control input-sm" [value]="this.dataService.data?.values[28]['checked']" />
               </td>
             </tr>
 
             <tr>
               <th scope="row">NZD</th>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.nzdStatus==false" #nzdBuy=ngModel
-                  required nzdBuy autocomplete="off" [value]="this.dataService.data?.values[27]['buy'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.nzdStatus==false"
+                  #nzdBuy=ngModel required nzdBuy autocomplete="off" [value]="this.dataService.data?.values[29]['buy'].toFixed(2)"
                   [(ngModel)]="messageCurrency.nzdBuy" type="number" id="nzdBuy" name="nzdBuy" class="form-control input-sm" />
               </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.nzdStatus==false" #nzdSell=ngModel
-                  required nzdSell autocomplete="off" [value]="this.dataService.data?.values[27]['sell'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.nzdStatus==false"
+                  #nzdSell=ngModel required nzdSell autocomplete="off" [value]="this.dataService.data?.values[29]['sell'].toFixed(2)"
                   [(ngModel)]="messageCurrency.nzdSell" type="number" id="nzdSell" name="nzdSell" class="form-control input-sm" />
               </td>
               <td>
-                <input [(ngModel)]="messageCurrency.nzdStatus" [checked]="this.checkedStatus==true" type="checkbox" id="nzdStatus"
-                  name="nzdStatus" class="form-control input-sm" [value]="this.dataService.data?.values[27]['checked']" />
+                <input (keydown.Enter)="onKey($event)" [(ngModel)]="messageCurrency.nzdStatus" [checked]="this.checkedStatus"
+                  type="checkbox" id="nzdStatus" name="nzdStatus" class="form-control input-sm" [value]="this.dataService.data?.values[29]['checked']" />
               </td>
             </tr>
 
@@ -617,83 +662,83 @@
             <tr>
               <th scope="row">PHP</th>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.phpStatus==false" #phpBuy=ngModel
-                  required phpBuy autocomplete="off" [value]="this.dataService.data?.values[28]['buy'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.phpStatus==false"
+                  #phpBuy=ngModel required phpBuy autocomplete="off" [value]="this.dataService.data?.values[30]['buy'].toFixed(2)"
                   [(ngModel)]="messageCurrency.phpBuy" type="number" id="phpBuy" name="phpBuy" class="form-control input-sm" />
               </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.phpStatus==false" #phpSell=ngModel
-                  required phpSell autocomplete="off" [value]="this.dataService.data?.values[28]['sell'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.phpStatus==false"
+                  #phpSell=ngModel required phpSell autocomplete="off" [value]="this.dataService.data?.values[30]['sell'].toFixed(2)"
                   [(ngModel)]="messageCurrency.phpSell" type="number" id="phpSell" name="phpSell" class="form-control input-sm" />
               </td>
               <td>
-                <input [(ngModel)]="messageCurrency.phpStatus" [checked]="this.checkedStatus==true" type="checkbox" id="phpStatus"
-                  name="phpStatus" class="form-control input-sm" [value]="this.dataService.data?.values[28]['checked']" />
+                <input (keydown.Enter)="onKey($event)" [(ngModel)]="messageCurrency.phpStatus" [checked]="this.checkedStatus"
+                  type="checkbox" id="phpStatus" name="phpStatus" class="form-control input-sm" [value]="this.dataService.data?.values[30]['checked']" />
               </td>
             </tr>
 
             <tr>
               <th scope="row">SGD</th>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.sgdStatus==false" #sgdBuy=ngModel
-                  required sgdBuy autocomplete="off" [value]="this.dataService.data?.values[29]['buy'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.sgdStatus==false"
+                  #sgdBuy=ngModel required sgdBuy autocomplete="off" [value]="this.dataService.data?.values[31]['buy'].toFixed(2)"
                   [(ngModel)]="messageCurrency.sgdBuy" type="number" id="sgdBuy" name="sgdBuy" class="form-control input-sm" />
               </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.sgdStatus==false" #sgdSell=ngModel
-                  required sgdSell autocomplete="off" [value]="this.dataService.data?.values[29]['sell'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.sgdStatus==false"
+                  #sgdSell=ngModel required sgdSell autocomplete="off" [value]="this.dataService.data?.values[31]['sell'].toFixed(2)"
                   [(ngModel)]="messageCurrency.sgdSell" type="number" id="sgdSell" name="sgdSell" class="form-control input-sm" />
               </td>
               <td>
-                <input [(ngModel)]="messageCurrency.sgdStatus" [checked]="this.checkedStatus==true" type="checkbox" id="sgdStatus"
-                  name="sgdStatus" class="form-control input-sm" [value]="this.dataService.data?.values[29]['checked']" />
+                <input (keydown.Enter)="onKey($event)" [(ngModel)]="messageCurrency.sgdStatus" [checked]="this.checkedStatus"
+                  type="checkbox" id="sgdStatus" name="sgdStatus" class="form-control input-sm" [value]="this.dataService.data?.values[31]['checked']" />
               </td>
             </tr>
 
             <tr>
               <th scope="row">THB</th>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.thbStatus==false" #thbBuy=ngModel
-                  required thbBuy autocomplete="off" [value]="this.dataService.data?.values[30]['buy'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.thbStatus==false"
+                  #thbBuy=ngModel required thbBuy autocomplete="off" [value]="this.dataService.data?.values[32]['buy'].toFixed(2)"
                   [(ngModel)]="messageCurrency.thbBuy" type="number" id="thbBuy" name="thbBuy" class="form-control input-sm" />
               </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.thbStatus==false" #thbSell=ngModel
-                  required thbSell autocomplete="off" [value]="this.dataService.data?.values[30]['sell'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.thbStatus==false"
+                  #thbSell=ngModel required thbSell autocomplete="off" [value]="this.dataService.data?.values[32]['sell'].toFixed(2)"
                   [(ngModel)]="messageCurrency.thbSell" type="number" id="thbSell" name="thbSell" class="form-control input-sm" />
               </td>
               <td>
-                <input [(ngModel)]="messageCurrency.thbStatus" [checked]="this.checkedStatus==true" type="checkbox" id="thbStatus"
-                  name="thbStatus" class="form-control input-sm" [value]="this.dataService.data?.values[30]['checked']" />
+                <input (keydown.Enter)="onKey($event)" [(ngModel)]="messageCurrency.thbStatus" [checked]="this.checkedStatus"
+                  type="checkbox" id="thbStatus" name="thbStatus" class="form-control input-sm" [value]="this.dataService.data?.values[32]['checked']" />
               </td>
             </tr>
             <tr>
               <th scope="row">ZAR</th>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.zarStatus==false" #zarBuy=ngModel
-                  required zarBuy autocomplete="off" [value]="this.dataService.data?.values[31]['buy'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.zarStatus==false"
+                  #zarBuy=ngModel required zarBuy autocomplete="off" [value]="this.dataService.data?.values[33]['buy'].toFixed(2)"
                   [(ngModel)]="messageCurrency.zarBuy" type="number" id="zarBuy" name="zarBuy" class="form-control input-sm" />
               </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td>
-                <input (keydown.Enter)="onKey($event)" step="0.0001"   [disabled]="messageCurrency.zarStatus==false" #zarSell=ngModel
-                  required zarSell autocomplete="off" [value]="this.dataService.data?.values[31]['sell'].toFixed(2)"
+                <input (keydown.Enter)="onKey($event)" step="0.0001" [disabled]="messageCurrency.zarStatus==false"
+                  #zarSell=ngModel required zarSell autocomplete="off" [value]="this.dataService.data?.values[33]['sell'].toFixed(2)"
                   [(ngModel)]="messageCurrency.zarSell" type="number" id="zarSell" name="zarSell" class="form-control input-sm" />
               </td>
               <td>
-                <input [(ngModel)]="messageCurrency.zarStatus" [checked]="this.checkedStatus==true" type="checkbox" id="zarStatus"
-                  name="zarStatus" class="form-control input-sm" [value]="this.dataService.data?.values[31]['checked']" />
+                <input (keydown.Enter)="onKey($event)" [(ngModel)]="messageCurrency.zarStatus" [checked]="this.checkedStatus"
+                  type="checkbox" id="zarStatus" name="zarStatus" class="form-control input-sm" [value]="this.dataService.data?.values[33]['checked']" />
               </td>
             </tr>
 
@@ -705,20 +750,20 @@
               </th>
               <td>
                 <input required passwordInput placeholder="{{'password' | translate}}" (input)="this.isPasswordTrue()"
-                  [(ngModel)]="passwordInput" type="password" maxlength="7" id="passwordInput" name="passwordInput"
-                  class="form-control input-sm" />
+                  (keydown.Enter)="onKey($event)" [(ngModel)]="passwordInput" type="password" maxlength="7" id="passwordInput"
+                  name="passwordInput" class="form-control input-sm" />
               </td>
               <td class="noPrint">
                 <div class="">&nbsp;</div>
               </td>
               <td class="noPrint">
                 <button [disabled]="this.updateCurrency==false || !form.valid" type="submit" class="btn btn-block"
-                  [ngClass]="{'btn-success': this.updateCurrency==true, 'btn-default': this.updateCurrency==false}" id="update">
+                  [ngClass]="{'btn-success': this.updateCurrency, 'btn-default': this.updateCurrency==false}" id="update">
                   <span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;{{"save" | translate}}
                 </button>
               </td>
               <td class="noPrint">
-                <div (click)="this.checkAll()" class="btn" [ngClass]="{'btn-primary': this.checkedStatus==true, 'btn-default': this.checkedStatus==false}"
+                <div (click)="this.checkAll()" class="btn" [ngClass]="{'btn-primary': this.checkedStatus, 'btn-default': this.checkedStatus==false}"
                   id="checkAll">
                   <span class="glyphicon glyphicon-check"></span>&nbsp;
                 </div>

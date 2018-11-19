@@ -93,6 +93,20 @@
                   'flag' => "flag--bulgaria",
                   'checked' => $data->bgnStatus
                   );
+            $rsd=array(
+                  'currency' => 'RSD',
+                  'buy' => (double)$data->rsdBuy,
+                  'sell' => (double)$data->rsdSell,
+                  'flag' => "flag--serbia",
+                  'checked' => $data->rsdStatus
+                  );
+            $all=array(
+                  'currency' => 'ALL',
+                  'buy' => (double)$data->allBuy,
+                  'sell' => (double)$data->allSell,
+                  'flag' => "flag--albania",
+                  'checked' => $data->allStatus
+                  );
             $czk=array(
                   'currency' => 'CZK',
                   'buy' => (double)$data->czkBuy,
@@ -241,7 +255,7 @@
                   'checked' => $data->zarStatus
                   );
             // $n[]=$data;
-            $currencies=array($eur, $aud, $cad, $dkk, $jpy, $nok, $sek, $chf, $gbp, $usd, $bgn, $czk, $huf, $pln, $ron, $hrk, $try, $rub, $brl, $cny, $hkd, $idr, $ils, $inr, $krw, $mxn, $myr, $nzd, $php, $sgd, $thb, $zar);
+            $currencies=array($eur, $aud, $cad, $dkk, $jpy, $nok, $sek, $chf, $gbp, $usd, $bgn, $rsd, $all, $czk, $huf, $pln, $ron, $hrk, $try, $rub, $brl, $cny, $hkd, $idr, $ils, $inr, $krw, $mxn, $myr, $nzd, $php, $sgd, $thb, $zar);
 
             $obj = array('datum' => $todayDate,'values' => $currencies);
             

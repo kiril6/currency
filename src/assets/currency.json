@@ -67,6 +67,18 @@
       "checked": false
     },
     {
+      "currency": "RSD",
+      "buy": 10.20, "sell": 10.20,
+      "flag": "flag--serbia",
+      "checked": false
+    },
+    {
+      "currency": "ALL",
+      "buy": 10.20, "sell": 10.20,
+      "flag": "flag--albania",
+      "checked": false
+    },
+    {
       "currency": "CZK",
       "buy": 10.00, "sell": 10.00,
       "flag": "flag--czech",

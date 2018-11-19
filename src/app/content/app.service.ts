@@ -1,6 +1,6 @@
 
-import {throwError as observableThrowError,  Observable } from 'rxjs';
-import {map, catchError} from 'rxjs/operators';
+import { throwError as observableThrowError, Observable } from 'rxjs';
+import { map, catchError } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 
@@ -35,12 +35,16 @@ export interface ICurrencies {
 
   bgnBuy?: string;
   bgnSell?: string;
+  rsdBuy?: string;
+  rsdSell?: string;
+  allBuy?: string;
+  allSell?: string;
   czkBuy?: string;
   czkSell?: string;
   hufBuy?: string;
   hufSell?: string;
-  plnBuy?: string; 
-  plnSell?: string; 
+  plnBuy?: string;
+  plnSell?: string;
   ronBuy?: string;
   ronSell?: string;
   hrkBuy?: string;
@@ -51,8 +55,8 @@ export interface ICurrencies {
   rubSell?: string;
   brlBuy?: string;
   brlSell?: string;
-  cnyBuy?: string; 
-  cnySell?: string; 
+  cnyBuy?: string;
+  cnySell?: string;
   hkdBuy?: string;
   hkdSell?: string;
   idrBuy?: string;
@@ -89,15 +93,17 @@ export interface ICurrencies {
   gbpStatus?: boolean;
   usdStatus?: boolean;
   bgnStatus?: boolean;
+  rsdStatus?: boolean;
+  allStatus?: boolean;
   czkStatus?: boolean;
   hufStatus?: boolean;
-  plnStatus?: boolean; 
+  plnStatus?: boolean;
   ronStatus?: boolean;
   hrkStatus?: boolean;
   tryStatus?: boolean;
   rubStatus?: boolean;
   brlStatus?: boolean;
-  cnyStatus?: boolean; 
+  cnyStatus?: boolean;
   hkdStatus?: boolean;
   idrStatus?: boolean;
   ilsStatus?: boolean;
@@ -128,7 +134,7 @@ export class AppService {
       catchError(error => {
         // console.log('Sending email got error', error);
         return observableThrowError(error);
-      }), );
+      }));
   }
 
   // currency udpate
@@ -141,7 +147,7 @@ export class AppService {
       catchError(error => {
         // console.log('updating currency got error', error);
         return observableThrowError(error);
-      }), );
+      }));
   }
 
 }
