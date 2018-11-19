@@ -201,6 +201,15 @@ export class UpdateComponent implements OnInit {
     this.getValues('status', '', '');
   }
 
+  openUrl(value) {
+    if (value === 'nbrm') {
+      window.open("http://www.nbrm.mk/kursna_lista.nspx", "_blank");
+    } else if (value === 'xe') {
+      window.open("https://www.xe.com/currency/eur-euro", "_blank");
+    }
+  }
+
+
   private formatDateToString(date) {
     const dd = (date.getDate() < 10 ? '0' : '') + date.getDate();
     const MM = ((date.getMonth() + 1) < 10 ? '0' : '') + (date.getMonth() + 1);
@@ -210,16 +219,15 @@ export class UpdateComponent implements OnInit {
 
   onKey(event) {
     let getValue = event.target.value;
-    const setZeros = getValue + '.00';
+    const setZeros = getValue + '.0000';
 
     if (event.keyCode === 13 && event.target.nodeName === 'INPUT') {
       const form = event.target.form;
       const index = Array.prototype.indexOf.call(form, event.target);
-
       event.target.onchange = () => {
-        if (event.target.value.length <= 2) {
+        if (event.target.value.length <= 2 && event.target.value !== '') {
           event.target.value = setZeros;
-        } else if (event.target.value.length >= 3) {
+        } else if (event.target.value == '' || event.target.value == '.') {
           event.target.value = null;
           form.elements[index].select();
         }

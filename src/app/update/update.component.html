@@ -3,9 +3,13 @@
   <div class="currencyPrint">
     <div class="animated fadeInDown">
       <h3 class="title padding">
-        <b>{{"currency_title" | translate}}</b>
+        <div class="pull-left printer">
+          <div (click)="this.openUrl('nbrm')" class="btn btn-primary"><i class="fa fa-globe" aria-hidden="true"></i><b>NBRM</b></div>&nbsp;
+          <div (click)="this.openUrl('xe')" class="btn btn-primary"><i class="fa fa-globe" aria-hidden="true"></i><b>XE</b></div>
+        </div>
+        <b>{{"currency_title" | translate}}__________</b>
         <div class="pull-right printer">
-          <div class="btn btn-primary"><i (click)="this.dataService.reloadPage('local')" class="fa fa-refresh"
+          <div (click)="this.dataService.reloadPage('local')" class="btn btn-primary"><i class="fa fa-refresh"
               aria-hidden="true"></i></div>
         </div>
       </h3>

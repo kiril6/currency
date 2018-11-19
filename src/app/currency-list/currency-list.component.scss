@@ -92,11 +92,6 @@ body {
     }
 }
 
-%additional-icons {
-    height: 22px;
-    background-position: center center;
-}
-
 // EXCEPTIONS (not functions)
 .flag--spain {
     @extend %flag;
@@ -122,7 +117,9 @@ $star-size: ($flag-height/13)*2.45/3.7;
 .flag--usa {
     @extend %additional;
     background: url(/../assets/img/flags/usa.png) no-repeat;
-    @extend %additional-icons;
+    height: 22px;
+    background-position-x: center;
+    background-position-y: center;
 }
 
 // Made WITH FUNCTIONS
@@ -174,31 +171,41 @@ $star-size: ($flag-height/13)*2.45/3.7;
 .flag--australia {
     @extend %additional;
     background: url(/../assets/img/flags/aud.png) no-repeat;
-    @extend %additional-icons;
+    height: 22px;
+    background-position-x: center;
+    background-position-y: center;
 }
 
 .flag--europe {
     @extend %additional;
     background: url(/../assets/img/flags/eur.png) no-repeat;
-    @extend %additional-icons;
+    height: 22px;
+    background-position-x: center;
+    background-position-y: center;
 }
 
 .flag--canada {
     @extend %additional;
     background: url(/../assets/img/flags/cad.png) no-repeat;
-    @extend %additional-icons;
+    height: 22px;
+    background-position-x: center;
+    background-position-y: center;
 }
 
 .flag--serbia {
     @extend %additional;
     background: url(/../assets/img/flags/rsd.png) no-repeat;
-    @extend %additional-icons;
+    height: 22px;
+    background-position-x: center;
+    background-position-y: center;
 }
 
 .flag--albania {
     @extend %additional;
     background: url(/../assets/img/flags/all.png) no-repeat;
-    @extend %additional-icons;
+    height: 22px;
+    background-position-x: center;
+    background-position-y: center;
 }
 
 // .flag--hungary {
