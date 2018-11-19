@@ -52,10 +52,20 @@ textarea:disabled {
 
 input[type='checkbox'] {
     cursor: pointer;
+    &:checked {
+        background: green;
+    }
 }
 
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
   -webkit-appearance: none; 
   margin: 0; 
+}
+
+input:focus { 
+    background-color: yellow;
+}
+button:focus {
+    font-weight: bold;
 }

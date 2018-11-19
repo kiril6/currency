@@ -3,6 +3,7 @@ import { AppService, ICurrencies } from '../content/app.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Http, Response, RequestOptions, Headers, HttpModule } from '@angular/http';
 import { DataService } from '../services/data.service';
+
 @Component({
   selector: 'app-update',
   templateUrl: './update.component.html',
@@ -20,11 +21,11 @@ export class UpdateComponent implements OnInit {
   public updateCurrency = false;
   public checkedStatus = true;
 
-  public currencyBuy = ['eurBuy', 'audBuy', 'cadBuy', 'dkkBuy', 'jpyBuy', 'nokBuy', 'sekBuy', 'chfBuy', 'gbpBuy', 'usdBuy', 'bgnBuy', 'czkBuy', 'hufBuy', 'plnBuy', 'ronBuy', 'hrkBuy', 'tryBuy', 'rubBuy', 'brlBuy', 'cnyBuy', 'hkdBuy', 'idrBuy', 'ilsBuy', 'inrBuy', 'krwBuy', 'mxnBuy', 'myrBuy', 'nzdBuy', 'phpBuy', 'sgdBuy', 'thbBuy', 'zarBuy' ];
-  public currencySell = ['eurSell', 'audSell', 'cadSell', 'dkkSell', 'jpySell', 'nokSell', 'sekSell', 'chfSell', 'gbpSell', 'usdSell', 'bgnSell', 'czkSell', 'hufSell', 'plnSell', 'ronSell', 'hrkSell', 'trySell', 'rubSell', 'brlSell', 'cnySell', 'hkdSell', 'idrSell', 'ilsSell', 'inrSell', 'krwSell', 'mxnSell', 'myrSell', 'nzdSell', 'phpSell', 'sgdSell', 'thbSell', 'zarSell' ];
-  public currencyStatus = ['eurStatus', 'audStatus', 'cadStatus', 'dkkStatus', 'jpyStatus', 'nokStatus', 'sekStatus', 'chfStatus', 'gbpStatus', 'usdStatus', 'bgnStatus', 'czkStatus', 'hufStatus', 'plnStatus', 'ronStatus', 'hrkStatus', 'tryStatus', 'rubStatus', 'brlStatus', 'cnyStatus', 'hkdStatus', 'idrStatus', 'ilsStatus', 'inrStatus', 'krwStatus', 'mxnStatus', 'myrStatus', 'nzdStatus', 'phpStatus', 'sgdStatus', 'thbStatus', 'zarStatus' ];
+  public currencyBuy = ['eurBuy', 'audBuy', 'cadBuy', 'dkkBuy', 'jpyBuy', 'nokBuy', 'sekBuy', 'chfBuy', 'gbpBuy', 'usdBuy', 'bgnBuy', 'czkBuy', 'hufBuy', 'plnBuy', 'ronBuy', 'hrkBuy', 'tryBuy', 'rubBuy', 'brlBuy', 'cnyBuy', 'hkdBuy', 'idrBuy', 'ilsBuy', 'inrBuy', 'krwBuy', 'mxnBuy', 'myrBuy', 'nzdBuy', 'phpBuy', 'sgdBuy', 'thbBuy', 'zarBuy'];
+  public currencySell = ['eurSell', 'audSell', 'cadSell', 'dkkSell', 'jpySell', 'nokSell', 'sekSell', 'chfSell', 'gbpSell', 'usdSell', 'bgnSell', 'czkSell', 'hufSell', 'plnSell', 'ronSell', 'hrkSell', 'trySell', 'rubSell', 'brlSell', 'cnySell', 'hkdSell', 'idrSell', 'ilsSell', 'inrSell', 'krwSell', 'mxnSell', 'myrSell', 'nzdSell', 'phpSell', 'sgdSell', 'thbSell', 'zarSell'];
+  public currencyStatus = ['eurStatus', 'audStatus', 'cadStatus', 'dkkStatus', 'jpyStatus', 'nokStatus', 'sekStatus', 'chfStatus', 'gbpStatus', 'usdStatus', 'bgnStatus', 'czkStatus', 'hufStatus', 'plnStatus', 'ronStatus', 'hrkStatus', 'tryStatus', 'rubStatus', 'brlStatus', 'cnyStatus', 'hkdStatus', 'idrStatus', 'ilsStatus', 'inrStatus', 'krwStatus', 'mxnStatus', 'myrStatus', 'nzdStatus', 'phpStatus', 'sgdStatus', 'thbStatus', 'zarStatus'];
 
-  
+
 
   constructor(private appService: AppService, private router: Router, private http: Http, public dataService: DataService) { }
 
@@ -171,19 +172,19 @@ export class UpdateComponent implements OnInit {
 
   getValues(dataType1, dataType2, dataType3) {
     if (dataType1 === 'status') {
-      for (let i = 0; i <= this.currencyStatus.length; i++) { 
+      for (let i = 0; i <= this.currencyStatus.length; i++) {
         this.messageCurrency[this.currencyStatus[i]] = this.checkedStatus;
       }
     }
     if (dataType2 === 'buy') {
-        for (let i = 0; i <= this.currencyBuy.length; i++) { 
-          this.messageCurrency[this.currencyBuy[i]] = '';
-        }
+      for (let i = 0; i <= this.currencyBuy.length; i++) {
+        this.messageCurrency[this.currencyBuy[i]] = '';
+      }
     }
     if (dataType3 === 'sell') {
-        for (let i = 0; i <= this.currencySell.length; i++) { 
-          this.messageCurrency[this.currencySell[i]] = '';
-        }
+      for (let i = 0; i <= this.currencySell.length; i++) {
+        this.messageCurrency[this.currencySell[i]] = '';
+      }
     }
   }
 
@@ -201,6 +202,52 @@ export class UpdateComponent implements OnInit {
     const MM = ((date.getMonth() + 1) < 10 ? '0' : '') + (date.getMonth() + 1);
     const yyyy = date.getFullYear();
     return (dd + '.' + MM + '.' + yyyy);
+  }
+
+  onKey(event) {
+
+    let getValue = event.target.value;
+    const setZeros = getValue + '.00';
+
+    if (event.keyCode === 13 && event.target.nodeName === 'INPUT') {
+      var form = event.target.form;
+      var index = Array.prototype.indexOf.call(form, event.target);
+
+      if (getValue === 'true' || getValue === 'false') {
+        // event.target.value=a;
+        console.log(getValue);
+      } else {
+        form.elements[index + 1].value = '';
+        if (getValue) {
+          event.target.value = setZeros;
+          console.log(getValue + '\\\\')
+        }
+      }
+      form.elements[index + 1].focus();
+    }
+
+    event.preventDefault();
+
+    // alert('dsdsd')
+
+    // console.log(event);
+    // const doClick=e
+
+
+    // let dd = self=event.target;
+    // console.log(dd.nextSibling);
+
+
+
+    // var nextInput = dd.get(dd.index(this) + 1);
+
+    // console.log(nextInput)
+    // if (nextInput) {
+    //    nextInput.focus();
+    // }
+
+    // dd.nextSibling.focus();
+
   }
 
 }
