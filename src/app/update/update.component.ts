@@ -227,7 +227,7 @@ export class UpdateComponent implements OnInit {
     if (event.keyCode === 13 && event.target.nodeName === 'INPUT') {
       const form = event.target.form;
       const index = Array.prototype.indexOf.call(form, event.target);
-
+      const getType = form.elements[index + 1].getAttribute('type');
       event.target.onchange = () => {
         // when having just number (no dot)
         if (event.target.value.indexOf('.') == -1) {
@@ -276,7 +276,12 @@ export class UpdateComponent implements OnInit {
         if (event.target.readOnly === true) {
           document.getElementById('passwordInput').focus();
         } else {
-          form.elements[index + 1].select();
+          if (getType=='checkbox') {
+           form.elements[index + 1].focus();
+           console.log(form.elements[index + 1].getAttribute('type'));
+          } else {
+            form.elements[index + 1].select();
+          }
         }
       }
     }
