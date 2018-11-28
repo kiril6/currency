@@ -36,15 +36,16 @@
     }
 }
 
-input,
-textarea {
+input[type="password"] {
     &.ng-invalid.ng-touched {
         background: #af4848 !important;
     }
 }
 
 input:disabled,
-textarea:disabled {
+textarea:disabled,
+input:read-only,
+textarea:read-only {
     animation-name: fadeDisabled;
     animation-duration: 1s;
     animation-fill-mode: forwards;
@@ -55,12 +56,6 @@ input[type='checkbox'] {
     &:checked {
         background: green;
     }
-}
-
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
 }
 
 input:focus { 

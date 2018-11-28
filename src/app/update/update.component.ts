@@ -219,21 +219,65 @@ export class UpdateComponent implements OnInit {
 
   onKey(event) {
     let getValue = event.target.value;
-    const setZeros = getValue + '.0000';
+    const setZeros = getValue + '0';
+    const setZeros2 = getValue + '00';
+    const setZeros3 = getValue + '000';
+    const setZeros4 = getValue + '.0000';
 
     if (event.keyCode === 13 && event.target.nodeName === 'INPUT') {
       const form = event.target.form;
       const index = Array.prototype.indexOf.call(form, event.target);
+
       event.target.onchange = () => {
-        if (event.target.value.length <= 2 && event.target.value !== '') {
-          event.target.value = setZeros;
-        } else if (event.target.value == '' || event.target.value == '.') {
+        // when having just number (no dot)
+        if (event.target.value.indexOf('.') == -1) {
+          if (event.target.value.length == 1) {
+            event.target.value = setZeros4;
+          }
+          if (event.target.value.length == 2) {
+            event.target.value = setZeros4;
+          }
+          if (event.target.value.length == 3 || event.target.value.length == 4 || event.target.value.length == 5) {
+            event.target.value = null;
+            form.elements[index].select();
+          }
+        }
+        // when having 1 number in front of dot
+        if (event.target.value.indexOf('.') == 1) {
+          if (event.target.value.length == 3) {
+            event.target.value = setZeros3;
+          }
+          if (event.target.value.length == 4) {
+            event.target.value = setZeros2;
+          }
+          if (event.target.value.length == 5) {
+            event.target.value = setZeros;
+          }
+        }
+        // when having 2 number in front of dot
+        if (event.target.value.indexOf('.') == 2) {
+          if (event.target.value.length == 4) {
+            event.target.value = setZeros3;
+          }
+          if (event.target.value.length == 5) {
+            event.target.value = setZeros2;
+          }
+          if (event.target.value.length == 6) {
+            event.target.value = setZeros;
+          }
+        }
+        // when having 3 and more numbers in front of dot
+        if (event.target.value.indexOf('.') >= 3) {
           event.target.value = null;
           form.elements[index].select();
         }
       }
       if (event.target.value.length >= 1) {
-        form.elements[index + 1].select();
+        if (event.target.readOnly === true) {
+          document.getElementById('passwordInput').focus();
+        } else {
+          form.elements[index + 1].select();
+        }
       }
     }
   }
