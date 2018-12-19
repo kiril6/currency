@@ -54,6 +54,9 @@
 
   .informDialog {
     display: block!important;  
+    .result {
+      color: black;
+    }
   }
   button.informDialog.btn-primary {
     float:right;

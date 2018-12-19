@@ -278,7 +278,6 @@ export class UpdateComponent implements OnInit {
         } else {
           if (getType=='checkbox') {
            form.elements[index + 1].focus();
-           console.log(form.elements[index + 1].getAttribute('type'));
           } else {
             form.elements[index + 1].select();
           }
