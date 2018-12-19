@@ -1,14 +1,25 @@
 .table-currency {
     max-width: 500px;
     margin: 0 auto;
+    tr th,
+    tr td {
+        vertical-align: middle;
+    }
+    tr:hover {
+        font-weight: bolder;
+    }
+    .read-more {
+        animation: blinker 1.5s linear infinite;
+    }
 }
 
-tr th,
-tr td {
-    vertical-align: middle;
-}
+@keyframes blinker {  
+    0% { opacity: 0.4; }
+    50% { opacity: 1; }
+    100% { opacity: 0.4; }
+  }
 
-//flags
+// flags
 // Common properties
 $flag-width: 2.5em;
 $flag-height: $flag-width*10/16;
@@ -65,12 +76,10 @@ body {
 
 %flag {
     width: $flag-width;
-    height: $flag-height;
-    //   border: 1px solid #999;
+    height: $flag-height; //   border: 1px solid #999;
     border: 0;
     display: inline-block;
-    margin: 0;
-    box-shadow: 1px 1px 1px #CCC;
+    margin: 0; // box-shadow: 1px 1px 1px #CCC;
     transition: all .5s;
     &:after {
         // content: attr(class);
@@ -116,9 +125,7 @@ body {
 $star-size: ($flag-height/13)*2.45/3.7;
 .flag--usa {
     @extend %additional;
-    background-image: url(/../assets/img/flags/usa.png);
-    background-repeat: no-repeat;
-    width: 100%;
+    background: url(/../assets/img/flags/usa.png) no-repeat;
     height: 22px;
     background-position-x: center;
     background-position-y: center;
@@ -126,66 +133,53 @@ $star-size: ($flag-height/13)*2.45/3.7;
 
 // Made WITH FUNCTIONS
 // Thirds
-.flag--ireland {
-    @extend %flag;
-    background: thirds(#00ae00, white, orange);
-}
-
-.flag--italy {
-    @extend %flag;
-    background: thirds(#00ae00, white, red);
-}
-
-.flag--belgium {
-    @extend %flag;
-    background: thirds(black, yellow, red);
-}
-
-.flag--france {
-    @extend %flag;
-    background: thirds(mediumblue, white, red);
-}
-
-.flag--romania {
-    @extend %flag;
-    background: thirds(mediumblue, yellow, red);
-}
-
-.flag--germany {
-    @extend %flag;
-    background: thirds(black, red, gold, -180deg);
-}
-
-.flag--russia {
-    @extend %flag;
-    background: thirds(white, mediumblue, red, -180deg);
-}
-
-.flag--bulgaria {
-    @extend %flag;
-    background: thirds(white, green, red, -180deg);
-}
-
-.flag--netherlands {
-    @extend %flag;
-    background: thirds(red, white, mediumblue, -180deg);
-}
-
-.flag--lithuania {
-    @extend %flag;
-    background: thirds(gold, green, red, -180deg);
-}
-
-.flag--austria {
-    @extend %flag;
-    background: thirds(red, white, red, -180deg);
-}
-
+// .flag--ireland {
+//     @extend %flag;
+//     background: thirds(#00ae00, white, orange);
+// }
+// .flag--italy {
+//     @extend %flag;
+//     background: thirds(#00ae00, white, red);
+// }
+// .flag--belgium {
+//     @extend %flag;
+//     background: thirds(black, yellow, red);
+// }
+// .flag--france {
+//     @extend %flag;
+//     background: thirds(mediumblue, white, red);
+// }
+// .flag--romania {
+//     @extend %flag;
+//     background: thirds(mediumblue, yellow, red);
+// }
+// .flag--germany {
+//     @extend %flag;
+//     background: thirds(black, red, gold, -180deg);
+// }
+// .flag--russia {
+//     @extend %flag;
+//     background: thirds(white, mediumblue, red, -180deg);
+// }
+// .flag--bulgaria {
+//     @extend %flag;
+//     background: thirds(white, green, red, -180deg);
+// }
+// .flag--netherlands {
+//     @extend %flag;
+//     background: thirds(red, white, mediumblue, -180deg);
+// }
+// .flag--lithuania {
+//     @extend %flag;
+//     background: thirds(gold, green, red, -180deg);
+// }
+// .flag--austria {
+//     @extend %flag;
+//     background: thirds(red, white, red, -180deg);
+// }
 .flag--australia {
     @extend %additional;
-    background-image: url(/../assets/img/flags/aud.png);
-    background-repeat: no-repeat;
-    width: 100%;
+    background: url(/../assets/img/flags/aud.png) no-repeat;
     height: 22px;
     background-position-x: center;
     background-position-y: center;
@@ -193,9 +187,7 @@ $star-size: ($flag-height/13)*2.45/3.7;
 
 .flag--europe {
     @extend %additional;
-    background-image: url(/../assets/img/flags/eur.png);
-    background-repeat: no-repeat;
-    width: 100%;
+    background: url(/../assets/img/flags/eur.png) no-repeat;
     height: 22px;
     background-position-x: center;
     background-position-y: center;
@@ -203,66 +195,195 @@ $star-size: ($flag-height/13)*2.45/3.7;
 
 .flag--canada {
     @extend %additional;
-    background-image: url(/../assets/img/flags/cad.png);
-    background-repeat: no-repeat;
-    width: 100%;
+    background: url(/../assets/img/flags/cad.png) no-repeat;
     height: 22px;
     background-position-x: center;
     background-position-y: center;
 }
 
-.flag--hungary {
-    @extend %flag;
-    background: thirds(red, white, green, -180deg);
+.flag--serbia {
+    @extend %additional;
+    background: url(/../assets/img/flags/rsd.png) no-repeat;
+    height: 22px;
+    background-position-x: center;
+    background-position-y: center;
 }
 
-.flag--estonia {
-    @extend %flag;
-    background: thirds(royalblue, darken(royalblue, 30%), white, -180deg);
+.flag--albania {
+    @extend %additional;
+    background: url(/../assets/img/flags/all.png) no-repeat;
+    height: 22px;
+    background-position-x: center;
+    background-position-y: center;
 }
 
-.flag--bolivia {
-    @extend %flag;
-    background: thirds(red, yellow, green, -180deg);
-}
-
+// .flag--hungary {
+//     @extend %flag;
+//     background: thirds(red, white, green, -180deg);
+// }
+// .flag--estonia {
+//     @extend %flag;
+//     background: thirds(royalblue, darken(royalblue, 30%), white, -180deg);
+// }
+// .flag--bolivia {
+//     @extend %flag;
+//     background: thirds(red, yellow, green, -180deg);
+// }
 // Halfs
-.flag--poland {
-    @extend %flag;
-    background: halfs(white, red);
-}
-
-.flag--ukraine {
-    @extend %flag;
-    background: halfs(royalblue, yellow);
-}
-
+// .flag--poland {
+//     @extend %flag;
+//     background: halfs(white, red);
+// }
+// .flag--ukraine {
+//     @extend %flag;
+//     background: halfs(royalblue, yellow);
+// }
 // Cross
 .flag--denmark {
     @extend %flag;
     background: cross(red, white);
 }
 
-.flag--iceland {
-    @extend %flag;
-    background: cross(mediumblue, red, white);
-}
-
+// .flag--iceland {
+//     @extend %flag;
+//     background: cross(mediumblue, red, white);
+// }
 .flag--norway {
     @extend %flag;
     background: cross(red, blue, white);
 }
 
-.flag--finland {
-    @extend %flag;
-    background: cross(white, blue, blue);
-}
-
+// .flag--finland {
+//     @extend %flag;
+//     background: cross(white, blue, blue);
+// }
 .flag--sweden {
     @extend %flag;
     background: cross(mediumblue, yellow, yellow);
 }
 
+// new
+.flag--bulgaria,
+.flag--brazil,
+.flag--china,
+.flag--czech,
+.flag--hongkong,
+.flag--croatia,
+.flag--hungary,
+.flag--indonesia,
+.flag--israel,
+.flag--india,
+.flag--korea,
+.flag--mexico,
+.flag--malaysia,
+.flag--newzealand,
+.flag--philippines,
+.flag--poland,
+.flag--romania,
+.flag--russia,
+.flag--singapore,
+.flag--thailand,
+.flag--turkey,
+.flag--safrica {
+    @extend %additional;
+    display: inline-block;
+    background: url('../../assets/img/sprites/flags.png') no-repeat;
+    overflow: hidden;
+    text-indent: -9999px;
+    text-align: left;
+    width: 30px;
+    height: 20px;
+}
+
+.flag--bulgaria {
+    background-position: -2px -0px;
+}
+
+.flag--brazil {
+    background-position: -34px -0px;
+}
+
+.flag--china {
+    background-position: -66px -0px;
+}
+
+.flag--czech {
+    background-position: -98px -0px;
+}
+
+.flag--hongkong {
+    background-position: -2px -22px;
+}
+
+.flag--croatia {
+    background-position: -34px -22px;
+}
+
+.flag--hungary {
+    background-position: -66px -22px;
+}
+
+.flag--indonesia {
+    background-position: -98px -22px;
+}
+
+.flag--israel {
+    background-position: -2px -44px;
+}
+
+.flag--india {
+    background-position: -34px -44px;
+}
+
+.flag--korea {
+    background-position: -66px -44px;
+}
+
+.flag--mexico {
+    background-position: -98px -44px;
+}
+
+.flag--malaysia {
+    background-position: -2px -66px;
+}
+
+.flag--newzealand {
+    background-position: -34px -66px;
+}
+
+.flag--philippines {
+    background-position: -66px -66px;
+}
+
+.flag--poland {
+    background-position: -98px -66px;
+}
+
+.flag--romania {
+    background-position: -2px -88px;
+}
+
+.flag--russia {
+    background-position: -34px -88px;
+}
+
+.flag--singapore {
+    background-position: -66px -88px;
+}
+
+.flag--thailand {
+    background-position: -98px -88px;
+}
+
+.flag--turkey {
+    background-position: -2px -110px;
+}
+
+.flag--safrica {
+    background-position: -34px -110px;
+}
+
+//end new
 .animated {
     &.flash {
         -webkit-animation-delay: 4s;
@@ -275,11 +396,11 @@ $star-size: ($flag-height/13)*2.45/3.7;
         animation-duration: 1s;
     }
     &.fadeInDown {
-      color: gray;
-      -webkit-animation-delay: 2.5s;
-      animation-delay: 2.5s;
-      opacity: 1 !important;
-  }
+        color: gray;
+        -webkit-animation-delay: 2.5s;
+        animation-delay: 2.5s;
+        opacity: 1 !important;
+    }
 }
 
 .title {

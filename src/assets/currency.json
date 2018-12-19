@@ -1,5 +1,5 @@
 {
-  "datum": "25.10.2018",
+  "datum": "14.11.2018",
   "values": [{
     "currency": "EUR",
     "buy": 61.39, "sell": 61.60,
@@ -59,6 +59,150 @@
       "buy" : 57.20, "sell": 54.29,
       "flag" : "flag--usa",
       "checked": true
+    },
+    {
+      "currency": "BGN",
+      "buy": 10.20, "sell": 10.20,
+      "flag": "flag--bulgaria",
+      "checked": false
+    },
+    {
+      "currency": "RSD",
+      "buy": 10.20, "sell": 10.20,
+      "flag": "flag--serbia",
+      "checked": false
+    },
+    {
+      "currency": "ALL",
+      "buy": 10.20, "sell": 10.20,
+      "flag": "flag--albania",
+      "checked": false
+    },
+    {
+      "currency": "CZK",
+      "buy": 10.00, "sell": 10.00,
+      "flag": "flag--czech",
+      "checked": false
+    },
+    {
+      "currency": "HUF",
+      "buy": 10.00, "sell": 10.00,
+      "flag": "flag--hungary",
+      "checked": false
+    },
+    {
+      "currency": "PLN",
+      "buy": 10.00, "sell": 10.00,
+      "flag": "flag--poland",
+      "checked": false
+    },
+    {
+      "currency": "RON",
+      "buy": 10.00, "sell": 10.00,
+      "flag": "flag--romania",
+      "checked": false
+    },
+    {
+      "currency": "HRK",
+      "buy": 10.00, "sell": 10.00,
+      "flag": "flag--croatia",
+      "checked": false
+    },
+    {
+      "currency": "TRY",
+      "buy": 10.00, "sell": 10.00,
+      "flag": "flag--turkey",
+      "checked": false
+    },
+    {
+      "currency": "RUB",
+      "buy": 10.00, "sell": 10.00,
+      "flag": "flag--russia",
+      "checked": false
+    },
+    {
+      "currency": "BRL",
+      "buy": 10.00, "sell": 10.00,
+      "flag": "flag--brazil",
+      "checked": false
+    },
+    {
+      "currency": "CNY",
+      "buy": 10.00, "sell": 10.00,
+      "flag": "flag--china",
+      "checked": false
+    },
+    {
+      "currency": "HKD",
+      "buy": 10.00, "sell": 10.00,
+      "flag": "flag--hongkong",
+      "checked": false
+    },
+    {
+      "currency": "IDR",
+      "buy": 10.00, "sell": 10.00,
+      "flag": "flag--indonesia",
+      "checked": false
+    },
+    {
+      "currency": "ILS",
+      "buy": 10.00, "sell": 10.00,
+      "flag": "flag--israel",
+      "checked": false
+    },
+    {
+      "currency": "INR",
+      "buy": 10.00, "sell": 10.00,
+      "flag": "flag--india",
+      "checked": false
+    },
+    {
+      "currency": "KRW",
+      "buy": 10.00, "sell": 10.00,
+      "flag": "flag--korea",
+      "checked": false
+    },
+    {
+      "currency": "MXN",
+      "buy": 10.00, "sell": 10.00,
+      "flag": "flag--mexico",
+      "checked": false
+    },
+    {
+      "currency": "MYR",
+      "buy": 10.00, "sell": 10.00,
+      "flag": "flag--malaysia",
+      "checked": false
+    },
+    {
+      "currency": "NZD",
+      "buy": 10.00, "sell": 10.00,
+      "flag": "flag--newzealand",
+      "checked": false
+    },
+    {
+      "currency": "PHP",
+      "buy": 10.00, "sell": 10.00,
+      "flag": "flag--philippines",
+      "checked": false
+    },
+    {
+      "currency": "SGD",
+      "buy": 10.00, "sell": 10.00,
+      "flag": "flag--singapore",
+      "checked": false
+    },
+    {
+      "currency": "THB",
+      "buy": 10.00, "sell": 10.00,
+      "flag": "flag--thailand",
+      "checked": false
+    },
+    {
+      "currency": "ZAR",
+      "buy": 10.00, "sell": 10.00,
+      "flag": "flag--safrica",
+      "checked": false
     }
   ]
 }

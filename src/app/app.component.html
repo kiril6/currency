@@ -1,13 +1,10 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<!-- <div class="main"> -->
-
 <div id="myModal" class="modal fade in" role="dialog">
   <div class="modal-dialog">
 
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" (click)="this.closeModalX()">&times;</button>
+        <button type="button" class="close" (click)="this.closeModal()">&times;</button>
         <h5 class="modal-title hide">
           <b>{{"alert_header" | translate}}</b>
         </h5>
@@ -56,7 +53,7 @@
         <button type="button" class="btn btn-primary btn-sm informDialog" (click)="this.closeModal()">{{"close" | translate}}</button>
         <div class="pull-left informDialog">
           &nbsp;
-          <b>{{this.outputCalculation}}</b>
+          <b class="result">{{this.outputCalculation}}</b>
         </div>
       </div>
     </div>
@@ -67,9 +64,7 @@
 <app-header></app-header>
 
 <app-content>
-
   <router-outlet></router-outlet>
 </app-content>
 
 <app-footer></app-footer>
-<!-- </div> -->

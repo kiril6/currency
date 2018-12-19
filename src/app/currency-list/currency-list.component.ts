@@ -13,31 +13,26 @@ import { DataService } from '../services/data.service';
 })
 
 export class CurrencyListComponent {
-  public d = new Date();
   public newDate: string;
   public same = false;
   public isSunday = false;
   public modalElement;
-  public moreExpanded: boolean = false;
-  public print =() => window.print();
+  public moreExpanded = false;
+  public print = () => window.print();
 
   constructor(public dataService: DataService) { }
 
   ngOnInit() {
-    var dateObj = new Date();
-    var month = dateObj.getUTCMonth() + 1;
-    var day = dateObj.getUTCDay();
-    var dayName = dateObj.toString().split(' ')[0];
-    var year = dateObj.getUTCFullYear();
+    const dateObj = new Date();
+    const dayName = dateObj.toString().split(' ')[0];
     this.newDate = this.formatDateToString(dateObj);
 
     setTimeout(() => {
       if (this.dataService.data['datum'] === this.newDate) {
         this.same = true;
-      }
-      else {
+      } else {
         this.same = false;
-        if (dayName == 'Sun') {
+        if (dayName === 'Sun') {
           this.isSunday = true;
         }
       }
@@ -46,12 +41,12 @@ export class CurrencyListComponent {
 
   calculator() {
     this.modalElement = document.getElementById('myModal');
-    this.modalElement.className += " showB calculator";
+    this.modalElement.className += ' showB calculator';
     // this.turnOffSubscribtion();
   }
 
   seeMore() {
-    this.moreExpanded = this.moreExpanded != true;
+    this.moreExpanded = this.moreExpanded !== true;
   }
 
   // turnOffSubscribtion(){
@@ -62,12 +57,12 @@ export class CurrencyListComponent {
 
   private formatDateToString(date) {
     // 01, 02, 03, ... 29, 30, 31
-    var dd = (date.getDate() < 10 ? '0' : '') + date.getDate();
+    const dd = (date.getDate() < 10 ? '0' : '') + date.getDate();
     // 01, 02, 03, ... 10, 11, 12
-    var MM = ((date.getMonth() + 1) < 10 ? '0' : '') + (date.getMonth() + 1);
+    const MM = ((date.getMonth() + 1) < 10 ? '0' : '') + (date.getMonth() + 1);
     // 1970, 1971, ... 2015, 2016, ...
-    var yyyy = date.getFullYear();
+    const yyyy = date.getFullYear();
     // create the format you want
-    return (dd + "." + MM + "." + yyyy);
+    return (dd + '.' + MM + '.' + yyyy);
   }
 }

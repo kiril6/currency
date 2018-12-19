@@ -19,23 +19,23 @@ export class DataService {
 
     constructor(private router: Router, private http: Http) {
         const headers = new Headers({ 'Content-Type': 'application/json' });
-        this.timer = observableTimer(2000,5000);
-        this.sub= this.timer.subscribe(() => 
+        this.timer = observableTimer(2000, 5000);
+        this.sub = this.timer.subscribe(() =>
         http.get('assets/currency.json?nocache=' + (new Date()).getTime(), { headers: headers }).pipe(
-            map(response => response.json()),catchError(this.errorHandler),)
+            map(response => response.json()), catchError(this.errorHandler), )
             .subscribe(data => this.data = data,
             err => console.log(err + ' currency file not found'),
-            () => console.log('')));
+            () => console.log('subscribing..')));
     }
     errorHandler(error: Response) {
         console.error(error);
-        return observableThrowError(error || "Server Error");
+        return observableThrowError(error || 'Server Error');
     }
 
     reloadPage(parameter) {
-        if (parameter==='external') {
-            location.href = "http://intercoop.delovski.net";
-        }  else if (parameter==='local') {
+        if (parameter === 'external') {
+            location.href = 'http://intercoop.delovski.net';
+        }  else if (parameter === 'local') {
             location.reload();
         }
     }

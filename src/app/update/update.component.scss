@@ -36,15 +36,16 @@
     }
 }
 
-input,
-textarea {
+input[type="password"] {
     &.ng-invalid.ng-touched {
         background: #af4848 !important;
     }
 }
 
 input:disabled,
-textarea:disabled {
+textarea:disabled,
+input:read-only,
+textarea:read-only {
     animation-name: fadeDisabled;
     animation-duration: 1s;
     animation-fill-mode: forwards;
@@ -52,4 +53,14 @@ textarea:disabled {
 
 input[type='checkbox'] {
     cursor: pointer;
+    &:checked {
+        background: green;
+    }
+}
+
+input:focus { 
+    background-color: yellow;
+}
+button:focus {
+    font-weight: bold;
 }

@@ -12,11 +12,13 @@ export class FooterComponent implements OnInit {
   public newDate;
 
   ngOnInit() {
-    var dateObj = new Date();
-    var month = dateObj.getUTCMonth() + 1;
-    var day = dateObj.getUTCDate();
-    var year = dateObj.getUTCFullYear();    
-    this.newDate = year;
+
+  }
+
+  getYear(){
+    const dateObj = new Date();
+    const year = dateObj.getUTCFullYear();   
+    return this.newDate = year;
   }
 
 }
