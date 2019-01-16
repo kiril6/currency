@@ -25,7 +25,7 @@ install:
   - npm install -g npm
   - ps: $env:path = $env:appdata + "\npm;" + $env:path
   - npm install
-  - npm prod
+  - npm run prod
 
 test_script:
   # Output useful info for debugging.
