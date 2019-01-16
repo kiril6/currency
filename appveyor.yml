@@ -7,7 +7,7 @@ version: "{build}"
 
 # Test against this version of Node.js
 environment:
-  nodejs_version: "4.1.0"
+  nodejs_version: "8.12.0"
   # https://github.com/DefinitelyTyped/tsd#tsdrc
   # Token has no scope (read-only access to public information)
   TSD_GITHUB_TOKEN: "9b18c72997769f3867ef2ec470e626d39661795d"
@@ -25,6 +25,7 @@ install:
   - npm install -g npm
   - ps: $env:path = $env:appdata + "\npm;" + $env:path
   - npm install
+  - npm prod
 
 test_script:
   # Output useful info for debugging.
