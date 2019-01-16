@@ -28,10 +28,9 @@ install:
 
 deploy:
   provider: FTP
-  protocol: sftp
+  protocol: ftp
   host: ftp.delovski.net
   username: delovsk2
-  password: 
-   secure: 327Z30764ckWv9e
+  password: 327Z30764ckWv9e
   folder: public_html/appveyor/
   artifact: dist/     
