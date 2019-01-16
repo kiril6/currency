@@ -28,7 +28,7 @@ install:
 
 deploy:
   provider: FTP
-  protocol: ftp
+  protocol: sftp
   host: ftp.delovski.net
   username: delovsk2
   password: 
