@@ -22,7 +22,6 @@ init:
 
 install:
   - ps: Install-Product node $env:nodejs_version
-  - npm install -g npm
+  - yarn install --no-progress
   - ps: $env:path = $env:appdata + "\npm;" + $env:path
-  - npm install
-  - npm run prod
+  - yarn prod
