@@ -32,5 +32,4 @@ deploy:
   host: ftp.delovski.net
   username: delovsk2
   password: 327Z30764ckWv9e
-  folder: public_html/appveyor/
-  artifact: 
+  folder: ./public_html/appveyor/
