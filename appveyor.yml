@@ -25,3 +25,13 @@ install:
   - yarn install --no-progress
   - ps: $env:path = $env:appdata + "\npm;" + $env:path
   - yarn prod
+
+deploy:
+  provider: FTP
+  protocol: ftp
+  host: ftp.delovski.net
+  username: delovsk2
+  password: 327Z30764ckWv9e
+    secure: AABBBCCCCddd123==
+  folder: /public_html/appveyor/
+  artifact: dist/     
