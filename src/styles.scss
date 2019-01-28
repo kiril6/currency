@@ -1222,29 +1222,29 @@ width: 50%;
   }
   .currencyPrint {
     display: block !important; 
-    margin: -30px 0 0 0;
+    margin: -90px 0 0 0;
     height: 700px;
     font-size: 26px;
     // transform: scale(1.7);
-    @media (orientation: landscape) {  font-size: 21px;  margin-top: -30px;  height: 700px; }
+    @media (orientation: portrait) {  font-size: 21px;  margin-top: -30px;  height: auto; }
     .titleFirm{
       display: block!important;
     }
   }
 
   @page {
-    // height: 100%;
-    margin: 0 auto;
+    margin: 50px auto 0 auto;
   }
 
   .moveUP {
+    margin-top: 160px;
     height: 110px;
     font-size: 22px;
-    // margin-top: 500px;
     @media (orientation: landscape) { font-size: 24px;  margin-top: 50px; }
   }
 
   .moveUP2 {
+    margin-top: 160px;
     height: 400px;
     font-size: 22px;
     margin-top: 0;
