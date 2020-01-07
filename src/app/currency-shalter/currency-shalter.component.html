@@ -14,7 +14,7 @@
       </h5>
     </div>
 
-    <div class="animated fadeIn" style="min-height: 464.6px">
+    <div class="animated fadeIn">
       <table *ngIf="this.dataService.data" class="table table-responsive table-hover table-currency">
         <thead>
           <tr class="tableTitle">
@@ -39,7 +39,7 @@
         </tbody>
       </table>
     </div>
-    <div class="ticker-wrap">
+    <div class="ticker-wrap" style="margin-left: -133px;">
       <div class="ticker">
         <div class="ticker__item noPrint">{{"above_500" | translate}}</div>
       </div>
@@ -51,14 +51,12 @@
       <h4 *ngIf="!this.isSunday" class="title animated flash">{{"no_currency1" | translate}}</h4>
       <h4 *ngIf="this.isSunday" class="title animated flash">{{"no_currencySunday1" | translate}}</h4>
       <br>
-      <h4 *ngIf="!this.isSunday" class="title animated flash">{{"no_currency2" | translate}}.</h4>
       <div *ngIf="!this.isSunday">
         <br>
-        <button (click)="this.dataService.reloadPage('external')" type="button" class="btn btn-default btn-sm">
+        <button (click)="this.dataService.reloadPage('local')" type="button" class="btn btn-default btn-sm">
           <span class="fa fa-refresh"></span>
         </button>
       </div>
-
       <h4 *ngIf="this.isSunday" class="title animated flash">{{"no_currencySunday2" | translate}}</h4>
     </div>
   </ng-template>
