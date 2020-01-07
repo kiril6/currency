@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContentComponent } from './content/content.component';
 import { CurrencyListComponent } from './currency-list/currency-list.component';
+import { CurrencyShalterComponent } from './currency-shalter/currency-shalter.component';
 import { UpdateComponent } from './update/update.component';
 import { AppService } from './content/app.service';
 import { AppRoutingModule } from './app-routing.module';
@@ -27,6 +28,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     FooterComponent,
     ContentComponent,
     CurrencyListComponent,
+    CurrencyShalterComponent,
     UpdateComponent,
   ],
   imports: [

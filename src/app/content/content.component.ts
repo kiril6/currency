@@ -10,6 +10,7 @@ export class ContentComponent {
   public success: boolean;
   public modalElement;
   public editLink = false;
+  public shalterLink = false;
 
   message: IMessage = {};
 
@@ -22,6 +23,11 @@ export class ContentComponent {
           this.editLink = true;
         } else {
           this.editLink = false;
+        }
+        if (val.url.includes('shalter')) {
+          this.shalterLink = true;
+        } else {
+          this.shalterLink = false;
         }
       }
     });

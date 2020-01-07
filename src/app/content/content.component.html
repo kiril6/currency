@@ -1,3 +1,13 @@
+<!-- snow  -->
+<div class="snowflakes" aria-hidden="true">
+  <div *ngFor="let i of [0,1,2,3,4,5,6,7,8,9]" class="snowflake">
+  ❅
+  </div>
+</div>
+
+<!-- end snow -->
+
+
 <!--
   <div class="col-md-12 collapse in" id="map" style="opacity: 0.8;filter: alpha(opacity=80);">
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2965.219248296016!2d21.42829931521855!3d41.995569979213144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0xdbaddbf99023fcb5!2sIntercoop+-+Currency+Exchange+Office!5e0!3m2!1sen!2sus!4v1465155940175"
@@ -17,8 +27,9 @@
     <div class="item active">
       <div class="container">
         <div class="carousel-content">
-          <app-currency-list *ngIf="this.editLink==false"></app-currency-list>
-          <app-update *ngIf="this.editLink==true"></app-update>
+          <app-currency-list *ngIf="this.editLink==false && this.shalterLink==false"></app-currency-list>
+          <app-update *ngIf="this.editLink==true && this.shalterLink==false"></app-update>
+          <app-currency-shalter *ngIf="this.editLink==false && this.shalterLink==true"></app-currency-shalter>
         </div>
       </div>
     </div>
@@ -46,7 +57,7 @@
     <a class="next" href="#main-slider" data-slide="next"><i class="fa fa-chevron-right" aria-hidden="true"></i></a> -->
 </section>
 
-<section id="services" *ngIf="this.editLink==false">
+<section id="services" *ngIf="this.editLink==false && this.shalterLink==false">
   <div class="container">
     <div class="box first">
       <div class="row">
@@ -67,7 +78,7 @@
   <!--/.container-->
 </section>
 
-<section id="portfolio" *ngIf="this.editLink==false">
+<section id="portfolio" *ngIf="this.editLink==false && this.shalterLink==false">
   <div class="container">
     <div class="box">
       <div class="center gap">
@@ -96,7 +107,7 @@
 </section>
 <!--/#portfolio-->
 
-<section id="about-us" *ngIf="this.editLink==false">
+<section id="about-us" *ngIf="this.editLink==false && this.shalterLink==false">
   <div class="container">
     <div class="box images">
       <div class="center">
@@ -182,7 +193,7 @@
 </section>
 <!--/#about-us-->
 
-<section id="contact" *ngIf="this.editLink==false">
+<section id="contact" *ngIf="this.editLink==false && this.shalterLink==false">
   <div class="container">
     <div class="box last">
       <div class="row">
@@ -314,4 +325,4 @@
   <!--/.container-->
 </section>
 
-<!-- demo interesen sajt za sporedba http://bootstrapdevelop.com/demo/devtheme-v1.1/ -->
+<!-- demo interesting site for comparison http://bootstrapdevelop.com/demo/devtheme-v1.1/ -->
