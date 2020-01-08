@@ -1,13 +1,10 @@
 /deep/ {
     #main-slider {
         .item {
-            // background: transparent!important;
             background: url("../../assets/img/slider-bg2.jpg")!important;
             background-repeat: no-repeat!important;
             background-position: center center!important;
             background-size: 100%!important;
-            -webkit-transform: scaleX(-1)!important;
-            transform: scaleX(-1)!important;
         }
     }
 
@@ -16,9 +13,8 @@
     }
 
     body {
-        height: 100vh!important;
+        height: 100%!important;
         background: black!important;
-        zoom: 130%!important;
         font-weight: bolder!important;
     }
 }
