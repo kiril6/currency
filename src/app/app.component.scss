@@ -2,7 +2,8 @@
 .showB {
   margin: 200px 0 0 0;
   display: block!important;
-  .modal-dialog{
+
+  .modal-dialog {
     width: 300px;
     margin: 0 auto;
     opacity: 0.96;
@@ -84,8 +85,6 @@
     font-size: 27px;
   }
 }
-.modal-body {
-  p {
+.modal-body p {
     color: black;
-  }
 }

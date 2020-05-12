@@ -1071,7 +1071,7 @@ body {
 }
 
 // contact form
-#contact_form{
+#contact_form {
 	max-width:272px;
 	padding:20px;
 	border: 1px solid #DDD;
@@ -1083,16 +1083,16 @@ body {
 	background:#FAFAFA;
 	margin-right: auto;
 }
-#contact_form legend{
+#contact_form legend {
 	font-size: 15px;
 	color: #C9C9C9;
 }
-#contact_form label{
+#contact_form label {
   font-size: 14px;
 	display: block;
 	margin-bottom:5px;
 }
-#contact_form label span{
+#contact_form label span {
 	float:left;
 	width:100px;
 	color:#666666;
@@ -1106,7 +1106,7 @@ body {
 	max-width: 230px;
 	font-family: Arial, Helvetica, sans-serif;
 }
-#contact_form textarea{
+#contact_form textarea {
   padding: 2px 4px 2px 4px;
 	border: 1px solid #DBDBDB;
 	border-radius: 3px;
@@ -1134,7 +1134,7 @@ and (min-device-width : 320px)
 .submit_btn:hover {
 	background: #ECECEC;
 }
-.success{
+.success {
 	background: #CFFFF5;
 	padding: 10px;
 	margin-bottom: 10px;
@@ -1142,7 +1142,7 @@ and (min-device-width : 320px)
 	border-radius: 5px;
 	font-weight: normal;
 }
-.error{
+.error {
 	background: #FFDFDF;
 	padding: 10px;
 	margin-bottom: 10px;
@@ -1247,7 +1247,6 @@ width: 50%;
     margin-top: 160px;
     height: 400px;
     font-size: 22px;
-    margin-top: 0;
     @media (orientation: landscape) { font-size: 24px;  margin-top: 10px; }
   }
 

@@ -9,8 +9,8 @@
         </div>
 
         <div class="pull-right printer">
-          <i (click)="this.calculator()" class="fa fa-calculator" aria-hidden="true"></i>&nbsp;
-          <i (click)="this.print()" id="printBtn" class="fa fa-print" aria-hidden="true"></i>&nbsp;
+          <span class="hvr-icon-float"><i (click)="this.calculator()" class="fa fa-calculator hvr-icon" aria-hidden="true"></i></span>&nbsp;
+          <span class="hvr-icon-float"><i (click)="this.print()" id="printBtn" class="fa fa-print hvr-icon" aria-hidden="true"></i></span>&nbsp;
         </div>
       </h3>
       <div class="clearfix"></div>
@@ -80,8 +80,8 @@
       <h4 *ngIf="!this.isSunday" class="title animated flash">{{"no_currency2" | translate}}.</h4>
       <div *ngIf="!this.isSunday">
         <br>
-        <button (click)="this.dataService.reloadPage('external')" type="button" class="btn btn-default btn-sm">
-          <span class="fa fa-refresh"></span>
+        <button (click)="this.dataService.reloadPage('external')" type="button" class="btn btn-default btn-sm hvr-icon-grow">
+          <span class="fa fa-refresh hvr-icon"></span>
         </button>
       </div>
 

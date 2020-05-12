@@ -120,6 +120,7 @@
 //   -ms-animation: scaleUp 400ms;
 //   animation: scaleUp 400ms;
 // }
+
 #main-slider .prev,
 #main-slider .next {
     position: absolute;
@@ -260,11 +261,21 @@
 //portfolio
 #portfolio .box {
     background: #f3f3f3;
+    color: rgba(0, 0, 0, 0.6);
+    .money-gram {
+        @media screen and (max-width: 767px) {
+            margin-top: 18px;
+        }
+    }
+
+    img {
+        height: 90px;
+        display: inline;
+    }
 }
 
 .list-services {
     padding: 10px 10px;
-    background: white;
 }
 
 #call,
