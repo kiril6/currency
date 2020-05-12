@@ -1,10 +1,5 @@
 import { Component } from '@angular/core';
 
-
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { Http, Response, RequestOptions, Headers, HttpModule } from '@angular/http';
-
-
 import { DataService } from '../services/data.service';
 @Component({
   selector: 'app-currency-list',

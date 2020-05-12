@@ -19,9 +19,7 @@ export class HeaderComponent {
     this.translate.use(language);
     if (language === this.lngCheck) {
       this.lngBool = true;
-    } else {
-      this.lngBool = false;
-    }
+    } else this.lngBool = false;
   }
 
   closeToggle() {

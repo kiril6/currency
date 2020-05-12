@@ -1,5 +1,5 @@
 {
-  "datum": "14.11.2018",
+  "datum": "08.01.2020",
   "values": [{
     "currency": "EUR",
     "buy": 61.39, "sell": 61.60,
@@ -64,13 +64,13 @@
       "currency": "BGN",
       "buy": 10.20, "sell": 10.20,
       "flag": "flag--bulgaria",
-      "checked": false
+      "checked": true
     },
     {
       "currency": "RSD",
       "buy": 10.20, "sell": 10.20,
       "flag": "flag--serbia",
-      "checked": false
+      "checked": true
     },
     {
       "currency": "ALL",

@@ -1,13 +1,13 @@
 
-import {throwError as observableThrowError, timer as observableTimer} from 'rxjs';
+import { throwError as observableThrowError, timer as observableTimer } from 'rxjs';
 
-import {catchError, map} from 'rxjs/operators';
-import { Http, Response, RequestOptions, Headers, HttpModule } from '@angular/http';
+import { catchError, map} from 'rxjs/operators';
+import { Http, Response, Headers } from '@angular/http';
 import { Injectable } from '@angular/core';
 
-import { Observable, Subscription } from 'rxjs/Rx';
+import { Subscription } from 'rxjs/Rx';
 import 'rxjs/Rx';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Injectable()
 

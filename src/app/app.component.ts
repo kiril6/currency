@@ -4,7 +4,6 @@ import { Component, Injectable, OnInit } from '@angular/core';
 // import { Http, Response, RequestOptions, Headers, HttpModule } from '@angular/http';
 // import { Observable } from 'rxjs/Rx';
 
-import * as $ from 'jquery';
 import { DataService } from './services/data.service';
 @Injectable()
 

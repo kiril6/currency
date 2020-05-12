@@ -1,10 +1,5 @@
 import { Component } from '@angular/core';
 
-
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { Http, Response, RequestOptions, Headers, HttpModule } from '@angular/http';
-
-
 import { DataService } from '../services/data.service';
 @Component({
   selector: 'app-currency-shalter',
@@ -23,8 +18,8 @@ export class CurrencyShalterComponent {
   constructor(public dataService: DataService) { }
 
   ngOnInit() {
-    const dateObj = new Date();
-    const dayName = dateObj.toString().split(' ')[0];
+    const dateObj = new Date(),
+      dayName = dateObj.toString().split(' ')[0];
     this.newDate = this.formatDateToString(dateObj);
 
     setTimeout(() => {

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService, ICurrencies } from '../content/app.service';
-import { Router, ActivatedRoute } from '@angular/router';
-import { Http, Response, RequestOptions, Headers, HttpModule } from '@angular/http';
+import { Router } from '@angular/router';
+import { Http } from '@angular/http';
 import { DataService } from '../services/data.service';
 
 @Component({
@@ -23,8 +23,6 @@ export class UpdateComponent implements OnInit {
   public currencyBuy = ['eurBuy', 'audBuy', 'cadBuy', 'dkkBuy', 'jpyBuy', 'nokBuy', 'sekBuy', 'chfBuy', 'gbpBuy', 'usdBuy', 'bgnBuy', 'rsdBuy', 'allBuy', 'czkBuy', 'hufBuy', 'plnBuy', 'ronBuy', 'hrkBuy', 'tryBuy', 'rubBuy', 'brlBuy', 'cnyBuy', 'hkdBuy', 'idrBuy', 'ilsBuy', 'inrBuy', 'krwBuy', 'mxnBuy', 'myrBuy', 'nzdBuy', 'phpBuy', 'sgdBuy', 'thbBuy', 'zarBuy'];
   public currencySell = ['eurSell', 'audSell', 'cadSell', 'dkkSell', 'jpySell', 'nokSell', 'sekSell', 'chfSell', 'gbpSell', 'usdSell', 'bgnSell', 'rsdSell', 'allSell', 'czkSell', 'hufSell', 'plnSell', 'ronSell', 'hrkSell', 'trySell', 'rubSell', 'brlSell', 'cnySell', 'hkdSell', 'idrSell', 'ilsSell', 'inrSell', 'krwSell', 'mxnSell', 'myrSell', 'nzdSell', 'phpSell', 'sgdSell', 'thbSell', 'zarSell'];
   public currencyStatus = ['eurStatus', 'audStatus', 'cadStatus', 'dkkStatus', 'jpyStatus', 'nokStatus', 'sekStatus', 'chfStatus', 'gbpStatus', 'usdStatus', 'bgnStatus', 'rsdStatus', 'allStatus', 'czkStatus', 'hufStatus', 'plnStatus', 'ronStatus', 'hrkStatus', 'tryStatus', 'rubStatus', 'brlStatus', 'cnyStatus', 'hkdStatus', 'idrStatus', 'ilsStatus', 'inrStatus', 'krwStatus', 'mxnStatus', 'myrStatus', 'nzdStatus', 'phpStatus', 'sgdStatus', 'thbStatus', 'zarStatus'];
-
-
 
   constructor(private appService: AppService, private router: Router, private http: Http, public dataService: DataService) { }
 
@@ -57,11 +55,11 @@ export class UpdateComponent implements OnInit {
   }
 
   ngOnInit() {
-    const dateObj = new Date();
-    const month = dateObj.getUTCMonth() + 1;
-    const day = dateObj.getUTCDay();
-    const dayName = dateObj.toString().split(' ')[0];
-    const year = dateObj.getUTCFullYear();
+    const dateObj = new Date(),
+     month = dateObj.getUTCMonth() + 1,
+     day = dateObj.getUTCDay(),
+     dayName = dateObj.toString().split(' ')[0],
+     year = dateObj.getUTCFullYear();
     this.newDate = this.formatDateToString(dateObj);
   }
 
@@ -211,23 +209,23 @@ export class UpdateComponent implements OnInit {
 
 
   private formatDateToString(date) {
-    const dd = (date.getDate() < 10 ? '0' : '') + date.getDate();
-    const MM = ((date.getMonth() + 1) < 10 ? '0' : '') + (date.getMonth() + 1);
-    const yyyy = date.getFullYear();
+    const dd = (date.getDate() < 10 ? '0' : '') + date.getDate(),
+      MM = ((date.getMonth() + 1) < 10 ? '0' : '') + (date.getMonth() + 1),
+      yyyy = date.getFullYear();
     return (dd + '.' + MM + '.' + yyyy);
   }
 
   onKey(event) {
     let getValue = event.target.value;
-    const setZeros = getValue + '0';
-    const setZeros2 = getValue + '00';
-    const setZeros3 = getValue + '000';
-    const setZeros4 = getValue + '.0000';
+    const setZeros = getValue + '0',
+     setZeros2 = getValue + '00',
+     setZeros3 = getValue + '000',
+     setZeros4 = getValue + '.0000';
 
     if (event.keyCode === 13 && event.target.nodeName === 'INPUT') {
-      const form = event.target.form;
-      const index = Array.prototype.indexOf.call(form, event.target);
-      const getType = form.elements[index + 1].getAttribute('type');
+      const form = event.target.form,
+       index = Array.prototype.indexOf.call(form, event.target),
+       getType = form.elements[index + 1].getAttribute('type');
       event.target.onchange = () => {
         // when having just number (no dot)
         if (event.target.value.indexOf('.') == -1) {
