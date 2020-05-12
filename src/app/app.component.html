@@ -22,8 +22,8 @@
                 autocomplete="off" maxlength="7" id="amount" name="amount" class="form-control input-sm" />
             </div>
             <div class="col-xs-3 col-sm-3 col-md-3" style="padding-top: 4px; text-align: right">
-              <button (click)="refreshCalc()" type="button" class="btn btn-primary btn-sm">
-                <span class="fa fa-refresh"></span>
+              <button (click)="refreshCalc()" type="button" class="btn btn-primary btn-sm hvr-icon-spin">
+                <span class="fa fa-refresh hvr-icon"></span>
               </button>
             </div>
           </div>
@@ -42,9 +42,9 @@
             <option [disabled]="this.currencyFrom==='MKD'" value="MKD">MKD</option>
             <option [disabled]="this.currencyFrom===list.currency" *ngFor="let list of this.dataService.data?.values;">{{list.currency}}</option>
           </select>
-          <button tabindex=4 (click)="calculateCurrency()" [disabled]="!formCalculator.valid" type="submit" class="btn btn-info btn-block"
+          <button tabindex=4 (click)="calculateCurrency()" [disabled]="!formCalculator.valid" type="submit" class="btn btn-info btn-block hvr-icon-back"
             id="updateCalculator">
-            <span class="fa fa-calculator"></span>&nbsp;{{"calculate" | translate}}
+            <span class="fa fa-calculator hvr-icon"></span>&nbsp;{{"calculate" | translate}}
           </button>
         </form>
       </div>

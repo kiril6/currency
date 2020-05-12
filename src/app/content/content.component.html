@@ -71,22 +71,34 @@
   <div class="container">
     <div class="box">
       <div class="center gap">
-        <h2>{{"services_title" | translate}}</h2>
-        <p class="lead">{{"services_description" | translate}}</p>
-        EUR AUD CAD DKK JPY NOK SEK CHF
-        <br>GBP USD RSD HRK BGN ALL TRY MKD
-        <br>
+
+        <div class="row">
+          <div class="col-md-12">
+              <h2>{{"services_title" | translate}}</h2>
+          </div>
+        
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <p class="lead">{{"services_description" | translate}}</p>
+            EUR AUD CAD DKK JPY NOK SEK CHF
+            <br>GBP USD RSD HRK BGN ALL TRY MKD
+          </div>
+
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <p class="lead money-gram" [innerHTML]="'services-moneygram_description' | translate"></p>
+            <a href="https://www.moneygram.com/" target="_blank"><img alt="money gram" class="img-responsive"src="assets/img/moneygram.png"></a>
+          </div>
+        </div>
       </div>
       <!--/.center-->
       <div class="row">
         <div class="col-md-6 col-sm-6 col-xs-12 text-center list-services">
-          <a id="call" href="tel:+389023239522" class="btn btn-success btn-sm">
-            <span class="fa fa-phone"></span>&nbsp;&nbsp;{{"call_us" | translate}}</a>
+          <a id="call" href="tel:+389023239522" class="btn btn-success btn-sm hvr-icon-grow-rotate">
+            <span class="fa fa-phone hvr-icon"></span>&nbsp;&nbsp;{{"call_us" | translate}}</a>
         </div>
         <div class="col-md-6 col-sm-6 col-xs-12 text-center list-services">
           <a id="directions" href="https://www.google.com/maps/dir//%27%27/data=!4m5!4m4!1m0!1m2!1m1!1s0x135415b48a672011:0xdbaddbf99023fcb5"
-            class="btn btn-success btn-sm">
-            <span class="fa fa-map-marker"></span>&nbsp;&nbsp;{{"get_directions" | translate}}</a>
+            class="btn btn-success btn-sm hvr-icon-pulse">
+            <span class="fa fa-map-marker hvr-icon"></span>&nbsp;&nbsp;{{"get_directions" | translate}}</a>
         </div>
       </div>
     </div>
@@ -219,9 +231,9 @@
                       <br>
                       <div class="row">
                         <div class="col-md-1">
-                          <button *ngIf="this.success==null" [disabled]="!f.valid" type="submit" class="btn" [ngClass]="{'btn-primary' : this.success==null}"
+                          <button *ngIf="this.success==null" [disabled]="!f.valid" type="submit" class="btn hvr-icon-rotate" [ngClass]="{'btn-primary' : this.success==null}"
                             id="send">
-                            <span class="glyphicon glyphicon-send"></span>&nbsp;{{"send" | translate}}
+                            <span class="glyphicon glyphicon-send hvr-icon"></span>&nbsp;{{"send" | translate}}
                           </button>
                           <button *ngIf="this.success==true" [disabled]="this.success==true" type="submit" class="btn"
                             [ngClass]="{'btn-success' : this.success==true}" id="send">
@@ -258,8 +270,8 @@
             <br>
 
             <a id="directions-footer" href="https://www.google.com/maps/dir//%27%27/data=!4m5!4m4!1m0!1m2!1m1!1s0x135415b48a672011:0xdbaddbf99023fcb5"
-              class="btn btn-success btn-xs">
-              <span class="fa fa-map-marker"></span>&nbsp;&nbsp;{{"get_directions" | translate }}</a>
+              class="btn btn-success btn-xs hvr-icon-pulse">
+              <span class="fa fa-map-marker hvr-icon"></span>&nbsp;&nbsp;{{"get_directions" | translate }}</a>
             <br>
           </div>
         </div>
@@ -267,28 +279,28 @@
           <div class="noPrint">
             <h1>{{"find_us" | translate}}</h1>
             <p class="social">
-              <a href="https://www.facebook.com/IntercoopExchangeOffice/" title="" class="facebook">
-                <i class="fa fa-facebook"></i>
+              <a href="https://www.facebook.com/IntercoopExchangeOffice/" title="" class="facebook hvr-icon-grow">
+                <i class="fa fa-facebook hvr-icon"></i>
               </a>
-              <a href="https://plus.google.com/116118647434016492795/" title="" class="gplus">
-                <i class="fa fa-google-plus"></i>
-              </a>
+              <!-- <a href="https://plus.google.com/116118647434016492795/" title="" class="gplus hvr-icon-grow">
+                <i class="fa fa-google-plus hvr-icon"></i>
+              </a> -->
             </p>
           </div>
 
           <div class="moveUP2">
             <span>{{"contact" | translate}}</span>
             <br>
-            <a href="tel:00389023239522" class="noPrint">
+            <a href="tel:00389023239522" class="noPrint hvr-icon-forward">
               <span>{{"tel" | translate}} </span>
-              <i class="fa fa-phone" aria-hidden="true"></i>
+              <i class="fa fa-phone hvr-icon" aria-hidden="true"></i>
             </a>
             <span class="telPrint">{{"tel" | translate}}
               <i class="fa fa-phone" aria-hidden="true"></i>
             </span>
             <br class="noPrint">
-            <a href="mailto:intercoop.delovski@hotmail.com" class="noPrint" target="_top">{{"email" | translate}}
-              <i class="fa fa-envelope-o" aria-hidden="true"></i>
+            <a href="mailto:intercoop.delovski@hotmail.com" class="noPrint hvr-icon-forward" target="_top">{{"email" | translate}}
+              <i class="fa fa-envelope-o hvr-icon" aria-hidden="true"></i>
             </a>
             <br class="noPrint">
             <br> {{"business_hours" | translate}}

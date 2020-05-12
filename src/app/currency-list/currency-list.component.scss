@@ -177,6 +177,7 @@ $star-size: ($flag-height/13)*2.45/3.7;
 //     @extend %flag;
 //     background: thirds(red, white, red, -180deg);
 // }
+
 .flag--australia {
     @extend %additional;
     background: url(/../assets/img/flags/aud.png) no-repeat;
@@ -238,7 +239,7 @@ $star-size: ($flag-height/13)*2.45/3.7;
 //     @extend %flag;
 //     background: halfs(royalblue, yellow);
 // }
-// Cross
+
 .flag--denmark {
     @extend %flag;
     background: cross(red, white);
@@ -248,6 +249,7 @@ $star-size: ($flag-height/13)*2.45/3.7;
 //     @extend %flag;
 //     background: cross(mediumblue, red, white);
 // }
+
 .flag--norway {
     @extend %flag;
     background: cross(red, blue, white);
@@ -257,6 +259,7 @@ $star-size: ($flag-height/13)*2.45/3.7;
 //     @extend %flag;
 //     background: cross(white, blue, blue);
 // }
+
 .flag--sweden {
     @extend %flag;
     background: cross(mediumblue, yellow, yellow);
@@ -445,12 +448,10 @@ $star-size: ($flag-height/13)*2.45/3.7;
     }
 }
 
-.printer {
-    i {
+.printer i {
         cursor: pointer;
         color: white !important;
         padding-right: 10px;
-    }
 }
 
 .no-currency {
