@@ -14,7 +14,7 @@ import { DataService } from './services/data.service';
   providers: [DataService]
 })
 
-export class AppComponent implements OnInit {
+export class AppComponent {
 
   // public modalElement;
   public amount: number;
@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
   private formula = 0;
   private calcMKD = 0;
 
-  constructor(public dataService: DataService) { }
+  constructor(public dataService: DataService) {}
 
   title = 'app';
   // ngOnInit() {
@@ -41,7 +41,6 @@ export class AppComponent implements OnInit {
   //                   err => console.log(err),
   //                   () => console.log('file rode'));
   //   }
-  ngOnInit() { }
 
   reload() {
     location.reload();

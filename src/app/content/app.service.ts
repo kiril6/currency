@@ -137,7 +137,7 @@ export class AppService {
       }));
   }
 
-  // currency udpate
+  // currency update
   sendCurrency(messageCurrency: ICurrencies): Observable<ICurrencies> | any {
     return this.http.post(this.updateCurrency, messageCurrency).pipe(
       map(response => {
