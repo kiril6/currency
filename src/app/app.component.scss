@@ -1,3 +1,6 @@
+button.btn {
+  outline: 0!important;
+}
 
 .showB {
   margin: 200px 0 0 0;
@@ -6,7 +9,6 @@
   .modal-dialog {
     width: 300px;
     margin: 0 auto;
-    opacity: 0.96;
     @media screen and (min-height: 500px) and (orientation : landscape) {
       margin: 90px auto 0 auto;
     }
@@ -41,9 +43,25 @@
 
 //modal calculator
 .calculator {
-  .modal-header{
-    color: white!important;
-    background-color: rgb(42, 201, 103)!important;
+  user-select: none;
+  .modal-dialog {
+
+    @media screen and (min-width: 992px) and (max-width: 1999px) {
+      transform: translate(164%,0);
+      width: 220px!important;
+    }
+    
+    @media screen and (min-width: 1200px) {
+      transform: translate(181%,0);
+      width: 220px!important;
+    }
+  }
+  .modal-content {
+    background-color: rgba(256, 256, 256, 0.9);
+    .modal-header {
+      color: white!important;
+      background-color: rgb(42, 201, 103)!important;
+    }
   }
   .modal-body {
     height: 150px;
