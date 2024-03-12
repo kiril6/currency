@@ -13,31 +13,45 @@
         <b class="date">&nbsp;{{this.dataService.data?.datum}}&nbsp;</b>
       </h5>
     </div>
-
-    <div class="animated fadeIn">
-      <table *ngIf="this.dataService.data" class="table table-responsive table-hover table-currency">
-        <thead>
-          <tr class="tableTitle">
-            <th>{{"currency" | translate}}</th>
-            <th></th>
-            <th>{{"buy" | translate}}</th>
-            <th class="noPrint"></th>
-            <th>{{"sell" | translate}}</th>
-          </tr>
-        </thead>
-
-        <tbody>
-            <tr *ngFor="let item of this.dataService.data.values">
-              <th *ngIf="item.checked == true" scope="row">{{item.currency}}</th>
-              <th *ngIf="item.checked == true">1</th>
-              <td *ngIf="item.checked == true">{{item.buy.toFixed(4)}}</td>
-              <td *ngIf="item.checked == true" class="noPrint">
-                <div class="{{item.flag}}"></div>
-              </td>
-              <td *ngIf="item.checked == true">{{item.sell.toFixed(4)}}</td>
+    <div class="holder-flex">
+      <div class="flex-item"></div>
+      <div class="animated fadeIn custom-width">
+        <table *ngIf="this.dataService.data" class="table table-responsive table-hover table-currency">
+          <thead>
+            <tr class="tableTitle">
+              <th>{{"currency" | translate}}</th>
+              <th></th>
+              <th>{{"buy" | translate}}</th>
+              <th class="noPrint"></th>
+              <th>{{"sell" | translate}}</th>
             </tr>
-        </tbody>
-      </table>
+          </thead>
+
+          <tbody>
+              <tr *ngFor="let item of this.dataService.data.values">
+                <th *ngIf="item.checked == true" scope="row">{{item.currency}}</th>
+                <th *ngIf="item.checked == true">1</th>
+                <td *ngIf="item.checked == true">{{item.buy.toFixed(4)}}</td>
+                <td *ngIf="item.checked == true" class="noPrint">
+                  <div class="{{item.flag}}"></div>
+                </td>
+                <td *ngIf="item.checked == true">{{item.sell.toFixed(4)}}</td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="flex-item">
+        <div class="flex-item--inner">
+          <br> {{"business_hours" | translate}}
+          <br> {{"monday" | translate }}
+          <br> {{"tuesday" | translate }}
+          <br> {{"wednesday" | translate }}
+          <br> {{"thursday" | translate }}
+          <br> {{"friday" | translate }}
+          <br> {{"saturday" | translate }}
+          <br> {{"sunday" | translate }}
+        </div>
+      </div>
     </div>
     <div class="ticker-wrap">
       <div class="ticker">
